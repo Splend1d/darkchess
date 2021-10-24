@@ -13,16 +13,16 @@ using namespace std;
 
 #define TIME_LIMIT 10
 
-#define WIN 1.0 * 100000
-#define DRAW 0.2 * 100000
+#define WIN 1.0 * 200000
+#define DRAW 0.2 * 200000
 #define LOSE 0.0
-#define BONUS 0.3 * 100000
+#define BONUS 0.3 * 200000
 #define BONUS_MAX_PIECE 8
 
 #define OFFSET (WIN + BONUS)
 
 #define NOEATFLIP_LIMIT 60
-#define POSITION_REPETITION_LIMIT 3
+#define POSITION_REPETITION_LIMIT 2
 
 static tuple<int,int> MAX_TUPLE=make_tuple(3,-1);
 static const double values[14] = {
@@ -35,7 +35,14 @@ static const double hasPKval[9] = {
 static const double KhasPKval[6] = {
 	11000,6000,4000,3000,2300,2000 // //40905, 29904, 18903,13902,11501,11500
 };
-
+enum MetaState { 
+	UNDETERMINED,
+	MUSTLOSE,
+	HALFLOSE,
+	HALFWIN,
+	MUSTWIN, 
+};
+MetaState CURSTATE = UNDETERMINED;
 
 MyAI::MyAI(void){}
 
@@ -257,9 +264,22 @@ void MyAI::generateMove(char move[6])
 
 	double t = -DBL_MAX;
 	begin = clock();
+	// if (CURSTATE == UNDETERMINED) {
+	// 	double v = Evaluate(&this->main_chessboard, 1, this->Color, 0, 0);
+	// 	if (v >= 50000)
+	// 		CURSTATE = MUSTWIN;
+	// 	else if (v >= 25000)
+	// 		CURSTATE = HALFWIN;
+	// 	else if (v <= 25000)
+	// 		CURSTATE = HALFLOSE;
+	// 	else if (v <= 50000)
+	// 		CURSTATE = MUSTLOSE;
+	// }
+	
+	
 
-	// iterative-deeping, start from 3, time limit = <TIME_LIMIT> sec // 4-this->Color
-	for(int depth = 4-this->Color; (double)((clock() - begin) / CLOCKS_PER_SEC < TIME_LIMIT); depth+=2){ //If first , search even, else search odd 
+	// iterative-deeping, start from 3, time limit = <TIME_LIMIT> sec // 4-this->Color -this->Color
+	for(int depth = 4; (double)((clock() - begin) / CLOCKS_PER_SEC < TIME_LIMIT); depth+=2){ //If first , search even, else search odd 
 		this->node = 0;
 		int best_move_tmp; double t_tmp;
 
@@ -649,6 +669,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		}else{ // Win
 			score += WIN - DRAW ;
 		}
+		finish = true;
 	}
 	else{ // no conclusion
 		// static material values
@@ -657,17 +678,105 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		int count_pieces[14] = {0} ;
 		int has_enemy[14] = {0} ;
 		double piece_value = 0;
+		int opponent = this->Color==1?0:1;
 		for(int i = 0; i < 32; i++){
 			if(chessboard->Board[i] != CHESS_EMPTY && 
 				chessboard->Board[i] != CHESS_COVER){
-				count_pieces[chessboard->Board[i]]++;
-				
+				count_pieces[chessboard->Board[i]]++;	
 			}
+		}
+		bool maybe_advance_state = false;
+		bool always_advance_state = false;
+		//if (CURSTATE == UNDETERMINED){ // find if state is winning or losing
+			
+			
+		if (count_pieces[this->Color*7+6] != 0 && count_pieces[opponent*7+6] == 0){ // I have King, opponent doesn't have
+			maybe_advance_state = true;
+		} else if (count_pieces[opponent*7+6] != 0 && count_pieces[this->Color*7+6] == 0) { // Opponent has King, I don't have
+			maybe_advance_state = true;
+		} else if (!(count_pieces[0] != 0 && count_pieces[13] != 0) || (count_pieces[7] != 0 && count_pieces[6] != 0)) { // No King Pawn Bite
+			maybe_advance_state = true;
+			always_advance_state = true;
+		} 
+			
+			
+			
+		//}
+		if (maybe_advance_state == true || CURSTATE != UNDETERMINED){ 
+				MetaState temp_state = CURSTATE;
+				int gt_chess_no[2][7] = {0};
+				int acc[2] = {0};
+				int largest[2] = {-1,-1};
+				int hasking = -1;
+				for (int p = 13; p >=0 ; --p){
+					if (p % 7 ==6 && always_advance_state == false) { // Consider will win or not if king dead
+						hasking = count_pieces[p]==1?p/7:0;
+						continue;
+					} 
+						
+					piece_value += values[p] * count_pieces[p] * (p / 7 == this->Color?1:-1);
+					acc[p/7] += count_pieces[p];
+					gt_chess_no[p/7][p%7] = acc[p/7];
+					if (largest[p/7] ==-1 && count_pieces[p] != 0)
+						largest[p/7] = p%7;
+				}
+				
+
+				if (largest[this->Color] > largest[opponent] && (hasking == -1 || hasking == this->Color) && acc[this->Color] >= 2)
+					temp_state = MUSTWIN;
+				else if (largest[this->Color] < largest[opponent] && (hasking == -1 || hasking == opponent) && acc[opponent] >= 2)
+					temp_state = MUSTLOSE;
+				else if (gt_chess_no[this->Color][largest[opponent]] > count_pieces[largest[opponent]] && (hasking == -1 || hasking == this->Color))
+					temp_state = MUSTWIN;
+				else if (gt_chess_no[this->Color][largest[opponent]] == count_pieces[largest[opponent]] && acc[this->Color] > acc[opponent] && (hasking == -1 || hasking == this->Color)){
+					temp_state = HALFWIN;
+				}
+				else if (gt_chess_no[this->Color][largest[opponent]] == count_pieces[largest[opponent]] && acc[this->Color] < acc[opponent] && (hasking == -1 || hasking == opponent)){
+					temp_state = HALFLOSE;
+				}
+				else if (gt_chess_no[opponent][largest[this->Color]] > count_pieces[largest[this->Color]] && (hasking == -1 || hasking == opponent)) {
+					// for (int i = 0;i < 14; ++i)
+					// 	fprintf(stderr, "how many %d: %d \n",i,count_pieces[i]); //DEBUG
+					// fprintf(stderr,"%d %d\n",largest[this->Color],largest[opponent]);//DEBUG
+					// fprintf(stderr,"%d\n",gt_chess_no[opponent][largest[this->Color]]);
+					// fprintf(stderr,"%d\n",count_pieces[largest[this->Color]]);
+					// fflush(stderr);
+					// exit(0);
+					// temp_state = MUSTLOSE;
+				}
+					
+
+				switch (temp_state){
+					case MUSTWIN:
+						score += 50000;
+						score -=  oppo_extra_moves * 50;
+						break;
+
+					case HALFWIN:
+						score += 25000;
+						break;
+
+					case HALFLOSE:
+						score -= 25000;
+						break;
+
+					case MUSTLOSE:
+						score -= 50000;
+						score += my_extra_moves * 50;
+						break;
+
+					default:
+						break;
+				}
+				if (always_advance_state == true)
+					return score + piece_value;
+				
 		}
 		
 
 
 		if ((count_pieces[0] != 0 && count_pieces[13] != 0) || (count_pieces[7] != 0 && count_pieces[6] != 0)){ // pawn bite king
+			piece_value = 0 ;// dynamic score
 			has_enemy[6] += count_pieces[7]; // pawn bite king, king cannot bite pawn
 			has_enemy[13] += count_pieces[0]; // pawn bite king, king cannot bite pawn
 			has_enemy[0] -= count_pieces[13]; // pawn bite king, king cannot bite pawn
@@ -688,31 +797,48 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 					piece_value += hasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 			} 
 			
-		} else{ // no kings or no pawns
-			int gt_chess_no[2][7] = {0};
-			int acc[2] = {0};
-			int largest[2] = {-1};
-			for (int p = 13; p >=0 ; --p){
-				piece_value += values[p] * count_pieces[p] * (p / 7 == this->Color?1:-1);
-				acc[p/7] += count_pieces[p];
-				gt_chess_no[p/7][p%7] = acc[p/7];
-				if (largest[p/7] ==-1 && count_pieces[p%7] != 0)
-					largest[p/7] = p%7;
-			}
-			bool mustwin = false;
-			bool mustlose = false;
-			int opponent = this->Color==1?0:1;
-			if (gt_chess_no[this->Color][largest[opponent]] > largest[opponent])
-				mustwin = true;
-			else if (gt_chess_no[opponent][largest[this->Color]] > largest[this->Color])
-				mustlose = true;
-			if (mustwin){
-				score += 50000;
-			}
-			if (mustlose){
-				score -= 50000;
-			}
-		}
+		} 
+		// else{ // no king pawn loop
+		// 	int gt_chess_no[2][7] = {0};
+		// 	int acc[2] = {0};
+		// 	int largest[2] = {-1};
+		// 	for (int p = 13; p >=0 ; --p){
+		// 		piece_value += values[p] * count_pieces[p] * (p / 7 == this->Color?1:-1);
+		// 		acc[p/7] += count_pieces[p];
+		// 		gt_chess_no[p/7][p%7] = acc[p/7];
+		// 		if (largest[p/7] ==-1 && count_pieces[p%7] != 0)
+		// 			largest[p/7] = p%7;
+		// 	}
+		// 	bool mustwin = false;
+		// 	bool halfwin = false;
+		// 	bool halflose = false;
+		// 	bool mustlose = false;
+		// 	int opponent = this->Color==1?0:1;
+		// 	if (gt_chess_no[this->Color][largest[opponent]] > largest[opponent])
+		// 		mustwin = true;
+		// 	else if (gt_chess_no[this->Color][largest[opponent]] == largest[opponent] && acc[this->Color] > acc[opponent]){
+		// 		halfwin = true;
+		// 	}
+		// 	else if (gt_chess_no[this->Color][largest[opponent]] == largest[opponent] && acc[this->Color] < acc[opponent]){
+		// 		halflose = true;
+		// 	}
+		// 	else if (gt_chess_no[opponent][largest[this->Color]] > largest[this->Color])
+		// 		mustlose = true;
+		// 	if (mustwin){
+		// 		score += 50000;
+		// 		score +=  - oppo_extra_moves * 50;
+		// 	}
+		// 	else if  (halfwin){
+		// 		score += 25000;
+		// 	}
+		// 	else if  (halflose){
+		// 		score += 25000;
+		// 	}
+		// 	else if (mustlose){
+		// 		score -= 50000;
+		// 		score +=  my_extra_moves;
+		// 	}
+		// }
 		// DEBUG
 		// for (int p = 0;p < 14; ++p){
 		// 	if (p % 7 == 6)
@@ -729,7 +855,8 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		// exit(0);
 
 		score += piece_value; 
-		//score += my_extra_moves * 5 - oppo_extra_moves * 5; // mobility score
+		
+		score += my_extra_moves * 5 - oppo_extra_moves * 5; // mobility score
 		finish = false;
 	}
 
