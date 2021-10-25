@@ -652,7 +652,13 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 	const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves){
 	// score = My Score - Opponent's Score
 	// offset = <WIN + BONUS> to let score always not less than zero
-
+	int opponent = this->Color==1?0:1;
+	vector<Move2Strength> Moves1;
+	Expand(chessboard->Board, this->Color,&Moves1, -2); // overwrite extra_moves
+	my_extra_moves = Moves1.size(); 
+	vector<Move2Strength> Moves2;
+	Expand(chessboard->Board, opponent,&Moves2, -2);
+	oppo_extra_moves = Moves2.size(); 
 	double score = OFFSET;
 	bool finish;
 
@@ -664,11 +670,12 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		}
 		finish = true;}
 	else if(isDraw(chessboard)){
-		if(color == this->Color){ // Lose
-			score += DRAW - WIN;
-		}else{ // Win
-			score += WIN - DRAW ;
-		}
+		// if(color == this->Color){ // Lose
+		// 	score += DRAW - WIN;
+		// }else{ // Win
+		// 	score += WIN - DRAW ;
+		// }
+		score += DRAW - WIN;
 		finish = true;
 	}
 	else{ // no conclusion
@@ -678,7 +685,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		int count_pieces[14] = {0} ;
 		int has_enemy[14] = {0} ;
 		double piece_value = 0;
-		int opponent = this->Color==1?0:1;
+		
 		for(int i = 0; i < 32; i++){
 			if(chessboard->Board[i] != CHESS_EMPTY && 
 				chessboard->Board[i] != CHESS_COVER){
@@ -697,7 +704,11 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		} else if (!(count_pieces[0] != 0 && count_pieces[13] != 0) || (count_pieces[7] != 0 && count_pieces[6] != 0)) { // No King Pawn Bite
 			maybe_advance_state = true;
 			always_advance_state = true;
-		} 
+		} else if ((count_pieces[opponent*7] == 0 && count_pieces[this->Color*7+6] != 0)|| 
+							 (count_pieces[this->Color*7] == 0 && count_pieces[opponent*7+6] != 0)) { // One side don't have pawn and the other side has king
+			always_advance_state = true;
+			maybe_advance_state = true;
+		}
 			
 			
 			
@@ -742,27 +753,31 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 					// fprintf(stderr,"%d\n",count_pieces[largest[this->Color]]);
 					// fflush(stderr);
 					// exit(0);
-					// temp_state = MUSTLOSE;
-				}
-					
+					temp_state = MUSTLOSE;
+				} else if (count_pieces[this->Color*7+6] == 1 &&  count_pieces[opponent*7] == 0 && acc[this->Color] > 2)
+					temp_state = HALFWIN;
+				else if (count_pieces[this->Color*7+6] == 1 &&  count_pieces[opponent*7] == 0 && acc[opponent] > 2)
+					temp_state = HALFLOSE;
 
 				switch (temp_state){
 					case MUSTWIN:
 						score += 50000;
-						score -=  oppo_extra_moves * 50;
+						score +=  (my_extra_moves * 0.5 - oppo_extra_moves * 0.5);
 						break;
 
 					case HALFWIN:
 						score += 25000;
+						score +=  (my_extra_moves * 0.5 - oppo_extra_moves * 0.5);
 						break;
 
 					case HALFLOSE:
 						score -= 25000;
+						score +=  my_extra_moves * 5;
 						break;
 
 					case MUSTLOSE:
 						score -= 50000;
-						score += my_extra_moves * 50;
+						score += my_extra_moves * 5;
 						break;
 
 					default:
@@ -796,6 +811,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 				else
 					piece_value += hasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 			} 
+			score += my_extra_moves * 5 - oppo_extra_moves * 5; // mobility score
 			
 		} 
 		// else{ // no king pawn loop
@@ -856,7 +872,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 
 		score += piece_value; 
 		
-		score += my_extra_moves * 5 - oppo_extra_moves * 5; // mobility score
+		
 		finish = false;
 	}
 
