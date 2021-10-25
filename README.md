@@ -9,4 +9,4 @@ V3 added branching score 10W-10D-0L
 
 V4 added uncontested king special case, change branching score to branching count for both players at the last position (including Quiescent)
 
-V5 branching score now considers importance of chess piece 17W-3D-0L
+V5 branching score now considers importance of chess piece *17W-3D-0L
