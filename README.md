@@ -11,4 +11,4 @@ V4 added uncontested king special case, change branching score to branching coun
 
 V5 branching score now considers importance of chess piece *17W-3D-0L
 
-V6 resolved tie issues, changes to branching score 9W-11L
+V6 resolved tie issues, changes to branching score 9W-11D
