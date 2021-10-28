@@ -14,3 +14,6 @@ V5 branching score now considers importance of chess piece *17W-3D-0L
 V6 resolved tie issues, changes to branching score 9W-11D
 
 V7 resolved qsearch issues, added win more search, added eat first reward 15W-5D
+
+V8 added closeness score when can't find something to eat, WWWWWWWWWWWDWDWDWDLD
+- last 5 games, going second score : 5: WWDW 6:DDDD 7:DDLL 8:DWWD 9:WDWD
