@@ -105,12 +105,12 @@ private:
 	void MakeMove(ChessBoard* chessboard, const int move, const int chess);
 	void MakeMove(ChessBoard* chessboard, const char move[6]);
 	bool Referee(const int* board, const int Startoint, const int EndPoint, const int color, int*, int*);
-	void Expand(const int* board, const int color, vector<Move2Strength>* Result,int last_eaten_piece, bool Q);
-	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves, int first_eat_bonus, int depth);
+	void Expand(const int* board, const int color, vector<Move2Strength>* Result,int last_move, bool Q);
+	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves, int first_eat_bonus);
 	
-	double Nega_max(ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat);
+	double Nega_max(ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, int last_move);
 	bool isDraw(const ChessBoard* chessboard);
-
+	bool hasAppeared(const ChessBoard* chessboard);
 	// Display
 	void Pirnf_Chess(int chess_no,char *Result);
 	void Pirnf_Chessboard();
