@@ -108,7 +108,7 @@ private:
 	void Expand(const int* board, const int color, vector<Move2Strength>* Result,int last_eaten_piece, bool Q);
 	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves, int first_eat_bonus, int depth);
 	
-	double Nega_max(ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat);
+	double Nega_max(ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat, int last_eaten_pos);
 	bool isDraw(const ChessBoard* chessboard);
 
 	// Display

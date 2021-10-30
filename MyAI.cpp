@@ -308,7 +308,7 @@ void MyAI::generateMove(char move[6])
 
 		// run Nega-max
 		bool haseat=false;
-		t_tmp = Nega_max(this->main_chessboard, &best_move_tmp, this->Color, 0, depth, -1000000, 1000000,&MAX_TUPLE,0,0,0,&haseat);
+		t_tmp = Nega_max(this->main_chessboard, &best_move_tmp, this->Color, 0, depth, -1000000, 1000000,&MAX_TUPLE,0,0,0,&haseat,-1);
 		t_tmp -= OFFSET; // rescale
 
 		// check score
@@ -396,7 +396,7 @@ void MyAI::MakeMove(ChessBoard* chessboard, const char move[6])
 	Pirnf_Chessboard();
 }
 
-void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Result,int last_eaten_piece,bool Q=false)
+void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Result,int last_eaten_pos,bool Q=false)
 {
 	//int ResultCount = 0;
 	for(int i=0;i<32;i++)
@@ -443,11 +443,12 @@ void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Resul
 							Result -> push_back(Move2Strength { i*100+Move[k], make_tuple(-eaten_chess_no,-self_chess_no)});
 						}
 						else {
-							if (eaten_chess_no < 0) //didnt eat dont consider
-								continue;
+							//if (eaten_chess_no < 0) //didnt eat dont consider
+								//continue;
 							//if ( last_eaten_piece >= 0 )// last step is eat then consider && eaten_chess_no%7 > last_eaten_piece%7)//eaten chess value less than last eaten chess dont consider
 								//continue;
-							Result -> push_back(Move2Strength { i*100+Move[k], make_tuple(-eaten_chess_no,-self_chess_no)});
+							if (last_eaten_pos == Move[k])
+								Result -> push_back(Move2Strength { i*100+Move[k], make_tuple(-eaten_chess_no,-self_chess_no)});
 						}
 						
 						
@@ -1078,7 +1079,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 	return score + first_eat_bonus;
 }
 
-double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth,double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat){
+double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth,double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat, int last_eaten_pos){
 	assert(alpha < beta);
 	vector<Move2Strength> Moves;
 	if (remain_depth > 0) {
@@ -1093,7 +1094,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 	else {// Quiescent
 		int last_eaten_piece = -get<0>(*delta);
 		if (last_eaten_piece >= 0)
-			Expand(chessboard.Board, color, &Moves, last_eaten_piece, true);
+			Expand(chessboard.Board, color, &Moves, last_eaten_pos, true);
 
 	}
 	sort(Moves.begin(), Moves.end(), [](Move2Strength a, Move2Strength b) { return a.evaluator < b.evaluator; });
@@ -1159,13 +1160,13 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 		// fflush(stderr); //DEBUG
 
 		double val = -1;
-		if((depth == 0 ||depth == 1) && GLOBALTURN > 10){
+		if(GLOBALTURN > 0){
 			if (isDraw(&new_chessboard))
-				val = - (DRAW-DRAW);
+				val = - (DRAW-WIN) * 0.5;
 			else
-				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat);
+				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 		}else{
-			val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat);
+			val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 
 		}
 		if (get<0>(thisevaluator) <=0)
