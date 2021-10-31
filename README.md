@@ -18,6 +18,7 @@ V7 resolved qsearch issues, added win more search, added eat first reward 15W-5D
 V8 added closeness score when can't find something to eat, WWWWWWWWWWWDWDWDWDLD
 - last 5 games, going second score : 5: WWDW 6:DDDD 7:DDLL 8:DWWD 9:WDWD
 
-V8+ change Q search to "最後一個被吃位置吃到不能吃為止"
+V8+ change Q search to "最後一個被吃位置吃到不能吃為止" 18W-2L
+- last 4 games, going second score :  6:LLW 7:WWW 8:WWW 9:LLL
 
 V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value into account
