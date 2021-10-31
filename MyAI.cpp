@@ -1146,7 +1146,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 				break;
 		}
 		if (get<0>(thisevaluator) <=0)
-			first_eat_bonus += (30-depth) * ((depth % 2 == 0)?1:0);
+			first_eat_bonus += -get<0>(thisevaluator)*(30-depth) * ((depth % 2 == 0)?1:-1);
 		// if (remain_depth < 0 && thisevaluator > *delta) // Only search Quiscent
 		// 	break;
 		ChessBoard new_chessboard = chessboard;
@@ -1162,7 +1162,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 		double val = -1;
 		if(GLOBALTURN > 0){
 			if (isDraw(&new_chessboard))
-				val = - (DRAW-WIN) * 0.5;
+				val = - (DRAW-DRAW) * 0.5;
 			else
 				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 		}else{
@@ -1170,7 +1170,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 
 		}
 		if (get<0>(thisevaluator) <=0)
-			first_eat_bonus -= (30-depth) * ((depth % 2 == 0)?1:0);
+			first_eat_bonus -= -get<0>(thisevaluator)*(30-depth) * ((depth % 2 == 0)?1:-1);
 		
 		t = max(t,val);
 		
