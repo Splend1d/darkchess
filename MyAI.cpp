@@ -831,9 +831,9 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 				// 		fflush(stderr);
 				// 	}
 				// }
-				// else if (largest[this->Color] < largest[opponent] && (hasking == -1 || hasking == opponent) && acc[opponent] >= 2) // Opponent is absolutely bigger
-				// 	temp_state = MUSTLOSE;
-				if (count_pieces[this->Color*7+6] == 1 &&  count_pieces[opponent*7] == 0 && gt_chess_no[this->Color][nonkinglargest[opponent]] >= 2 &&(!(count_pieces[opponent*7+6] == 1 &&  count_pieces[this->Color*7] == 0))&& acc[this->Color] > 2) { // I have an uncontested king and opponent doesn't have
+				if (largest[this->Color] < largest[opponent] && (hasking == -1 || hasking == opponent) && acc[opponent] >= 2) // Opponent is absolutely bigger
+					temp_state = MUSTLOSE;
+				else if (count_pieces[this->Color*7+6] == 1 &&  count_pieces[opponent*7] == 0 && gt_chess_no[this->Color][nonkinglargest[opponent]] >= 2 &&(!(count_pieces[opponent*7+6] == 1 &&  count_pieces[this->Color*7] == 0))&& acc[this->Color] > 2) { // I have an uncontested king and opponent doesn't have
 					temp_state = HALFMUSTWIN;
 					if (ISTURNSTART == true){
 						fprintf(stderr,"HALFMUSTWIN: my %d(%d) >= 2\n",gt_chess_no[this->Color][nonkinglargest[opponent]],nonkinglargest[opponent]);
@@ -1162,7 +1162,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 		double val = -1;
 		if(GLOBALTURN > 0){
 			if (isDraw(&new_chessboard)==true)
-				val = (OFFSET - (DRAW-DRAW) * 0.5) * (depth&1 ? -1 : 1);
+				val = (OFFSET - (0-LOSE) ) * (depth&1 ? -1 : 1);
 			else
 				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 		}else{
