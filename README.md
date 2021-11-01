@@ -21,4 +21,6 @@ V8 added closeness score when can't find something to eat, WWWWWWWWWWWDWDWDWDLD
 V8+ change Q search to "最後一個被吃位置吃到不能吃為止" 18W-2L
 - last 4 games, going second score :  6:LLW 7:WWW 8:WWW 9:LLL
 
-V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value into account
+V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value into account, fix tie game bug 19W-1D
+-last 4 games, going second score 6:DL 7:W 8:W 9:W
+*6黑方高估自己實力
