@@ -1138,15 +1138,15 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 		
 		int thismove = it -> move;
 		auto thisevaluator = it -> evaluator;
-		int negthiseat = get<0>(thisevaluator);
-		if (best_eat > 0 && remain_depth <= 0)
-			best_eat = negthiseat;
-		else if (remain_depth <= 0){
-			if (negthiseat > best_eat)
-				break;
-		}
+		// int negthiseat = get<0>(thisevaluator);
+		// if (best_eat > 0 && remain_depth <= 0)
+		// 	best_eat = negthiseat;
+		// else if (remain_depth <= 0){
+		// 	if (negthiseat > best_eat)
+		// 		break;
+		// }
 		if (get<0>(thisevaluator) <=0)
-			first_eat_bonus += -get<0>(thisevaluator)*(30-depth) * ((depth % 2 == 0)?1:-1);
+			first_eat_bonus += (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
 		// if (remain_depth < 0 && thisevaluator > *delta) // Only search Quiscent
 		// 	break;
 		ChessBoard new_chessboard = chessboard;
@@ -1161,8 +1161,8 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 
 		double val = -1;
 		if(GLOBALTURN > 0){
-			if (isDraw(&new_chessboard))
-				val = - (DRAW-DRAW) * 0.5;
+			if (isDraw(&new_chessboard)==true)
+				val = (OFFSET - (DRAW-DRAW) * 0.5) * (depth&1 ? -1 : 1);
 			else
 				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 		}else{
@@ -1170,7 +1170,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 
 		}
 		if (get<0>(thisevaluator) <=0)
-			first_eat_bonus -= -get<0>(thisevaluator)*(30-depth) * ((depth % 2 == 0)?1:-1);
+			first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
 		
 		t = max(t,val);
 		
