@@ -28,7 +28,7 @@ V9-a: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
 *6黑方高估自己實力
 
 V9-b: DRAW = -25000分for all scenario
-- last 4 games, going second score 6:DDWD 7:DWWW 8:WWW 9:WDD
-- first 2 games, going second score 1:WD 2:D 
-V9-b: DRAW = -25000分for all scenario and repetitive detection
+- last 4 games, going second score 6:DDWDDW 7:DWWW 8:WWW 9:WDDD
+
+V9-c: DRAW = -25000分for all scenario and repetitive detection
 - all games going second score 3:DW, 4:DW, 6:DW, 8:LD, 9:WD
