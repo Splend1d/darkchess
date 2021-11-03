@@ -52,9 +52,25 @@ int N_BLACK_PIECES = 0;
 bool HASEAT = false;
 bool BESTHASEAT = true;
 bool LASTTURNBESTHASEAT = true;
+int STARTNOEATFLIPCOUNT = 0;
+int zobrish[32][14];
+
 MyAI::MyAI(void){}
 
 MyAI::~MyAI(void){}
+
+int zhash(int* Board){
+	int ret = 0;
+	for(int i = 0; i < 32; i++){
+		if(Board[i]!=CHESS_EMPTY){
+			//fprintf(stderr, "%d,%d\n",i,Board[i]); 
+			
+			ret ^= zobrish[i][Board[i]];
+		}
+	}
+
+	return ret;
+}
 
 bool MyAI::protocol_version(const char* data[], char* response){
 	strcpy(response, "1.0.0");
@@ -250,7 +266,11 @@ void MyAI::initBoardState()
 	main_chessboard.Black_Chess_Num = 16;
 	main_chessboard.NoEatFlip = 0;
 	main_chessboard.HistoryCount = 0;
-
+	for(int i = 0; i < 32; i++){
+		for(int j = 0; j < 14; j++){
+			zobrish[i][j] = rand();
+		}
+	}
 	//convert to my format
 	int Index = 0;
 	for(int i=0;i<8;i++)
@@ -275,7 +295,7 @@ void MyAI::generateMove(char move[6])
 	begin = clock();
 	// if (CURSTATE == UNDETERMINED) {
 	ISTURNSTART = true;
-	
+	STARTNOEATFLIPCOUNT = this->main_chessboard.NoEatFlip;
 	double v = Evaluate(&this->main_chessboard, 1, this->Color, 0, 0,0,-1);
 	v -= OFFSET;
 	if (v >= 125000)
@@ -378,6 +398,7 @@ void MyAI::MakeMove(ChessBoard* chessboard, const int move, const int chess){
 		chessboard->Board[src] = CHESS_EMPTY;
 	}
 	chessboard->History[chessboard->HistoryCount++] = move;
+	chessboard->BoardHistory[chessboard->HistoryCount] = zhash(chessboard->Board);
 }
 
 void MyAI::MakeMove(ChessBoard* chessboard, const char move[6])
@@ -731,7 +752,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		// }else{ // Win
 		// 	score += WIN - DRAW ;
 		// }
-		score += DRAW - DRAW;
+		score += DRAW - DRAW - 25000;
 		finish = true;
 	}
 	else{ // no conclusion
@@ -831,7 +852,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 				// 		fflush(stderr);
 				// 	}
 				// }
-				if (largest[this->Color] < largest[opponent] && (hasking == -1 || hasking == opponent) && acc[opponent] >= 2) // Opponent is absolutely bigger
+				if (largest[this->Color] < largest[opponent] && (hasking == -1 || hasking == opponent) ) // Opponent is absolutely bigger
 					temp_state = MUSTLOSE;
 				else if (count_pieces[this->Color*7+6] == 1 &&  count_pieces[opponent*7] == 0 && gt_chess_no[this->Color][nonkinglargest[opponent]] >= 2 &&(!(count_pieces[opponent*7+6] == 1 &&  count_pieces[this->Color*7] == 0))&& acc[this->Color] > 2) { // I have an uncontested king and opponent doesn't have
 					temp_state = HALFMUSTWIN;
@@ -1080,6 +1101,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 }
 
 double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth,double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat, int last_eaten_pos){
+	
 	assert(alpha < beta);
 	vector<Move2Strength> Moves;
 	if (remain_depth > 0) {
@@ -1097,6 +1119,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 			Expand(chessboard.Board, color, &Moves, last_eaten_pos, true);
 
 	}
+
 	sort(Moves.begin(), Moves.end(), [](Move2Strength a, Move2Strength b) { return a.evaluator < b.evaluator; });
 	//bool isQ = isQuiescent(&Moves);
 	if(isTimeUp() || // time is up
@@ -1131,7 +1154,7 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 	int new_move;
 	// search deeper
 	double t = alpha;
-	int best_eat = 3;
+	//int best_eat = 3;
 	bool childhaseat = false;
 	for (vector<Move2Strength>::iterator it = Moves.begin();it != Moves.end(); ++it){ // move
 		
@@ -1160,14 +1183,25 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 		// fflush(stderr); //DEBUG
 
 		double val = -1;
-		if(GLOBALTURN > 0){
-			if (isDraw(&new_chessboard)==true)
-				val = (OFFSET - (0-LOSE) ) * (depth&1 ? -1 : 1);
-			else
-				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
-		}else{
-			val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
+		// if(new_chessboard.NoEatFlip >= NOEATFLIP_LIMIT){ // check no eat
+		// 	val = (OFFSET+ (DRAW-WIN))* (depth&1 ? -1 : 1);
+		// } 
+		// else if(hasAppeared(&new_chessboard)==true){
+		// 	if (isDraw(&new_chessboard)==true)
+		// 		val = (OFFSET - (DRAW-WIN) ) * (depth&1 ? -1 : 1);
+		// 	else if (color == this->Color)
+		// 		val = (OFFSET+ (WIN-DRAW));//* (depth&1 ? -1 : 1);
+		// 	else
+		// 		val = (OFFSET+ (DRAW-WIN));//* (depth&1 ? -1 : 1);
+		// }else{
+		// 	val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 
+		// }
+		if (isDraw(&new_chessboard)==true)
+			val = (OFFSET + (DRAW-WIN) ) * (depth&1 ? -1 : 1);
+		
+		else{
+			val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
 		}
 		if (get<0>(thisevaluator) <=0)
 			first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
@@ -1191,6 +1225,22 @@ double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, c
 	}
 	return m;
 	
+}
+
+bool MyAI::hasAppeared(const ChessBoard* chessboard){
+	// Position Repetition
+	int last_idx = chessboard->HistoryCount - 1;
+	// -2: my previous ply
+	int idx = last_idx - 2;
+	// All ply must be move type
+	int smallest_identical_idx = last_idx - (chessboard->NoEatFlip);//+STARTNOEATFLIPCOUNT;
+	// check loop
+	while(idx >= 0 && idx >= smallest_identical_idx){
+		if(chessboard->BoardHistory[idx] == chessboard->BoardHistory[last_idx])
+			return true;
+		idx -= 2;
+	}
+	return false;
 }
 
 bool MyAI::isDraw(const ChessBoard* chessboard){
