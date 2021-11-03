@@ -23,7 +23,7 @@ V8+ change Q search to "最後一個被吃位置吃到不能吃為止" 18W-2L
 
 V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value into account, fix tie game bug 
 
-V9-a: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
+V9-a: DRAW = 0分for all scenario
 - last 4 games, going second score 6:DL 7:W 8:W 9:W
 *6黑方高估自己實力
 
@@ -32,3 +32,6 @@ V9-b: DRAW = -25000分for all scenario
 
 V9-c: DRAW = -25000分for all scenario and repetitive detection
 - all games going second score 3:DW, 4:DW, 6:DW, 8:LD, 9:WD
+
+V9-d: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
+- all games (W unless specified) 6:DDDDDDDWD , 7:DDWWWWW 8:WWWWWD 9:WDWWWW
