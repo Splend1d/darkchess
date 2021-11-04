@@ -25,6 +25,8 @@ V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value 
 
 V9-a: DRAW = 0分for all scenario
 - last 4 games, going second score 6:DL 7:W 8:W 9:W
+- all games going first (WWWW unless mentioned): 3:DWWW 5:DWWW
+- all games going second (WWWW unless mentioned): 0:DWWW 5:DWWW 6:DDDD 7:DDWW 8:DDDW
 *6黑方高估自己實力
 
 V9-b: DRAW = -25000分for all scenario
