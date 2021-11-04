@@ -31,6 +31,7 @@ V9-a: DRAW = 0分for all scenario
 
 V9-b: DRAW = -25000分for all scenario
 - last 4 games, going second score 6:DDWDDW 7:DWWW 8:WWW 9:WDDD
+- last 4 games, going second score 6:DWDD 7:WWWW 8:WWWW 9:DWDD
 
 V9-c: DRAW = -25000分for all scenario and repetitive detection
 - all games going second score 3:DW, 4:DW, 6:DW, 8:LD, 9:WD
