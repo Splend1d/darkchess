@@ -38,3 +38,6 @@ V9-c: DRAW = -25000分for all scenario and repetitive detection
 
 V9-d: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
 - all games going second (W unless specified) 6:DDDDDDDWD , 7:DDWWWWW 8:WWWWWD 9:WDWWWW
+
+V10+: Revamped state criterion, added cluster score to guide strong pieces to center
+- last 4 games, going second score : 6:DWWDD, 7:WWWWW, 8: WWWWW, 9:WWWWW
