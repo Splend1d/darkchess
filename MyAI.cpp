@@ -1057,7 +1057,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 			}
 		}
 
-		if (score > -125000+OFFSET && chessboard->NoEatFlip >= 30){
+		if (score > -125000+OFFSET && LASTTURNBESTHASEAT == false && chessboard->NoEatFlip >= 30){
 					
 			for (vector<tuple<int,int>>::iterator it=strongest_my_piece_pos.begin(); it != strongest_my_piece_pos.end();++it ){
 				if (weakest_enemy_piece == 6){
@@ -1084,53 +1084,51 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 			}
 		}
 
-		if (score > -125000+OFFSET && nopponentpieces > 2){ 
+		if (score > -125000+OFFSET && LASTTURNBESTHASEAT == false && nopponentpieces > 2){ 
 			for (vector<tuple<int,int>>::iterator it=strongest_my_piece_pos.begin(); it != strongest_my_piece_pos.end();++it ){				
 				int piece1 = get<0>(*it);
 				int pos1 = get<1>(*it);
-				clusterscore += min(3 - 1*abs(pos1%4),abs(pos1%4));
-				clusterscore += min(7 - 1*abs(pos1/4),abs(pos1/4));
 				if (piece1 < strong_threshold)
 					break;
-				// for (vector<tuple<int,int>>::iterator it2=it+1; it2 != strongest_my_piece_pos.end();++it2 ){
-				// 	int piece2= get<0>(*it2);
-				// 	int pos2 = get<1>(*it2);
-				// 	if (piece2 < strong_threshold)
-				// 		break;
-				// 	clusterscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
-				// 	clusterscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
+				for (vector<tuple<int,int>>::iterator it2=it+1; it2 != strongest_my_piece_pos.end();++it2 ){
+					int piece2= get<0>(*it2);
+					int pos2 = get<1>(*it2);
+					if (piece2 < strong_threshold)
+						break;
+					clusterscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
+					clusterscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
 					
-				// }
+				}
 				
 			}
 			
 		}
-		// if (score > -125000+OFFSET && nopponentpieces <= 2){ 
-		// 	for (vector<tuple<int,int>>::iterator it=enemy_piece_pos.begin(); it != enemy_piece_pos.end();++it ){	
-		// 		int piece1 = get<0>(*it);
-		// 		int pos1 = get<1>(*it);
-		// 		for (vector<tuple<int,int>>::iterator it2=strongest_my_piece_pos.begin(); it2 != strongest_my_piece_pos.end();++it2 ){				
-		// 			int piece2 = get<0>(*it2);
-		// 			int pos2 = get<1>(*it2);
-		// 			if (piece1 == 6){
-		// 				if (piece2 == 0 || piece2 == 6 ){
-		// 					close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
-		// 					close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
-		// 				}
+		if (score > -125000+OFFSET && nopponentpieces <= 2){ 
+			for (vector<tuple<int,int>>::iterator it=enemy_piece_pos.begin(); it != enemy_piece_pos.end();++it ){	
+				int piece1 = get<0>(*it);
+				int pos1 = get<1>(*it);
+				for (vector<tuple<int,int>>::iterator it2=strongest_my_piece_pos.begin(); it2 != strongest_my_piece_pos.end();++it2 ){				
+					int piece2 = get<0>(*it2);
+					int pos2 = get<1>(*it2);
+					if (piece1 == 6){
+						if (piece2 == 0 || piece2 == 6 ){
+							close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+							close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
+						}
 						
-		// 			} else if (piece1 == 0){
-		// 				if (piece2 != 6 ){
-		// 					close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
-		// 					close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
-		// 				}
-		// 			} else if (piece1 <= piece2){ //weakest_enemy_piece = 1,2,3,4,5
-		// 				close2preyscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
-		// 				close2preyscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
-		// 			}
+					} else if (piece1 == 0){
+						if (piece2 != 6 ){
+							close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+							close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
+						}
+					} else if (piece1 <= piece2){ //weakest_enemy_piece = 1,2,3,4,5
+						close2preyscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
+						close2preyscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
+					}
 					
-		// 		}
-		// 	}
-		// }
+				}
+			}
+		}
 
 	}
 	// Bonus (Only Win / Draw)
@@ -1147,9 +1145,9 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 	if (score < -125000+OFFSET){ // losing, play for tie
 		opponent_extra_moves_score = 0;
 	}
-	// if (score >= -125000+OFFSET){ // winning, play to win
-	// 	my_extra_moves_score = 0;
-	// }
+	if (score >= -125000+OFFSET){ // winning, play to win
+		my_extra_moves_score = 0;
+	}
 	//sassert(close2preyscore==0);
 	if (ISTURNSTART == true){
 		fprintf(stderr,"%lf,%lf,%lf,%lf,%lf,%lf,%lf\n", score, piece_value, bonus, my_extra_moves_score,opponent_extra_moves_score, close2preyscore, clusterscore);
