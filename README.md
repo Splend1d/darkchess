@@ -41,3 +41,6 @@ V9-d: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
 
 V10+: Revamped state criterion, added cluster score to guide strong pieces to center
 - last 4 games, going second score : 6:DWWDD, 7:WWWWW, 8: WWWWW, 9:WWWWW
+
+V10.0: 379W28D1L
+-last 4 games, going second score : 6: 8W8D 7:13W3D 8:15W1D 9:8W8D
