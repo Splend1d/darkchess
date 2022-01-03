@@ -1,5 +1,5 @@
 #include "float.h"
-
+#include "time.h"
 #include "MyAI.h"
 #include <iostream>
 #include <algorithm>
@@ -11,20 +11,19 @@
 
 using namespace std;
 
-
-#define MAX_DEPTH 6
+double TIME_LIMIT=9.5;
 
 #define WIN 1.0 * 400000
 #define DRAW 0.2 * 400000
 #define LOSE 0.0
 #define BONUS 0.3 * 400000
 #define BONUS_MAX_PIECE 8
-#define NOEATFLIP_LIMIT 60
-#define POSITION_REPETITION_LIMIT 3
 
-double OFFSET = 0;//(WIN + BONUS);
-bool ISTURNSTART = false;
-int GLOBALTURN = 0;
+#define OFFSET (WIN + BONUS)
+
+#define NOEATFLIP_LIMIT 60
+#define POSITION_REPETITION_LIMIT 2
+
 static tuple<int,int> MAX_TUPLE=make_tuple(3,-1);
 static const double values[14] = {
 	  50, 3000,  500, 1100, 2400,4900,11000,
@@ -36,17 +35,18 @@ static const double hasPKval[9] = {
 static const double KhasPKval[6] = {
 	11000,6000,4000,3000,2300,2000 // //40905, 29904, 18903,13902,11501,11500
 };
-enum MetaState {
+enum MetaState { 
 	MUSTLOSE,
 	HALFMUSTLOSE,
 	HALFLOSE,
 	UNDETERMINED,
 	HALFWIN,
 	HALFMUSTWIN,
-	MUSTWIN,
+	MUSTWIN, 
 };
 MetaState CURSTATE = UNDETERMINED;
-int THINK_DEPTH = 3;
+bool ISTURNSTART = true;
+int GLOBALTURN = 0;
 int N_RED_PIECES = 0;
 int N_BLACK_PIECES = 0;
 bool HASEAT = false;
@@ -54,12 +54,12 @@ bool BESTHASEAT = true;
 bool LASTTURNBESTHASEAT = true;
 bool THISTURNBESTHASEAT = true;
 
-MyAI::MyAI(void){srand(time(NULL));}
+MyAI::MyAI(void){}
 
 MyAI::~MyAI(void){}
 
 bool MyAI::protocol_version(const char* data[], char* response){
-	strcpy(response, "1.1.0");
+	strcpy(response, "1.0.0");
   return 0;
 }
 
@@ -177,11 +177,6 @@ bool MyAI::showboard(const char* data[], char* response){
 	return 0;
 }
 
-bool MyAI::init_board(const char* data[], char* response){
-  initBoardState(data);
-	return 0;
-}
-
 
 // *********************** AI FUNCTION *********************** //
 
@@ -252,17 +247,17 @@ int MyAI::ConvertChessNo(int input)
 void MyAI::initBoardState()
 {	
 	int iPieceCount[14] = {5, 2, 2, 2, 2, 2, 1, 5, 2, 2, 2, 2, 2, 1};
-	memcpy(main_chessboard.CoverChess, iPieceCount, sizeof(int)*14);
+	memcpy(main_chessboard.CoverChess,iPieceCount,sizeof(int)*14);
 	main_chessboard.Red_Chess_Num = 16;
 	main_chessboard.Black_Chess_Num = 16;
 	main_chessboard.NoEatFlip = 0;
 	main_chessboard.HistoryCount = 0;
 
-	// convert to my format
+	//convert to my format
 	int Index = 0;
-	for(int i = 0; i < 8; i++)
+	for(int i=0;i<8;i++)
 	{
-		for(int j = 0; j < 4; j++)
+		for(int j=0;j<4;j++)
 		{
 			main_chessboard.Board[Index] = CHESS_COVER;
 			Index++;
@@ -271,115 +266,92 @@ void MyAI::initBoardState()
 	Pirnf_Chessboard();
 }
 
-void MyAI::initBoardState(const char* data[])
-{	
-	memset(main_chessboard.CoverChess, 0, sizeof(int)*14);
-
-	main_chessboard.Red_Chess_Num = 0;
-	main_chessboard.Black_Chess_Num = 0;
-	main_chessboard.NoEatFlip = 0;
-	main_chessboard.HistoryCount = 0;
-
-	// set board
-	int Index = 0;
-	for(int i = 0; i < 8; i++)
-	{
-		for(int j = 0; j < 4; j++)
-		{
-			// convert to my format
-			int chess = ConvertChessNo(GetFin(data[Index][0]));
-			main_chessboard.Board[Index] = chess;
-			if(chess != CHESS_COVER && chess != CHESS_EMPTY){
-				main_chessboard.CoverChess[chess]--;
-				(chess < 7 ? 
-					main_chessboard.Red_Chess_Num : main_chessboard.Black_Chess_Num)++;
-			}
-			Index++;
-		}
-	}
-	// set covered chess
-	for(int i = 0; i < 14; i++){
-		main_chessboard.CoverChess[i] += data[32 + i][0] - '0';
-		(i < 7 ? 
-			main_chessboard.Red_Chess_Num : main_chessboard.Black_Chess_Num)
-			+= main_chessboard.CoverChess[i];
-	}
-
-	Pirnf_Chessboard();
-}
-
 void MyAI::generateMove(char move[6])
 {
-/* generateMove Call by reference: change src,dst */
+	/* generateMove Call by reference: change src,dst */
 	int StartPoint = 0;
 	int EndPoint = 0;
-
 	GLOBALTURN += 1;
 
-
+	double t = -DBL_MAX;
+	begin = clock();
+	// if (CURSTATE == UNDETERMINED) {
 	ISTURNSTART = true;
-	double v;
-	double t;
-	int best_move;
-	bool isInit = true;
-	for (int i = 0; i < 32; ++i){
-		if (this->main_chessboard.Board[i] != CHESS_COVER){
-			isInit = false;
-			break;
-		}
-	}
-	if (isInit){
-		t = 0;
-		best_move = 1313; 
-	}else{
-		v = Evaluate(&this->main_chessboard, 1, this->Color, 0,0);
-		v -= OFFSET;
-		if (v >= 125000)
-			CURSTATE = MUSTWIN;
-		else if (v >= 75000)
-			CURSTATE = HALFMUSTWIN;
-		else if (v >= 25000)
-			CURSTATE = HALFWIN;
-		else if (v <= -125000)
-			CURSTATE = MUSTLOSE;
-		else if (v <= -75000)
-			CURSTATE = HALFMUSTLOSE;
-		else if (v <= -25000)
-			CURSTATE = HALFLOSE;
-		else
-			CURSTATE = UNDETERMINED; 
+	
+	double v = Evaluate(&this->main_chessboard, 1, this->Color, 0, 0,0,-1);
+	v -= OFFSET;
+	if (v >= 125000)
+		CURSTATE = MUSTWIN;
+	else if (v >= 75000)
+		CURSTATE = HALFMUSTWIN;
+	else if (v >= 25000)
+		CURSTATE = HALFWIN;
+	else if (v <= -125000)
+		CURSTATE = MUSTLOSE;
+	else if (v <= -75000)
+		CURSTATE = HALFMUSTLOSE;
+	else if (v <= -25000)
+		CURSTATE = HALFLOSE;
+	else
+		CURSTATE = UNDETERMINED;
+	
+	fprintf(stderr, "Curstate: %d %lf\n", CURSTATE,v);
+	fflush(stderr);
+	ISTURNSTART = false;
+	
+	// }
+	
+	
 
-		fprintf(stderr, "Curstate: %d %lf\n", CURSTATE,v);
-		fflush(stderr);
-		ISTURNSTART = false;
-
-
-		t = -DBL_MAX;
-
-		// iterative-deeping, start from 3, time limit = <TIME_LIMIT> sec
+	// iterative-deeping, start from 3, time limit = <TIME_LIMIT> sec // 4-this->Color -this->Color
+	for(int depth = 4; ( (double)(clock() - begin) / CLOCKS_PER_SEC < TIME_LIMIT) && depth <= 50; depth+=2){ //If first , search even, else search odd 
 		this->node = 0;
-		
+		int best_move_tmp; double t_tmp;
 
 		// run Nega-max
-		t = NegaScout(this->main_chessboard, &best_move, this->Color, 0, 0, -1000000, 1000000,-1);
-		t -= OFFSET; // rescale
+		bool haseat=false;
+		t_tmp = Nega_max(this->main_chessboard, &best_move_tmp, this->Color, 0, depth, -1000000, 1000000,&MAX_TUPLE,0,0,0,&haseat,-1);
+		t_tmp -= OFFSET; // rescale
+
+		// check score
+		// if search all nodes
+		// replace the move and score
+		if(!this->timeIsUp){
+			if (t_tmp <= t && t >= WIN){
+				
+			} else{
+				t = t_tmp;
+				StartPoint = best_move_tmp/100;
+				EndPoint   = best_move_tmp%100;
+				//fprintf(stderr, "Not Time Up");
+				sprintf(move, "%c%c-%c%c",'a'+(StartPoint%4),'1'+(7-StartPoint/4),'a'+(EndPoint%4),'1'+(7-EndPoint/4)); // store sting to s
+				THISTURNBESTHASEAT = haseat;
+			}
+			
+		}
+		// U: Undone
+		// D: Done
+		fprintf(stderr, "[%c] Depth: %2d, Node: %10d, Score: %+1.5lf, Move: %s (%d)\n", (this->timeIsUp ? 'U' : 'D'), 
+			depth, node, t, move,best_move_tmp);
+		fprintf(stderr, "Can eat something = %d\n",THISTURNBESTHASEAT);
+		fflush(stderr);
+		// if (depth == 2)
+		// 	depth += 2;
+		// game finish !!! but search for bonus
+		// if(t >= WIN){
+
+		// 	break;
+		// }
+
 	}
-
-
-	// replace the move and score
-	StartPoint = best_move/100;
-	EndPoint   = best_move%100;
-	sprintf(move, "%c%c-%c%c",'a'+(StartPoint%4),'1'+(7-StartPoint/4),'a'+(EndPoint%4),'1'+(7-EndPoint/4));
-	fprintf(stderr, "Depth: %2d, Node: %10d, Score: %+1.5lf, Move: %s\n",  
-		MAX_DEPTH, node, t, move);
-	fflush(stderr);
-	
+	//exit(0); //DEBUG
+	LASTTURNBESTHASEAT = THISTURNBESTHASEAT; 
 	char chess_Start[4]="";
 	char chess_End[4]="";
 	Pirnf_Chess(main_chessboard.Board[StartPoint],chess_Start);
 	Pirnf_Chess(main_chessboard.Board[EndPoint],chess_End);
 	printf("My result: \n--------------------------\n");
-	printf("NegaScout: %lf (node: %d)\n", t, this->node);
+	printf("Nega max: %lf (node: %d)\n", t, this->node);
 	printf("(%d) -> (%d)\n",StartPoint,EndPoint);
 	printf("<%s> -> <%s>\n",chess_Start,chess_End);
 	printf("move:%s\n",move);
@@ -387,18 +359,13 @@ void MyAI::generateMove(char move[6])
 	this->Pirnf_Chessboard();
 }
 
-int MyAI::MakeMove(ChessBoard* chessboard, const int move, const int chess){
-	// return 0 -> MOVE
-	// return 1 -> EAT
-	// return 2 -> FLIP
+void MyAI::MakeMove(ChessBoard* chessboard, const int move, const int chess){
 	int src = move/100, dst = move%100;
 	if(src == dst){ // flip
 		chessboard->Board[src] = chess;
 		chessboard->CoverChess[chess]--;
 		chessboard->NoEatFlip = 0;
-		return 2;
 	}else { // move
-		int is_eat = -1;
 		if(chessboard->Board[dst] != CHESS_EMPTY){
 			if(chessboard->Board[dst] / 7 == 0){ // red
 				(chessboard->Red_Chess_Num)--;
@@ -406,15 +373,11 @@ int MyAI::MakeMove(ChessBoard* chessboard, const int move, const int chess){
 				(chessboard->Black_Chess_Num)--;
 			}
 			chessboard->NoEatFlip = 0;
-			is_eat = 1;
 		}else{
 			chessboard->NoEatFlip += 1;
-			is_eat = 0;
 		}
-		assert(is_eat >= 0);
 		chessboard->Board[dst] = chessboard->Board[src];
 		chessboard->Board[src] = CHESS_EMPTY;
-		return is_eat;
 	}
 	chessboard->History[chessboard->HistoryCount++] = move;
 }
@@ -434,12 +397,14 @@ void MyAI::MakeMove(ChessBoard* chessboard, const char move[6])
 	MakeMove(chessboard, m, ConvertChessNo(GetFin(move[3])));
 	Pirnf_Chessboard();
 }
-void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Result) // Flip does not count
+
+void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Result,int last_eaten_pos,bool Q=false)
 {
-	int ResultCount = 0;
+	//int ResultCount = 0;
 	for(int i=0;i<32;i++)
 	{
-		int self_chess_no = board[i];
+		int eaten_chess_no = 0;
+		int self_chess_no= 0;
 		if(board[i] >= 0 && board[i]/7 == color)
 		{
 			//Gun
@@ -449,10 +414,9 @@ void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Resul
 				int col = i%4;
 				for(int rowCount=row*4;rowCount<(row+1)*4;rowCount++)
 				{
-					if(Referee(board,i,rowCount,color))
+					if(Referee(board,i,rowCount,color,&eaten_chess_no,&self_chess_no))
 					{
-						//Result[ResultCount] = i*100+rowCount;
-						int eaten_chess_no = board[rowCount];
+						assert("This game does not have gun!" == "false");
 						Result -> push_back(Move2Strength{ i*100+rowCount, make_tuple(-eaten_chess_no,-self_chess_no) }) ;
 						//ResultCount++;
 					}
@@ -460,24 +424,36 @@ void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Resul
 				for(int colCount=col; colCount<32;colCount += 4)
 				{
 				
-					if(Referee(board,i,colCount,color))
+					if(Referee(board,i,colCount,color,&eaten_chess_no,&self_chess_no))
 					{
-						int eaten_chess_no = board[colCount];
-						Result-> push_back(Move2Strength{ i*100+colCount, make_tuple(-eaten_chess_no,-self_chess_no) }) ;
+						assert("This game does not have gun!" == "false");
+						Result -> push_back(Move2Strength{ i*100+colCount, make_tuple(-eaten_chess_no,-self_chess_no) });
 						//ResultCount++;
 					}
 				}
 			}
-			else
+			else // not gun
 			{
 				int Move[4] = {i-4,i+1,i+4,i-1};
 				for(int k=0; k<4;k++)
 				{
 					
-					if(Move[k] >= 0 && Move[k] < 32 && Referee(board,i,Move[k],color))
+					if(Move[k] >= 0 && Move[k] < 32 && Referee(board,i,Move[k],color,&eaten_chess_no,&self_chess_no))
 					{
-						int eaten_chess_no = board[Move[k]];
-						Result-> push_back(Move2Strength{ i*100+Move[k] , make_tuple(-eaten_chess_no,-self_chess_no) }) ;
+						//auto neg_move_reward = make_tuple(-eaten_chess_no,-self_chess_no);
+						if (Q == false){
+							Result -> push_back(Move2Strength { i*100+Move[k], make_tuple(-eaten_chess_no,-self_chess_no)});
+						}
+						else {
+							//if (eaten_chess_no < 0) //didnt eat dont consider
+								//continue;
+							//if ( last_eaten_piece >= 0 )// last step is eat then consider && eaten_chess_no%7 > last_eaten_piece%7)//eaten chess value less than last eaten chess dont consider
+								//continue;
+							if (last_eaten_pos == Move[k])
+								Result -> push_back(Move2Strength { i*100+Move[k], make_tuple(-eaten_chess_no,-self_chess_no)});
+						}
+						
+						
 						//ResultCount++;
 					}
 				}
@@ -490,7 +466,7 @@ void MyAI::Expand(const int* board, const int color,vector<Move2Strength>* Resul
 
 
 // Referee
-bool MyAI::Referee(const int* chess, const int from_location_no, const int to_location_no, const int UserId)
+bool MyAI::Referee(const int* chess, const int from_location_no, const int to_location_no, const int UserId, int* eaten_chess_no,  int* self_chess_no)
 {
 	// int MessageNo = 0;
 	bool IsCurrent = true;
@@ -500,6 +476,8 @@ bool MyAI::Referee(const int* chess, const int from_location_no, const int to_lo
 	int to_row = to_location_no / 4;
 	int from_col = from_location_no % 4;
 	int to_col = to_location_no % 4;
+	*eaten_chess_no = to_chess_no;
+	*self_chess_no = from_chess_no;
 
 	if(from_chess_no < 0 || ( to_chess_no < 0 && to_chess_no != CHESS_EMPTY) )
 	{  
@@ -622,29 +600,112 @@ bool MyAI::Referee(const int* chess, const int from_location_no, const int to_lo
 	return IsCurrent;
 }
 
+// always use my point of view, so use this->Color
+// double MyAI::Evaluate(const ChessBoard* chessboard, 
+// 	const int legal_move_count, const int color){
+// 	// score = My Score - Opponent's Score
+// 	// offset = <WIN + BONUS> to let score always not less than zero
+
+// 	double score = OFFSET;
+// 	bool finish;
+
+// 	if(legal_move_count == 0){ // Win, Lose
+// 		if(color == this->Color){ // Lose
+// 			score += LOSE - WIN;
+// 		}else{ // Win
+// 			score += WIN - LOSE;
+// 		}
+// 		finish = true;
+// 	}else if(isDraw(chessboard)){ // Draw
+// 		// score = DRAW - DRAW;
+// 		if(color == this->Color){ // Lose
+// 			score += DRAW - WIN;
+// 		}else{ // Win
+// 			score += WIN - DRAW ;
+// 		}
+// 		 // Draw is Almost Lose
+// 		//assert (true == false); 
+// 		finish = true;
+// 	}else{ // no conclusion
+// 		// static material values
+// 		// cover and empty are both zero
+// 		static const double values[14] = {
+// 			  1,180,  6, 18, 90,270,810,  
+// 			  1,180,  6, 18, 90,270,810
+// 		};
+		
+// 		double piece_value = 0;
+// 		for(int i = 0; i < 32; i++){
+// 			if(chessboard->Board[i] != CHESS_EMPTY && 
+// 				chessboard->Board[i] != CHESS_COVER){
+// 				if(chessboard->Board[i] / 7 == this->Color){
+// 					piece_value += values[chessboard->Board[i]];
+// 				}else{
+// 					piece_value -= values[chessboard->Board[i]];
+// 				}
+// 			}
+// 		}
+// 		// linear map to (-<WIN>, <WIN>)
+// 		// score max value = 1*5 + 180*2 + 6*2 + 18*2 + 90*2 + 270*2 + 810*1 = 1943
+// 		// <ORIGINAL_SCORE> / <ORIGINAL_SCORE_MAX_VALUE> * (<WIN> - 0.01)
+// 		piece_value = piece_value / 1943 * (WIN - 0.01);
+// 		score += piece_value; 
+// 		finish = false;
+// 	}
+
+// 	// Bonus (Only Win / Draw)
+// 	if(finish){
+// 		if((this->Color == RED && chessboard->Red_Chess_Num > chessboard->Black_Chess_Num) ||
+// 			(this->Color == BLACK && chessboard->Red_Chess_Num < chessboard->Black_Chess_Num)){
+// 			if(!(legal_move_count == 0 && color == this->Color)){ // except Lose
+// 				double bonus = BONUS / BONUS_MAX_PIECE * 
+// 				(chessboard->Red_Chess_Num - chessboard->Black_Chess_Num);
+// 				if(bonus > BONUS){ bonus = BONUS; } // limit
+// 				score += bonus;
+// 			}
+// 		}else if((this->Color == RED && chessboard->Red_Chess_Num < chessboard->Black_Chess_Num) ||
+// 			(this->Color == BLACK && chessboard->Red_Chess_Num > chessboard->Black_Chess_Num)){
+// 			if(!(legal_move_count == 0 && color != this->Color)){ // except Lose
+// 				double bonus = BONUS / BONUS_MAX_PIECE * 
+// 				(chessboard->Red_Chess_Num - chessboard->Black_Chess_Num);
+// 				if(bonus > BONUS){ bonus = BONUS; } // limit
+// 				score -= bonus;
+// 			}
+// 		}
+// 	}
+	
+// 	return score;
+// }
+
+bool isQuiescent(vector<Move2Strength>* mvptr){
+	sort(mvptr->begin(), mvptr->end(), [](Move2Strength a, Move2Strength b) { return a.evaluator < b.evaluator; });
+	if(get<0>((*mvptr)[0].evaluator) > 0)
+		return true;
+	return false;
+}
 int winorlose(int* mypiece, int* opponentpiece) {
 	int covered[7] = {0};
-	// 0: pawn, 1:cannon, 2:horse, 3: car, 4:elephant, 5: shi, 6:king
+	// 0: pawn, 1:cannon, 2:horse, 3: car, 4:elephant, 5: shi, 6:king 
 	if ((mypiece[0] + mypiece[6]) >= 2){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"my 0+6 can take down of opponent 6\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
 		covered[6] = 1;
-	}
+	} 
 	if ((mypiece[0] + mypiece[2] + mypiece[3] + mypiece[4] + mypiece[5] ) >= 2 && (mypiece[2] + mypiece[3] + mypiece[4] + mypiece[5] ) >= 1){
 		covered[0] = 5;
 	}
 	int largest = -1;
 	int secondlargest = -1;
-
+	
 	for (int piece = 6; piece >= 0; --piece){
 		if (mypiece[piece] >= 2){
 			if (largest == -1){
 				largest = piece;
-				secondlargest = piece;
-
+				secondlargest = piece; 
+				
 			} else {
 				secondlargest = piece;
 			}
@@ -653,7 +714,7 @@ int winorlose(int* mypiece, int* opponentpiece) {
 		} else if (mypiece[piece] == 1){
 			if (largest == -1){
 				largest = piece;
-
+				
 			} else if (secondlargest == -1){
 				secondlargest = piece;
 				break;
@@ -664,13 +725,13 @@ int winorlose(int* mypiece, int* opponentpiece) {
 	if (ISTURNSTART == true){
 		fprintf(stderr,"my largest is %d, second largest is %d\n",largest,secondlargest);
 		//fprintf(stderr,"my largest");
-		fflush(stderr);
+		fflush(stderr); 
 	}
 	if (largest == secondlargest){
 		for (int piece = secondlargest-1; piece >= 1; --piece){
 			covered[piece] = 2;
 		}
-	}
+	} 
 	else { // largest > secondlargest
 		for (int piece = secondlargest; piece >= 1; --piece){
 			covered[piece] = 2;
@@ -678,7 +739,7 @@ int winorlose(int* mypiece, int* opponentpiece) {
 	}
 	bool canonlysqueezekill = false;
 	bool cannotkill = false;
-
+	
 	if (covered[6] < opponentpiece[6]){
 		canonlysqueezekill = true;
 
@@ -687,21 +748,21 @@ int winorlose(int* mypiece, int* opponentpiece) {
 			if (ISTURNSTART == true){
 				fprintf(stderr,"my 0 take care of opponent 6\n");
 				//fprintf(stderr,"my largest");
-				fflush(stderr);
+				fflush(stderr); 
 			}
 		} else if (mypiece[6] > 0){
 			mypiece[6] -= 1;
 			if (ISTURNSTART == true){
 				fprintf(stderr,"my 6 take care of opponent 6\n");
 				//fprintf(stderr,"my largest");
-				fflush(stderr);
+				fflush(stderr); 
 			}
 		} else {
 			cannotkill=true;
 			if (ISTURNSTART == true){
 				fprintf(stderr,"I cannot take care of opponent 6\n");
 				//fprintf(stderr,"my largest");
-				fflush(stderr);
+				fflush(stderr); 
 			}
 		}
 	}
@@ -720,21 +781,21 @@ int winorlose(int* mypiece, int* opponentpiece) {
 					if (ISTURNSTART == true){
 						fprintf(stderr,"my %d take care of opponent %d\n",largerpiece,piece);
 						//fprintf(stderr,"my largest");
-						fflush(stderr);
+						fflush(stderr); 
 					}
 					if (needtotakecare == 0)
 						break;
-
+					
 				}
 				if (needtotakecare == 0)
 					break;
-
+				
 			}
 			if (needtotakecare != 0){
 				if (ISTURNSTART == true){
 					fprintf(stderr,"I cannot take care of opponent %d\n",piece);
 					//fprintf(stderr,"my largest");
-					fflush(stderr);
+					fflush(stderr); 
 				}
 				cannotkill = true;
 				break;
@@ -756,34 +817,34 @@ int winorlose(int* mypiece, int* opponentpiece) {
 
 }
 int getState(int* mypiece,  int* opponentpiece) {
-	int tempmypiece[7] = {0};
+	int tempmypiece[7] = {0};  
 	int tempopponentpiece[7] = {0};
 	for (int i = 0; i <= 6; ++i){
 		tempmypiece[i] = mypiece[i];
 		tempopponentpiece[i] = opponentpiece[i];
-	}
+	}  
 
 	int mystate = winorlose(tempmypiece, tempopponentpiece);
 	if (ISTURNSTART == true){
 		fprintf(stderr,"Can I beat opponent? state=%d\n",mystate);
 		//fprintf(stderr,"my largest");
-		fflush(stderr);
+		fflush(stderr); 
 	}
 
 	for (int i = 0; i <= 6; ++i){
 		tempmypiece[i] = mypiece[i];
 		tempopponentpiece[i] = opponentpiece[i];
-	}
+	} 
 	int opponentstate = winorlose(tempopponentpiece, tempmypiece);
 	if (ISTURNSTART == true){
 		fprintf(stderr,"Can opponent beat me?=%d\n",opponentstate);
 		//fprintf(stderr,"my largest");
-		fflush(stderr);
+		fflush(stderr); 
 	}
 	int nmypieces = 0;
 	int nopponentpieces = 0;
 	for (int p = 6; p >=0 ; --p){
-
+		
 		nmypieces += mypiece[p];
 		nopponentpieces += opponentpiece[p];
 	}
@@ -791,98 +852,95 @@ int getState(int* mypiece,  int* opponentpiece) {
 		if (ISTURNSTART == true){
 			fprintf(stderr,"NEUTRAL(ATTACK/ATTACK)\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
-		return 0 + nmypieces* 500 - nopponentpieces * 500;
+		return 0 - nopponentpieces * 500;
 	}else if (mystate == 1 && opponentstate == 1){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"SQUEEZE/SQUEEZE, opponent has %d pieces\n",nopponentpieces);
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
 		if (nopponentpieces <= 2)
 			return 150000 -nopponentpieces * 500;
 		else
-			return -50000 + nmypieces* 500;
+			return -50000 - nopponentpieces * 500;
 	}else if (mystate == 2 && opponentstate == 1){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"ATTACK/SQUEEZE\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
 		return 100000- nopponentpieces * 500;
 	}else if (mystate == 1 && opponentstate == 0){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"SQUEEZE/LOSE\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
 		return 150000- nopponentpieces * 500;
 	}else if (mystate == 2 && opponentstate == 0){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"ATTACK/LOSE\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
 		return 200000- nopponentpieces * 500;
 	}else if (mystate == 1 && opponentstate == 2){
 		if (ISTURNSTART == true){
 			fprintf(stderr,"SQUEEZE/ATTACK\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
-		return -100000 + nmypieces * 500;
+		return -100000 + nopponentpieces * 500;
 	}else { // mystate == 0
 		if (ISTURNSTART == true){
 			fprintf(stderr,"LOSE/WHATEVER\n");
 			//fprintf(stderr,"my largest");
-			fflush(stderr);
+			fflush(stderr); 
 		}
-		return -200000 + nmypieces * 500;
+		return LOSE - WIN + nmypieces * 500;
 	}
 }
 // always use my point of view, so use this->Color
-double MyAI::Evaluate(const ChessBoard* chessboard,
-	const int legal_move_count, const int color, int first_eat_bonus, int depth){
+double MyAI::Evaluate(const ChessBoard* chessboard, 
+	const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves, int first_eat_bonus, int depth){
 	// score = My Score - Opponent's Score
 	// offset = <WIN + BONUS> to let score always not less than zero
 	int opponent = this->Color==1?0:1;
 	int pieces_moves[14] = {0};
-
+	
 	if (ISTURNSTART == true){
 		N_RED_PIECES = chessboard->Red_Chess_Num;
 		N_BLACK_PIECES = chessboard->Black_Chess_Num;
 	}
-
+	
 	vector<Move2Strength> Moves1;
-	Expand(chessboard->Board, this->Color,&Moves1); // overwrite extra_moves
-	//fprintf(stderr, "moves count: %d \n", Moves1.size());
+	Expand(chessboard->Board, this->Color,&Moves1, -2); // overwrite extra_moves
 	for (vector<Move2Strength>::iterator it = Moves1.begin();it != Moves1.end(); ++it){
-
+		
 		auto thisevaluator = it -> evaluator;
 		int thispiece = -get<1>(thisevaluator);
-		//fprintf(stderr, "moved whichpiece: %d \n", thispiece);
 		pieces_moves[thispiece] += 1;
 	}
-	//assert(false);
-	//my_extra_moves = Moves1.size();
-
+	//my_extra_moves = Moves1.size(); 
+	
 	vector<Move2Strength> Moves2;
-	Expand(chessboard->Board, opponent,&Moves2);
+	Expand(chessboard->Board, opponent,&Moves2, -2);
 	for (vector<Move2Strength>::iterator it = Moves2.begin();it != Moves2.end(); ++it){
-
+		
 		auto thisevaluator = it -> evaluator;
 		int thispiece = -get<1>(thisevaluator);
 		pieces_moves[thispiece] += 1;
 	}
-	//oppo_extra_moves = Moves2.size();
+	//oppo_extra_moves = Moves2.size(); 
 	double score = OFFSET;
 	bool finish=false;
 	//fprintf(stderr, "legal_move_count: %d \n", legal_move_count);
 	double close2preyscore = 0;
 	double clusterscore = 0;
 	double opponent_extra_moves_score = 0;
-	double my_extra_moves_score= 0;
+	double my_extra_moves_score= 0; 
 	double piece_value = 0;
 
 	if(legal_move_count == 0){ // Win, Lose
@@ -900,43 +958,35 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		// 	score += WIN - DRAW ;
 		// }
 		score += DRAW - DRAW;
-		//finish = true;
+		finish = true;
 	}
 	else{ // no conclusion
 		// static material values
 		// cover and empty are both zero
-
+		
 		int count_pieces[14] = {0} ;
 		int has_enemy[14] = {0} ;
-
+		
 		int weakest_enemy_pos = -1;
 		int weakest_enemy_piece = 7;
 		vector<tuple<int,int>> strongest_my_piece_pos;
 		vector<tuple<int,int>> enemy_piece_pos;
 		int nopponentpieces = 0;
 		int nmypieces = 0;
-
-		for (int i = 0; i < 14; ++i){
-			count_pieces[i] = chessboard->CoverChess[i];
-			int p = i;
-			nopponentpieces += count_pieces[i] * int(p/7 == opponent);
-			nmypieces += count_pieces[i] * int(p/7 == this->Color);
-			
-		}
-
+		
 		for(int i = 0; i < 32; i++){
-			if(chessboard->Board[i] != CHESS_EMPTY &&
+			if(chessboard->Board[i] != CHESS_EMPTY && 
 				chessboard->Board[i] != CHESS_COVER){
-				count_pieces[chessboard->Board[i]]++;
+				count_pieces[chessboard->Board[i]]++;	
 				int p = chessboard->Board[i];
 				nopponentpieces += int(p/7 == opponent);
-				nmypieces += int(p/7 == this->Color);
+				nmypieces += int(p/7 == this->Color); 
 				if (p/7 == opponent && p%7 < weakest_enemy_piece) {
 					weakest_enemy_pos = i;
 					weakest_enemy_piece = p%7;
-
+					
 				}
-
+					
 				//if (LASTTURNBESTHASEAT == false)
 				if (p/7 == opponent && nopponentpieces <= 2)
 					enemy_piece_pos.push_back(make_tuple((p%7),i));
@@ -944,8 +994,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 					strongest_my_piece_pos.push_back(make_tuple((p%7),i));
 			}
 		}
-		//for(int i = 0; i < 14; ++i)
-		//	fprintf(stderr,"%d\n",count_pieces[i]);
+		
 		sort(strongest_my_piece_pos.begin(), strongest_my_piece_pos.end(), [](tuple<int,int> a, tuple<int,int> b) { return b<a; });
 		int cumsum = (count_pieces[this->Color*7+6] == 1?3:2);
 		int strong_threshold = 0;
@@ -956,9 +1005,9 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 				break;
 			}
 		}
-
+		
 		score += getState(&count_pieces[this->Color*7],&count_pieces[opponent*7]); //meta score, win/lose
-		//fprintf(stderr,"State Score:%lf\n",score);
+
 		if (((count_pieces[0] != 0 && count_pieces[13] != 0) || (count_pieces[7] != 0 && count_pieces[6] != 0) )&& !finish){ // pawn bite king
 			// dynamic score
 			has_enemy[6] += count_pieces[7]; // pawn bite king, king cannot bite pawn
@@ -973,16 +1022,16 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 				acc2 += count_pieces[what_piece+7];
 				has_enemy[what_piece-1] = acc2 > 8 ? 8 : acc2;
 			}
-
+			
 			for (int p = 0; p < 14; ++p){
 
 				if (p % 7 == 6) {
 					// if (ISTURNSTART == true){
 					// 	fprintf(stderr,"%d,%d,%lf\n",p,count_pieces[p],KhasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1));
 					// 	//fprintf(stderr,"my largest");
-					// 	fflush(stderr);
+					// 	fflush(stderr); 
 					// }
-
+					
 					piece_value += KhasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 					my_extra_moves_score       += KhasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?1:0);
 					opponent_extra_moves_score += KhasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?0:1);
@@ -991,430 +1040,235 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 					// if (ISTURNSTART == true){
 					// 	fprintf(stderr,"%d,%d,%lf\n",p,count_pieces[p],hasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1));
 					// 	//fprintf(stderr,"my largest");
-					// 	fflush(stderr);
+					// 	fflush(stderr); 
 					// }
 					piece_value += hasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 					my_extra_moves_score       += hasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?1:0);
 					opponent_extra_moves_score += hasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?0:1);
 				}
-			}
+			} 
 		} else { //static value
 
 			for (int p = 13; p >=0 ; --p){
-
+					
 				piece_value += values[p] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 				my_extra_moves_score       += max(values[p] * 0.001,0.5)  *  pieces_moves[p] * (p / 7 == this->Color?1:0);
 				opponent_extra_moves_score += max(values[p] * 0.001,0.5) *  pieces_moves[p] * (p / 7 == this->Color?0:1);
 			}
 		}
-		//fprintf(stderr,"Score:%lf\n",score);
-		if (score > -125000+OFFSET && chessboard->NoEatFlip >= 30){
 
+		if (score > -125000+OFFSET && LASTTURNBESTHASEAT == false && chessboard->NoEatFlip >= 30){
+					
 			for (vector<tuple<int,int>>::iterator it=strongest_my_piece_pos.begin(); it != strongest_my_piece_pos.end();++it ){
 				if (weakest_enemy_piece == 6){
 					if (get<0>(*it) == 0 || get<0>(*it) == 6 ){
 						int pos1 = get<1>(*it);
 						int pos2 = weakest_enemy_pos;
-						int dist = abs(pos1%4-pos2%4) + abs(pos1/4-pos2/4);
-						close2preyscore += (get<0>(*it)+1) * pow(2 , (3-dist)); //* (20 - depth);
-						close2preyscore += 0; //* (20 - depth);
+						close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+						close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
 					}
-
+					
 				} else if (weakest_enemy_piece == 0){
 					if (get<0>(*it) != 6 ){
 						int pos1 = get<1>(*it);
 						int pos2 = weakest_enemy_pos;
-						int dist = abs(pos1%4-pos2%4) + abs(pos1/4-pos2/4);
-						close2preyscore += (get<0>(*it)+1) * pow(2 , (3-dist)); //* (20 - depth);
-						close2preyscore += 0; //* (20 - depth);
+						close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+						close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
 					}
 				} else if (weakest_enemy_piece <= get<0>(*it)){ //weakest_enemy_piece = 1,2,3,4,5
 					int pos1 = get<1>(*it);
 					int pos2 = weakest_enemy_pos;
-					int dist = abs(pos1%4-pos2%4) + abs(pos1/4-pos2/4);
-					close2preyscore += (get<0>(*it)+1) * pow(2 , (3-dist));//* (20 - depth);
-					close2preyscore += 0; //* (20 - depth);
+					close2preyscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
+					close2preyscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
 				}
 			}
 		}
-		//fprintf(stderr,"Score:%lf\n",score);
-		if (score > -125000+OFFSET && nopponentpieces > 2){
-			for (vector<tuple<int,int>>::iterator it=strongest_my_piece_pos.begin(); it != strongest_my_piece_pos.end();++it ){
+
+		if (score > -125000+OFFSET && LASTTURNBESTHASEAT == false && nopponentpieces > 2){ 
+			for (vector<tuple<int,int>>::iterator it=strongest_my_piece_pos.begin(); it != strongest_my_piece_pos.end();++it ){				
 				int piece1 = get<0>(*it);
 				int pos1 = get<1>(*it);
-				int dist = abs(pos1%4-1.5) + abs(pos1/4-3.5);
-				clusterscore += (piece1+1) * pow(2 , (3-dist));
-				clusterscore += 0;
 				if (piece1 < strong_threshold)
 					break;
-				// for (vector<tuple<int,int>>::iterator it2=it+1; it2 != strongest_my_piece_pos.end();++it2 ){
-				// 	int piece2= get<0>(*it2);
-				// 	int pos2 = get<1>(*it2);
-				// 	if (piece2 < strong_threshold)
-				// 		break;
-				// 	clusterscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
-				// 	clusterscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
-
-				// }
-
+				for (vector<tuple<int,int>>::iterator it2=it+1; it2 != strongest_my_piece_pos.end();++it2 ){
+					int piece2= get<0>(*it2);
+					int pos2 = get<1>(*it2);
+					if (piece2 < strong_threshold)
+						break;
+					clusterscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
+					clusterscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
+					
+				}
+				
 			}
-
+			
 		}
-		// if (score > -125000+OFFSET && nopponentpieces <= 2){
-		// 	for (vector<tuple<int,int>>::iterator it=enemy_piece_pos.begin(); it != enemy_piece_pos.end();++it ){
-		// 		int piece1 = get<0>(*it);
-		// 		int pos1 = get<1>(*it);
-		// 		for (vector<tuple<int,int>>::iterator it2=strongest_my_piece_pos.begin(); it2 != strongest_my_piece_pos.end();++it2 ){
-		// 			int piece2 = get<0>(*it2);
-		// 			int pos2 = get<1>(*it2);
-		// 			if (piece1 == 6){
-		// 				if (piece2 == 0 || piece2 == 6 ){
-		// 					close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
-		// 					close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
-		// 				}
-
-		// 			} else if (piece1 == 0){
-		// 				if (piece2 != 6 ){
-		// 					close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
-		// 					close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
-		// 				}
-		// 			} else if (piece1 <= piece2){ //weakest_enemy_piece = 1,2,3,4,5
-		// 				close2preyscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
-		// 				close2preyscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
-		// 			}
-
-		// 		}
-		// 	}
-		// }
+		if (score > -125000+OFFSET && nopponentpieces <= 2){ 
+			for (vector<tuple<int,int>>::iterator it=enemy_piece_pos.begin(); it != enemy_piece_pos.end();++it ){	
+				int piece1 = get<0>(*it);
+				int pos1 = get<1>(*it);
+				for (vector<tuple<int,int>>::iterator it2=strongest_my_piece_pos.begin(); it2 != strongest_my_piece_pos.end();++it2 ){				
+					int piece2 = get<0>(*it2);
+					int pos2 = get<1>(*it2);
+					if (piece1 == 6){
+						if (piece2 == 0 || piece2 == 6 ){
+							close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+							close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
+						}
+						
+					} else if (piece1 == 0){
+						if (piece2 != 6 ){
+							close2preyscore += (3 - 1 * abs(pos1%4-pos2%4)); //* (20 - depth);
+							close2preyscore += (7-1*abs(pos1/4-pos2/4)); //* (20 - depth);
+						}
+					} else if (piece1 <= piece2){ //weakest_enemy_piece = 1,2,3,4,5
+						close2preyscore += (3 - 1*abs(pos1%4-pos2%4));//* (20 - depth);
+						close2preyscore += (7- 1*abs(pos1/4-pos2/4));//* (20 - depth);
+					}
+					
+				}
+			}
+		}
 
 	}
 	// Bonus (Only Win / Draw)
 	double bonus = 0;
 	if(finish){
-		bonus += this->Color == RED?(BONUS / BONUS_MAX_PIECE *
-				min(chessboard->Red_Chess_Num - chessboard->Black_Chess_Num,BONUS_MAX_PIECE)):(BONUS / BONUS_MAX_PIECE *
+		bonus += this->Color == RED?(BONUS / BONUS_MAX_PIECE * 
+				min(chessboard->Red_Chess_Num - chessboard->Black_Chess_Num,BONUS_MAX_PIECE)):(BONUS / BONUS_MAX_PIECE * 
 				min((-chessboard->Red_Chess_Num + chessboard->Black_Chess_Num),BONUS_MAX_PIECE));
-
+		
 	}
-
-
-
+	
+	
+	
 	if (score < -125000+OFFSET){ // losing, play for tie
 		opponent_extra_moves_score = 0;
 	}
-	// if (score >= -125000+OFFSET){ // winning, play to win
-	// 	my_extra_moves_score = 0;
-	// }
+	if (score >= -125000+OFFSET){ // winning, play to win
+		my_extra_moves_score = 0;
+	}
 	//sassert(close2preyscore==0);
-	if (ISTURNSTART == true || (score + piece_value + bonus + 0.5*my_extra_moves_score - opponent_extra_moves_score + close2preyscore + clusterscore) > 1000000 ){
+	if (ISTURNSTART == true){
 		fprintf(stderr,"%lf,%lf,%lf,%lf,%lf,%lf,%lf\n", score, piece_value, bonus, my_extra_moves_score,opponent_extra_moves_score, close2preyscore, clusterscore);
 		//fprintf(stderr,"my largest");
-		fflush(stderr);
-		if (!ISTURNSTART){
-			assert(false);
-		}
+		fflush(stderr); 
 	}
-
-	return score + piece_value + bonus + 0.5*my_extra_moves_score - opponent_extra_moves_score + close2preyscore + clusterscore;
-}
-long get_relavant_positions(const ChessBoard chessboard, const int position){
-	long relavant_positions=0;
-	// adjacent
-
-	if (position / 4 != 0){
-		//fprintf(stderr,"UP%d\n", (position - 4));
-		relavant_positions ^= 1 << (position - 4) ;
-	}
-	if (position / 4 != 7){
-		//fprintf(stderr,"DOWN%d\n", (position + 4));
-		relavant_positions^= 1 << (position + 4);
-	}
-	if (position % 4 != 0){
-		//fprintf(stderr,"LEFT%d\n", (position - 1));
-		relavant_positions^= 1 << (position - 1);
-	}
-	if (position % 4 != 3){
-		//fprintf(stderr,"RIGHT%d\n", (position +1));
-		relavant_positions^= 1 << (position + 1);
-	}
-	//fprintf(stderr,"%ld\n", relavant_positions);
-	// if gun eat
-	int temp = position;
-	int count = 0;
-	while (temp / 4 > 0){
-		temp -= 4;
-		if (chessboard.Board[temp] != CHESS_EMPTY){
-			count += 1;
-		} 
-		if (count == 2){
-			//fprintf(stderr,"up %d\n", (temp));
-			relavant_positions^= 1 << temp;
-			break;
-		}
-	}
-	temp = position;
-	count = 0;
-	while (temp / 4 < 7){
-		temp += 4;
-		if (chessboard.Board[temp] != CHESS_EMPTY){
-			count += 1;
-		} 
-		if (count == 2){
-			//fprintf(stderr,"down %d\n", (temp));
-			relavant_positions ^= 1 << temp;
-			break;
-		}
-	}
-	temp = position;
-	count = 0;
-	while (temp % 4 > 0){
-		temp -= 1;
-		if (chessboard.Board[temp] != CHESS_EMPTY){
-			count += 1;
-		} 
-		if (count == 2){
-			//fprintf(stderr,"left %d\n", (temp));
-			relavant_positions ^= 1 << temp;
-			break;
-		}
-	}
-	temp = position;
-	count = 0;
-	while (temp % 4 < 3){
-		temp += 1;
-		if (chessboard.Board[temp] != CHESS_EMPTY){
-			count += 1;
-		} 
-		if (count == 2){
-			//fprintf(stderr,"right %d\n", (temp));
-			relavant_positions ^= 1 << temp;
-			break;
-		}
-	}
-	return relavant_positions;
-
-
+	return score + piece_value + bonus + 0.5*my_extra_moves_score - opponent_extra_moves_score + first_eat_bonus + close2preyscore + clusterscore;
 }
 
-double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int last_move_is_eat, double alpha, double beta, int first_eat_bonus){
-
+double MyAI::Nega_max(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth,double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat, int last_eaten_pos){
+	assert(alpha < beta);
 	vector<Move2Strength> Moves;
-	int Flip_Moves[32];
-	int Chess[2048];
-	int move_count = 0, flip_count = 0, remain_count = 0, remain_total = 0;
-
-	// move
-	Expand(chessboard.Board, color, &Moves);
-	move_count = Moves.size();
-	// flip
-	for(int j = 0; j < 14; j++){ // find remain chess
-		if(chessboard.CoverChess[j] > 0){
-			Chess[remain_count] = j;
-			remain_count++;
-			remain_total += chessboard.CoverChess[j];
-		}
-	}
-	for(int i = 0; i < 32; i++){ // find cover
-		if(chessboard.Board[i] == CHESS_COVER){
-			Flip_Moves[flip_count] = i*100+i;
-			flip_count++;
-		}
-	}
-	//fprintf(stderr, "remain_depth=%d, move_count = %d, flip_count = % d\n", remain_depth,move_count,flip_count);
-	if ((depth >= THINK_DEPTH)&&move_count==0){ // If last move is only flip, skip
-		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
-		return val;
-	}
-	else if((depth >= THINK_DEPTH && !(last_move_is_eat==1) )|| // reach limit of depth
-		chessboard.Red_Chess_Num == 0 || // terminal node (no chess type)
-		chessboard.Black_Chess_Num == 0 || // terminal node (no chess type)
-		move_count+flip_count == 0 // terminal node (no move type)
-		){
-		this->node++;
-		// if (this->node % 10000 == 0){
-		// 	fprintf(stderr, "node_parsed %d\n", this->node);
-		// }
-		//fprintf(stderr, "node=%d\n", this->node);
-		// odd: *-1, even: *1
-		//fprintf(stderr, "depth=%d, move_count = %d, flip_count = % d\n", depth,move_count,flip_count);
-		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
-		assert (val < 1000000 && val > -1000000);
-		// for (int i = 0; i < 8; ++i){
-		// 	fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
-		// 	fprintf(stderr, "%lf", val);
-			
-		// }
-		// assert (false);
-		return val;
-	}else{
-		double m = -DBL_MAX; // lower bound
-		double n = beta; // upper bound
-		int new_move;
-		// search deeper
-		for (vector<Move2Strength>::iterator it = Moves.begin();it != Moves.end(); ++it){  // move
-
-			int thismove = it -> move;
-			
-			auto thisevaluator = it -> evaluator;
-			if(depth <= 100){
-				//fprintf(stderr, "DEPTH=%d, thismove=%d \n",depth, thismove);
-				fflush(stderr);
-			}
-			
-			if (get<0>(thisevaluator) <=0)
-				first_eat_bonus += (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
-			
-			ChessBoard new_chessboard = chessboard;
-			int is_eat = MakeMove(&new_chessboard, thismove, 0); // 0: MOVE, 1: EAT, 2: FLIP
-			// if (depth >= 10){
-			// 	fprintf(stderr, "Depth : %d Is_eat=%d \n",depth,is_eat);
-			// 	for (int i = 0; i < 8; ++i){
-			// 		fprintf(stderr, "%d %d %d %d\n",new_chessboard.Board[i*4],new_chessboard.Board[i*4+1],new_chessboard.Board[i*4+2],new_chessboard.Board[i*4+3]);
-			// 	}
-				
-			// 	fflush(stderr);
-			// }
-			// if (depth >= 13){
-			// 	assert (false);
-			// }
-			
-			double t ;
-			if (isDraw(&new_chessboard)==true)
-				t = (OFFSET + 0) * (depth&1 ? -1 : 1);
-			else if (is_eat == 1) { // If last move is eat, keep searching
-				t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 1, -n, -std::max(alpha, m),first_eat_bonus);
-			} else {
-				t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 0, -n, -std::max(alpha, m),first_eat_bonus);
-			}
-			if (get<0>(thisevaluator) <=0)
-				first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
-			//alpha = max(alpha, t);
-			if(depth == 0){
-				fprintf(stderr, "MOVE %d score = %.2lf\n", thismove, t);
-				fflush(stderr);
-			}
-			if(t > m){ 
-				if (n == beta || THINK_DEPTH - depth < 3 || t >= beta){ // No scouting
-					m = t;
-					*move = thismove;
-
-					// if(depth == 1){ fprintf(stderr, "%d score= %.2lf\n", *move, t); }
-				} else { 
-					if(is_eat == 1)
-						m = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 1, -beta, -t, first_eat_bonus); // re-search
-					else{
-						m = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 0, -beta, -t, first_eat_bonus); // re-search
-					}
-					*move = thismove;
-
-				}
-				if (m >= beta){
-					return m;
-				}
-				n = std::max(alpha, m) + 1;
-			}
-		}
-		if (depth < THINK_DEPTH){
-			long relavant_positions = 0;
-			for(int i = 0; i < 32; i++){ 
-				if (chessboard.Board[i] != CHESS_EMPTY && chessboard.Board[i] != CHESS_COVER){
-					relavant_positions |= get_relavant_positions(chessboard,i);
-					//fprintf(stderr,"relavant %d -> %ld ",i,relavant_positions);
-					//assert(false);
-				}
-			}
-			
-			int irrelavant_positions[32];
-			int n_irrelavant_positions = 0;
-			for(int i = 0; i < flip_count; i++){ // flip RELAVANT positions
-					double total = 0;
-					if (!((1 << (Flip_Moves[i]%100) ) & relavant_positions)){
-						irrelavant_positions[n_irrelavant_positions] = (Flip_Moves[i]%100);
-						++n_irrelavant_positions;
-						continue;
-					} 
-					for(int k = 0; k < remain_count; k++){ // what pieces could covered chess be
-						ChessBoard new_chessboard = chessboard;
-						
-						MakeMove(&new_chessboard, Flip_Moves[i], Chess[k]);
-						
-						double t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 0, -999999, 999999, first_eat_bonus);
-						if (t > 1000000){
-							fprintf(stderr,"%lf",t);
-							assert(false);
-						}
-						if(depth == 0){
-							//fprintf(stderr, "--relavant FLIP %d is %d score = %.2lf\n", Flip_Moves[i],Chess[k], t);
-							fflush(stderr);
-						}
-						total += chessboard.CoverChess[Chess[k]] * t;
-						// early break if 無力回天
-						//double max_possible = total
-
-					}
-					if(depth <= 100){
-						//fprintf(stderr, "DEPTH=%d, thisflip=%d, chess=%d \n",depth, Flip_Moves[i], Chess[0]);
-						fflush(stderr);
-					}
-					assert (remain_total > 0);
-					double E_score = (total / remain_total); // calculate the expect value of flip
-					if(E_score > m){ 
-						m = E_score;
-						*move = Flip_Moves[i];
-					}
-					if(depth == 0){
-						fprintf(stderr, "relavant FLIP %d score = %.2lf\n", Flip_Moves[i], E_score);
-						fflush(stderr);
-					}
-			}
-			if (n_irrelavant_positions){
-				random_shuffle(&irrelavant_positions[0], &irrelavant_positions[n_irrelavant_positions]);
-				// flip IRRELAVANT, random sample one
-				int rnd_flip_move = irrelavant_positions[0] * 100 + irrelavant_positions[0];
-				double total = 0;
-				for(int k = 0; k < remain_count; k++){ // what pieces could covered chess be
-					ChessBoard new_chessboard = chessboard;
-					
-					MakeMove(&new_chessboard, rnd_flip_move, Chess[k]);
-					
-					double t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, 0, -999999, 999999, first_eat_bonus);
-					if (t > 1000000){
-						fprintf(stderr,"%lf",t);
-						assert(false);
-					}
-					if(depth == 0){
-						//fprintf(stderr, "--irrelavant FLIP %d is %d score = %.2lf\n", rnd_flip_move,Chess[k], t);
-						fflush(stderr);
-					}
-					total += chessboard.CoverChess[Chess[k]] * t;
-					// early break if 無力回天
-					//double max_possible = total
-
-				}
-				if(depth <= 100){
-					//fprintf(stderr, "DEPTH=%d, thisflip=%d, chess=%d \n",depth, Flip_Moves[i], Chess[0]);
-					fflush(stderr);
-				}
-				assert (remain_total > 0);
-				double E_score = (total / remain_total); // calculate the expect value of flip
-				if(E_score > m){ 
-					m = E_score;
-					*move = rnd_flip_move;
-				}
-
-				if(depth == 0){
-					fprintf(stderr, "irrelavant FLIP %d score = %.2lf\n", rnd_flip_move, E_score);
-					fflush(stderr);
-				}
-			}
-			
-				
-			
-			
+	if (remain_depth > 0) {
+		Expand(chessboard.Board, color, &Moves,-1);
+		if (depth % 2 == 0){ // my move
+			my_extra_moves = Moves.size();
+		} else {
+			oppo_extra_moves = Moves.size();
 		}
 		
-		return m;
 	}
+	else {// Quiescent
+		int last_eaten_piece = -get<0>(*delta);
+		if (last_eaten_piece >= 0)
+			Expand(chessboard.Board, color, &Moves, last_eaten_pos, true);
+
+	}
+	sort(Moves.begin(), Moves.end(), [](Move2Strength a, Move2Strength b) { return a.evaluator < b.evaluator; });
+	//bool isQ = isQuiescent(&Moves);
+	if(isTimeUp() || // time is up
+		//(remain_depth == 0 and isQ)|| // reach limit of depth
+		chessboard.Red_Chess_Num == 0 || // terminal node (no chess type)
+		chessboard.Black_Chess_Num == 0 || // terminal node (no chess type)
+		Moves.empty() // terminal node (no move type)
+		){
+		this->node++;
+		// odd: *-1, even: *1
+		int isend = remain_depth <= 0?min(chessboard.Red_Chess_Num ,chessboard.Black_Chess_Num ):Moves.size();
+		//bool haseat = false;
+		
+		if (this->Color==RED && N_BLACK_PIECES > chessboard.Black_Chess_Num)
+			*haseat = true;
+		else if (this->Color==BLACK && N_RED_PIECES > chessboard.Red_Chess_Num)
+			*haseat = true;
+		else
+			*haseat = false;
+		
+		double e = Evaluate(&chessboard, isend, color,my_extra_moves,oppo_extra_moves,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
+		// fprintf(stderr, "reward: %+1.5lf",e); //DEBUG
+		// fflush(stderr); //DEBUG
+		// if (GLOBALTURN == 100) {
+		// 	fprintf(stderr, "First eat bonus: %d\n",first_eat_bonus); //DEBUG
+		// 	fflush(stderr); //DEBUG
+		// 	exit(0); // DEBUG
+		// }
+		return e;
+	}
+	double m = alpha-1;//-DBL_MAX;
+	int new_move;
+	// search deeper
+	double t = alpha;
+	int best_eat = 3;
+	bool childhaseat = false;
+	for (vector<Move2Strength>::iterator it = Moves.begin();it != Moves.end(); ++it){ // move
+		
+		
+		int thismove = it -> move;
+		auto thisevaluator = it -> evaluator;
+		// int negthiseat = get<0>(thisevaluator);
+		// if (best_eat > 0 && remain_depth <= 0)
+		// 	best_eat = negthiseat;
+		// else if (remain_depth <= 0){
+		// 	if (negthiseat > best_eat)
+		// 		break;
+		// }
+		if (get<0>(thisevaluator) <=0)
+			first_eat_bonus += (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
+		// if (remain_depth < 0 && thisevaluator > *delta) // Only search Quiscent
+		// 	break;
+		ChessBoard new_chessboard = chessboard;
+		MakeMove(&new_chessboard, thismove, 0); // 0: dummy
+		//double e = Evaluate(&chessboard, 1, color,my_extra_moves,oppo_extra_moves,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
+		// int StartPoint = thismove/100;  //DEBUG
+		// int EndPoint = thismove%100;  //DEBUG
+		// char moves[6];
+		// sprintf(moves, "%c%c-%c%c",'a'+(StartPoint%4),'1'+(7-StartPoint/4),'a'+(EndPoint%4),'1'+(7-EndPoint/4));  //DEBUG
+		// fprintf(stderr, "Depth: %2d, Move: %s, score:%lf\n",depth, moves,e); //DEBUG
+		// fflush(stderr); //DEBUG
+
+		double val = -1;
+		if(GLOBALTURN > 0){
+			if (isDraw(&new_chessboard)==true)
+				val = (OFFSET - (125000) ) * (depth&1 ? -1 : 1);
+			else
+				val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
+		}else{
+			val = -Nega_max(new_chessboard, &new_move, color^1, depth+1, remain_depth-1, -1*beta, -1*alpha,&thisevaluator,my_extra_moves,oppo_extra_moves,first_eat_bonus, &childhaseat, thismove%100);
+
+		}
+		if (get<0>(thisevaluator) <=0)
+			first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
+		
+		t = max(t,val);
+		
+		// if (depth == 10)
+		// 	exit(0);
+		alpha = max(alpha, t);
+		
+		if(t > m){ 
+			m = t;
+			*move = thismove;
+			*haseat = childhaseat;
+		}
+		if (alpha >= beta){
+			break;
+		}
+		
+		
+	}
+	return m;
+	
 }
 
 bool MyAI::isDraw(const ChessBoard* chessboard){
@@ -1455,13 +1309,9 @@ bool MyAI::isDraw(const ChessBoard* chessboard){
 	return false;
 }
 
-bool MyAI::isFinish(const ChessBoard* chessboard, int move_count){
-	return (
-		chessboard->Red_Chess_Num == 0 || // terminal node (no chess type)
-		chessboard->Black_Chess_Num == 0 || // terminal node (no chess type)
-		move_count == 0 || // terminal node (no move type)
-		isDraw(chessboard) // draw
-	);
+bool MyAI::isTimeUp(){
+	this->timeIsUp = ((double)(clock() - begin) / CLOCKS_PER_SEC  >= TIME_LIMIT);
+	return this->timeIsUp;
 }
 
 //Display chess board

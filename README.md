@@ -1,46 +1,4 @@
 # darkchess
 Theory of Computer Games Homeworks
 
-V1 alpha-beta logic 2W-18D, human evaluation tied positions : 4W2L 
-
-V2 "obeserver" logic 1W-17D-2L , human evaluation tied positions : 9W2L 
-
-V3 added branching score 10W-10D-0L
-
-V4 added uncontested king special case, change branching score to branching count for both players at the last position (including Quiescent)
-
-V5 branching score now considers importance of chess piece *17W-3D-0L
-
-V6 resolved tie issues, changes to branching score 9W-11D
-
-V7 resolved qsearch issues, added win more search, added eat first reward 15W-5D
-
-V8 added closeness score when can't find something to eat, WWWWWWWWWWWDWDWDWDLD
-- last 5 games, going second score : 5: WWDW 6:DDDD 7:DDLL 8:DWWD 9:WDWD
-
-V8+ change Q search to "最後一個被吃位置吃到不能吃為止" 18W-2L
-- last 4 games, going second score :  6:LLW 7:WWW 8:WWW 9:LLL
-
-V9 added "晚被吃得分"，"早晚吃子" reward adjusted to take piece value into account, fix tie game bug 
-
-V9-a: DRAW = 0分for all scenario
-- last 4 games, going second score 6:DL 7:W 8:W 9:W
-- all games going first (WWWW unless mentioned): 3:DWWW 5:DWWW
-- all games going second (WWWW unless mentioned): 0:DWWW 5:DWWW 6:DDDD 7:DDWW 8:DDDW
-*6黑方高估自己實力
-
-V9-b: DRAW = -25000分for all scenario
-- last 4 games, going second score 6:DDWDDW 7:DWWW 8:WWW 9:WDDD
-- last 4 games, going second score 6:DWDD 7:WWWW 8:WWWW 9:DWDD
-
-V9-c: DRAW = -25000分for all scenario and repetitive detection
-- all games going second score 3:DW, 4:DW, 6:DW, 8:LD, 9:WD
-
-V9-d: DRAW = LOSE - 19W-1D, 盤終draw = 0 (忘記+OFFSET)
-- all games going second (W unless specified) 6:DDDDDDDWD , 7:DDWWWWW 8:WWWWWD 9:WDWWWW
-
-V10+: Revamped state criterion, added cluster score to guide strong pieces to center
-- last 4 games, going second score : 6:DWWDD, 7:WWWWW, 8: WWWWW, 9:WWWWW
-
-V10.0: 379W28D1L
--last 4 games, going second score : 6: 8W8D 7:13W3D 8:15W1D 9:8W8D
+V1 NegaScout + Evaluation + Relavant Position Flipping

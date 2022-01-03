@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "MyAI.h"
 
 // commands enumerate
 enum COMMANDS{
@@ -24,41 +23,15 @@ enum COMMANDS{
   SHOWBOARD // 17
 };
 
-// function pointer array
-static bool (MyAI::*functions[])(const char* [], char*) = {
-  &MyAI::protocol_version,
-  &MyAI::name,
-  &MyAI::version,
-  &MyAI::known_command,
-  &MyAI::list_commands,
-  &MyAI::quit,
-  &MyAI::boardsize,
-  &MyAI::reset_board,
-  &MyAI::num_repetition,
-  &MyAI::num_moves_to_draw,
-  &MyAI::move,
-  &MyAI::flip,
-  &MyAI::genmove,
-  &MyAI::game_over,
-  &MyAI::ready,
-  &MyAI::time_settings,
-  &MyAI::time_left,
-  &MyAI::showboard,
-  &MyAI::init_board
-};
-
 int main(){
-  char read[1024], write[1024], output[2048], *token;
-  const char *data[50];
+  char read[1024], write[1024], output[1024], *token;
+  const char *data[10];
   int id;
   bool isFailed;
-  MyAI myai;
+
   do{
     // read command
-    if(fgets(read, 1024, stdin) == NULL){ // ERROR
-      fprintf(stderr, "READ COMMAND ERROR\n");
-      exit(1);
-    }
+    fgets(read, 1024, stdin);
     fprintf(stderr, "%s", read);
     // remove newline(\n)
     read[strlen(read) - 1] = '\0';
@@ -74,8 +47,8 @@ int main(){
     }
 
     write[0] = '\0'; // empty the char array
-
-    isFailed = (myai.*functions[id])(data, write);
+    
+    //TODO: Call AI Function
 
     if(strlen(write) > 0){
       if(isFailed){

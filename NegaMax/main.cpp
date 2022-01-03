@@ -43,13 +43,12 @@ static bool (MyAI::*functions[])(const char* [], char*) = {
   &MyAI::ready,
   &MyAI::time_settings,
   &MyAI::time_left,
-  &MyAI::showboard,
-  &MyAI::init_board
+  &MyAI::showboard
 };
 
 int main(){
   char read[1024], write[1024], output[2048], *token;
-  const char *data[50];
+  const char *data[10];
   int id;
   bool isFailed;
   MyAI myai;

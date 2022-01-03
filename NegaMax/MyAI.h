@@ -6,7 +6,6 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include <stdint.h>
 #include <set>
 #include <vector>
 #include <tuple>
@@ -14,12 +13,11 @@
 
 using namespace std;
 
-
 #define RED 0
 #define BLACK 1
 #define CHESS_COVER -1
 #define CHESS_EMPTY -2
-#define COMMAND_NUM 19
+#define COMMAND_NUM 18
 
 struct ChessBoard{
 	int Board[32];
@@ -28,17 +26,6 @@ struct ChessBoard{
 	int NoEatFlip;
 	int History[4096];
 	int HistoryCount;
-
-	ChessBoard(){}
-	ChessBoard(const ChessBoard &chessBoard){
-		memcpy(this->Board, chessBoard.Board, 32*sizeof(int));
-		memcpy(this->CoverChess, chessBoard.CoverChess, 14*sizeof(int));
-		this->Red_Chess_Num = chessBoard.Red_Chess_Num;
-		this->Black_Chess_Num = chessBoard.Black_Chess_Num;
-		this->NoEatFlip = chessBoard.NoEatFlip;
-		memcpy(this->History, chessBoard.History, chessBoard.HistoryCount*sizeof(int));
-		this->HistoryCount = chessBoard.HistoryCount;
-	}
 };
 struct Move2Strength
 {
@@ -46,7 +33,11 @@ struct Move2Strength
     tuple<int,int> evaluator;
 
 };
-
+struct StateStrength
+{
+    int power_units; // power of surviving units
+    int pos;
+};
 class MyAI  
 {
 	const char* commands_name[COMMAND_NUM] = {
@@ -67,8 +58,7 @@ class MyAI
 		"ready",
 		"time_settings",
 		"time_left",
-  	"showboard",
-		"init_board"
+  	"showboard"
 	};
 public:
 	MyAI(void);
@@ -93,40 +83,33 @@ public:
 	bool time_settings(const char* data[], char* response);// 15
 	bool time_left(const char* data[], char* response);// 16
 	bool showboard(const char* data[], char* response);// 17
-	bool init_board(const char* data[], char* response);// 18
 
 private:
 	int Color;
 	int Red_Time, Black_Time;
 	ChessBoard main_chessboard;
-	bool timeIsUp;
-
-#ifdef WINDOWS
 	clock_t begin;
-#else
-	struct timeval begin;
-#endif
-
+	bool timeIsUp;
+	
 	// statistics
 	int node;
 
 	// Utils
 	int GetFin(char c);
 	int ConvertChessNo(int input);
+	bool isTimeUp();
 
 	// Board
 	void initBoardState();
-	void initBoardState(const char* data[]);
 	void generateMove(char move[6]);
-	int MakeMove(ChessBoard* chessboard, const int move, const int chess);
+	void MakeMove(ChessBoard* chessboard, const int move, const int chess);
 	void MakeMove(ChessBoard* chessboard, const char move[6]);
-	bool Referee(const int* board, const int Startoint, const int EndPoint, const int color);
-	void Expand(const int* board, const int color, vector<Move2Strength>* Result);
-	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int first_eat_bonus, int depth);
-	double NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta, int first_eat_bonus);
-
+	bool Referee(const int* board, const int Startoint, const int EndPoint, const int color, int*, int*);
+	void Expand(const int* board, const int color, vector<Move2Strength>* Result,int last_eaten_piece, bool Q);
+	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int my_extra_moves, int oppo_extra_moves, int first_eat_bonus, int depth);
+	
+	double Nega_max(ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta,tuple<int,int>* delta, int my_extra_moves, int oppo_extra_moves,int first_eat_bonus, bool* haseat, int last_eaten_pos);
 	bool isDraw(const ChessBoard* chessboard);
-	bool isFinish(const ChessBoard* chessboard, int move_count);
 
 	// Display
 	void Pirnf_Chess(int chess_no,char *Result);
