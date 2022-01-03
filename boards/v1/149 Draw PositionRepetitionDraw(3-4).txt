@@ -1,0 +1,3112 @@
+INITIAL
+* 8:22am Jan 3, 2022
+* chan vs ai
+* 1 2 2 2 2 2 5 1 2 2 2 2 2 5
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* first 1
+* time 900
+* 1. b5(m) b3(k)
+* 2. c7(p) b2(M)
+* 3. c8(C) b1(N)
+* 4. d7(P) c2(r)
+* 5. b3-b2 a8(c)
+* 6. c7-d7 c8-a8
+* 7. d6(p) a6(P)
+* 8. c6(M) b7(p)
+* 9. a7(m) c5(P)
+* 10. a7-a6 a4(N)
+* 11. b8(g) b4(R)
+* 12. b8-a8 a3(P)
+* 13. b5-b4 d4(c)
+* 14. b4-a4 d3(C)
+* 15. b2-b1 c4(G)
+* 16. d2(n) c4-d4
+* 17. d2-d3 a5(p)
+* 18. b6(R) c3(p)
+* 19. a6-b6 c6-b6
+* 20. d5(g) d4-d5
+* 21. a4-a3 d1(K)
+* 22. d8(r) a2(G)
+* 23. d6-c6 a2-a3
+* 24. c6-c5 d1-d2
+* 25. c5-c6 a3-a2
+* 26. b1-b2 a2-a3
+* 27. b2-b3 a3-a2
+* 28. b3-b2 a2-a3
+* 29. b2-b3 a3-a2
+* 30. b3-b2 a2-a3
+* 31. b2-b3 a3-a2
+* 32. b3-b2
+* PositionRepetitionDraw,3,4 chan Draw 0.500000,0.500000
+* Comment 0 0
+0. 1641169379637
+1. 1641169379637
+2. 1641169392006
+3. 1641169394548
+4. 1641169404201
+5. 1641169411797
+6. 1641169419964
+7. 1641169433537
+8. 1641169440264
+9. 1641169457639
+10. 1641169464097
+11. 1641169479058
+12. 1641169484797
+13. 1641169494494
+14. 1641169499473
+15. 1641169510579
+16. 1641169513837
+17. 1641169522333
+18. 1641169524446
+19. 1641169535341
+20. 1641169537171
+21. 1641169542296
+22. 1641169543361
+23. 1641169551734
+24. 1641169552578
+25. 1641169557229
+26. 1641169557907
+27. 1641169561128
+28. 1641169561586
+29. 1641169563482
+30. 1641169563717
+31. 1641169564613
+32. 1641169564759
+33. 1641169565627
+34. 1641169565809
+35. 1641169566154
+36. 1641169566216
+37. 1641169566477
+38. 1641169566513
+39. 1641169566623
+40. 1641169566685
+41. 1641169566739
+42. 1641169566757
+43. 1641169566817
+44. 1641169566826
+45. 1641169566834
+46. 1641169566917
+47. 1641169566925
+48. 1641169566932
+49. 1641169566981
+50. 1641169566988
+51. 1641169566995
+52. 1641169567077
+53. 1641169567087
+54. 1641169567095
+55. 1641169567145
+56. 1641169567152
+57. 1641169567162
+58. 1641169567241
+59. 1641169567249
+60. 1641169567258
+61. 1641169567309
+62. 1641169567316
+63. 1641169567325
+
+# 17 37 67 87 117 137 167 187 217 237 267 287 317 337 367 387 417 437 467 487 517 537 567 587 617 637 667 687 717 737 767 787 817 837 867 887 917 937 967 987 1017 1037 1067 1087 1117 1137 1167 1187 1217 1237 1267 1287 1317 1337 1367 1387 1417 1437 1467 1487 1517 1537 1567 1587 #
+=1 MyAI
+=2 1.0.0
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=7
+=15
+=14
+My result: 
+--------------------------
+NegaScout: 0.000000 (node: 1279348297)
+(13) -> (13)
+< X > -> < X >
+move:b5-b5
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b5 b5
+# call flip(): flip(13,13) = 11
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(21,21) = 9
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 0.332535 (node: 2592779)
+(6) -> (6)
+< X > -> < X >
+move:c7-c7
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c7 c7
+# call flip(): flip(6,6) = 15
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(25,25) = 3
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 4707.901910 (node: 8666462)
+(2) -> (2)
+< X > -> < X >
+move:c8-c8
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c8 c8
+# call flip(): flip(2,2) = 6
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(29,29) = 5
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 4894.300147 (node: 12707616)
+(7) -> (7)
+< X > -> < X >
+move:d7-d7
+--------------------------
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    X 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d7 d7
+# call flip(): flip(7,7) = 7
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    X    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(26,26) = 12
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 2031.210000 (node: 21443532)
+(21) -> (25)
+< k > -> < M >
+move:b3-b2
+--------------------------
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    k    X    X 
+<2>    X    M    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b3 b2
+# call move(): move : 21-25 
+------------Black-------------
+<8>    X    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(0,0) = 14
+------------Black-------------
+<8>    c    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 3121.410000 (node: 17126732)
+(6) -> (7)
+< p > -> < P >
+move:c7-d7
+--------------------------
+------------Black-------------
+<8>    c    X    C    X 
+<7>    X    X    p    P 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c7 d7
+# call move(): move : 6-7 
+------------Black-------------
+<8>    c    X    C    X 
+<7>    X    X    -    p 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 2-0 
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 6574.121793 (node: 10504952)
+(11) -> (11)
+< X > -> < X >
+move:d6-d6
+--------------------------
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    X    X    X    X 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d6 d6
+# call flip(): flip(11,11) = 15
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    X    X    X    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(8,8) = 7
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    P    X    X    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 7116.097476 (node: 11209390)
+(10) -> (10)
+< X > -> < X >
+move:c6-c6
+--------------------------
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    P    X    X    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c6 c6
+# call flip(): flip(10,10) = 3
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    X    -    p 
+<6>    P    X    M    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(5,5) = 15
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    p    -    p 
+<6>    P    X    M    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 6870.678971 (node: 9149738)
+(4) -> (4)
+< X > -> < X >
+move:a7-a7
+--------------------------
+------------Black-------------
+<8>    C    X    -    X 
+<7>    X    p    -    p 
+<6>    P    X    M    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a7 a7
+# call flip(): flip(4,4) = 11
+------------Black-------------
+<8>    C    X    -    X 
+<7>    m    p    -    p 
+<6>    P    X    M    p 
+<5>    X    m    X    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(14,14) = 7
+------------Black-------------
+<8>    C    X    -    X 
+<7>    m    p    -    p 
+<6>    P    X    M    p 
+<5>    X    m    P    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 3763.470000 (node: 9167117)
+(4) -> (8)
+< m > -> < P >
+move:a7-a6
+--------------------------
+------------Black-------------
+<8>    C    X    -    X 
+<7>    m    p    -    p 
+<6>    P    X    M    p 
+<5>    X    m    P    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a7 a6
+# call move(): move : 4-8 
+------------Black-------------
+<8>    C    X    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    X    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(16,16) = 5
+------------Black-------------
+<8>    C    X    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 3849.816250 (node: 4434895)
+(1) -> (1)
+< X > -> < X >
+move:b8-b8
+--------------------------
+------------Black-------------
+<8>    C    X    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b8 b8
+# call flip(): flip(1,1) = 10
+------------Black-------------
+<8>    C    g    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    X    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(17,17) = 4
+------------Black-------------
+<8>    C    g    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    R    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 4346.150000 (node: 6469524)
+(1) -> (0)
+< g > -> < C >
+move:b8-a8
+--------------------------
+------------Black-------------
+<8>    C    g    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    R    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b8 a8
+# call move(): move : 1-0 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    R    X    X 
+<3>    X    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(20,20) = 7
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    R    X    X 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 5498.385000 (node: 3649219)
+(13) -> (17)
+< m > -> < R >
+move:b5-b4
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    m    P    X 
+<4>    N    R    X    X 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b5 b4
+# call move(): move : 13-17 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    N    m    X    X 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(19,19) = 14
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    N    m    X    c 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 6807.620833 (node: 2475505)
+(17) -> (16)
+< m > -> < N >
+move:b4-a4
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    N    m    X    c 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b4 a4
+# call move(): move : 17-16 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    X    c 
+<3>    P    -    X    X 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(23,23) = 6
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    X    c 
+<3>    P    -    X    C 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 7055.255000 (node: 1358952)
+(25) -> (29)
+< k > -> < N >
+move:b2-b1
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    X    c 
+<3>    P    -    X    C 
+<2>    X    k    r    X 
+<1>    X    N    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b2 b1
+# call move(): move : 25-29 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    X    c 
+<3>    P    -    X    C 
+<2>    X    -    r    X 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(18,18) = 2
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    G    c 
+<3>    P    -    X    C 
+<2>    X    -    r    X 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 7183.227278 (node: 603876)
+(27) -> (27)
+< X > -> < X >
+move:d2-d2
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    G    c 
+<3>    P    -    X    C 
+<2>    X    -    r    X 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d2 d2
+# call flip(): flip(27,27) = 13
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    G    c 
+<3>    P    -    X    C 
+<2>    X    -    r    n 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call move(): move : 18-19 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    C 
+<2>    X    -    r    n 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 6519.220000 (node: 627665)
+(27) -> (23)
+< n > -> < C >
+move:d2-d3
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    C 
+<2>    X    -    r    n 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d2 d3
+# call move(): move : 27-23 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    X    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(12,12) = 15
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 18662.064464 (node: 258921)
+(9) -> (9)
+< X > -> < X >
+move:b6-b6
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    X    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b6 b6
+# call flip(): flip(9,9) = 4
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    R    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    X    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(22,22) = 15
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    R    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 8659.790000 (node: 131562)
+(8) -> (9)
+< m > -> < R >
+move:a6-b6
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    m    R    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a6 b6
+# call move(): move : 8-9 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    m    M    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 10-9 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 22008.541000 (node: 74016)
+(15) -> (15)
+< X > -> < X >
+move:d5-d5
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    X 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d5 d5
+# call flip(): flip(15,15) = 10
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    g 
+<4>    m    -    -    G 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call move(): move : 19-15 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    m    -    -    - 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 1888.500000 (node: 33984)
+(16) -> (20)
+< m > -> < P >
+move:a4-a3
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    m    -    -    - 
+<3>    P    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a4 a3
+# call move(): move : 16-20 
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(31,31) = 1
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 2097.100000 (node: 9488)
+(3) -> (3)
+< X > -> < X >
+move:d8-d8
+--------------------------
+------------Black-------------
+<8>    g    -    -    X 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d8 d8
+# call flip(): flip(3,3) = 12
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    X    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(24,24) = 2
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    G    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 1886.250000 (node: 2176)
+(11) -> (10)
+< p > -> < - >
+move:d6-c6
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    p 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    G    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d6 c6
+# call move(): move : 11-10 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    m    -    p    n 
+<2>    G    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 24-20 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 2761.200000 (node: 2826)
+(10) -> (14)
+< p > -> < P >
+move:c6-c5
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    P    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c6 c5
+# call move(): move : 10-14 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    - 
+<5>    p    -    p    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    - 
+<1>    X    k    X    K 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 31-27 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    - 
+<5>    p    -    p    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    K 
+<1>    X    k    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 2761.250000 (node: 1896)
+(14) -> (10)
+< p > -> < - >
+move:c5-c6
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    -    - 
+<5>    p    -    p    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    K 
+<1>    X    k    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c5 c6
+# call move(): move : 14-10 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    -    r    K 
+<1>    X    k    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 20-24 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    -    r    K 
+<1>    X    k    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4067.550000 (node: 2213)
+(29) -> (25)
+< k > -> < - >
+move:b1-b2
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    -    r    K 
+<1>    X    k    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b1 b2
+# call move(): move : 29-25 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 24-20 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4070.550000 (node: 2568)
+(25) -> (21)
+< k > -> < - >
+move:b2-b3
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b2 b3
+# call move(): move : 25-21 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    k    p    n 
+<2>    -    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 20-24 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4067.550000 (node: 2238)
+(21) -> (25)
+< k > -> < - >
+move:b3-b2
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b3 b2
+# call move(): move : 21-25 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 24-20 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4070.550000 (node: 2568)
+(25) -> (21)
+< k > -> < - >
+move:b2-b3
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b2 b3
+# call move(): move : 25-21 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    k    p    n 
+<2>    -    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 20-24 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4067.550000 (node: 2238)
+(21) -> (25)
+< k > -> < - >
+move:b3-b2
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b3 b2
+# call move(): move : 21-25 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 24-20 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4070.550000 (node: 2568)
+(25) -> (21)
+< k > -> < - >
+move:b2-b3
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    -    p    n 
+<2>    -    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b2 b3
+# call move(): move : 25-21 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    G    k    p    n 
+<2>    -    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 20-24 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 4067.550000 (node: 2238)
+(21) -> (25)
+< k > -> < - >
+move:b3-b2
+--------------------------
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    k    p    n 
+<2>    G    -    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b3 b2
+# call move(): move : 21-25 
+------------Black-------------
+<8>    g    -    -    r 
+<7>    -    p    -    p 
+<6>    -    M    p    - 
+<5>    p    -    -    G 
+<4>    -    -    -    - 
+<3>    -    -    p    n 
+<2>    G    k    r    K 
+<1>    X    -    X    - 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+
+# 17 37 67 87 117 137 167 187 217 237 267 287 317 337 367 387 417 437 467 487 517 537 567 587 617 637 667 687 717 737 767 787 817 837 867 887 917 937 967 987 1017 1037 1067 1087 1117 1137 1167 1187 1217 1237 1267 1287 1317 1337 1367 1387 1417 1437 1467 1487 1517 1537 1567 1587 #
+1 name
+=1 MyAI
+2 version
+=2 1.0.0
+7 reset_board
+=7
+15 time_setting 900000
+=15
+14 ready
+=14
+12 genmove unknown
+Depth:  6, Node: 1279348297, Score: +0.00000, Move: b5-b5
+=12 b5 b5
+11 flip b5 m
+=11
+16 time_left black 900000
+Time Left(black): 900000
+=16
+11 flip b3 k
+=11
+16 time_left red 887631
+Time Left(red): 887631
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+Curstate: 3 0.000000
+relavant FLIP 505 score = -148.99
+relavant FLIP 909 score = -154.90
+relavant FLIP 1212 score = -156.06
+relavant FLIP 1414 score = -156.06
+relavant FLIP 1515 score = -148.99
+relavant FLIP 1717 score = -22164.90
+relavant FLIP 2020 score = -21310.12
+relavant FLIP 2222 score = -21310.12
+relavant FLIP 2323 score = -7328.94
+relavant FLIP 2525 score = -21310.08
+relavant FLIP 2929 score = -7328.94
+irrelavant FLIP 606 score = 0.33
+Depth:  6, Node:    2592779, Score: +0.33254, Move: c7-c7
+=12 c7 c7
+11 flip c7 p
+=11
+16 time_left black 897458
+Time Left(black): 897458
+=16
+11 flip b2 M
+=11
+16 time_left red 877978
+Time Left(red): 877978
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+0.000000,0.000000,0.000000,2.000000,0.000000,0.000000,0.000000
+Curstate: 3 1.000000
+MOVE 2125 score = 2241.32
+relavant FLIP 202 score = 4707.90
+relavant FLIP 404 score = 1732.24
+relavant FLIP 505 score = 4426.29
+relavant FLIP 707 score = 4701.98
+relavant FLIP 909 score = 1540.48
+relavant FLIP 1010 score = 4707.90
+relavant FLIP 1212 score = 1558.00
+relavant FLIP 1414 score = 1513.86
+relavant FLIP 1515 score = 1472.89
+relavant FLIP 1717 score = -22375.90
+relavant FLIP 2020 score = -21907.00
+relavant FLIP 2222 score = -21915.16
+relavant FLIP 2323 score = -6220.04
+relavant FLIP 2424 score = 386.60
+relavant FLIP 2626 score = 385.39
+relavant FLIP 2727 score = 1591.31
+relavant FLIP 2929 score = -7587.89
+irrelavant FLIP 1818 score = 1714.90
+Depth:  6, Node:    8666462, Score: +4707.90191, Move: c8-c8
+=12 c8 c8
+11 flip c8 C
+=11
+16 time_left black 889862
+Time Left(black): 889862
+=16
+11 flip b1 N
+=11
+16 time_left red 869811
+Time Left(red): 869811
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+0.000000,0.000000,0.000000,2.000000,0.000000,0.000000,0.000000
+Curstate: 3 1.000000
+MOVE 2125 score = 2586.64
+relavant FLIP 0 score = 1019.05
+relavant FLIP 101 score = 1698.19
+relavant FLIP 303 score = 1742.66
+relavant FLIP 404 score = 1697.83
+relavant FLIP 505 score = 4744.28
+relavant FLIP 707 score = 4894.30
+relavant FLIP 909 score = 1501.53
+relavant FLIP 1010 score = 4189.45
+relavant FLIP 1212 score = 1512.95
+relavant FLIP 1414 score = 1489.59
+relavant FLIP 1515 score = 1569.11
+relavant FLIP 1717 score = -24214.43
+relavant FLIP 2020 score = -23740.25
+relavant FLIP 2222 score = -23735.03
+relavant FLIP 2323 score = -2573.24
+relavant FLIP 2424 score = 286.05
+relavant FLIP 2626 score = 292.57
+relavant FLIP 2727 score = 1636.54
+relavant FLIP 2828 score = 1590.49
+relavant FLIP 3030 score = 1590.49
+relavant FLIP 3131 score = 1719.70
+irrelavant FLIP 1818 score = 1710.93
+Depth:  6, Node:   12707616, Score: +4894.30015, Move: d7-d7
+=12 d7 d7
+11 flip d7 P
+=11
+16 time_left black 876289
+Time Left(black): 876289
+=16
+11 flip c2 r
+=11
+16 time_left red 863084
+Time Left(red): 863084
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+0.000000,0.000000,0.000000,2.020000,1.120000,0.000000,0.000000
+Curstate: 3 -0.110000
+MOVE 607 score = -36.56
+MOVE 2125 score = 1421.18
+relavant FLIP 0 score = -827.71
+relavant FLIP 101 score = -40.41
+relavant FLIP 303 score = -40.89
+relavant FLIP 404 score = -40.09
+relavant FLIP 505 score = -70.66
+relavant FLIP 909 score = -147.08
+relavant FLIP 1010 score = -501.60
+relavant FLIP 1111 score = -40.27
+relavant FLIP 1212 score = -147.08
+relavant FLIP 1414 score = -147.09
+relavant FLIP 1515 score = -74.11
+relavant FLIP 1717 score = -22945.96
+relavant FLIP 1818 score = -11.57
+relavant FLIP 2020 score = -22407.68
+relavant FLIP 2222 score = -22663.77
+relavant FLIP 2323 score = -4618.51
+relavant FLIP 2424 score = -260.30
+relavant FLIP 2727 score = -8.43
+relavant FLIP 2828 score = -39.88
+relavant FLIP 3030 score = 2.49
+relavant FLIP 3131 score = -40.08
+irrelavant FLIP 1616 score = -40.08
+Depth:  6, Node:   21443532, Score: +2031.21000, Move: b3-b2
+=12 b3 b2
+10 move b3 b2
+=10
+16 time_left black 858914
+Time Left(black): 858914
+=16
+11 flip a8 c
+=11
+16 time_left red 856626
+Time Left(red): 856626
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+500.000000,1740.000000,0.000000,4.040000,0.040000,0.000000,0.000000
+Curstate: 3 2241.980000
+MOVE 2 score = 2551.26
+MOVE 607 score = 3061.33
+MOVE 2521 score = 2541.36
+MOVE 2529 score = 3121.41
+relavant FLIP 101 score = 1974.52
+relavant FLIP 303 score = 1944.47
+relavant FLIP 404 score = 1972.72
+relavant FLIP 505 score = 2030.12
+relavant FLIP 808 score = 2122.60
+relavant FLIP 909 score = 1891.28
+relavant FLIP 1010 score = 1435.36
+relavant FLIP 1111 score = 1942.24
+relavant FLIP 1212 score = 1891.28
+relavant FLIP 1414 score = 1904.36
+relavant FLIP 1515 score = 1873.70
+relavant FLIP 1717 score = 1886.01
+relavant FLIP 1818 score = 1922.38
+relavant FLIP 2222 score = 2057.09
+relavant FLIP 2424 score = -21022.46
+relavant FLIP 2727 score = -2677.45
+relavant FLIP 2828 score = 1899.00
+relavant FLIP 3030 score = 2072.63
+relavant FLIP 3131 score = 1941.99
+irrelavant FLIP 1616 score = 1941.99
+Depth:  6, Node:   17126732, Score: +3121.41000, Move: c7-d7
+=12 c7 d7
+10 move c7 d7
+=10
+16 time_left black 843953
+Time Left(black): 843953
+=16
+10 move c8 a8
+=10
+16 time_left red 850887
+Time Left(red): 850887
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+500.000000,2040.000000,0.000000,4.620000,0.000000,0.000000,0.000000
+Curstate: 3 2542.310000
+MOVE 706 score = 2866.62
+MOVE 2521 score = 2542.15
+MOVE 2529 score = 3122.16
+relavant FLIP 101 score = 2918.47
+relavant FLIP 303 score = 1758.75
+relavant FLIP 404 score = 2968.54
+relavant FLIP 505 score = 2669.57
+relavant FLIP 808 score = 2047.25
+relavant FLIP 909 score = 2724.71
+relavant FLIP 1111 score = 6574.12
+relavant FLIP 1212 score = 2678.46
+relavant FLIP 1414 score = 2688.34
+relavant FLIP 1515 score = 2752.52
+relavant FLIP 1717 score = 2627.33
+relavant FLIP 1818 score = 2828.97
+relavant FLIP 2222 score = 2833.37
+relavant FLIP 2424 score = -20438.84
+relavant FLIP 2727 score = -1892.61
+relavant FLIP 2828 score = 2539.19
+relavant FLIP 3030 score = 2723.22
+relavant FLIP 3131 score = 2849.90
+irrelavant FLIP 1616 score = 2880.27
+Depth:  6, Node:   10504952, Score: +6574.12179, Move: d6-d6
+=12 d6 d6
+11 flip d6 p
+=11
+16 time_left black 834256
+Time Left(black): 834256
+=16
+11 flip a6 P
+=11
+16 time_left red 845908
+Time Left(red): 845908
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+500.000000,2040.000000,0.000000,4.620000,0.000000,0.000000,0.000000
+Curstate: 3 2542.310000
+MOVE 706 score = 2869.46
+MOVE 2521 score = 2542.14
+MOVE 2529 score = 3122.09
+relavant FLIP 101 score = 3006.64
+relavant FLIP 303 score = 1320.91
+relavant FLIP 404 score = 2990.79
+relavant FLIP 505 score = 2730.25
+relavant FLIP 909 score = 2683.97
+relavant FLIP 1010 score = 7116.10
+relavant FLIP 1212 score = 2631.14
+relavant FLIP 1414 score = 2718.38
+relavant FLIP 1515 score = 6979.39
+relavant FLIP 1616 score = 2999.03
+relavant FLIP 1717 score = 2681.80
+relavant FLIP 1818 score = 2945.17
+relavant FLIP 1919 score = 2956.61
+relavant FLIP 2222 score = 2880.73
+relavant FLIP 2424 score = -17284.67
+relavant FLIP 2727 score = -2310.81
+relavant FLIP 2828 score = 2622.39
+relavant FLIP 3030 score = 2780.27
+relavant FLIP 3131 score = 2978.53
+irrelavant FLIP 2323 score = 2983.73
+Depth:  6, Node:   11209390, Score: +7116.09748, Move: c6-c6
+=12 c6 c6
+11 flip c6 M
+=11
+16 time_left black 823150
+Time Left(black): 823150
+=16
+11 flip b7 p
+=11
+16 time_left red 842650
+Time Left(red): 842650
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+500.000000,2040.000000,0.000000,4.640000,2.200000,0.000000,0.000000
+Curstate: 3 2540.120000
+MOVE 506 score = 1718.21
+MOVE 706 score = 1718.22
+MOVE 2521 score = 1720.12
+MOVE 2529 score = 2299.23
+relavant FLIP 101 score = 1945.71
+relavant FLIP 303 score = 1091.94
+relavant FLIP 404 score = 6870.68
+relavant FLIP 909 score = 1724.69
+relavant FLIP 1212 score = 1893.30
+relavant FLIP 1414 score = 1733.11
+relavant FLIP 1515 score = 1807.31
+relavant FLIP 1616 score = 1757.30
+relavant FLIP 1717 score = 1732.31
+relavant FLIP 1818 score = 1704.75
+relavant FLIP 1919 score = 1763.51
+relavant FLIP 2222 score = 1846.86
+relavant FLIP 2424 score = -20470.29
+relavant FLIP 2727 score = -3895.96
+relavant FLIP 2828 score = 1856.30
+relavant FLIP 3030 score = 1938.74
+relavant FLIP 3131 score = 1720.44
+irrelavant FLIP 2323 score = 1720.47
+Depth:  6, Node:    9149738, Score: +6870.67897, Move: a7-a7
+=12 a7 a7
+11 flip a7 m
+=11
+16 time_left black 814654
+Time Left(black): 814654
+=16
+11 flip c5 P
+=11
+16 time_left red 840537
+Time Left(red): 840537
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+500.000000,2040.000000,0.000000,7.940000,2.200000,0.000000,0.000000
+Curstate: 3 2541.770000
+MOVE 400 score = 3061.77
+MOVE 408 score = 3243.46
+MOVE 506 score = 2944.67
+MOVE 706 score = 2944.13
+MOVE 1314 score = 3042.34
+MOVE 2521 score = 3762.83
+MOVE 2529 score = 3520.68
+relavant FLIP 101 score = 2938.20
+relavant FLIP 303 score = 1720.43
+relavant FLIP 909 score = 2405.15
+relavant FLIP 1212 score = 2596.16
+relavant FLIP 1515 score = 2866.90
+relavant FLIP 1616 score = 3084.75
+relavant FLIP 1717 score = 2786.21
+relavant FLIP 1818 score = 2948.40
+relavant FLIP 1919 score = 3081.62
+relavant FLIP 2222 score = 3000.02
+relavant FLIP 2424 score = -15686.46
+relavant FLIP 2727 score = -3477.36
+relavant FLIP 2828 score = 3025.62
+relavant FLIP 3030 score = 2986.41
+relavant FLIP 3131 score = 3077.28
+irrelavant FLIP 2323 score = 3078.98
+Depth:  6, Node:    9167117, Score: +3763.47000, Move: a7-a6
+=12 a7 a6
+10 move a7 a6
+=10
+16 time_left black 803759
+Time Left(black): 803759
+=16
+11 flip a4 N
+=11
+16 time_left red 838707
+Time Left(red): 838707
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+1000.000000,2760.000000,0.000000,8.260000,2.220000,0.000000,0.000000
+Curstate: 3 3761.910000
+MOVE 506 score = 3244.58
+MOVE 504 score = 3040.71
+MOVE 706 score = 3761.91
+MOVE 804 score = 3820.05
+MOVE 1314 score = 3680.59
+MOVE 2521 score = 3764.01
+MOVE 2529 score = 3823.45
+relavant FLIP 101 score = 3849.82
+relavant FLIP 303 score = 2652.95
+relavant FLIP 909 score = 3625.23
+relavant FLIP 1212 score = 2757.81
+relavant FLIP 1515 score = 3830.32
+relavant FLIP 1717 score = 3442.40
+relavant FLIP 1818 score = 3803.68
+relavant FLIP 1919 score = 3748.36
+relavant FLIP 2020 score = 3709.41
+relavant FLIP 2222 score = 3808.39
+relavant FLIP 2424 score = -16202.44
+relavant FLIP 2727 score = -3172.00
+relavant FLIP 2828 score = 3560.24
+relavant FLIP 3030 score = 3676.12
+relavant FLIP 3131 score = 3748.29
+irrelavant FLIP 2323 score = 3763.47
+Depth:  6, Node:    4434895, Score: +3849.81625, Move: b8-b8
+=12 b8 b8
+11 flip b8 g
+=11
+16 time_left black 798634
+Time Left(black): 798634
+=16
+11 flip b4 R
+=11
+16 time_left red 837642
+Time Left(red): 837642
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+1000.000000,2760.000000,0.000000,19.160000,2.460000,0.000000,0.000000
+Curstate: 3 3767.120000
+MOVE 102 score = 3977.87
+MOVE 100 score = 4284.91
+MOVE 506 score = 4139.07
+MOVE 504 score = 3047.06
+MOVE 706 score = 4287.64
+MOVE 804 score = 3826.68
+MOVE 1314 score = 3684.49
+MOVE 1317 score = 4135.51
+MOVE 2521 score = 4280.54
+MOVE 2529 score = 4346.15
+relavant FLIP 303 score = 3282.80
+relavant FLIP 909 score = 3262.36
+relavant FLIP 1212 score = 3129.88
+relavant FLIP 1515 score = 4084.98
+relavant FLIP 1818 score = 3997.87
+relavant FLIP 1919 score = 3967.98
+relavant FLIP 2020 score = 3870.25
+relavant FLIP 2222 score = 4054.01
+relavant FLIP 2424 score = -18794.53
+relavant FLIP 2727 score = -3877.36
+relavant FLIP 2828 score = 3928.25
+relavant FLIP 3030 score = 4001.70
+relavant FLIP 3131 score = 3967.00
+irrelavant FLIP 2323 score = 3977.84
+Depth:  6, Node:    6469524, Score: +4346.15000, Move: b8-a8
+=12 b8 a8
+10 move b8 a8
+=10
+16 time_left black 790261
+Time Left(black): 790261
+=16
+11 flip a3 P
+=11
+16 time_left red 836798
+Time Left(red): 836798
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+1500.000000,2780.000000,0.000000,19.180000,2.460000,0.000000,0.000000
+Curstate: 3 4287.130000
+MOVE 1 score = 4346.12
+MOVE 4 score = 4343.12
+MOVE 501 score = 4343.67
+MOVE 506 score = 4045.84
+MOVE 504 score = 4343.11
+MOVE 706 score = 4346.12
+MOVE 804 score = 4343.67
+MOVE 1314 score = 4203.42
+MOVE 1317 score = 4497.87
+MOVE 2521 score = 5496.59
+MOVE 2529 score = 4836.20
+relavant FLIP 303 score = 4363.35
+relavant FLIP 909 score = 3816.20
+relavant FLIP 1212 score = 3556.17
+relavant FLIP 1515 score = 4449.18
+relavant FLIP 1818 score = 4322.02
+relavant FLIP 1919 score = 4376.58
+relavant FLIP 2222 score = 4390.77
+relavant FLIP 2323 score = 4395.51
+relavant FLIP 2424 score = -12497.64
+relavant FLIP 2727 score = -4172.01
+relavant FLIP 2828 score = 4308.75
+relavant FLIP 3030 score = 4323.81
+relavant FLIP 3131 score = 4341.52
+Depth:  6, Node:    3649219, Score: +5498.38500, Move: b5-b4
+=12 b5 b4
+10 move b5 b4
+=10
+16 time_left black 785610
+Time Left(black): 785610
+=16
+11 flip d4 c
+=11
+16 time_left red 836120
+Time Left(red): 836120
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+2000.000000,3310.000000,0.000000,20.280000,2.240000,0.000000,0.000000
+Curstate: 3 5317.900000
+MOVE 1 score = 5871.66
+MOVE 4 score = 5912.41
+MOVE 501 score = 5912.70
+MOVE 506 score = 5227.34
+MOVE 504 score = 5912.87
+MOVE 706 score = 5227.41
+MOVE 804 score = 5912.56
+MOVE 1713 score = 5903.24
+MOVE 1721 score = 6040.06
+MOVE 1716 score = 6075.14
+MOVE 2521 score = 6077.61
+MOVE 2529 score = 6140.63
+relavant FLIP 303 score = 5642.03
+relavant FLIP 909 score = -4035.30
+relavant FLIP 1212 score = 4707.76
+relavant FLIP 1515 score = 5692.77
+relavant FLIP 1818 score = 5399.78
+relavant FLIP 2222 score = 5862.29
+relavant FLIP 2323 score = 5742.18
+relavant FLIP 2424 score = -12944.65
+relavant FLIP 2727 score = -3209.37
+relavant FLIP 2828 score = 5631.76
+relavant FLIP 3030 score = 5630.79
+relavant FLIP 3131 score = 5846.84
+Depth:  6, Node:    2475505, Score: +6807.62083, Move: b4-a4
+=12 b4 a4
+10 move b4 a4
+=10
+16 time_left black 782389
+Time Left(black): 782389
+=16
+11 flip d3 C
+=11
+16 time_left red 835662
+Time Left(red): 835662
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+2500.000000,3570.000000,0.000000,19.300000,2.240000,0.000000,0.000000
+Curstate: 3 6077.410000
+MOVE 1 score = 6145.05
+MOVE 4 score = 6146.26
+MOVE 501 score = 6146.26
+MOVE 506 score = 6146.15
+MOVE 504 score = 6148.10
+MOVE 706 score = 6146.31
+MOVE 804 score = 6146.70
+MOVE 1617 score = 6148.04
+MOVE 1620 score = 5679.48
+MOVE 2521 score = 6075.59
+MOVE 2529 score = 6356.77
+relavant FLIP 303 score = 6158.77
+relavant FLIP 909 score = 6015.05
+relavant FLIP 1212 score = 6177.32
+relavant FLIP 1515 score = 5563.14
+relavant FLIP 1818 score = 6368.97
+relavant FLIP 2222 score = 6329.17
+relavant FLIP 2424 score = -14066.73
+relavant FLIP 2727 score = 6540.78
+relavant FLIP 2828 score = 5820.44
+relavant FLIP 3030 score = 6114.06
+relavant FLIP 3131 score = 5848.88
+Depth:  6, Node:    1358952, Score: +7055.25500, Move: b2-b1
+=12 b2 b1
+10 move b2 b1
+=10
+16 time_left black 780493
+Time Left(black): 780493
+=16
+11 flip c4 G
+=11
+16 time_left red 835427
+Time Left(red): 835427
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,4050.000000,0.000000,17.040000,12.040000,0.000000,0.000000
+Curstate: 3 7046.480000
+MOVE 1 score = 6924.23
+MOVE 4 score = 6921.84
+MOVE 501 score = 6921.84
+MOVE 506 score = 6349.24
+MOVE 504 score = 6923.68
+MOVE 706 score = 6349.30
+MOVE 804 score = 6922.28
+MOVE 1617 score = 6313.69
+MOVE 1620 score = 6707.71
+MOVE 2625 score = 6921.84
+MOVE 2925 score = 6923.64
+relavant FLIP 303 score = 6777.22
+relavant FLIP 909 score = 6660.92
+relavant FLIP 1212 score = 6903.19
+relavant FLIP 1515 score = 6225.12
+relavant FLIP 2222 score = 6283.05
+relavant FLIP 2424 score = 6645.02
+relavant FLIP 2727 score = 7183.23
+relavant FLIP 2828 score = -14775.81
+relavant FLIP 3030 score = -15476.57
+relavant FLIP 3131 score = 6248.94
+Depth:  6, Node:     603876, Score: +7183.22728, Move: d2-d2
+=12 d2 d2
+11 flip d2 n
+=11
+16 time_left black 779597
+Time Left(black): 779597
+=16
+10 move c4 d4
+=10
+16 time_left red 835281
+Time Left(red): 835281
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+2500.000000,3810.000000,0.000000,17.280000,7.160000,0.000000,0.000000
+Curstate: 3 6311.480000
+MOVE 1 score = 5779.80
+MOVE 4 score = 5777.35
+MOVE 501 score = 5777.35
+MOVE 506 score = 5614.24
+MOVE 504 score = 5779.13
+MOVE 706 score = 5779.68
+MOVE 804 score = 5777.66
+MOVE 1617 score = 5403.79
+MOVE 1620 score = 5965.88
+MOVE 2625 score = 5777.35
+MOVE 2723 score = 6436.95
+MOVE 2925 score = 6519.22
+relavant FLIP 303 score = 5931.19
+relavant FLIP 909 score = 5636.50
+relavant FLIP 1212 score = 5720.65
+relavant FLIP 1515 score = 5316.71
+relavant FLIP 2222 score = 6046.25
+relavant FLIP 2424 score = 6217.27
+relavant FLIP 2828 score = -18037.00
+relavant FLIP 3030 score = -18785.09
+relavant FLIP 3131 score = 5200.42
+Depth:  6, Node:     627665, Score: +6519.22000, Move: d2-d3
+=12 d2 d3
+10 move d2 d3
+=10
+16 time_left black 778729
+Time Left(black): 778729
+=16
+11 flip a5 p
+=11
+16 time_left red 835099
+Time Left(red): 835099
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,4480.000000,0.000000,18.540000,12.060000,0.000000,0.000000
+Curstate: 3 7477.210000
+MOVE 1 score = 6520.16
+MOVE 4 score = 6517.71
+MOVE 501 score = 6517.71
+MOVE 506 score = 6519.92
+MOVE 504 score = 6519.49
+MOVE 706 score = 6520.04
+MOVE 804 score = 6518.14
+MOVE 1213 score = 6519.89
+MOVE 1617 score = 6439.64
+MOVE 1620 score = 7957.71
+MOVE 2327 score = 7959.33
+MOVE 2627 score = 6521.34
+MOVE 2625 score = 7957.83
+MOVE 2925 score = 6521.34
+relavant FLIP 303 score = 6871.76
+relavant FLIP 909 score = 18662.06
+relavant FLIP 1515 score = 6099.87
+relavant FLIP 2222 score = 6751.73
+relavant FLIP 2424 score = 6749.46
+relavant FLIP 2828 score = -20334.13
+relavant FLIP 3030 score = -21188.99
+relavant FLIP 3131 score = 6518.81
+Depth:  6, Node:     258921, Score: +18662.06446, Move: b6-b6
+=12 b6 b6
+11 flip b6 R
+=11
+16 time_left black 778384
+Time Left(black): 778384
+=16
+11 flip c3 p
+=11
+16 time_left red 835037
+Time Left(red): 835037
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,4480.000000,0.000000,20.120000,12.540000,0.000000,0.000000
+Curstate: 3 7477.520000
+MOVE 1 score = 7040.72
+MOVE 4 score = 7042.57
+MOVE 501 score = 7343.40
+MOVE 506 score = 7042.07
+MOVE 504 score = 7558.19
+MOVE 706 score = 6520.01
+MOVE 804 score = 7040.95
+MOVE 809 score = 8435.97
+MOVE 1213 score = 7957.49
+MOVE 1617 score = 6439.47
+MOVE 1620 score = 7958.91
+MOVE 2218 score = 7957.19
+MOVE 2221 score = 7956.64
+MOVE 2327 score = 7956.57
+MOVE 2627 score = 7956.45
+MOVE 2625 score = 7954.82
+MOVE 2925 score = 7958.45
+relavant FLIP 303 score = 6951.29
+relavant FLIP 1515 score = 6515.20
+relavant FLIP 2424 score = 6493.43
+relavant FLIP 2828 score = -28947.58
+relavant FLIP 3030 score = -29731.31
+relavant FLIP 3131 score = 6519.14
+Depth:  6, Node:     131562, Score: +8659.79000, Move: a6-b6
+=12 a6 b6
+10 move a6 b6
+=10
+16 time_left black 778123
+Time Left(black): 778123
+=16
+10 move c6 b6
+=10
+16 time_left red 835001
+Time Left(red): 835001
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,5440.000000,0.000000,21.000000,14.280000,0.000000,0.000000
+Curstate: 3 8436.220000
+MOVE 1 score = 7588.80
+MOVE 4 score = 7588.80
+MOVE 501 score = 7588.80
+MOVE 506 score = 7588.55
+MOVE 504 score = 7588.80
+MOVE 706 score = 7139.77
+MOVE 1110 score = 7138.65
+MOVE 1208 score = 7587.85
+MOVE 1213 score = 7138.62
+MOVE 1617 score = 7140.35
+MOVE 1620 score = 8659.79
+MOVE 2218 score = 8659.19
+MOVE 2221 score = 8658.64
+MOVE 2327 score = 8658.44
+MOVE 2627 score = 8658.19
+MOVE 2625 score = 8656.69
+MOVE 2925 score = 8657.74
+relavant FLIP 303 score = 7689.23
+relavant FLIP 1515 score = 22008.54
+relavant FLIP 2424 score = 7441.10
+relavant FLIP 2828 score = -28821.45
+relavant FLIP 3030 score = -29999.07
+relavant FLIP 3131 score = 7587.46
+Depth:  6, Node:      74016, Score: +22008.54100, Move: d5-d5
+=12 d5 d5
+11 flip d5 g
+=11
+16 time_left black 778013
+Time Left(black): 778013
+=16
+10 move d4 d5
+=10
+16 time_left red 834939
+Time Left(red): 834939
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+2500.000000,-850.000000,0.000000,21.500000,19.600000,0.000000,0.000000
+Curstate: 3 1641.150000
+MOVE 1 score = 1789.97
+MOVE 4 score = 338.40
+MOVE 501 score = 338.40
+MOVE 506 score = 338.15
+MOVE 504 score = 338.40
+MOVE 706 score = 346.00
+MOVE 1110 score = 339.95
+MOVE 1208 score = 346.05
+MOVE 1213 score = 746.95
+MOVE 1617 score = 346.55
+MOVE 1620 score = 1886.50
+MOVE 2218 score = 1887.25
+MOVE 2221 score = 1886.45
+MOVE 2319 score = 1886.50
+MOVE 2327 score = 1886.00
+MOVE 2627 score = 1886.00
+MOVE 2625 score = 1884.50
+MOVE 2925 score = 1888.00
+relavant FLIP 303 score = 953.26
+relavant FLIP 2424 score = 419.42
+relavant FLIP 2828 score = -83779.99
+relavant FLIP 3030 score = -85000.72
+relavant FLIP 3131 score = 335.90
+Depth:  6, Node:      33984, Score: +1888.50000, Move: a4-a3
+=12 a4 a3
+10 move a4 a3
+=10
+16 time_left black 777959
+Time Left(black): 777959
+=16
+11 flip d1 K
+=11
+16 time_left red 834921
+Time Left(red): 834921
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,200.000000,0.000000,23.000000,21.550000,0.000000,0.000000
+Curstate: 3 3189.950000
+MOVE 1 score = 1886.90
+MOVE 4 score = 1886.90
+MOVE 501 score = 1886.90
+MOVE 506 score = 1886.65
+MOVE 504 score = 1886.90
+MOVE 706 score = 1886.45
+MOVE 1110 score = 1888.15
+MOVE 1208 score = 1885.95
+MOVE 1213 score = 1888.15
+MOVE 1216 score = 1885.40
+MOVE 2016 score = 1885.95
+MOVE 2021 score = 1886.55
+MOVE 2218 score = 1886.45
+MOVE 2221 score = 1885.45
+MOVE 2319 score = 1886.70
+MOVE 2327 score = 1885.95
+MOVE 2627 score = 1888.20
+MOVE 2625 score = 1884.45
+MOVE 2925 score = 1888.20
+relavant FLIP 303 score = 2097.10
+relavant FLIP 2424 score = 1992.24
+relavant FLIP 2828 score = -49763.56
+relavant FLIP 3030 score = -51864.60
+Depth:  6, Node:       9488, Score: +2097.10000, Move: d8-d8
+=12 d8 d8
+11 flip d8 r
+=11
+16 time_left black 777899
+Time Left(black): 777899
+=16
+11 flip a2 G
+=11
+16 time_left red 834912
+Time Left(red): 834912
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,200.000000,0.000000,23.500000,31.350000,0.000000,0.000000
+Curstate: 3 3180.400000
+MOVE 1 score = 1457.72
+MOVE 4 score = 1457.72
+MOVE 302 score = 1458.72
+MOVE 501 score = 1456.67
+MOVE 506 score = 1457.72
+MOVE 504 score = 1456.67
+MOVE 706 score = 1458.72
+MOVE 1110 score = 1877.35
+MOVE 1208 score = 1883.30
+MOVE 1213 score = 1885.50
+MOVE 1216 score = 1882.75
+MOVE 2016 score = 1883.30
+MOVE 2021 score = 1885.75
+MOVE 2218 score = 1883.80
+MOVE 2221 score = 1885.95
+MOVE 2319 score = 1884.05
+MOVE 2327 score = 1883.30
+MOVE 2627 score = 1885.55
+MOVE 2625 score = 1882.45
+MOVE 2925 score = 1462.87
+relavant FLIP 2828 score = -105825.39
+relavant FLIP 3030 score = -105826.39
+Depth:  6, Node:       2176, Score: +1886.25000, Move: d6-c6
+=12 d6 c6
+10 move d6 c6
+=10
+16 time_left black 777891
+Time Left(black): 777891
+=16
+10 move a2 a3
+=10
+16 time_left red 834829
+Time Left(red): 834829
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+2500.000000,-1020.000000,0.000000,22.800000,36.430000,0.000000,0.000000
+Curstate: 3 1454.970000
+MOVE 1 score = 154.92
+MOVE 4 score = 154.92
+MOVE 302 score = 155.92
+MOVE 501 score = 153.87
+MOVE 506 score = 158.38
+MOVE 504 score = 158.88
+MOVE 711 score = 160.43
+MOVE 706 score = 160.43
+MOVE 1006 score = 158.27
+MOVE 1011 score = 158.02
+MOVE 1014 score = 2755.20
+MOVE 1208 score = 2760.10
+MOVE 1213 score = 2759.85
+MOVE 1216 score = 2759.85
+MOVE 2218 score = 2760.60
+MOVE 2221 score = 2760.85
+MOVE 2319 score = 2760.35
+MOVE 2327 score = 2759.85
+MOVE 2627 score = 2759.85
+MOVE 2625 score = 2757.60
+MOVE 2925 score = 1064.65
+relavant FLIP 2828 score = -107406.96
+relavant FLIP 3030 score = -107408.12
+Depth:  6, Node:       2826, Score: +2761.20000, Move: c6-c5
+=12 c6 c5
+10 move c6 c5
+=10
+16 time_left black 777883
+Time Left(black): 777883
+=16
+10 move d1 d2
+=10
+16 time_left red 834822
+Time Left(red): 834822
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,23.800000,45.000000,0.000000,0.000000
+Curstate: 3 4056.900000
+MOVE 1 score = 2755.85
+MOVE 4 score = 2755.85
+MOVE 302 score = 2756.85
+MOVE 501 score = 2753.40
+MOVE 506 score = 2755.85
+MOVE 504 score = 2753.40
+MOVE 711 score = 2756.60
+MOVE 706 score = 2756.35
+MOVE 1208 score = 2755.85
+MOVE 1213 score = 2755.85
+MOVE 1216 score = 2755.85
+MOVE 1410 score = 2760.35
+MOVE 1418 score = 2760.75
+MOVE 1413 score = 2760.75
+MOVE 2218 score = 2756.85
+MOVE 2221 score = 2760.85
+MOVE 2319 score = 2756.85
+MOVE 2625 score = 2757.85
+MOVE 2925 score = 2761.00
+relavant FLIP 2828 score = -105986.75
+relavant FLIP 3030 score = -105986.75
+Depth:  6, Node:       1896, Score: +2761.25000, Move: c5-c6
+=12 c5 c6
+10 move c5 c6
+=10
+16 time_left black 777834
+Time Left(black): 777834
+=16
+10 move a3 a2
+=10
+16 time_left red 834815
+Time Left(red): 834815
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,23.800000,40.100000,0.000000,0.000000
+Curstate: 3 4061.800000
+MOVE 1 score = 2770.80
+MOVE 4 score = 2770.80
+MOVE 302 score = 2771.80
+MOVE 501 score = 2768.10
+MOVE 506 score = 2770.30
+MOVE 504 score = 2768.10
+MOVE 711 score = 2770.80
+MOVE 706 score = 2771.05
+MOVE 1006 score = 2770.30
+MOVE 1011 score = 2770.05
+MOVE 1014 score = 2770.80
+MOVE 1208 score = 2771.05
+MOVE 1213 score = 2771.30
+MOVE 1216 score = 2771.05
+MOVE 2218 score = 2772.05
+MOVE 2221 score = 2768.80
+MOVE 2319 score = 2771.55
+MOVE 2625 score = 2762.75
+MOVE 2925 score = 2775.90
+relavant FLIP 2828 score = -105981.85
+relavant FLIP 3030 score = -105979.15
+Depth:  6, Node:       2213, Score: +4067.55000, Move: b1-b2
+=12 b1 b2
+10 move b1 b2
+=10
+16 time_left black 777827
+Time Left(black): 777827
+=16
+10 move a2 a3
+=10
+16 time_left red 834733
+Time Left(red): 834733
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,45.000000,0.000000,0.000000
+Curstate: 3 4062.650000
+MOVE 1 score = 2765.90
+MOVE 4 score = 2765.90
+MOVE 302 score = 2766.90
+MOVE 501 score = 2763.45
+MOVE 506 score = 2765.40
+MOVE 504 score = 2763.45
+MOVE 711 score = 2765.90
+MOVE 706 score = 2766.15
+MOVE 1006 score = 2765.40
+MOVE 1011 score = 2765.15
+MOVE 1014 score = 2765.90
+MOVE 1208 score = 2766.15
+MOVE 1213 score = 2766.40
+MOVE 1216 score = 2765.90
+MOVE 2218 score = 2770.40
+MOVE 2221 score = 2764.15
+MOVE 2319 score = 2766.65
+MOVE 2521 score = 2939.55
+MOVE 2529 score = 2761.25
+MOVE 2524 score = 4067.55
+relavant FLIP 2828 score = 2766.29
+relavant FLIP 3030 score = 3417.11
+Depth:  6, Node:       2568, Score: +4070.55000, Move: b2-b3
+=12 b2 b3
+10 move b2 b3
+=10
+16 time_left black 777817
+Time Left(black): 777817
+=16
+10 move a3 a2
+=10
+16 time_left red 834725
+Time Left(red): 834725
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,40.100000,0.000000,0.000000
+Curstate: 3 4067.550000
+MOVE 1 score = 2771.05
+MOVE 4 score = 2771.05
+MOVE 302 score = 2772.05
+MOVE 501 score = 2768.35
+MOVE 506 score = 2770.55
+MOVE 504 score = 2768.35
+MOVE 711 score = 2771.05
+MOVE 706 score = 2771.30
+MOVE 1006 score = 2770.55
+MOVE 1011 score = 2770.30
+MOVE 1014 score = 2771.05
+MOVE 1208 score = 2771.30
+MOVE 1213 score = 2771.55
+MOVE 1216 score = 2771.05
+MOVE 2117 score = 2770.15
+MOVE 2125 score = 2775.90
+MOVE 2120 score = 4062.40
+MOVE 2218 score = 2775.25
+MOVE 2319 score = 2771.95
+MOVE 2625 score = 2772.05
+relavant FLIP 2828 score = 2768.92
+relavant FLIP 3030 score = 3422.26
+Depth:  6, Node:       2238, Score: +4067.55000, Move: b3-b2
+=12 b3 b2
+10 move b3 b2
+=10
+16 time_left black 777767
+Time Left(black): 777767
+=16
+10 move a2 a3
+=10
+16 time_left red 834718
+Time Left(red): 834718
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,45.000000,0.000000,0.000000
+Curstate: 3 4062.650000
+MOVE 1 score = 2765.90
+MOVE 4 score = 2765.90
+MOVE 302 score = 2766.90
+MOVE 501 score = 2763.45
+MOVE 506 score = 2765.40
+MOVE 504 score = 2763.45
+MOVE 711 score = 2765.90
+MOVE 706 score = 2766.15
+MOVE 1006 score = 2765.40
+MOVE 1011 score = 2765.15
+MOVE 1014 score = 2765.90
+MOVE 1208 score = 2766.15
+MOVE 1213 score = 2766.40
+MOVE 1216 score = 2765.90
+MOVE 2218 score = 2770.40
+MOVE 2221 score = 2764.15
+MOVE 2319 score = 2766.65
+MOVE 2521 score = 2939.55
+MOVE 2529 score = 2761.25
+MOVE 2524 score = 4067.55
+relavant FLIP 2828 score = 2766.29
+relavant FLIP 3030 score = 3417.11
+Depth:  6, Node:       2568, Score: +4070.55000, Move: b2-b3
+=12 b2 b3
+10 move b2 b3
+=10
+16 time_left black 777757
+Time Left(black): 777757
+=16
+10 move a3 a2
+=10
+16 time_left red 834639
+Time Left(red): 834639
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,40.100000,0.000000,0.000000
+Curstate: 3 4067.550000
+MOVE 1 score = 2771.05
+MOVE 4 score = 2771.05
+MOVE 302 score = 2772.05
+MOVE 501 score = 2768.35
+MOVE 506 score = 2770.55
+MOVE 504 score = 2768.35
+MOVE 711 score = 2771.05
+MOVE 706 score = 2771.30
+MOVE 1006 score = 2770.55
+MOVE 1011 score = 2770.30
+MOVE 1014 score = 2771.05
+MOVE 1208 score = 2771.30
+MOVE 1213 score = 2771.55
+MOVE 1216 score = 2771.05
+MOVE 2117 score = 2770.15
+MOVE 2125 score = 2775.90
+MOVE 2120 score = 4062.40
+MOVE 2218 score = 2775.25
+MOVE 2319 score = 2771.95
+MOVE 2625 score = 2772.05
+relavant FLIP 2828 score = 2768.92
+relavant FLIP 3030 score = 3422.26
+Depth:  6, Node:       2238, Score: +4067.55000, Move: b3-b2
+=12 b3 b2
+10 move b3 b2
+=10
+16 time_left black 777749
+Time Left(black): 777749
+=16
+10 move a2 a3
+=10
+16 time_left red 834630
+Time Left(red): 834630
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,45.000000,0.000000,0.000000
+Curstate: 3 4062.650000
+MOVE 1 score = 2765.90
+MOVE 4 score = 2765.90
+MOVE 302 score = 2766.90
+MOVE 501 score = 2763.45
+MOVE 506 score = 2765.40
+MOVE 504 score = 2763.45
+MOVE 711 score = 2765.90
+MOVE 706 score = 2766.15
+MOVE 1006 score = 2765.40
+MOVE 1011 score = 2765.15
+MOVE 1014 score = 2765.90
+MOVE 1208 score = 2766.15
+MOVE 1213 score = 2766.40
+MOVE 1216 score = 2765.90
+MOVE 2218 score = 2770.40
+MOVE 2221 score = 2764.15
+MOVE 2319 score = 2766.65
+MOVE 2521 score = 2939.55
+MOVE 2529 score = 2761.25
+MOVE 2524 score = 4067.55
+relavant FLIP 2828 score = 2766.29
+relavant FLIP 3030 score = 3417.11
+Depth:  6, Node:       2568, Score: +4070.55000, Move: b2-b3
+=12 b2 b3
+10 move b2 b3
+=10
+16 time_left black 777698
+Time Left(black): 777698
+=16
+10 move a3 a2
+=10
+16 time_left red 834623
+Time Left(red): 834623
+=16
+12 genmove black
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+3000.000000,1090.000000,0.000000,35.300000,40.100000,0.000000,0.000000
+Curstate: 3 4067.550000
+MOVE 1 score = 2771.05
+MOVE 4 score = 2771.05
+MOVE 302 score = 2772.05
+MOVE 501 score = 2768.35
+MOVE 506 score = 2770.55
+MOVE 504 score = 2768.35
+MOVE 711 score = 2771.05
+MOVE 706 score = 2771.30
+MOVE 1006 score = 2770.55
+MOVE 1011 score = 2770.30
+MOVE 1014 score = 2771.05
+MOVE 1208 score = 2771.30
+MOVE 1213 score = 2771.55
+MOVE 1216 score = 2771.05
+MOVE 2117 score = 2770.15
+MOVE 2125 score = 2775.90
+MOVE 2120 score = 4062.40
+MOVE 2218 score = 2775.25
+MOVE 2319 score = 2771.95
+MOVE 2625 score = 2772.05
+relavant FLIP 2828 score = 2768.92
+relavant FLIP 3030 score = 3422.26
+Depth:  6, Node:       2238, Score: +4067.55000, Move: b3-b2
+=12 b3 b2
+10 move b3 b2
+=10
+16 time_left black 777689
+Time Left(black): 777689
+=16
+5 quit
+
+###
+Account: chan
+Mode: MGTP
+Path: /mnt/HDD/course/1101/darkchess/FINAL/NegaScout/r09946011/exec.final
+Arg: 
+Name: MyAI
+Version: 1.0.0
+###
