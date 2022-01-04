@@ -1,0 +1,5859 @@
+INITIAL
+* 2:33pm Jan 4, 2022
+* chan vs ai
+* 1 2 2 2 2 2 5 1 2 2 2 2 2 5
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* first 1
+* time 900
+* 1. b5(p) b7(k)
+* 2. c5(M) b8(G)
+* 3. c4(r) c8(p)
+* 4. b7-b8 a7(N)
+* 5. a6(P) d7(C)
+* 6. c7(g) a8(n)
+* 7. a8-a7 d7-a7
+* 8. c7-b7 d5(P)
+* 9. b7-a7 a4(p)
+* 10. b4(N) b3(n)
+* 11. b3-b4 c1(p)
+* 12. d6(C) b2(R)
+* 13. a5(p) a2(P)
+* 14. d8(c) d3(m)
+* 15. a5-a6 a1(r)
+* 16. a1-a2 d2(P)
+* 17. a2-b2 c3(K)
+* 18. d3-d2 c3-d3
+* 19. c2(G) d3-d2
+* 20. d8-d5 c5-d5
+* 21. a3(P) d1(m)
+* 22. a4-a3 c2-b2
+* 23. c6(c) d5-c5
+* 24. b4-a4 c5-c6
+* 25. b8-b7 d6-d7
+* 26. a7-a8 d7-d8
+* 27. a8-a7 d8-d7
+* 28. a7-a8 d7-d8
+* 29. a8-a7 d8-d7
+* 30. a7-a8 d7-d8
+* 31. a8-a7 d8-d7
+* PositionRepetitionDraw,3,4 chan Draw 0.500000,0.500000
+* Comment 0 0
+0. 1641278019265
+1. 1641278019265
+2. 1641278031851
+3. 1641278036955
+4. 1641278046509
+5. 1641278046809
+6. 1641278055454
+7. 1641278057010
+8. 1641278065156
+9. 1641278068228
+10. 1641278074649
+11. 1641278081725
+12. 1641278087209
+13. 1641278087544
+14. 1641278092822
+15. 1641278093336
+16. 1641278098033
+17. 1641278098321
+18. 1641278102569
+19. 1641278102774
+20. 1641278105589
+21. 1641278107220
+22. 1641278109027
+23. 1641278109993
+24. 1641278111013
+25. 1641278112793
+26. 1641278113328
+27. 1641278118017
+28. 1641278118382
+29. 1641278118825
+30. 1641278119145
+31. 1641278119822
+32. 1641278119986
+33. 1641278121067
+34. 1641278121179
+35. 1641278122985
+36. 1641278123093
+37. 1641278145227
+38. 1641278145269
+39. 1641278147998
+40. 1641278148037
+41. 1641278162661
+42. 1641278162725
+43. 1641278173894
+44. 1641278173910
+45. 1641278197928
+46. 1641278197935
+47. 1641278233961
+48. 1641278234017
+49. 1641278253322
+50. 1641278253329
+51. 1641278268600
+52. 1641278268614
+53. 1641278287045
+54. 1641278287101
+55. 1641278302357
+56. 1641278302367
+57. 1641278320768
+58. 1641278320776
+59. 1641278336073
+60. 1641278336129
+61. 1641278354521
+62. 1641278354532
+
+# 17 37 67 87 117 137 167 187 217 237 267 287 317 337 367 387 417 437 467 487 517 537 567 587 617 637 667 687 717 737 767 787 817 837 867 887 917 937 967 987 1017 1037 1067 1087 1117 1137 1167 1187 1217 1237 1267 1287 1317 1337 1367 1387 1417 1437 1467 1487 1517 1537 #
+=1 MyAI
+=2 1.0.0
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=7
+=15
+=14
+My result: 
+--------------------------
+NegaScout: 0.000000 (node: 1279348297)
+(13) -> (13)
+< X > -> < X >
+move:b5-b5
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b5 b5
+# call flip(): flip(13,13) = 15
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    p    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(5,5) = 9
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -16383.994013 (node: 7556714)
+(14) -> (14)
+< X > -> < X >
+move:c5-c5
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c5 c5
+# call flip(): flip(14,14) = 3
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(1,1) = 2
+------------Black-------------
+<8>    X    G    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -12968.128730 (node: 270795)
+(18) -> (18)
+< X > -> < X >
+move:c4-c4
+--------------------------
+------------Black-------------
+<8>    X    G    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c4 c4
+# call flip(): flip(18,18) = 12
+------------Black-------------
+<8>    X    G    X    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(2,2) = 15
+------------Black-------------
+<8>    X    G    p    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -8313.351538 (node: 1662346)
+(5) -> (1)
+< k > -> < G >
+move:b7-b8
+--------------------------
+------------Black-------------
+<8>    X    G    p    X 
+<7>    X    k    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b7 b8
+# call move(): move : 5-1 
+------------Black-------------
+<8>    X    k    p    X 
+<7>    X    -    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(4,4) = 5
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -2871.951267 (node: 3399388)
+(8) -> (8)
+< X > -> < X >
+move:a6-a6
+--------------------------
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    X    X 
+<6>    X    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a6 a6
+# call flip(): flip(8,8) = 7
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    X    X 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(7,7) = 6
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    X    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -50426.552787 (node: 6209773)
+(6) -> (6)
+< X > -> < X >
+move:c7-c7
+--------------------------
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    X    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c7 c7
+# call flip(): flip(6,6) = 10
+------------Black-------------
+<8>    X    k    p    X 
+<7>    N    -    g    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(0,0) = 13
+------------Black-------------
+<8>    n    k    p    X 
+<7>    N    -    g    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 1342.460000 (node: 310666)
+(0) -> (4)
+< n > -> < N >
+move:a8-a7
+--------------------------
+------------Black-------------
+<8>    n    k    p    X 
+<7>    N    -    g    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a8 a7
+# call move(): move : 0-4 
+------------Black-------------
+<8>    -    k    p    X 
+<7>    n    -    g    C 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 7-4 
+------------Black-------------
+<8>    -    k    p    X 
+<7>    C    -    g    - 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 1574.970000 (node: 480356)
+(6) -> (5)
+< g > -> < - >
+move:c7-b7
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    C    -    g    - 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c7 b7
+# call move(): move : 6-5 
+------------Black-------------
+<8>    -    k    p    X 
+<7>    C    g    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    X 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(15,15) = 7
+------------Black-------------
+<8>    -    k    p    X 
+<7>    C    g    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 1578.630000 (node: 270870)
+(5) -> (4)
+< g > -> < C >
+move:b7-a7
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    C    g    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b7 a7
+# call move(): move : 5-4 
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    X    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(16,16) = 15
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 13476.631053 (node: 190304)
+(17) -> (17)
+< X > -> < X >
+move:b4-b4
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    X    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b4 b4
+# call flip(): flip(17,17) = 5
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    N    r    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(21,21) = 13
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    N    r    X 
+<3>    X    n    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 2418.663529 (node: 1639544)
+(21) -> (17)
+< n > -> < N >
+move:b3-b4
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    N    r    X 
+<3>    X    n    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b3 b4
+# call move(): move : 21-17 
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(30,30) = 15
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    X    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 16385.037500 (node: 864226)
+(11) -> (11)
+< X > -> < X >
+move:d6-d6
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    X 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    X    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d6 d6
+# call flip(): flip(11,11) = 6
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    X    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(25,25) = 4
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 18463.131071 (node: 1438503)
+(12) -> (12)
+< X > -> < X >
+move:a5-a5
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    X    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a5 a5
+# call flip(): flip(12,12) = 15
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    X    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(24,24) = 7
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 20685.753333 (node: 3629997)
+(3) -> (3)
+< X > -> < X >
+move:d8-d8
+--------------------------
+------------Black-------------
+<8>    -    k    p    X 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d8 d8
+# call flip(): flip(3,3) = 14
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    X 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(23,23) = 11
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 3475.805000 (node: 287813)
+(12) -> (8)
+< p > -> < P >
+move:a5-a6
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    P    X    X    C 
+<5>    p    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a5 a6
+# call move(): move : 12-8 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    P    R    X    X 
+<1>    X    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(28,28) = 12
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    P    R    X    X 
+<1>    r    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 4608.400000 (node: 529868)
+(28) -> (24)
+< r > -> < P >
+move:a1-a2
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    P    R    X    X 
+<1>    r    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a1 a2
+# call move(): move : 28-24 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    r    R    X    X 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(27,27) = 7
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    r    R    X    P 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 7867.410000 (node: 803848)
+(24) -> (25)
+< r > -> < R >
+move:a2-b2
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    r    R    X    P 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a2 b2
+# call move(): move : 24-25 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    X    m 
+<2>    -    r    X    P 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call flip(): flip(22,22) = 1
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    K    m 
+<2>    -    r    X    P 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 7072.040000 (node: 1291925)
+(23) -> (27)
+< m > -> < P >
+move:d3-d2
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    K    m 
+<2>    -    r    X    P 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d3 d2
+# call move(): move : 23-27 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    K    - 
+<2>    -    r    X    m 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 22-23 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    -    K 
+<2>    -    r    X    m 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 22532.215714 (node: 15389123)
+(26) -> (26)
+< X > -> < X >
+move:c2-c2
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    -    K 
+<2>    -    r    X    m 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c2 c2
+# call flip(): flip(26,26) = 2
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    -    K 
+<2>    -    r    G    m 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call move(): move : 23-27 
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 6457.895000 (node: 1946112)
+(3) -> (15)
+< c > -> < P >
+move:d8-d5
+--------------------------
+------------Black-------------
+<8>    -    k    p    c 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    P 
+<4>    p    n    r    X 
+<3>    X    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d8 d5
+# call move(): move : 3-15 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    M    c 
+<4>    p    n    r    X 
+<3>    X    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 14-15 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    p    n    r    X 
+<3>    X    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 23180.085000 (node: 10773665)
+(20) -> (20)
+< X > -> < X >
+move:a3-a3
+--------------------------
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    p    n    r    X 
+<3>    X    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a3 a3
+# call flip(): flip(20,20) = 7
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    p    n    r    X 
+<3>    P    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(31,31) = 11
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    p    n    r    X 
+<3>    P    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 109068.310000 (node: 8524289)
+(16) -> (20)
+< p > -> < P >
+move:a4-a3
+--------------------------
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    p    n    r    X 
+<3>    P    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a4 a3
+# call move(): move : 16-20 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    r    G    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 26-25 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 111369.752500 (node: 17511861)
+(10) -> (10)
+< X > -> < X >
+move:c6-c6
+--------------------------
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    X    C 
+<5>    -    p    -    M 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c6 c6
+# call flip(): flip(10,10) = 14
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    c    C 
+<5>    -    p    -    M 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call move(): move : 15-14 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    c    C 
+<5>    -    p    M    - 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110975.380000 (node: 23298345)
+(17) -> (16)
+< n > -> < - >
+move:b4-a4
+--------------------------
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    c    C 
+<5>    -    p    M    - 
+<4>    -    n    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b4 a4
+# call move(): move : 17-16 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    c    C 
+<5>    -    p    M    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 14-10 
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    M    C 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 111145.020000 (node: 13452443)
+(1) -> (5)
+< k > -> < - >
+move:b8-b7
+--------------------------
+------------Black-------------
+<8>    -    k    p    - 
+<7>    g    -    -    - 
+<6>    p    X    M    C 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b8 b7
+# call move(): move : 1-5 
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    - 
+<6>    p    X    M    C 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 11-7 
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110747.895000 (node: 11064279)
+(4) -> (0)
+< g > -> < - >
+move:a7-a8
+--------------------------
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a7 a8
+# call move(): move : 4-0 
+------------Black-------------
+<8>    g    -    p    - 
+<7>    -    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 7-3 
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110748.155000 (node: 13331335)
+(0) -> (4)
+< g > -> < - >
+move:a8-a7
+--------------------------
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a8 a7
+# call move(): move : 0-4 
+------------Black-------------
+<8>    -    -    p    C 
+<7>    g    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 3-7 
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110747.895000 (node: 11064279)
+(4) -> (0)
+< g > -> < - >
+move:a7-a8
+--------------------------
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a7 a8
+# call move(): move : 4-0 
+------------Black-------------
+<8>    g    -    p    - 
+<7>    -    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 7-3 
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110748.155000 (node: 13331335)
+(0) -> (4)
+< g > -> < - >
+move:a8-a7
+--------------------------
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a8 a7
+# call move(): move : 0-4 
+------------Black-------------
+<8>    -    -    p    C 
+<7>    g    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 3-7 
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110747.895000 (node: 11064279)
+(4) -> (0)
+< g > -> < - >
+move:a7-a8
+--------------------------
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a7 a8
+# call move(): move : 4-0 
+------------Black-------------
+<8>    g    -    p    - 
+<7>    -    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 7-3 
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+My result: 
+--------------------------
+NegaScout: 110748.155000 (node: 13331335)
+(0) -> (4)
+< g > -> < - >
+move:a8-a7
+--------------------------
+------------Black-------------
+<8>    g    -    p    C 
+<7>    -    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=12 a8 a7
+# call move(): move : 0-4 
+------------Black-------------
+<8>    -    -    p    C 
+<7>    g    k    -    - 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+# call move(): move : 3-7 
+------------Black-------------
+<8>    -    -    p    - 
+<7>    g    k    -    C 
+<6>    p    X    M    - 
+<5>    -    p    -    - 
+<4>    n    -    r    X 
+<3>    p    -    -    - 
+<2>    -    G    -    K 
+<1>    -    X    p    m 
+
+      <a>  <b>  <c>  <d> 
+
+=10
+=16
+
+# 17 37 67 87 117 137 167 187 217 237 267 287 317 337 367 387 417 437 467 487 517 537 567 587 617 637 667 687 717 737 767 787 817 837 867 887 917 937 967 987 1017 1037 1067 1087 1117 1137 1167 1187 1217 1237 1267 1287 1317 1337 1367 1387 1417 1437 1467 1487 1517 1537 #
+1 name
+=1 MyAI
+2 version
+=2 1.0.0
+7 reset_board
+=7
+15 time_setting 900000
+=15
+14 ready
+=14
+12 genmove unknown
+I am black, time left 900000.000000
+Assigned 15254.237288 seconds this turn,15254.237288 
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+Depth:  3, Node: 1279348297, Score: +0.00000, Move: b5-b5
+=12 b5 b5
+11 flip b5 p
+=11
+16 time_left black 900000
+Time Left(black): 900000
+=16
+11 flip b7 k
+=11
+16 time_left red 887414
+Time Left(red): 887414
+=16
+12 genmove black
+I am black, time left 840000.000000
+Assigned 14482.758621 seconds this turn,14482.758621 
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+HistoryCount 2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-8000.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+Curstate: 3 -8000.000000
+390,390,390.000000
+--relavant FLIP 101 is 0 score = -117920.02
+--relavant FLIP 101 is 1 score = -7999.00
+--relavant FLIP 101 is 2 score = -7999.00
+--relavant FLIP 101 is 3 score = -7999.00
+--relavant FLIP 101 is 4 score = -7999.00
+--relavant FLIP 101 is 5 score = -7999.00
+--relavant FLIP 101 is 6 score = -117922.00
+--relavant FLIP 101 is 7 score = -8000.00
+--relavant FLIP 101 is 8 score = -8000.00
+--relavant FLIP 101 is 9 score = -8000.00
+--relavant FLIP 101 is 10 score = -8000.00
+--relavant FLIP 101 is 11 score = -8000.00
+--relavant FLIP 101 is 12 score = -8000.00
+depth0 relavant FLIP 101 score = -29983.74
+--relavant FLIP 404 is 0 score = -117920.02
+--relavant FLIP 404 is 1 score = -7999.00
+--relavant FLIP 404 is 2 score = -7999.00
+--relavant FLIP 404 is 3 score = -7999.00
+--relavant FLIP 404 is 4 score = -7999.00
+--relavant FLIP 404 is 5 score = -7999.00
+--relavant FLIP 404 is 6 score = -117922.00
+--relavant FLIP 404 is 7 score = -8000.00
+--relavant FLIP 404 is 8 score = -8000.00
+--relavant FLIP 404 is 9 score = -8000.00
+--relavant FLIP 404 is 10 score = -8000.00
+--relavant FLIP 404 is 11 score = -8000.00
+--relavant FLIP 404 is 12 score = -8000.00
+depth0 relavant FLIP 404 score = -29983.74
+--relavant FLIP 606 is 0 score = -117920.02
+--relavant FLIP 606 is 1 score = -7999.00
+--relavant FLIP 606 is 2 score = -7999.00
+--relavant FLIP 606 is 3 score = -7999.00
+--relavant FLIP 606 is 4 score = -7999.00
+--relavant FLIP 606 is 5 score = -7999.00
+--relavant FLIP 606 is 6 score = -117922.00
+--relavant FLIP 606 is 7 score = -8000.00
+--relavant FLIP 606 is 8 score = -8000.00
+--relavant FLIP 606 is 9 score = -8000.00
+--relavant FLIP 606 is 10 score = -8000.00
+--relavant FLIP 606 is 11 score = -8000.00
+--relavant FLIP 606 is 12 score = -8000.00
+depth0 relavant FLIP 606 score = -29983.74
+--relavant FLIP 707 is 0 score = -8000.00
+--relavant FLIP 707 is 1 score = -117920.02
+--relavant FLIP 707 is 2 score = -8000.00
+--relavant FLIP 707 is 3 score = -8000.00
+--relavant FLIP 707 is 4 score = -8000.00
+--relavant FLIP 707 is 5 score = -8000.00
+--relavant FLIP 707 is 6 score = -8000.00
+--relavant FLIP 707 is 7 score = -8000.00
+--relavant FLIP 707 is 8 score = -8000.00
+--relavant FLIP 707 is 9 score = -8000.00
+--relavant FLIP 707 is 10 score = -8000.00
+--relavant FLIP 707 is 11 score = -8000.00
+--relavant FLIP 707 is 12 score = -8000.00
+depth0 relavant FLIP 707 score = -15328.00
+--relavant FLIP 909 is 0 score = -118240.04
+--relavant FLIP 909 is 1 score = -7999.00
+--relavant FLIP 909 is 2 score = -8318.00
+--relavant FLIP 909 is 3 score = -8318.00
+--relavant FLIP 909 is 4 score = -8318.00
+--relavant FLIP 909 is 5 score = -8318.00
+--relavant FLIP 909 is 6 score = -117919.98
+--relavant FLIP 909 is 7 score = -8000.00
+--relavant FLIP 909 is 8 score = -8000.00
+--relavant FLIP 909 is 9 score = -8000.00
+--relavant FLIP 909 is 10 score = -8000.00
+--relavant FLIP 909 is 11 score = -8000.00
+--relavant FLIP 909 is 12 score = -8000.00
+depth0 relavant FLIP 909 score = -30122.07
+--relavant FLIP 1212 is 0 score = -8320.02
+--relavant FLIP 1212 is 1 score = -8000.00
+--relavant FLIP 1212 is 2 score = -8320.05
+--relavant FLIP 1212 is 3 score = -8320.24
+--relavant FLIP 1212 is 4 score = -8321.10
+--relavant FLIP 1212 is 5 score = -8324.90
+--relavant FLIP 1212 is 6 score = -7999.99
+--relavant FLIP 1212 is 7 score = -8000.00
+--relavant FLIP 1212 is 8 score = -8000.00
+--relavant FLIP 1212 is 9 score = -8000.00
+--relavant FLIP 1212 is 10 score = -8000.00
+--relavant FLIP 1212 is 11 score = -8000.00
+--relavant FLIP 1212 is 12 score = -8000.00
+depth0 relavant FLIP 1212 score = -8139.09
+--relavant FLIP 1414 is 0 score = -8320.02
+--relavant FLIP 1414 is 1 score = -8000.00
+--relavant FLIP 1414 is 2 score = -8320.05
+--relavant FLIP 1414 is 3 score = -8320.24
+--relavant FLIP 1414 is 4 score = -8321.10
+--relavant FLIP 1414 is 5 score = -8324.90
+--relavant FLIP 1414 is 6 score = -7999.99
+--relavant FLIP 1414 is 7 score = -8000.00
+--relavant FLIP 1414 is 8 score = -8000.00
+--relavant FLIP 1414 is 9 score = -8000.00
+--relavant FLIP 1414 is 10 score = -8000.00
+--relavant FLIP 1414 is 11 score = -8000.00
+--relavant FLIP 1414 is 12 score = -8000.00
+depth0 relavant FLIP 1414 score = -8139.09
+--relavant FLIP 1515 is 0 score = -8000.00
+--relavant FLIP 1515 is 1 score = -8320.02
+--relavant FLIP 1515 is 2 score = -8000.00
+--relavant FLIP 1515 is 3 score = -8000.00
+--relavant FLIP 1515 is 4 score = -8000.00
+--relavant FLIP 1515 is 5 score = -8000.00
+--relavant FLIP 1515 is 6 score = -8000.00
+--relavant FLIP 1515 is 7 score = -8000.00
+--relavant FLIP 1515 is 8 score = -8000.00
+--relavant FLIP 1515 is 9 score = -8000.00
+--relavant FLIP 1515 is 10 score = -8000.00
+--relavant FLIP 1515 is 11 score = -8000.00
+--relavant FLIP 1515 is 12 score = -8000.00
+depth0 relavant FLIP 1515 score = -8021.33
+--relavant FLIP 1717 is 0 score = -8320.02
+--relavant FLIP 1717 is 1 score = -8000.00
+--relavant FLIP 1717 is 2 score = -8320.05
+--relavant FLIP 1717 is 3 score = -8320.24
+--relavant FLIP 1717 is 4 score = -8321.10
+--relavant FLIP 1717 is 5 score = -8324.90
+--relavant FLIP 1717 is 6 score = -7999.99
+--relavant FLIP 1717 is 7 score = -8000.00
+--relavant FLIP 1717 is 8 score = -8000.00
+--relavant FLIP 1717 is 9 score = -8000.00
+--relavant FLIP 1717 is 10 score = -8000.00
+--relavant FLIP 1717 is 11 score = -8000.00
+--relavant FLIP 1717 is 12 score = -8000.00
+depth0 relavant FLIP 1717 score = -8139.09
+--relavant FLIP 2121 is 0 score = -8000.00
+--relavant FLIP 2121 is 1 score = -8320.02
+--relavant FLIP 2121 is 2 score = -8000.00
+--relavant FLIP 2121 is 3 score = -8000.00
+--relavant FLIP 2121 is 4 score = -8000.00
+--relavant FLIP 2121 is 5 score = -8000.00
+--relavant FLIP 2121 is 6 score = -8000.00
+--relavant FLIP 2121 is 7 score = -8000.00
+--relavant FLIP 2121 is 8 score = -8000.00
+--relavant FLIP 2121 is 9 score = -8000.00
+--relavant FLIP 2121 is 10 score = -8000.00
+--relavant FLIP 2121 is 11 score = -8000.00
+--relavant FLIP 2121 is 12 score = -8000.00
+depth0 relavant FLIP 2121 score = -8021.33
+--irrelavant FLIP 2929 is 0 score = -8000.00
+--irrelavant FLIP 2929 is 1 score = -8000.00
+--irrelavant FLIP 2929 is 2 score = -8000.00
+--irrelavant FLIP 2929 is 3 score = -8000.00
+--irrelavant FLIP 2929 is 4 score = -8000.00
+--irrelavant FLIP 2929 is 5 score = -8000.00
+--irrelavant FLIP 2929 is 6 score = -8000.00
+--irrelavant FLIP 2929 is 7 score = -8000.00
+--irrelavant FLIP 2929 is 8 score = -8000.00
+--irrelavant FLIP 2929 is 9 score = -8000.00
+--irrelavant FLIP 2929 is 10 score = -8000.00
+--irrelavant FLIP 2929 is 11 score = -8000.00
+--irrelavant FLIP 2929 is 12 score = -8000.00
+irrelavant FLIP 2929 score = -8000.00
+Depth:  1, Time: 0, Node:        144, Score: -8000.00000, Best Move: 2929,
+Projected Depth  2 Time: 0.000000
+--relavant FLIP 101 is 0 score = -117920.02
+--relavant FLIP 101 is 1 score = -30318.25
+--relavant FLIP 101 is 2 score = -30275.84
+--relavant FLIP 101 is 3 score = -29924.46
+--relavant FLIP 101 is 4 score = -28329.29
+--relavant FLIP 101 is 5 score = -20936.18
+--relavant FLIP 101 is 6 score = -117922.00
+--relavant FLIP 101 is 7 score = -8000.00
+--relavant FLIP 101 is 8 score = -8000.50
+--relavant FLIP 101 is 9 score = -8000.00
+--relavant FLIP 101 is 10 score = -8000.00
+--relavant FLIP 101 is 11 score = -8000.00
+--relavant FLIP 101 is 12 score = -8000.00
+depth0 relavant FLIP 101 score = -36636.37
+--relavant FLIP 404 is 0 score = -117920.02
+--relavant FLIP 404 is 1 score = -30318.25
+--relavant FLIP 404 is 2 score = -30275.84
+--relavant FLIP 404 is 3 score = -29924.46
+--relavant FLIP 404 is 4 score = -28329.29
+--relavant FLIP 404 is 5 score = -20936.18
+--relavant FLIP 404 is 6 score = -117922.00
+--relavant FLIP 404 is 7 score = -8000.00
+--relavant FLIP 404 is 8 score = -8000.50
+--relavant FLIP 404 is 9 score = -8000.00
+--relavant FLIP 404 is 10 score = -8000.00
+--relavant FLIP 404 is 11 score = -8000.00
+--relavant FLIP 404 is 12 score = -8000.00
+depth0 relavant FLIP 404 score = -36636.37
+--relavant FLIP 606 is 0 score = -117920.02
+--relavant FLIP 606 is 1 score = -30318.25
+--relavant FLIP 606 is 2 score = -30275.84
+--relavant FLIP 606 is 3 score = -29924.46
+--relavant FLIP 606 is 4 score = -28329.29
+--relavant FLIP 606 is 5 score = -20936.18
+--relavant FLIP 606 is 6 score = -117922.00
+--relavant FLIP 606 is 7 score = -8000.00
+--relavant FLIP 606 is 8 score = -8000.50
+--relavant FLIP 606 is 9 score = -8000.00
+--relavant FLIP 606 is 10 score = -8000.00
+--relavant FLIP 606 is 11 score = -8000.00
+--relavant FLIP 606 is 12 score = -8000.00
+depth0 relavant FLIP 606 score = -36636.37
+--relavant FLIP 707 is 0 score = -45499.36
+--relavant FLIP 707 is 1 score = -117920.02
+--relavant FLIP 707 is 2 score = -8000.00
+--relavant FLIP 707 is 3 score = -8000.00
+--relavant FLIP 707 is 4 score = -8000.00
+--relavant FLIP 707 is 5 score = -8000.00
+--relavant FLIP 707 is 6 score = -28384.00
+--relavant FLIP 707 is 7 score = -8000.00
+--relavant FLIP 707 is 8 score = -8000.50
+--relavant FLIP 707 is 9 score = -8000.00
+--relavant FLIP 707 is 10 score = -8000.00
+--relavant FLIP 707 is 11 score = -8000.00
+--relavant FLIP 707 is 12 score = -8000.00
+depth0 relavant FLIP 707 score = -22257.40
+--relavant FLIP 909 is 0 score = -118240.04
+--relavant FLIP 909 is 1 score = -27607.04
+--relavant FLIP 909 is 2 score = -27653.94
+--relavant FLIP 909 is 3 score = -27299.46
+--relavant FLIP 909 is 4 score = -25742.90
+--relavant FLIP 909 is 5 score = -12253.25
+--relavant FLIP 909 is 6 score = -117919.98
+--relavant FLIP 909 is 7 score = -8000.00
+--relavant FLIP 909 is 8 score = -8000.50
+--relavant FLIP 909 is 9 score = -8000.00
+--relavant FLIP 909 is 10 score = -8000.00
+--relavant FLIP 909 is 11 score = -8000.00
+--relavant FLIP 909 is 12 score = -8000.00
+depth0 relavant FLIP 909 score = -35407.81
+--relavant FLIP 1212 is 0 score = -17858.83
+--relavant FLIP 1212 is 1 score = -42133.16
+--relavant FLIP 1212 is 2 score = -8320.05
+--relavant FLIP 1212 is 3 score = -8320.24
+--relavant FLIP 1212 is 4 score = -8321.10
+--relavant FLIP 1212 is 5 score = -8324.90
+--relavant FLIP 1212 is 6 score = 75559.69
+--relavant FLIP 1212 is 7 score = -8000.00
+--relavant FLIP 1212 is 8 score = -8000.50
+--relavant FLIP 1212 is 9 score = -8000.00
+--relavant FLIP 1212 is 10 score = -8000.00
+--relavant FLIP 1212 is 11 score = -8000.00
+--relavant FLIP 1212 is 12 score = -8000.00
+depth0 relavant FLIP 1212 score = -9219.15
+--relavant FLIP 1414 is 0 score = -17858.83
+--relavant FLIP 1414 is 1 score = -42133.16
+--relavant FLIP 1414 is 2 score = -8320.05
+--relavant FLIP 1414 is 3 score = -8320.24
+--relavant FLIP 1414 is 4 score = -8321.10
+--relavant FLIP 1414 is 5 score = -8324.90
+--relavant FLIP 1414 is 6 score = 75559.69
+--relavant FLIP 1414 is 7 score = -8000.00
+--relavant FLIP 1414 is 8 score = -8000.50
+--relavant FLIP 1414 is 9 score = -8000.00
+--relavant FLIP 1414 is 10 score = -8000.00
+--relavant FLIP 1414 is 11 score = -8000.00
+--relavant FLIP 1414 is 12 score = -8000.00
+depth0 relavant FLIP 1414 score = -9219.15
+--relavant FLIP 1515 is 0 score = -8000.00
+--relavant FLIP 1515 is 1 score = -42169.09
+--relavant FLIP 1515 is 2 score = -8000.00
+--relavant FLIP 1515 is 3 score = -8000.00
+--relavant FLIP 1515 is 4 score = -8000.00
+--relavant FLIP 1515 is 5 score = -8000.00
+--relavant FLIP 1515 is 6 score = -8000.00
+--relavant FLIP 1515 is 7 score = -8000.00
+--relavant FLIP 1515 is 8 score = -8000.50
+--relavant FLIP 1515 is 9 score = -8000.00
+--relavant FLIP 1515 is 10 score = -8000.00
+--relavant FLIP 1515 is 11 score = -8000.00
+--relavant FLIP 1515 is 12 score = -8000.00
+depth0 relavant FLIP 1515 score = -10277.97
+--relavant FLIP 1717 is 0 score = -17816.14
+--relavant FLIP 1717 is 1 score = -60957.98
+--relavant FLIP 1717 is 2 score = -8320.05
+--relavant FLIP 1717 is 3 score = -8320.24
+--relavant FLIP 1717 is 4 score = -8321.10
+--relavant FLIP 1717 is 5 score = -8324.90
+--relavant FLIP 1717 is 6 score = 83657.55
+--relavant FLIP 1717 is 7 score = -8000.00
+--relavant FLIP 1717 is 8 score = -8000.50
+--relavant FLIP 1717 is 9 score = -8000.00
+--relavant FLIP 1717 is 10 score = -8000.00
+--relavant FLIP 1717 is 11 score = -8000.00
+--relavant FLIP 1717 is 12 score = -8000.00
+depth0 relavant FLIP 1717 score = -10197.09
+--relavant FLIP 2121 is 0 score = -8000.00
+--relavant FLIP 2121 is 1 score = -42169.09
+--relavant FLIP 2121 is 2 score = -8000.00
+--relavant FLIP 2121 is 3 score = -8000.00
+--relavant FLIP 2121 is 4 score = -8000.00
+--relavant FLIP 2121 is 5 score = -8000.00
+--relavant FLIP 2121 is 6 score = -8000.00
+--relavant FLIP 2121 is 7 score = -8000.00
+--relavant FLIP 2121 is 8 score = -8000.50
+--relavant FLIP 2121 is 9 score = -8000.00
+--relavant FLIP 2121 is 10 score = -8000.00
+--relavant FLIP 2121 is 11 score = -8000.00
+--relavant FLIP 2121 is 12 score = -8000.00
+depth0 relavant FLIP 2121 score = -10277.97
+--irrelavant FLIP 1111 is 0 score = -8000.00
+--irrelavant FLIP 1111 is 1 score = -36564.65
+--irrelavant FLIP 1111 is 2 score = -8000.00
+--irrelavant FLIP 1111 is 3 score = -8000.00
+--irrelavant FLIP 1111 is 4 score = -8000.00
+--irrelavant FLIP 1111 is 5 score = -8000.00
+--irrelavant FLIP 1111 is 6 score = -8000.00
+--irrelavant FLIP 1111 is 7 score = -8000.00
+--irrelavant FLIP 1111 is 8 score = -8000.50
+--irrelavant FLIP 1111 is 9 score = -8000.00
+--irrelavant FLIP 1111 is 10 score = -8000.00
+--irrelavant FLIP 1111 is 11 score = -8000.00
+--irrelavant FLIP 1111 is 12 score = -8000.00
+irrelavant FLIP 1111 score = -9904.34
+Depth:  2, Time: 15, Node:      27043, Score: -9219.14613, Best Move: 1212,
+Projected Depth  3 Time: 5850.000000
+--relavant FLIP 101 is 0 score = -115452.72
+--relavant FLIP 101 is 1 score = -7496.92
+--relavant FLIP 101 is 2 score = -7531.44
+--relavant FLIP 101 is 3 score = -7288.02
+--relavant FLIP 101 is 4 score = -6214.13
+--relavant FLIP 101 is 5 score = -227.37
+--relavant FLIP 101 is 6 score = -117922.00
+--relavant FLIP 101 is 7 score = -19572.17
+--relavant FLIP 101 is 8 score = -17166.30
+--relavant FLIP 101 is 9 score = -17414.28
+--relavant FLIP 101 is 10 score = -17558.52
+--relavant FLIP 101 is 11 score = -17782.44
+--relavant FLIP 101 is 12 score = -18475.92
+depth0 relavant FLIP 101 score = -33592.83
+--relavant FLIP 404 is 0 score = -115449.27
+--relavant FLIP 404 is 1 score = -11198.79
+--relavant FLIP 404 is 2 score = -14167.19
+--relavant FLIP 404 is 3 score = -13875.73
+--relavant FLIP 404 is 4 score = -12588.79
+--relavant FLIP 404 is 5 score = -2586.96
+--relavant FLIP 404 is 6 score = -112720.38
+--relavant FLIP 404 is 7 score = -19568.27
+--relavant FLIP 404 is 8 score = -17166.54
+--relavant FLIP 404 is 9 score = -17469.00
+--relavant FLIP 404 is 10 score = -17634.42
+--relavant FLIP 404 is 11 score = -17975.35
+--relavant FLIP 404 is 12 score = -18976.66
+depth0 relavant FLIP 404 score = -35183.96
+--relavant FLIP 606 is 0 score = -115449.27
+--relavant FLIP 606 is 1 score = -7479.00
+--relavant FLIP 606 is 2 score = -4898.91
+--relavant FLIP 606 is 3 score = -7139.00
+--relavant FLIP 606 is 4 score = -5759.00
+--relavant FLIP 606 is 5 score = 641.00
+--relavant FLIP 606 is 6 score = -112864.91
+--relavant FLIP 606 is 7 score = -19568.27
+--relavant FLIP 606 is 8 score = -17166.54
+--relavant FLIP 606 is 9 score = -17469.00
+--relavant FLIP 606 is 10 score = -17634.42
+--relavant FLIP 606 is 11 score = -17975.35
+--relavant FLIP 606 is 12 score = -18976.66
+depth0 relavant FLIP 606 score = -33203.27
+--relavant FLIP 707 is 0 score = -23528.13
+--relavant FLIP 707 is 1 score = -118226.84
+--relavant FLIP 707 is 2 score = -19847.97
+--relavant FLIP 707 is 3 score = -19862.80
+--relavant FLIP 707 is 4 score = -19927.96
+--relavant FLIP 707 is 5 score = -17833.96
+--relavant FLIP 707 is 6 score = -9533.99
+--relavant FLIP 707 is 7 score = -19850.44
+--relavant FLIP 707 is 8 score = -19767.85
+--relavant FLIP 707 is 9 score = -19999.74
+--relavant FLIP 707 is 10 score = -19994.75
+--relavant FLIP 707 is 11 score = -19981.82
+--relavant FLIP 707 is 12 score = -19954.26
+depth0 relavant FLIP 707 score = -26579.08
+--relavant FLIP 909 is 0 score = -115308.24
+--relavant FLIP 909 is 1 score = -7479.00
+--relavant FLIP 909 is 2 score = -17869.98
+--relavant FLIP 909 is 3 score = -17706.84
+--relavant FLIP 909 is 4 score = -16913.85
+--relavant FLIP 909 is 5 score = -5604.72
+--relavant FLIP 909 is 6 score = -42499.50
+--relavant FLIP 909 is 7 score = -19624.25
+--relavant FLIP 909 is 8 score = -17166.30
+--relavant FLIP 909 is 9 score = -17457.93
+--relavant FLIP 909 is 10 score = -17611.19
+--relavant FLIP 909 is 11 score = -17896.76
+--relavant FLIP 909 is 12 score = -18735.16
+depth0 relavant FLIP 909 score = -33547.37
+--relavant FLIP 1212 is 0 score = -17222.08
+--relavant FLIP 1212 is 1 score = -26024.63
+--relavant FLIP 1212 is 2 score = -20845.28
+--relavant FLIP 1212 is 3 score = -20831.63
+--relavant FLIP 1212 is 4 score = -20795.55
+--relavant FLIP 1212 is 5 score = -20144.26
+--relavant FLIP 1212 is 6 score = 79070.69
+--relavant FLIP 1212 is 7 score = -19858.32
+--relavant FLIP 1212 is 8 score = -18342.37
+--relavant FLIP 1212 is 9 score = -18792.14
+--relavant FLIP 1212 is 10 score = -18854.41
+--relavant FLIP 1212 is 11 score = -18892.80
+--relavant FLIP 1212 is 12 score = -19128.67
+depth0 relavant FLIP 1212 score = -16392.55
+--relavant FLIP 1414 is 0 score = -17222.08
+--relavant FLIP 1414 is 1 score = -25928.40
+--relavant FLIP 1414 is 2 score = -20845.28
+--relavant FLIP 1414 is 3 score = -20831.63
+--relavant FLIP 1414 is 4 score = -20795.55
+--relavant FLIP 1414 is 5 score = -20144.26
+--relavant FLIP 1414 is 6 score = 79070.05
+--relavant FLIP 1414 is 7 score = -19858.32
+--relavant FLIP 1414 is 8 score = -18342.37
+--relavant FLIP 1414 is 9 score = -18777.07
+--relavant FLIP 1414 is 10 score = -18842.00
+--relavant FLIP 1414 is 11 score = -18889.84
+--relavant FLIP 1414 is 12 score = -19126.70
+depth0 relavant FLIP 1414 score = -16383.99
+--relavant FLIP 1515 is 0 score = -16126.70
+--relavant FLIP 1515 is 1 score = -118226.07
+--relavant FLIP 1515 is 2 score = -19847.97
+--relavant FLIP 1515 is 3 score = -19850.08
+--relavant FLIP 1515 is 4 score = -19863.88
+--relavant FLIP 1515 is 5 score = -20078.13
+--relavant FLIP 1515 is 6 score = 8424.00
+--relavant FLIP 1515 is 7 score = -19850.44
+--relavant FLIP 1515 is 8 score = -18789.94
+--relavant FLIP 1515 is 9 score = -18806.81
+--relavant FLIP 1515 is 10 score = -18817.85
+--relavant FLIP 1515 is 11 score = -18866.05
+--relavant FLIP 1515 is 12 score = -19177.04
+depth0 relavant FLIP 1515 score = -24541.96
+--relavant FLIP 1717 is 0 score = -17190.76
+--relavant FLIP 1717 is 1 score = -48271.28
+--relavant FLIP 1717 is 2 score = -20847.01
+--relavant FLIP 1717 is 3 score = -20839.64
+--relavant FLIP 1717 is 4 score = -20816.75
+--relavant FLIP 1717 is 5 score = -20165.95
+--relavant FLIP 1717 is 6 score = 83657.55
+--relavant FLIP 1717 is 7 score = -19858.32
+--relavant FLIP 1717 is 8 score = -18342.37
+--relavant FLIP 1717 is 9 score = -18576.81
+--relavant FLIP 1717 is 10 score = -18623.45
+--relavant FLIP 1717 is 11 score = -18739.81
+--relavant FLIP 1717 is 12 score = -19032.80
+depth0 relavant FLIP 1717 score = -17674.71
+--relavant FLIP 2121 is 0 score = -16126.70
+--relavant FLIP 2121 is 1 score = -118226.07
+--relavant FLIP 2121 is 2 score = -19847.97
+--relavant FLIP 2121 is 3 score = -19850.08
+--relavant FLIP 2121 is 4 score = -19863.88
+--relavant FLIP 2121 is 5 score = -20078.13
+--relavant FLIP 2121 is 6 score = 8424.00
+--relavant FLIP 2121 is 7 score = -19850.44
+--relavant FLIP 2121 is 8 score = -18569.28
+--relavant FLIP 2121 is 9 score = -18769.64
+--relavant FLIP 2121 is 10 score = -18781.45
+--relavant FLIP 2121 is 11 score = -18833.07
+--relavant FLIP 2121 is 12 score = -19159.87
+depth0 relavant FLIP 2121 score = -24519.01
+--irrelavant FLIP 1010 is 0 score = -23528.13
+--irrelavant FLIP 1010 is 1 score = -20071.25
+--irrelavant FLIP 1010 is 2 score = -19847.97
+--irrelavant FLIP 1010 is 3 score = -19850.08
+--irrelavant FLIP 1010 is 4 score = -19863.88
+--irrelavant FLIP 1010 is 5 score = -17611.88
+--irrelavant FLIP 1010 is 6 score = 11893.91
+--irrelavant FLIP 1010 is 7 score = -19850.44
+--irrelavant FLIP 1010 is 8 score = -18589.40
+--irrelavant FLIP 1010 is 9 score = -18769.64
+--irrelavant FLIP 1010 is 10 score = -18781.45
+--irrelavant FLIP 1010 is 11 score = -18807.16
+--irrelavant FLIP 1010 is 12 score = -19159.87
+irrelavant FLIP 1010 score = -18928.46
+Depth:  3, Time: 5101, Node:    7556714, Score: -16383.99401, Best Move: 1414,
+Projected Depth  4 Time: 1989390.000000
+Depth:  3, Node:    7556714, Score: -16383.99401, Move: c5-c5
+=12 c5 c5
+11 flip c5 M
+=11
+16 time_left black 894896
+Time Left(black): 894896
+=16
+11 flip b8 G
+=11
+16 time_left red 877860
+Time Left(red): 877860
+=16
+12 genmove black
+I am black, time left 834896.000000
+Assigned 14647.298246 seconds this turn,14647.298246 
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+HistoryCount 4
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-8000.000000,0.000000,0.000000,2.000000,1.100000,0.000000,0.000000
+Curstate: 3 -8000.100000
+365,365,365.000000
+depth 0 MOVE 501 score = 319.90
+move 501 returns value 319.900000 > -8000.100000 
+Depth:  1, Time: 0, Node:          1, Score: +319.90000, Best Move: 501,
+Projected Depth  2 Time: 0.000000
+depth 0 MOVE 501 score = -13934.55
+--relavant FLIP 0 is 0 score = -103972.44
+--relavant FLIP 0 is 1 score = -14843.89
+--relavant FLIP 0 is 2 score = -14379.12
+--relavant FLIP 0 is 3 score = -14073.56
+--relavant FLIP 0 is 4 score = -12623.93
+--relavant FLIP 0 is 5 score = 100970.17
+--relavant FLIP 0 is 6 score = -103977.00
+--relavant FLIP 0 is 7 score = -7405.45
+--relavant FLIP 0 is 8 score = -14901.19
+--relavant FLIP 0 is 9 score = -14716.26
+--relavant FLIP 0 is 10 score = -14754.00
+--relavant FLIP 0 is 11 score = -14932.83
+--relavant FLIP 0 is 12 score = -7820.40
+depth0 relavant FLIP 0 score = -28069.90
+--relavant FLIP 202 is 0 score = -103972.44
+--relavant FLIP 202 is 1 score = -14843.89
+--relavant FLIP 202 is 2 score = -14379.12
+--relavant FLIP 202 is 3 score = -14073.56
+--relavant FLIP 202 is 4 score = -12623.93
+--relavant FLIP 202 is 5 score = 117028.75
+--relavant FLIP 202 is 6 score = -103977.00
+--relavant FLIP 202 is 7 score = -7405.45
+--relavant FLIP 202 is 8 score = -13388.36
+--relavant FLIP 202 is 9 score = -14716.26
+--relavant FLIP 202 is 10 score = -14754.00
+--relavant FLIP 202 is 11 score = -14932.83
+--relavant FLIP 202 is 12 score = -7820.40
+depth0 relavant FLIP 202 score = -27388.32
+--relavant FLIP 303 is 0 score = -11068.67
+--relavant FLIP 303 is 1 score = -103972.42
+--relavant FLIP 303 is 2 score = -14694.83
+--relavant FLIP 303 is 3 score = -14678.16
+--relavant FLIP 303 is 4 score = -14601.87
+--relavant FLIP 303 is 5 score = -10510.98
+--relavant FLIP 303 is 6 score = -18361.10
+--relavant FLIP 303 is 7 score = -14717.39
+--relavant FLIP 303 is 8 score = -7382.22
+--relavant FLIP 303 is 9 score = -14717.39
+--relavant FLIP 303 is 10 score = -14717.39
+--relavant FLIP 303 is 11 score = -14717.39
+--relavant FLIP 303 is 12 score = -14717.44
+depth0 relavant FLIP 303 score = -19888.62
+--relavant FLIP 404 is 0 score = -117922.42
+--relavant FLIP 404 is 1 score = -14457.63
+--relavant FLIP 404 is 2 score = -14631.46
+--relavant FLIP 404 is 3 score = -14550.67
+--relavant FLIP 404 is 4 score = -14169.30
+--relavant FLIP 404 is 5 score = 47458.89
+--relavant FLIP 404 is 6 score = -117924.40
+--relavant FLIP 404 is 7 score = -7534.97
+--relavant FLIP 404 is 8 score = -22739.91
+--relavant FLIP 404 is 9 score = -14729.19
+--relavant FLIP 404 is 10 score = -14747.48
+--relavant FLIP 404 is 11 score = -14861.14
+--relavant FLIP 404 is 12 score = -15137.32
+depth0 relavant FLIP 404 score = -34146.30
+--relavant FLIP 606 is 0 score = -117922.42
+--relavant FLIP 606 is 1 score = -14457.63
+--relavant FLIP 606 is 2 score = -14631.46
+--relavant FLIP 606 is 3 score = -14550.67
+--relavant FLIP 606 is 4 score = -14169.30
+--relavant FLIP 606 is 5 score = 47458.89
+--relavant FLIP 606 is 6 score = -117924.40
+--relavant FLIP 606 is 7 score = -7534.97
+--relavant FLIP 606 is 8 score = 2760.54
+--relavant FLIP 606 is 9 score = -14729.19
+--relavant FLIP 606 is 10 score = -14747.48
+--relavant FLIP 606 is 11 score = -14861.14
+--relavant FLIP 606 is 12 score = -15137.32
+depth0 relavant FLIP 606 score = -32324.84
+--relavant FLIP 707 is 0 score = -10854.71
+--relavant FLIP 707 is 1 score = -117922.42
+--relavant FLIP 707 is 2 score = -14740.01
+--relavant FLIP 707 is 3 score = -14756.68
+--relavant FLIP 707 is 4 score = -14832.98
+--relavant FLIP 707 is 5 score = -22566.31
+--relavant FLIP 707 is 6 score = -10866.41
+--relavant FLIP 707 is 7 score = -14717.39
+--relavant FLIP 707 is 8 score = -14717.39
+--relavant FLIP 707 is 9 score = -14717.39
+--relavant FLIP 707 is 10 score = -14717.39
+--relavant FLIP 707 is 11 score = -14717.39
+--relavant FLIP 707 is 12 score = -14717.44
+depth0 relavant FLIP 707 score = -21550.75
+--relavant FLIP 909 is 0 score = -118253.44
+--relavant FLIP 909 is 1 score = -2808.03
+--relavant FLIP 909 is 2 score = -6589.26
+--relavant FLIP 909 is 3 score = -6105.18
+--relavant FLIP 909 is 4 score = -3864.44
+--relavant FLIP 909 is 5 score = 172170.58
+--relavant FLIP 909 is 6 score = -43064.60
+--relavant FLIP 909 is 7 score = -7884.87
+--relavant FLIP 909 is 8 score = 1605.81
+--relavant FLIP 909 is 9 score = -14779.17
+--relavant FLIP 909 is 10 score = -14974.95
+--relavant FLIP 909 is 11 score = -13034.47
+--relavant FLIP 909 is 12 score = -13092.89
+depth0 relavant FLIP 909 score = -22754.34
+--relavant FLIP 1010 is 0 score = -10854.72
+--relavant FLIP 1010 is 1 score = -16141.54
+--relavant FLIP 1010 is 2 score = -14740.05
+--relavant FLIP 1010 is 3 score = -14756.87
+--relavant FLIP 1010 is 4 score = -14833.83
+--relavant FLIP 1010 is 5 score = -22571.71
+--relavant FLIP 1010 is 6 score = -10868.83
+--relavant FLIP 1010 is 7 score = -15278.04
+--relavant FLIP 1010 is 8 score = -14740.26
+--relavant FLIP 1010 is 9 score = -14822.86
+--relavant FLIP 1010 is 10 score = -15332.87
+--relavant FLIP 1010 is 11 score = -10510.82
+--relavant FLIP 1010 is 12 score = 109.30
+depth0 relavant FLIP 1010 score = -13054.72
+--relavant FLIP 1212 is 0 score = -10414.14
+--relavant FLIP 1212 is 1 score = -103972.42
+--relavant FLIP 1212 is 2 score = -14740.04
+--relavant FLIP 1212 is 3 score = -14756.79
+--relavant FLIP 1212 is 4 score = -14833.51
+--relavant FLIP 1212 is 5 score = -22571.71
+--relavant FLIP 1212 is 6 score = 317.60
+--relavant FLIP 1212 is 7 score = -15411.57
+--relavant FLIP 1212 is 8 score = -7425.17
+--relavant FLIP 1212 is 9 score = -14854.54
+--relavant FLIP 1212 is 10 score = -15392.31
+--relavant FLIP 1212 is 11 score = -12827.44
+--relavant FLIP 1212 is 12 score = -12620.23
+depth0 relavant FLIP 1212 score = -19427.95
+--relavant FLIP 1515 is 0 score = -10854.72
+--relavant FLIP 1515 is 1 score = -103974.82
+--relavant FLIP 1515 is 2 score = -14740.05
+--relavant FLIP 1515 is 3 score = -14756.87
+--relavant FLIP 1515 is 4 score = -14833.83
+--relavant FLIP 1515 is 5 score = -22571.71
+--relavant FLIP 1515 is 6 score = -10868.83
+--relavant FLIP 1515 is 7 score = -15278.04
+--relavant FLIP 1515 is 8 score = -14740.26
+--relavant FLIP 1515 is 9 score = -14822.86
+--relavant FLIP 1515 is 10 score = -15332.87
+--relavant FLIP 1515 is 11 score = -10255.92
+--relavant FLIP 1515 is 12 score = -5340.91
+depth0 relavant FLIP 1515 score = -19699.62
+--relavant FLIP 1717 is 0 score = -10414.14
+--relavant FLIP 1717 is 1 score = -103972.42
+--relavant FLIP 1717 is 2 score = -14740.04
+--relavant FLIP 1717 is 3 score = -14756.79
+--relavant FLIP 1717 is 4 score = -14833.51
+--relavant FLIP 1717 is 5 score = -22571.71
+--relavant FLIP 1717 is 6 score = 317.60
+--relavant FLIP 1717 is 7 score = -15411.57
+--relavant FLIP 1717 is 8 score = -14744.17
+--relavant FLIP 1717 is 9 score = -14854.54
+--relavant FLIP 1717 is 10 score = -15392.31
+--relavant FLIP 1717 is 11 score = -12827.44
+--relavant FLIP 1717 is 12 score = -12620.23
+depth0 relavant FLIP 1717 score = -19950.73
+--relavant FLIP 1818 is 0 score = -10854.72
+--relavant FLIP 1818 is 1 score = -14736.70
+--relavant FLIP 1818 is 2 score = -14740.05
+--relavant FLIP 1818 is 3 score = -14756.87
+--relavant FLIP 1818 is 4 score = -14833.83
+--relavant FLIP 1818 is 5 score = -22571.71
+--relavant FLIP 1818 is 6 score = -10868.83
+--relavant FLIP 1818 is 7 score = -15278.04
+--relavant FLIP 1818 is 8 score = -14740.26
+--relavant FLIP 1818 is 9 score = -14822.86
+--relavant FLIP 1818 is 10 score = -15332.87
+--relavant FLIP 1818 is 11 score = -10510.82
+--relavant FLIP 1818 is 12 score = -83.29
+depth0 relavant FLIP 1818 score = -12968.13
+--relavant FLIP 2121 is 0 score = -10854.71
+--relavant FLIP 2121 is 1 score = -103972.42
+--relavant FLIP 2121 is 2 score = -14740.01
+--relavant FLIP 2121 is 3 score = -14756.68
+--relavant FLIP 2121 is 4 score = -14832.98
+--relavant FLIP 2121 is 5 score = -22566.31
+--relavant FLIP 2121 is 6 score = -10866.53
+--relavant FLIP 2121 is 7 score = -14717.39
+--relavant FLIP 2121 is 8 score = -12623.97
+--relavant FLIP 2121 is 9 score = -14717.39
+--relavant FLIP 2121 is 10 score = -14717.39
+--relavant FLIP 2121 is 11 score = -14717.39
+--relavant FLIP 2121 is 12 score = -14717.44
+depth0 relavant FLIP 2121 score = -20404.80
+--relavant FLIP 2222 is 0 score = -10854.71
+--relavant FLIP 2222 is 1 score = -14736.68
+--relavant FLIP 2222 is 2 score = -14740.01
+--relavant FLIP 2222 is 3 score = -14756.68
+--relavant FLIP 2222 is 4 score = -14832.98
+--relavant FLIP 2222 is 5 score = -22566.31
+--relavant FLIP 2222 is 6 score = -10866.53
+--relavant FLIP 2222 is 7 score = -14717.39
+--relavant FLIP 2222 is 8 score = -4515.53
+--relavant FLIP 2222 is 9 score = -14717.39
+--relavant FLIP 2222 is 10 score = -14717.39
+--relavant FLIP 2222 is 11 score = -14717.39
+--relavant FLIP 2222 is 12 score = -14717.44
+depth0 relavant FLIP 2222 score = -13451.64
+--irrelavant FLIP 2929 is 0 score = -10854.71
+--irrelavant FLIP 2929 is 1 score = -51172.89
+--irrelavant FLIP 2929 is 2 score = -14740.01
+--irrelavant FLIP 2929 is 3 score = -14756.68
+--irrelavant FLIP 2929 is 4 score = -14832.98
+--irrelavant FLIP 2929 is 5 score = -22566.31
+--irrelavant FLIP 2929 is 6 score = -10866.53
+--irrelavant FLIP 2929 is 7 score = -14717.39
+--irrelavant FLIP 2929 is 8 score = -14717.39
+--irrelavant FLIP 2929 is 9 score = -14717.39
+--irrelavant FLIP 2929 is 10 score = -14717.39
+--irrelavant FLIP 2929 is 11 score = -14717.39
+--irrelavant FLIP 2929 is 12 score = -14717.44
+irrelavant FLIP 2929 score = -16782.93
+Depth:  2, Time: 258, Node:     270795, Score: -12968.12873, Best Move: 1818,
+Projected Depth  3 Time: 94170.000000
+Depth:  2, Node:     270795, Score: -12968.12873, Move: c4-c4
+=12 c4 c4
+11 flip c4 r
+=11
+16 time_left black 894596
+Time Left(black): 894596
+=16
+11 flip c8 p
+=11
+16 time_left red 869215
+Time Left(red): 869215
+=16
+12 genmove black
+I am black, time left 834596.000000
+Assigned 14903.500000 seconds this turn,14903.500000 
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+HistoryCount 6
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-8000.000000,0.000000,0.000000,2.000000,7.100000,0.000000,0.000000
+Curstate: 3 -8006.100000
+339,341,339.998529
+depth 0 MOVE 501 score = -301.19
+move 501 returns value -301.190000 > -8006.100000 
+Depth:  1, Time: 0, Node:          7, Score: -301.19000, Best Move: 501,
+Projected Depth  2 Time: 0.000000
+depth 0 MOVE 501 score = -8313.35
+--relavant FLIP 0 is 0 score = -118244.84
+--relavant FLIP 0 is 1 score = -16410.79
+--relavant FLIP 0 is 2 score = -7674.20
+--relavant FLIP 0 is 3 score = -7401.11
+--relavant FLIP 0 is 4 score = -6674.82
+--relavant FLIP 0 is 5 score = -397.85
+--relavant FLIP 0 is 6 score = -118249.40
+--relavant FLIP 0 is 7 score = -8659.47
+--relavant FLIP 0 is 8 score = -16637.84
+--relavant FLIP 0 is 9 score = -8659.42
+--relavant FLIP 0 is 10 score = -8659.23
+--relavant FLIP 0 is 11 score = -8658.28
+--relavant FLIP 0 is 12 score = -8791.78
+depth0 relavant FLIP 0 score = -34601.95
+--relavant FLIP 303 is 0 score = -104794.84
+--relavant FLIP 303 is 1 score = -118255.84
+--relavant FLIP 303 is 2 score = -8743.65
+--relavant FLIP 303 is 3 score = -8743.84
+--relavant FLIP 303 is 4 score = -8785.15
+--relavant FLIP 303 is 5 score = -16570.04
+--relavant FLIP 303 is 6 score = -9405.00
+--relavant FLIP 303 is 7 score = -8693.71
+--relavant FLIP 303 is 8 score = -8697.69
+--relavant FLIP 303 is 9 score = -8697.69
+--relavant FLIP 303 is 10 score = -8677.67
+--relavant FLIP 303 is 11 score = -8633.60
+--relavant FLIP 303 is 12 score = -8632.35
+depth0 relavant FLIP 303 score = -35934.71
+--relavant FLIP 404 is 0 score = -117935.82
+--relavant FLIP 404 is 1 score = -8518.98
+--relavant FLIP 404 is 2 score = -8042.18
+--relavant FLIP 404 is 3 score = -7683.40
+--relavant FLIP 404 is 4 score = -6340.35
+--relavant FLIP 404 is 5 score = -398.85
+--relavant FLIP 404 is 6 score = -117937.80
+--relavant FLIP 404 is 7 score = -8633.87
+--relavant FLIP 404 is 8 score = -25018.09
+--relavant FLIP 404 is 9 score = -8627.66
+--relavant FLIP 404 is 10 score = -8627.63
+--relavant FLIP 404 is 11 score = -8627.31
+--relavant FLIP 404 is 12 score = -8626.06
+depth0 relavant FLIP 404 score = -34583.57
+--relavant FLIP 606 is 0 score = -119496.80
+--relavant FLIP 606 is 1 score = -8032.76
+--relavant FLIP 606 is 2 score = -8743.65
+--relavant FLIP 606 is 3 score = -8743.84
+--relavant FLIP 606 is 4 score = -8744.78
+--relavant FLIP 606 is 5 score = -8752.25
+--relavant FLIP 606 is 6 score = -45214.60
+--relavant FLIP 606 is 7 score = -9050.00
+--relavant FLIP 606 is 8 score = 2541.03
+--relavant FLIP 606 is 9 score = -8380.00
+--relavant FLIP 606 is 10 score = -8690.00
+--relavant FLIP 606 is 11 score = -10070.00
+--relavant FLIP 606 is 12 score = -6512.10
+depth0 relavant FLIP 606 score = -30458.39
+--relavant FLIP 707 is 0 score = -8633.88
+--relavant FLIP 707 is 1 score = -117935.82
+--relavant FLIP 707 is 2 score = -8633.88
+--relavant FLIP 707 is 3 score = -8633.88
+--relavant FLIP 707 is 4 score = -8633.88
+--relavant FLIP 707 is 5 score = -14968.03
+--relavant FLIP 707 is 6 score = -12399.05
+--relavant FLIP 707 is 7 score = -8779.80
+--relavant FLIP 707 is 8 score = -8640.47
+--relavant FLIP 707 is 9 score = -8779.80
+--relavant FLIP 707 is 10 score = -8779.80
+--relavant FLIP 707 is 11 score = -8882.07
+--relavant FLIP 707 is 12 score = -9482.47
+depth0 relavant FLIP 707 score = -17548.70
+--relavant FLIP 909 is 0 score = -119494.40
+--relavant FLIP 909 is 1 score = -7830.29
+--relavant FLIP 909 is 2 score = -8658.60
+--relavant FLIP 909 is 3 score = -8658.64
+--relavant FLIP 909 is 4 score = -8658.95
+--relavant FLIP 909 is 5 score = -16508.28
+--relavant FLIP 909 is 6 score = -45212.20
+--relavant FLIP 909 is 7 score = -8633.86
+--relavant FLIP 909 is 8 score = -1021.19
+--relavant FLIP 909 is 9 score = -6515.11
+--relavant FLIP 909 is 10 score = -6514.89
+--relavant FLIP 909 is 11 score = -6474.08
+--relavant FLIP 909 is 12 score = -6299.88
+depth0 relavant FLIP 909 score = -30430.13
+--relavant FLIP 1010 is 0 score = -10320.65
+--relavant FLIP 1010 is 1 score = -9405.02
+--relavant FLIP 1010 is 2 score = -8659.60
+--relavant FLIP 1010 is 3 score = -8659.74
+--relavant FLIP 1010 is 4 score = -8660.68
+--relavant FLIP 1010 is 5 score = -16539.58
+--relavant FLIP 1010 is 6 score = -12466.35
+--relavant FLIP 1010 is 7 score = -8751.03
+--relavant FLIP 1010 is 8 score = -8647.46
+--relavant FLIP 1010 is 9 score = -8652.57
+--relavant FLIP 1010 is 10 score = -9119.43
+--relavant FLIP 1010 is 11 score = -6599.54
+--relavant FLIP 1010 is 12 score = -3067.64
+depth0 relavant FLIP 1010 score = -8924.06
+--relavant FLIP 1212 is 0 score = -7995.66
+--relavant FLIP 1212 is 1 score = -103974.81
+--relavant FLIP 1212 is 2 score = -8659.63
+--relavant FLIP 1212 is 3 score = -8659.79
+--relavant FLIP 1212 is 4 score = -8660.88
+--relavant FLIP 1212 is 5 score = -15091.80
+--relavant FLIP 1212 is 6 score = -304.70
+--relavant FLIP 1212 is 7 score = -8718.59
+--relavant FLIP 1212 is 8 score = -4838.84
+--relavant FLIP 1212 is 9 score = -8037.50
+--relavant FLIP 1212 is 10 score = -8089.65
+--relavant FLIP 1212 is 11 score = -7457.68
+--relavant FLIP 1212 is 12 score = -7852.35
+depth0 relavant FLIP 1212 score = -15278.55
+--relavant FLIP 1515 is 0 score = -8633.90
+--relavant FLIP 1515 is 1 score = -105512.50
+--relavant FLIP 1515 is 2 score = -8634.00
+--relavant FLIP 1515 is 3 score = -8634.14
+--relavant FLIP 1515 is 4 score = -8635.08
+--relavant FLIP 1515 is 5 score = -16539.58
+--relavant FLIP 1515 is 6 score = -12466.35
+--relavant FLIP 1515 is 7 score = -8743.06
+--relavant FLIP 1515 is 8 score = -8021.33
+--relavant FLIP 1515 is 9 score = -8652.57
+--relavant FLIP 1515 is 10 score = -9119.42
+--relavant FLIP 1515 is 11 score = -6599.54
+--relavant FLIP 1515 is 12 score = -6062.97
+depth0 relavant FLIP 1515 score = -16168.97
+--relavant FLIP 1616 is 0 score = -8659.48
+--relavant FLIP 1616 is 1 score = -8101.63
+--relavant FLIP 1616 is 2 score = -8659.48
+--relavant FLIP 1616 is 3 score = -8659.48
+--relavant FLIP 1616 is 4 score = -8659.48
+--relavant FLIP 1616 is 5 score = -16533.35
+--relavant FLIP 1616 is 6 score = -12464.51
+--relavant FLIP 1616 is 7 score = -8659.48
+--relavant FLIP 1616 is 8 score = -8023.45
+--relavant FLIP 1616 is 9 score = -8659.48
+--relavant FLIP 1616 is 10 score = -8659.48
+--relavant FLIP 1616 is 11 score = -8659.48
+--relavant FLIP 1616 is 12 score = -8659.48
+depth0 relavant FLIP 1616 score = -9016.83
+--relavant FLIP 1717 is 0 score = -7902.14
+--relavant FLIP 1717 is 1 score = -22905.43
+--relavant FLIP 1717 is 2 score = -8659.81
+--relavant FLIP 1717 is 3 score = -8347.05
+--relavant FLIP 1717 is 4 score = -8661.07
+--relavant FLIP 1717 is 5 score = -16541.35
+--relavant FLIP 1717 is 6 score = -305.80
+--relavant FLIP 1717 is 7 score = -8451.32
+--relavant FLIP 1717 is 8 score = -8683.83
+--relavant FLIP 1717 is 9 score = -8090.39
+--relavant FLIP 1717 is 10 score = -8535.36
+--relavant FLIP 1717 is 11 score = -4153.83
+--relavant FLIP 1717 is 12 score = -3921.71
+depth0 relavant FLIP 1717 score = -8785.86
+--relavant FLIP 1919 is 0 score = -7997.73
+--relavant FLIP 1919 is 1 score = -7899.99
+--relavant FLIP 1919 is 2 score = -8191.07
+--relavant FLIP 1919 is 3 score = -7777.15
+--relavant FLIP 1919 is 4 score = -8660.88
+--relavant FLIP 1919 is 5 score = -16540.85
+--relavant FLIP 1919 is 6 score = -12515.24
+--relavant FLIP 1919 is 7 score = -8660.68
+--relavant FLIP 1919 is 8 score = -8648.68
+--relavant FLIP 1919 is 9 score = -8648.68
+--relavant FLIP 1919 is 10 score = -9120.67
+--relavant FLIP 1919 is 11 score = -7845.37
+--relavant FLIP 1919 is 12 score = -7845.17
+depth0 relavant FLIP 1919 score = -8712.33
+--relavant FLIP 2121 is 0 score = -8659.48
+--relavant FLIP 2121 is 1 score = -105883.11
+--relavant FLIP 2121 is 2 score = -8659.48
+--relavant FLIP 2121 is 3 score = -8659.48
+--relavant FLIP 2121 is 4 score = -8659.48
+--relavant FLIP 2121 is 5 score = -16533.35
+--relavant FLIP 2121 is 6 score = -12464.51
+--relavant FLIP 2121 is 7 score = -8659.48
+--relavant FLIP 2121 is 8 score = -8358.87
+--relavant FLIP 2121 is 9 score = -8659.48
+--relavant FLIP 2121 is 10 score = -8659.67
+--relavant FLIP 2121 is 11 score = -8907.67
+--relavant FLIP 2121 is 12 score = -9508.07
+depth0 relavant FLIP 2121 score = -16648.66
+--relavant FLIP 2222 is 0 score = -8023.66
+--relavant FLIP 2222 is 1 score = -7900.00
+--relavant FLIP 2222 is 2 score = -8191.07
+--relavant FLIP 2222 is 3 score = -7777.15
+--relavant FLIP 2222 is 4 score = -8660.88
+--relavant FLIP 2222 is 5 score = -16540.85
+--relavant FLIP 2222 is 6 score = -12515.24
+--relavant FLIP 2222 is 7 score = -8090.01
+--relavant FLIP 2222 is 8 score = -5596.78
+--relavant FLIP 2222 is 9 score = -8093.75
+--relavant FLIP 2222 is 10 score = -8433.16
+--relavant FLIP 2222 is 11 score = -7819.70
+--relavant FLIP 2222 is 12 score = -7794.35
+depth0 relavant FLIP 2222 score = -8341.69
+--relavant FLIP 2626 is 0 score = -8659.48
+--relavant FLIP 2626 is 1 score = -8101.63
+--relavant FLIP 2626 is 2 score = -8659.48
+--relavant FLIP 2626 is 3 score = -8659.48
+--relavant FLIP 2626 is 4 score = -8659.48
+--relavant FLIP 2626 is 5 score = -16533.35
+--relavant FLIP 2626 is 6 score = -12464.51
+--relavant FLIP 2626 is 7 score = -8659.48
+--relavant FLIP 2626 is 8 score = -6261.61
+--relavant FLIP 2626 is 9 score = -8659.48
+--relavant FLIP 2626 is 10 score = -8659.48
+--relavant FLIP 2626 is 11 score = -8659.48
+--relavant FLIP 2626 is 12 score = -8659.48
+depth0 relavant FLIP 2626 score = -8881.30
+--irrelavant FLIP 2727 is 0 score = -8659.48
+--irrelavant FLIP 2727 is 1 score = -8101.35
+--irrelavant FLIP 2727 is 2 score = -8659.48
+--irrelavant FLIP 2727 is 3 score = -8659.48
+--irrelavant FLIP 2727 is 4 score = -8659.48
+--irrelavant FLIP 2727 is 5 score = -16533.35
+--irrelavant FLIP 2727 is 6 score = -12464.51
+--irrelavant FLIP 2727 is 7 score = -8659.48
+--irrelavant FLIP 2727 is 8 score = -8659.48
+--irrelavant FLIP 2727 is 9 score = -8659.48
+--irrelavant FLIP 2727 is 10 score = -8659.48
+--irrelavant FLIP 2727 is 11 score = -8659.48
+--irrelavant FLIP 2727 is 12 score = -8659.48
+irrelavant FLIP 2727 score = -9065.73
+Depth:  2, Time: 1554, Node:    1662346, Score: -8313.35154, Best Move: 501,
+Projected Depth  3 Time: 528357.714701
+Depth:  2, Node:    1662346, Score: -8313.35154, Move: b7-b8
+=12 b7 b8
+10 move b7 b8
+=10
+16 time_left black 893040
+Time Left(black): 893040
+=16
+11 flip a7 N
+=11
+16 time_left red 861069
+Time Left(red): 861069
+=16
+12 genmove black
+I am black, time left 833040.000000
+Assigned 15146.181818 seconds this turn,15146.181818 
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+HistoryCount 8
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-7500.000000,8140.000000,0.000000,2.000000,2.250000,0.000000,0.000000
+Curstate: 3 638.750000
+326,328,326.998471
+depth 0 MOVE 105 score = 369.81
+--relavant FLIP 0 is 0 score = -104743.11
+--relavant FLIP 0 is 1 score = 119.70
+--relavant FLIP 0 is 2 score = 689.70
+--relavant FLIP 0 is 3 score = 1079.70
+--relavant FLIP 0 is 4 score = 2539.70
+--relavant FLIP 0 is 5 score = 211339.70
+--relavant FLIP 0 is 6 score = 146746.35
+--relavant FLIP 0 is 7 score = -400.24
+--relavant FLIP 0 is 8 score = -0.30
+--relavant FLIP 0 is 9 score = 200.91
+--relavant FLIP 0 is 10 score = 370.16
+--relavant FLIP 0 is 11 score = 371.11
+--relavant FLIP 0 is 12 score = 372.36
+depth0 relavant FLIP 0 score = -6357.75
+--relavant FLIP 303 is 0 score = -351.24
+--relavant FLIP 303 is 1 score = -104792.92
+--relavant FLIP 303 is 2 score = -349.21
+--relavant FLIP 303 is 3 score = -349.34
+--relavant FLIP 303 is 4 score = -350.20
+--relavant FLIP 303 is 5 score = -354.00
+--relavant FLIP 303 is 6 score = 221348.81
+--relavant FLIP 303 is 7 score = 369.81
+--relavant FLIP 303 is 8 score = 369.81
+--relavant FLIP 303 is 9 score = 369.81
+--relavant FLIP 303 is 10 score = 369.81
+--relavant FLIP 303 is 11 score = 370.02
+--relavant FLIP 303 is 12 score = 371.27
+depth0 relavant FLIP 303 score = 507.83
+--relavant FLIP 606 is 0 score = -104425.02
+--relavant FLIP 606 is 1 score = 369.90
+--relavant FLIP 606 is 2 score = -349.21
+--relavant FLIP 606 is 3 score = -349.34
+--relavant FLIP 606 is 4 score = -350.20
+--relavant FLIP 606 is 5 score = -354.00
+--relavant FLIP 606 is 6 score = 221348.82
+--relavant FLIP 606 is 7 score = 369.81
+--relavant FLIP 606 is 8 score = 3273.09
+--relavant FLIP 606 is 9 score = 369.81
+--relavant FLIP 606 is 10 score = 370.07
+--relavant FLIP 606 is 11 score = 371.11
+--relavant FLIP 606 is 12 score = 372.36
+depth0 relavant FLIP 606 score = -11661.45
+--relavant FLIP 707 is 0 score = 369.81
+--relavant FLIP 707 is 1 score = -104792.39
+--relavant FLIP 707 is 2 score = 369.81
+--relavant FLIP 707 is 3 score = 369.81
+--relavant FLIP 707 is 4 score = 369.81
+--relavant FLIP 707 is 5 score = 369.81
+--relavant FLIP 707 is 6 score = 369.81
+--relavant FLIP 707 is 7 score = 369.81
+--relavant FLIP 707 is 8 score = 369.81
+--relavant FLIP 707 is 9 score = 369.81
+--relavant FLIP 707 is 10 score = 369.81
+--relavant FLIP 707 is 11 score = 369.81
+--relavant FLIP 707 is 12 score = 369.81
+depth0 relavant FLIP 707 score = -8043.17
+--relavant FLIP 808 is 0 score = -300.19
+--relavant FLIP 808 is 1 score = 888.81
+--relavant FLIP 808 is 2 score = 1098.81
+--relavant FLIP 808 is 3 score = 1488.81
+--relavant FLIP 808 is 4 score = 2948.81
+--relavant FLIP 808 is 5 score = 211748.81
+--relavant FLIP 808 is 6 score = -300.19
+--relavant FLIP 808 is 7 score = -349.09
+--relavant FLIP 808 is 8 score = 320.91
+--relavant FLIP 808 is 9 score = 200.91
+--relavant FLIP 808 is 10 score = 370.06
+--relavant FLIP 808 is 11 score = 371.11
+--relavant FLIP 808 is 12 score = 372.36
+depth0 relavant FLIP 808 score = 8824.16
+--relavant FLIP 909 is 0 score = -105515.08
+--relavant FLIP 909 is 1 score = 370.79
+--relavant FLIP 909 is 2 score = 370.70
+--relavant FLIP 909 is 3 score = 370.57
+--relavant FLIP 909 is 4 score = 369.71
+--relavant FLIP 909 is 5 score = 362.11
+--relavant FLIP 909 is 6 score = -103979.50
+--relavant FLIP 909 is 7 score = 368.82
+--relavant FLIP 909 is 8 score = 368.84
+--relavant FLIP 909 is 9 score = 369.87
+--relavant FLIP 909 is 10 score = 370.06
+--relavant FLIP 909 is 11 score = 690.22
+--relavant FLIP 909 is 12 score = 692.38
+depth0 relavant FLIP 909 score = -24930.02
+--relavant FLIP 1010 is 0 score = 369.81
+--relavant FLIP 1010 is 1 score = -350.20
+--relavant FLIP 1010 is 2 score = 369.80
+--relavant FLIP 1010 is 3 score = 369.67
+--relavant FLIP 1010 is 4 score = 368.81
+--relavant FLIP 1010 is 5 score = 362.21
+--relavant FLIP 1010 is 6 score = 367.41
+--relavant FLIP 1010 is 7 score = 208.71
+--relavant FLIP 1010 is 8 score = 368.71
+--relavant FLIP 1010 is 9 score = 368.71
+--relavant FLIP 1010 is 10 score = -1.29
+--relavant FLIP 1010 is 11 score = -2421.29
+--relavant FLIP 1010 is 12 score = 2959.36
+depth0 relavant FLIP 1010 score = 261.28
+--relavant FLIP 1212 is 0 score = 369.79
+--relavant FLIP 1212 is 1 score = -300.21
+--relavant FLIP 1212 is 2 score = 369.69
+--relavant FLIP 1212 is 3 score = 369.43
+--relavant FLIP 1212 is 4 score = 367.71
+--relavant FLIP 1212 is 5 score = 360.11
+--relavant FLIP 1212 is 6 score = 365.31
+--relavant FLIP 1212 is 7 score = -349.09
+--relavant FLIP 1212 is 8 score = 369.84
+--relavant FLIP 1212 is 9 score = 200.91
+--relavant FLIP 1212 is 10 score = -319.09
+--relavant FLIP 1212 is 11 score = 689.81
+--relavant FLIP 1212 is 12 score = 689.81
+depth0 relavant FLIP 1212 score = 239.38
+--relavant FLIP 1515 is 0 score = 369.81
+--relavant FLIP 1515 is 1 score = -104797.24
+--relavant FLIP 1515 is 2 score = 369.80
+--relavant FLIP 1515 is 3 score = 369.67
+--relavant FLIP 1515 is 4 score = 368.81
+--relavant FLIP 1515 is 5 score = 362.21
+--relavant FLIP 1515 is 6 score = 367.41
+--relavant FLIP 1515 is 7 score = 208.71
+--relavant FLIP 1515 is 8 score = 368.71
+--relavant FLIP 1515 is 9 score = 368.71
+--relavant FLIP 1515 is 10 score = -1.29
+--relavant FLIP 1515 is 11 score = -2421.29
+--relavant FLIP 1515 is 12 score = 2959.36
+depth0 relavant FLIP 1515 score = -8094.48
+--relavant FLIP 1616 is 0 score = 369.81
+--relavant FLIP 1616 is 1 score = 369.81
+--relavant FLIP 1616 is 2 score = 369.81
+--relavant FLIP 1616 is 3 score = 369.81
+--relavant FLIP 1616 is 4 score = 369.81
+--relavant FLIP 1616 is 5 score = 369.81
+--relavant FLIP 1616 is 6 score = 369.81
+--relavant FLIP 1616 is 7 score = 369.81
+--relavant FLIP 1616 is 8 score = 929.81
+--relavant FLIP 1616 is 9 score = 369.81
+--relavant FLIP 1616 is 10 score = 369.81
+--relavant FLIP 1616 is 11 score = 369.81
+--relavant FLIP 1616 is 12 score = 369.81
+depth0 relavant FLIP 1616 score = 414.61
+--relavant FLIP 1717 is 0 score = 1140.61
+--relavant FLIP 1717 is 1 score = 369.75
+--relavant FLIP 1717 is 2 score = 369.59
+--relavant FLIP 1717 is 3 score = 369.33
+--relavant FLIP 1717 is 4 score = 367.61
+--relavant FLIP 1717 is 5 score = 360.01
+--relavant FLIP 1717 is 6 score = 365.21
+--relavant FLIP 1717 is 7 score = -350.19
+--relavant FLIP 1717 is 8 score = 319.81
+--relavant FLIP 1717 is 9 score = 199.81
+--relavant FLIP 1717 is 10 score = -320.19
+--relavant FLIP 1717 is 11 score = 3274.43
+--relavant FLIP 1717 is 12 score = 3276.93
+depth0 relavant FLIP 1717 score = 856.59
+--relavant FLIP 1919 is 0 score = 369.79
+--relavant FLIP 1919 is 1 score = 369.79
+--relavant FLIP 1919 is 2 score = 369.69
+--relavant FLIP 1919 is 3 score = 369.43
+--relavant FLIP 1919 is 4 score = 367.71
+--relavant FLIP 1919 is 5 score = 360.11
+--relavant FLIP 1919 is 6 score = 365.31
+--relavant FLIP 1919 is 7 score = -349.09
+--relavant FLIP 1919 is 8 score = 320.91
+--relavant FLIP 1919 is 9 score = 200.91
+--relavant FLIP 1919 is 10 score = -319.09
+--relavant FLIP 1919 is 11 score = 929.81
+--relavant FLIP 1919 is 12 score = 929.81
+depth0 relavant FLIP 1919 score = 327.47
+--relavant FLIP 2121 is 0 score = 369.81
+--relavant FLIP 2121 is 1 score = -104794.84
+--relavant FLIP 2121 is 2 score = 369.81
+--relavant FLIP 2121 is 3 score = 369.81
+--relavant FLIP 2121 is 4 score = 369.81
+--relavant FLIP 2121 is 5 score = 369.81
+--relavant FLIP 2121 is 6 score = 369.81
+--relavant FLIP 2121 is 7 score = 369.81
+--relavant FLIP 2121 is 8 score = 689.81
+--relavant FLIP 2121 is 9 score = 369.81
+--relavant FLIP 2121 is 10 score = 369.81
+--relavant FLIP 2121 is 11 score = 369.81
+--relavant FLIP 2121 is 12 score = 369.81
+depth0 relavant FLIP 2121 score = -8017.76
+--relavant FLIP 2222 is 0 score = 369.79
+--relavant FLIP 2222 is 1 score = 369.79
+--relavant FLIP 2222 is 2 score = 369.69
+--relavant FLIP 2222 is 3 score = 369.43
+--relavant FLIP 2222 is 4 score = 367.71
+--relavant FLIP 2222 is 5 score = 360.11
+--relavant FLIP 2222 is 6 score = 365.31
+--relavant FLIP 2222 is 7 score = -349.09
+--relavant FLIP 2222 is 8 score = 369.84
+--relavant FLIP 2222 is 9 score = 200.91
+--relavant FLIP 2222 is 10 score = -319.09
+--relavant FLIP 2222 is 11 score = 929.81
+--relavant FLIP 2222 is 12 score = 929.81
+depth0 relavant FLIP 2222 score = 331.38
+--relavant FLIP 2626 is 0 score = 369.81
+--relavant FLIP 2626 is 1 score = 369.81
+--relavant FLIP 2626 is 2 score = 369.81
+--relavant FLIP 2626 is 3 score = 369.81
+--relavant FLIP 2626 is 4 score = 369.81
+--relavant FLIP 2626 is 5 score = 369.81
+--relavant FLIP 2626 is 6 score = 369.81
+--relavant FLIP 2626 is 7 score = 369.81
+--relavant FLIP 2626 is 8 score = 2952.12
+--relavant FLIP 2626 is 9 score = 369.81
+--relavant FLIP 2626 is 10 score = 369.81
+--relavant FLIP 2626 is 11 score = 369.81
+--relavant FLIP 2626 is 12 score = 369.81
+depth0 relavant FLIP 2626 score = 576.39
+--irrelavant FLIP 3030 is 0 score = 369.81
+--irrelavant FLIP 3030 is 1 score = 369.81
+--irrelavant FLIP 3030 is 2 score = 369.81
+--irrelavant FLIP 3030 is 3 score = 369.81
+--irrelavant FLIP 3030 is 4 score = 369.81
+--irrelavant FLIP 3030 is 5 score = 369.81
+--irrelavant FLIP 3030 is 6 score = 369.81
+--irrelavant FLIP 3030 is 7 score = 369.81
+--irrelavant FLIP 3030 is 8 score = 369.81
+--irrelavant FLIP 3030 is 9 score = 369.81
+--irrelavant FLIP 3030 is 10 score = 369.81
+--irrelavant FLIP 3030 is 11 score = 369.81
+--irrelavant FLIP 3030 is 12 score = 369.81
+irrelavant FLIP 3030 score = 369.81
+Depth:  1, Time: 11, Node:      10851, Score: +8824.15600, Best Move: 808,
+Projected Depth  2 Time: 3596.983180
+depth 0 MOVE 105 score = -7990.35
+--relavant FLIP 0 is 0 score = -104743.11
+--relavant FLIP 0 is 1 score = 119.70
+--relavant FLIP 0 is 2 score = 689.70
+--relavant FLIP 0 is 3 score = 1079.70
+--relavant FLIP 0 is 4 score = 2539.70
+--relavant FLIP 0 is 5 score = 211305.01
+--relavant FLIP 0 is 6 score = 146746.35
+--relavant FLIP 0 is 7 score = -12595.15
+--relavant FLIP 0 is 8 score = -8393.63
+--relavant FLIP 0 is 9 score = 200.91
+--relavant FLIP 0 is 10 score = 358.56
+--relavant FLIP 0 is 11 score = 157.76
+--relavant FLIP 0 is 12 score = -266.20
+depth0 relavant FLIP 0 score = -8562.61
+--relavant FLIP 303 is 0 score = -7589.39
+--relavant FLIP 303 is 1 score = -104792.92
+--relavant FLIP 303 is 2 score = -8502.37
+--relavant FLIP 303 is 3 score = -8501.45
+--relavant FLIP 303 is 4 score = -8502.63
+--relavant FLIP 303 is 5 score = -12054.80
+--relavant FLIP 303 is 6 score = 206732.18
+--relavant FLIP 303 is 7 score = 336.75
+--relavant FLIP 303 is 8 score = -8368.66
+--relavant FLIP 303 is 9 score = 336.79
+--relavant FLIP 303 is 10 score = 336.97
+--relavant FLIP 303 is 11 score = 138.42
+--relavant FLIP 303 is 12 score = -285.65
+depth0 relavant FLIP 303 score = -4074.97
+--relavant FLIP 606 is 0 score = -104425.02
+--relavant FLIP 606 is 1 score = 369.90
+--relavant FLIP 606 is 2 score = -25357.86
+--relavant FLIP 606 is 3 score = -25179.63
+--relavant FLIP 606 is 4 score = -24276.18
+--relavant FLIP 606 is 5 score = -354.00
+--relavant FLIP 606 is 6 score = 205977.77
+--relavant FLIP 606 is 7 score = 369.81
+--relavant FLIP 606 is 8 score = 3273.09
+--relavant FLIP 606 is 9 score = 369.81
+--relavant FLIP 606 is 10 score = 370.07
+--relavant FLIP 606 is 11 score = 337.98
+--relavant FLIP 606 is 12 score = 339.43
+depth0 relavant FLIP 606 score = -16225.39
+--relavant FLIP 707 is 0 score = -27267.37
+--relavant FLIP 707 is 1 score = -105928.82
+--relavant FLIP 707 is 2 score = 336.74
+--relavant FLIP 707 is 3 score = 336.74
+--relavant FLIP 707 is 4 score = 336.74
+--relavant FLIP 707 is 5 score = 336.74
+--relavant FLIP 707 is 6 score = 336.74
+--relavant FLIP 707 is 7 score = -7660.47
+--relavant FLIP 707 is 8 score = 369.81
+--relavant FLIP 707 is 9 score = -7654.63
+--relavant FLIP 707 is 10 score = -7682.54
+--relavant FLIP 707 is 11 score = -8125.55
+--relavant FLIP 707 is 12 score = -8751.23
+depth0 relavant FLIP 707 score = -17006.45
+--relavant FLIP 808 is 0 score = -11793.44
+--relavant FLIP 808 is 1 score = -3512.57
+--relavant FLIP 808 is 2 score = -7723.56
+--relavant FLIP 808 is 3 score = -7366.06
+--relavant FLIP 808 is 4 score = -6027.73
+--relavant FLIP 808 is 5 score = 80078.94
+--relavant FLIP 808 is 6 score = -8956.73
+--relavant FLIP 808 is 7 score = -8527.91
+--relavant FLIP 808 is 8 score = -8393.64
+--relavant FLIP 808 is 9 score = -3058.81
+--relavant FLIP 808 is 10 score = 336.99
+--relavant FLIP 808 is 11 score = 138.59
+--relavant FLIP 808 is 12 score = -285.37
+depth0 relavant FLIP 808 score = -2871.95
+--relavant FLIP 909 is 0 score = -105515.08
+--relavant FLIP 909 is 1 score = -3686.69
+--relavant FLIP 909 is 2 score = -8391.93
+--relavant FLIP 909 is 3 score = -8035.59
+--relavant FLIP 909 is 4 score = -6697.57
+--relavant FLIP 909 is 5 score = 362.11
+--relavant FLIP 909 is 6 score = -103979.50
+--relavant FLIP 909 is 7 score = -8367.02
+--relavant FLIP 909 is 8 score = -8181.31
+--relavant FLIP 909 is 9 score = -8338.69
+--relavant FLIP 909 is 10 score = 340.30
+--relavant FLIP 909 is 11 score = 450.94
+--relavant FLIP 909 is 12 score = 26.87
+depth0 relavant FLIP 909 score = -29062.88
+--relavant FLIP 1010 is 0 score = -26940.82
+--relavant FLIP 1010 is 1 score = -4246.11
+--relavant FLIP 1010 is 2 score = -8393.76
+--relavant FLIP 1010 is 3 score = -8393.90
+--relavant FLIP 1010 is 4 score = -8394.85
+--relavant FLIP 1010 is 5 score = -8399.05
+--relavant FLIP 1010 is 6 score = -8395.94
+--relavant FLIP 1010 is 7 score = -8538.93
+--relavant FLIP 1010 is 8 score = -8392.67
+--relavant FLIP 1010 is 9 score = -8392.61
+--relavant FLIP 1010 is 10 score = -8731.83
+--relavant FLIP 1010 is 11 score = -2421.29
+--relavant FLIP 1010 is 12 score = 2959.36
+depth0 relavant FLIP 1010 score = -10416.43
+--relavant FLIP 1212 is 0 score = -7260.50
+--relavant FLIP 1212 is 1 score = -6679.91
+--relavant FLIP 1212 is 2 score = -8347.08
+--relavant FLIP 1212 is 3 score = -8347.25
+--relavant FLIP 1212 is 4 score = -8348.36
+--relavant FLIP 1212 is 5 score = -8353.27
+--relavant FLIP 1212 is 6 score = 365.31
+--relavant FLIP 1212 is 7 score = -8526.94
+--relavant FLIP 1212 is 8 score = 369.84
+--relavant FLIP 1212 is 9 score = -8388.17
+--relavant FLIP 1212 is 10 score = -8394.59
+--relavant FLIP 1212 is 11 score = -8092.71
+--relavant FLIP 1212 is 12 score = -8092.32
+depth0 relavant FLIP 1212 score = -6936.89
+--relavant FLIP 1515 is 0 score = -8325.22
+--relavant FLIP 1515 is 1 score = -104797.24
+--relavant FLIP 1515 is 2 score = -8332.83
+--relavant FLIP 1515 is 3 score = -8300.46
+--relavant FLIP 1515 is 4 score = -8179.67
+--relavant FLIP 1515 is 5 score = 290.63
+--relavant FLIP 1515 is 6 score = 334.41
+--relavant FLIP 1515 is 7 score = -8525.63
+--relavant FLIP 1515 is 8 score = 368.71
+--relavant FLIP 1515 is 9 score = -8392.61
+--relavant FLIP 1515 is 10 score = -8701.19
+--relavant FLIP 1515 is 11 score = -2421.29
+--relavant FLIP 1515 is 12 score = 2959.36
+depth0 relavant FLIP 1515 score = -13318.35
+--relavant FLIP 1616 is 0 score = -8393.64
+--relavant FLIP 1616 is 1 score = -4011.87
+--relavant FLIP 1616 is 2 score = -8393.64
+--relavant FLIP 1616 is 3 score = -8393.64
+--relavant FLIP 1616 is 4 score = -8393.64
+--relavant FLIP 1616 is 5 score = -8393.64
+--relavant FLIP 1616 is 6 score = -8393.64
+--relavant FLIP 1616 is 7 score = -8393.64
+--relavant FLIP 1616 is 8 score = -7811.00
+--relavant FLIP 1616 is 9 score = -8393.64
+--relavant FLIP 1616 is 10 score = -8393.64
+--relavant FLIP 1616 is 11 score = -8393.64
+--relavant FLIP 1616 is 12 score = -8393.64
+depth0 relavant FLIP 1616 score = -7996.49
+--relavant FLIP 1717 is 0 score = -7553.81
+--relavant FLIP 1717 is 1 score = -14806.65
+--relavant FLIP 1717 is 2 score = -7618.95
+--relavant FLIP 1717 is 3 score = -7207.28
+--relavant FLIP 1717 is 4 score = -8395.22
+--relavant FLIP 1717 is 5 score = -8400.14
+--relavant FLIP 1717 is 6 score = 365.21
+--relavant FLIP 1717 is 7 score = -8527.98
+--relavant FLIP 1717 is 8 score = -8393.89
+--relavant FLIP 1717 is 9 score = -8387.17
+--relavant FLIP 1717 is 10 score = -8802.31
+--relavant FLIP 1717 is 11 score = -6271.14
+--relavant FLIP 1717 is 12 score = -6268.93
+depth0 relavant FLIP 1717 score = -7954.98
+--relavant FLIP 1919 is 0 score = -7260.29
+--relavant FLIP 1919 is 1 score = -3163.30
+--relavant FLIP 1919 is 2 score = -7325.42
+--relavant FLIP 1919 is 3 score = -6913.76
+--relavant FLIP 1919 is 4 score = -8395.02
+--relavant FLIP 1919 is 5 score = -8399.94
+--relavant FLIP 1919 is 6 score = -8396.11
+--relavant FLIP 1919 is 7 score = -8394.85
+--relavant FLIP 1919 is 8 score = -8394.85
+--relavant FLIP 1919 is 9 score = -8394.85
+--relavant FLIP 1919 is 10 score = -8801.20
+--relavant FLIP 1919 is 11 score = -7811.00
+--relavant FLIP 1919 is 12 score = -7811.00
+depth0 relavant FLIP 1919 score = -7511.25
+--relavant FLIP 2121 is 0 score = -8393.64
+--relavant FLIP 2121 is 1 score = -104794.84
+--relavant FLIP 2121 is 2 score = -8393.64
+--relavant FLIP 2121 is 3 score = -8393.64
+--relavant FLIP 2121 is 4 score = -8393.64
+--relavant FLIP 2121 is 5 score = -8393.64
+--relavant FLIP 2121 is 6 score = -8393.64
+--relavant FLIP 2121 is 7 score = -8393.65
+--relavant FLIP 2121 is 8 score = -8092.91
+--relavant FLIP 2121 is 9 score = -8393.65
+--relavant FLIP 2121 is 10 score = -8393.83
+--relavant FLIP 2121 is 11 score = -8652.17
+--relavant FLIP 2121 is 12 score = -9277.58
+depth0 relavant FLIP 2121 score = -16173.09
+--relavant FLIP 2222 is 0 score = -7260.29
+--relavant FLIP 2222 is 1 score = -3163.30
+--relavant FLIP 2222 is 2 score = -7325.42
+--relavant FLIP 2222 is 3 score = -6913.76
+--relavant FLIP 2222 is 4 score = -8395.02
+--relavant FLIP 2222 is 5 score = -8399.94
+--relavant FLIP 2222 is 6 score = -8396.11
+--relavant FLIP 2222 is 7 score = -8394.85
+--relavant FLIP 2222 is 8 score = 369.84
+--relavant FLIP 2222 is 9 score = -8394.85
+--relavant FLIP 2222 is 10 score = -8801.20
+--relavant FLIP 2222 is 11 score = -7811.00
+--relavant FLIP 2222 is 12 score = -7811.00
+depth0 relavant FLIP 2222 score = -6810.07
+--relavant FLIP 2626 is 0 score = -8393.64
+--relavant FLIP 2626 is 1 score = -4011.87
+--relavant FLIP 2626 is 2 score = -8393.64
+--relavant FLIP 2626 is 3 score = -8393.64
+--relavant FLIP 2626 is 4 score = -8393.64
+--relavant FLIP 2626 is 5 score = -8393.64
+--relavant FLIP 2626 is 6 score = -8393.64
+--relavant FLIP 2626 is 7 score = -8393.64
+--relavant FLIP 2626 is 8 score = -6597.12
+--relavant FLIP 2626 is 9 score = -8393.64
+--relavant FLIP 2626 is 10 score = -8393.64
+--relavant FLIP 2626 is 11 score = -8393.64
+--relavant FLIP 2626 is 12 score = -8393.64
+depth0 relavant FLIP 2626 score = -7899.38
+--irrelavant FLIP 2323 is 0 score = -8393.64
+--irrelavant FLIP 2323 is 1 score = -4011.87
+--irrelavant FLIP 2323 is 2 score = -8393.64
+--irrelavant FLIP 2323 is 3 score = -8393.64
+--irrelavant FLIP 2323 is 4 score = -8393.64
+--irrelavant FLIP 2323 is 5 score = -8393.64
+--irrelavant FLIP 2323 is 6 score = -8393.64
+--irrelavant FLIP 2323 is 7 score = -8393.64
+--irrelavant FLIP 2323 is 8 score = -8393.64
+--irrelavant FLIP 2323 is 9 score = -8393.64
+--irrelavant FLIP 2323 is 10 score = -8393.64
+--irrelavant FLIP 2323 is 11 score = -8393.64
+--irrelavant FLIP 2323 is 12 score = -8393.64
+irrelavant FLIP 2323 score = -8043.10
+Depth:  2, Time: 3067, Node:    3399388, Score: -2871.95127, Best Move: 808,
+Projected Depth  3 Time: 1002904.310387
+Depth:  2, Node:    3399388, Score: -2871.95127, Move: a6-a6
+=12 a6 a6
+11 flip a6 P
+=11
+16 time_left black 889968
+Time Left(black): 889968
+=16
+11 flip d7 C
+=11
+16 time_left red 854648
+Time Left(red): 854648
+=16
+12 genmove black
+I am black, time left 829968.000000
+Assigned 15369.777778 seconds this turn,15369.777778 
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+HistoryCount 10
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-7500.000000,8140.000000,0.000000,2.000000,2.250000,0.000000,0.000000
+Curstate: 3 638.750000
+300,302,300.998339
+depth 0 MOVE 105 score = -105512.74
+--relavant FLIP 0 is 0 score = -105515.08
+--relavant FLIP 0 is 1 score = -103404.86
+--relavant FLIP 0 is 2 score = -103194.86
+--relavant FLIP 0 is 3 score = -102544.86
+--relavant FLIP 0 is 4 score = -99444.86
+--relavant FLIP 0 is 5 score = 208045.14
+--relavant FLIP 0 is 6 score = 146745.85
+--relavant FLIP 0 is 7 score = -104795.35
+--relavant FLIP 0 is 8 score = -103504.86
+--relavant FLIP 0 is 9 score = -103624.92
+--relavant FLIP 0 is 10 score = -319.09
+--relavant FLIP 0 is 11 score = -2739.09
+--relavant FLIP 0 is 12 score = -7840.39
+depth0 relavant FLIP 0 score = -57762.06
+--relavant FLIP 303 is 0 score = -105184.93
+--relavant FLIP 303 is 1 score = -104795.14
+--relavant FLIP 303 is 2 score = -104795.28
+--relavant FLIP 303 is 3 score = -104795.80
+--relavant FLIP 303 is 4 score = -104799.60
+--relavant FLIP 303 is 5 score = -104816.80
+--relavant FLIP 303 is 6 score = 220619.70
+--relavant FLIP 303 is 7 score = -104792.37
+--relavant FLIP 303 is 8 score = -104712.61
+--relavant FLIP 303 is 9 score = 219.88
+--relavant FLIP 303 is 10 score = 220.07
+--relavant FLIP 303 is 11 score = 221.02
+--relavant FLIP 303 is 12 score = 222.27
+depth0 relavant FLIP 303 score = -58746.71
+--relavant FLIP 606 is 0 score = -105184.93
+--relavant FLIP 606 is 1 score = -104794.90
+--relavant FLIP 606 is 2 score = -104795.33
+--relavant FLIP 606 is 3 score = -104795.85
+--relavant FLIP 606 is 4 score = -104799.65
+--relavant FLIP 606 is 5 score = -104816.85
+--relavant FLIP 606 is 6 score = 220620.66
+--relavant FLIP 606 is 7 score = -104462.44
+--relavant FLIP 606 is 8 score = 320.03
+--relavant FLIP 606 is 9 score = 519.77
+--relavant FLIP 606 is 10 score = 990.35
+--relavant FLIP 606 is 11 score = 991.30
+--relavant FLIP 606 is 12 score = 992.55
+depth0 relavant FLIP 606 score = -49376.83
+--relavant FLIP 909 is 0 score = -105515.10
+--relavant FLIP 909 is 1 score = -105514.92
+--relavant FLIP 909 is 2 score = -104793.19
+--relavant FLIP 909 is 3 score = -104793.71
+--relavant FLIP 909 is 4 score = -104797.51
+--relavant FLIP 909 is 5 score = -104814.71
+--relavant FLIP 909 is 6 score = -104794.69
+--relavant FLIP 909 is 7 score = -104645.05
+--relavant FLIP 909 is 8 score = -104462.45
+--relavant FLIP 909 is 9 score = -104375.04
+--relavant FLIP 909 is 10 score = 821.17
+--relavant FLIP 909 is 11 score = 522.44
+--relavant FLIP 909 is 12 score = 527.29
+depth0 relavant FLIP 909 score = -81958.80
+--relavant FLIP 1010 is 0 score = -104792.41
+--relavant FLIP 1010 is 1 score = -105512.50
+--relavant FLIP 1010 is 2 score = -104792.63
+--relavant FLIP 1010 is 3 score = -104792.89
+--relavant FLIP 1010 is 4 score = -104794.79
+--relavant FLIP 1010 is 5 score = -104803.39
+--relavant FLIP 1010 is 6 score = -104794.69
+--relavant FLIP 1010 is 7 score = -104795.07
+--relavant FLIP 1010 is 8 score = -104762.68
+--relavant FLIP 1010 is 9 score = -104795.07
+--relavant FLIP 1010 is 10 score = -105612.48
+--relavant FLIP 1010 is 11 score = -108712.48
+--relavant FLIP 1010 is 12 score = 2545.77
+depth0 relavant FLIP 1010 score = -95865.22
+--relavant FLIP 1111 is 0 score = -104792.96
+--relavant FLIP 1111 is 1 score = -104792.99
+--relavant FLIP 1111 is 2 score = -104793.18
+--relavant FLIP 1111 is 3 score = -104793.44
+--relavant FLIP 1111 is 4 score = -104795.34
+--relavant FLIP 1111 is 5 score = -104803.94
+--relavant FLIP 1111 is 6 score = -104795.24
+--relavant FLIP 1111 is 7 score = -104792.38
+--relavant FLIP 1111 is 8 score = -104712.63
+--relavant FLIP 1111 is 9 score = 219.87
+--relavant FLIP 1111 is 10 score = 220.06
+--relavant FLIP 1111 is 11 score = 221.01
+--relavant FLIP 1111 is 12 score = 222.26
+depth0 relavant FLIP 1111 score = -72825.89
+--relavant FLIP 1212 is 0 score = -104792.75
+--relavant FLIP 1212 is 1 score = -104792.72
+--relavant FLIP 1212 is 2 score = -104793.19
+--relavant FLIP 1212 is 3 score = -104793.71
+--relavant FLIP 1212 is 4 score = -104797.51
+--relavant FLIP 1212 is 5 score = -104814.71
+--relavant FLIP 1212 is 6 score = -104794.69
+--relavant FLIP 1212 is 7 score = -105462.92
+--relavant FLIP 1212 is 8 score = 319.79
+--relavant FLIP 1212 is 9 score = -104742.80
+--relavant FLIP 1212 is 10 score = 820.07
+--relavant FLIP 1212 is 11 score = 521.35
+--relavant FLIP 1212 is 12 score = 524.84
+depth0 relavant FLIP 1212 score = -72829.29
+--relavant FLIP 1515 is 0 score = -104792.41
+--relavant FLIP 1515 is 1 score = -104797.24
+--relavant FLIP 1515 is 2 score = -104792.63
+--relavant FLIP 1515 is 3 score = -104792.89
+--relavant FLIP 1515 is 4 score = -104794.79
+--relavant FLIP 1515 is 5 score = -104803.39
+--relavant FLIP 1515 is 6 score = -104794.69
+--relavant FLIP 1515 is 7 score = -105512.39
+--relavant FLIP 1515 is 8 score = -104547.28
+--relavant FLIP 1515 is 9 score = -104795.12
+--relavant FLIP 1515 is 10 score = -105612.48
+--relavant FLIP 1515 is 11 score = -108712.48
+--relavant FLIP 1515 is 12 score = -115945.04
+depth0 relavant FLIP 1515 score = -106212.51
+--relavant FLIP 1616 is 0 score = -104792.39
+--relavant FLIP 1616 is 1 score = -104792.74
+--relavant FLIP 1616 is 2 score = -104792.39
+--relavant FLIP 1616 is 3 score = -104792.39
+--relavant FLIP 1616 is 4 score = -104792.39
+--relavant FLIP 1616 is 5 score = -104792.39
+--relavant FLIP 1616 is 6 score = -104792.39
+--relavant FLIP 1616 is 7 score = -104792.39
+--relavant FLIP 1616 is 8 score = -103974.92
+--relavant FLIP 1616 is 9 score = -104792.39
+--relavant FLIP 1616 is 10 score = -104792.39
+--relavant FLIP 1616 is 11 score = -104792.39
+--relavant FLIP 1616 is 12 score = -104792.39
+depth0 relavant FLIP 1616 score = -104721.32
+--relavant FLIP 1717 is 0 score = -104744.79
+--relavant FLIP 1717 is 1 score = -104792.72
+--relavant FLIP 1717 is 2 score = -104792.68
+--relavant FLIP 1717 is 3 score = -104792.94
+--relavant FLIP 1717 is 4 score = -104794.84
+--relavant FLIP 1717 is 5 score = -104803.44
+--relavant FLIP 1717 is 6 score = -104794.74
+--relavant FLIP 1717 is 7 score = -105512.72
+--relavant FLIP 1717 is 8 score = -104735.29
+--relavant FLIP 1717 is 9 score = -104794.74
+--relavant FLIP 1717 is 10 score = -105614.78
+--relavant FLIP 1717 is 11 score = -103771.24
+--relavant FLIP 1717 is 12 score = -103772.42
+depth0 relavant FLIP 1717 score = -104732.34
+--relavant FLIP 1919 is 0 score = -104792.41
+--relavant FLIP 1919 is 1 score = -104792.44
+--relavant FLIP 1919 is 2 score = -104792.63
+--relavant FLIP 1919 is 3 score = -104793.69
+--relavant FLIP 1919 is 4 score = -104797.49
+--relavant FLIP 1919 is 5 score = -104814.69
+--relavant FLIP 1919 is 6 score = -104797.29
+--relavant FLIP 1919 is 7 score = -104794.79
+--relavant FLIP 1919 is 8 score = -104794.79
+--relavant FLIP 1919 is 9 score = -104794.79
+--relavant FLIP 1919 is 10 score = -105022.51
+--relavant FLIP 1919 is 11 score = -103974.93
+--relavant FLIP 1919 is 12 score = -103774.85
+depth0 relavant FLIP 1919 score = -104645.09
+--relavant FLIP 2121 is 0 score = -104792.39
+--relavant FLIP 2121 is 1 score = -104794.84
+--relavant FLIP 2121 is 2 score = -104792.39
+--relavant FLIP 2121 is 3 score = -104792.39
+--relavant FLIP 2121 is 4 score = -104792.39
+--relavant FLIP 2121 is 5 score = -104792.39
+--relavant FLIP 2121 is 6 score = -104792.39
+--relavant FLIP 2121 is 7 score = -104792.39
+--relavant FLIP 2121 is 8 score = -104732.62
+--relavant FLIP 2121 is 9 score = -104792.39
+--relavant FLIP 2121 is 10 score = -104792.39
+--relavant FLIP 2121 is 11 score = -107564.80
+--relavant FLIP 2121 is 12 score = -115069.80
+depth0 relavant FLIP 2121 score = -105922.07
+--relavant FLIP 2222 is 0 score = -104792.41
+--relavant FLIP 2222 is 1 score = -104792.94
+--relavant FLIP 2222 is 2 score = -104792.63
+--relavant FLIP 2222 is 3 score = -104793.69
+--relavant FLIP 2222 is 4 score = -104797.49
+--relavant FLIP 2222 is 5 score = -104814.69
+--relavant FLIP 2222 is 6 score = -104797.29
+--relavant FLIP 2222 is 7 score = -104794.79
+--relavant FLIP 2222 is 8 score = -104794.79
+--relavant FLIP 2222 is 9 score = -104794.79
+--relavant FLIP 2222 is 10 score = -105022.51
+--relavant FLIP 2222 is 11 score = -103974.93
+--relavant FLIP 2222 is 12 score = -103774.85
+depth0 relavant FLIP 2222 score = -104645.12
+--relavant FLIP 2626 is 0 score = -104792.39
+--relavant FLIP 2626 is 1 score = -104792.74
+--relavant FLIP 2626 is 2 score = -104792.39
+--relavant FLIP 2626 is 3 score = -104792.39
+--relavant FLIP 2626 is 4 score = -104792.39
+--relavant FLIP 2626 is 5 score = -104792.39
+--relavant FLIP 2626 is 6 score = -104792.39
+--relavant FLIP 2626 is 7 score = -104792.39
+--relavant FLIP 2626 is 8 score = -103772.44
+--relavant FLIP 2626 is 9 score = -104792.39
+--relavant FLIP 2626 is 10 score = -104792.39
+--relavant FLIP 2626 is 11 score = -104792.39
+--relavant FLIP 2626 is 12 score = -104792.39
+depth0 relavant FLIP 2626 score = -104703.71
+--irrelavant FLIP 2828 is 0 score = -104792.39
+--irrelavant FLIP 2828 is 1 score = -104792.39
+--irrelavant FLIP 2828 is 2 score = -104792.39
+--irrelavant FLIP 2828 is 3 score = -104792.39
+--irrelavant FLIP 2828 is 4 score = -104792.39
+--irrelavant FLIP 2828 is 5 score = -104792.39
+--irrelavant FLIP 2828 is 6 score = -104792.39
+--irrelavant FLIP 2828 is 7 score = -104792.39
+--irrelavant FLIP 2828 is 8 score = -104792.39
+--irrelavant FLIP 2828 is 9 score = -104792.39
+--irrelavant FLIP 2828 is 10 score = -104792.39
+--irrelavant FLIP 2828 is 11 score = -104792.39
+--irrelavant FLIP 2828 is 12 score = -104792.39
+irrelavant FLIP 2828 score = -104792.39
+Depth:  1, Time: 51, Node:      44341, Score: -49376.83304, Best Move: 606,
+Projected Depth  2 Time: 15350.915282
+depth 0 MOVE 105 score = -105512.74
+--relavant FLIP 0 is 0 score = -105986.88
+--relavant FLIP 0 is 1 score = -103404.86
+--relavant FLIP 0 is 2 score = -103194.86
+--relavant FLIP 0 is 3 score = -102544.86
+--relavant FLIP 0 is 4 score = -99444.86
+--relavant FLIP 0 is 5 score = 208045.14
+--relavant FLIP 0 is 6 score = 146745.85
+--relavant FLIP 0 is 7 score = -106039.41
+--relavant FLIP 0 is 8 score = -103504.86
+--relavant FLIP 0 is 9 score = -103624.92
+--relavant FLIP 0 is 10 score = -319.09
+--relavant FLIP 0 is 11 score = -2739.09
+--relavant FLIP 0 is 12 score = -7840.39
+depth0 relavant FLIP 0 score = -58006.38
+--relavant FLIP 303 is 0 score = -105184.93
+--relavant FLIP 303 is 1 score = -106032.20
+--relavant FLIP 303 is 2 score = -106039.65
+--relavant FLIP 303 is 3 score = -106040.38
+--relavant FLIP 303 is 4 score = -106044.42
+--relavant FLIP 303 is 5 score = -106061.17
+--relavant FLIP 303 is 6 score = 208542.99
+--relavant FLIP 303 is 7 score = -106032.05
+--relavant FLIP 303 is 8 score = -105740.22
+--relavant FLIP 303 is 9 score = -11326.57
+--relavant FLIP 303 is 10 score = -11348.67
+--relavant FLIP 303 is 11 score = -11348.00
+--relavant FLIP 303 is 12 score = -11346.81
+depth0 relavant FLIP 303 score = -63366.22
+--relavant FLIP 606 is 0 score = -105184.93
+--relavant FLIP 606 is 1 score = -106032.25
+--relavant FLIP 606 is 2 score = -106039.89
+--relavant FLIP 606 is 3 score = -106040.99
+--relavant FLIP 606 is 4 score = -106047.02
+--relavant FLIP 606 is 5 score = -106071.36
+--relavant FLIP 606 is 6 score = 204436.01
+--relavant FLIP 606 is 7 score = -104462.44
+--relavant FLIP 606 is 8 score = 320.03
+--relavant FLIP 606 is 9 score = 493.27
+--relavant FLIP 606 is 10 score = 990.35
+--relavant FLIP 606 is 11 score = 991.30
+--relavant FLIP 606 is 12 score = 776.63
+depth0 relavant FLIP 606 score = -50426.55
+--relavant FLIP 909 is 0 score = -105515.10
+--relavant FLIP 909 is 1 score = -106097.38
+--relavant FLIP 909 is 2 score = -106032.20
+--relavant FLIP 909 is 3 score = -106032.91
+--relavant FLIP 909 is 4 score = -106036.95
+--relavant FLIP 909 is 5 score = -106053.69
+--relavant FLIP 909 is 6 score = -104794.69
+--relavant FLIP 909 is 7 score = -104645.05
+--relavant FLIP 909 is 8 score = -104462.45
+--relavant FLIP 909 is 9 score = -104375.04
+--relavant FLIP 909 is 10 score = 769.17
+--relavant FLIP 909 is 11 score = 389.44
+--relavant FLIP 909 is 12 score = 213.85
+depth0 relavant FLIP 909 score = -82294.59
+--relavant FLIP 1010 is 0 score = -106032.11
+--relavant FLIP 1010 is 1 score = -106222.37
+--relavant FLIP 1010 is 2 score = -106032.26
+--relavant FLIP 1010 is 3 score = -106032.44
+--relavant FLIP 1010 is 4 score = -106033.77
+--relavant FLIP 1010 is 5 score = -106041.56
+--relavant FLIP 1010 is 6 score = -106033.68
+--relavant FLIP 1010 is 7 score = -106033.02
+--relavant FLIP 1010 is 8 score = -104762.68
+--relavant FLIP 1010 is 9 score = -106032.95
+--relavant FLIP 1010 is 10 score = -106032.45
+--relavant FLIP 1010 is 11 score = -108712.48
+--relavant FLIP 1010 is 12 score = -1553.66
+depth0 relavant FLIP 1010 score = -97078.78
+--relavant FLIP 1111 is 0 score = -106032.12
+--relavant FLIP 1111 is 1 score = -106032.15
+--relavant FLIP 1111 is 2 score = -106032.34
+--relavant FLIP 1111 is 3 score = -106032.71
+--relavant FLIP 1111 is 4 score = -106034.73
+--relavant FLIP 1111 is 5 score = -106043.10
+--relavant FLIP 1111 is 6 score = -106034.40
+--relavant FLIP 1111 is 7 score = -106032.06
+--relavant FLIP 1111 is 8 score = -105740.25
+--relavant FLIP 1111 is 9 score = -11326.88
+--relavant FLIP 1111 is 10 score = -11348.92
+--relavant FLIP 1111 is 11 score = -11348.03
+--relavant FLIP 1111 is 12 score = -11346.89
+depth0 relavant FLIP 1111 score = -77188.69
+--relavant FLIP 1212 is 0 score = -104792.75
+--relavant FLIP 1212 is 1 score = -106032.11
+--relavant FLIP 1212 is 2 score = -106033.90
+--relavant FLIP 1212 is 3 score = -106034.47
+--relavant FLIP 1212 is 4 score = -106037.96
+--relavant FLIP 1212 is 5 score = -106053.36
+--relavant FLIP 1212 is 6 score = -104794.69
+--relavant FLIP 1212 is 7 score = -105462.92
+--relavant FLIP 1212 is 8 score = -8983.08
+--relavant FLIP 1212 is 9 score = -104742.80
+--relavant FLIP 1212 is 10 score = -30648.05
+--relavant FLIP 1212 is 11 score = -20413.78
+--relavant FLIP 1212 is 12 score = -15356.96
+depth0 relavant FLIP 1212 score = -78531.39
+--relavant FLIP 1515 is 0 score = -106032.11
+--relavant FLIP 1515 is 1 score = -106147.42
+--relavant FLIP 1515 is 2 score = -106032.26
+--relavant FLIP 1515 is 3 score = -106032.44
+--relavant FLIP 1515 is 4 score = -106033.77
+--relavant FLIP 1515 is 5 score = -106041.56
+--relavant FLIP 1515 is 6 score = -106033.68
+--relavant FLIP 1515 is 7 score = -106033.02
+--relavant FLIP 1515 is 8 score = -104547.28
+--relavant FLIP 1515 is 9 score = -106032.95
+--relavant FLIP 1515 is 10 score = -106034.54
+--relavant FLIP 1515 is 11 score = -108712.48
+--relavant FLIP 1515 is 12 score = -115945.04
+depth0 relavant FLIP 1515 score = -107003.96
+--relavant FLIP 1616 is 0 score = -106032.10
+--relavant FLIP 1616 is 1 score = -106220.32
+--relavant FLIP 1616 is 2 score = -106032.10
+--relavant FLIP 1616 is 3 score = -106032.10
+--relavant FLIP 1616 is 4 score = -106032.10
+--relavant FLIP 1616 is 5 score = -106032.10
+--relavant FLIP 1616 is 6 score = -106032.10
+--relavant FLIP 1616 is 7 score = -106032.10
+--relavant FLIP 1616 is 8 score = -104259.79
+--relavant FLIP 1616 is 9 score = -106032.10
+--relavant FLIP 1616 is 10 score = -106032.00
+--relavant FLIP 1616 is 11 score = -105891.09
+--relavant FLIP 1616 is 12 score = -105549.95
+depth0 relavant FLIP 1616 score = -105831.98
+--relavant FLIP 1717 is 0 score = -104744.79
+--relavant FLIP 1717 is 1 score = -104792.72
+--relavant FLIP 1717 is 2 score = -104792.68
+--relavant FLIP 1717 is 3 score = -104792.94
+--relavant FLIP 1717 is 4 score = -104799.59
+--relavant FLIP 1717 is 5 score = -104816.79
+--relavant FLIP 1717 is 6 score = -104794.74
+--relavant FLIP 1717 is 7 score = -105512.72
+--relavant FLIP 1717 is 8 score = -106038.12
+--relavant FLIP 1717 is 9 score = -104794.74
+--relavant FLIP 1717 is 10 score = -105614.78
+--relavant FLIP 1717 is 11 score = -104247.22
+--relavant FLIP 1717 is 12 score = -104588.42
+depth0 relavant FLIP 1717 score = -104958.76
+--relavant FLIP 1919 is 0 score = -104792.41
+--relavant FLIP 1919 is 1 score = -104792.44
+--relavant FLIP 1919 is 2 score = -104792.63
+--relavant FLIP 1919 is 3 score = -104793.69
+--relavant FLIP 1919 is 4 score = -106037.94
+--relavant FLIP 1919 is 5 score = -106053.34
+--relavant FLIP 1919 is 6 score = -106037.54
+--relavant FLIP 1919 is 7 score = -106040.99
+--relavant FLIP 1919 is 8 score = -106038.18
+--relavant FLIP 1919 is 9 score = -106040.99
+--relavant FLIP 1919 is 10 score = -106709.68
+--relavant FLIP 1919 is 11 score = -105339.53
+--relavant FLIP 1919 is 12 score = -104998.28
+depth0 relavant FLIP 1919 score = -105484.24
+--relavant FLIP 2121 is 0 score = -104792.72
+--relavant FLIP 2121 is 1 score = -106210.39
+--relavant FLIP 2121 is 2 score = -104792.72
+--relavant FLIP 2121 is 3 score = -104792.72
+--relavant FLIP 2121 is 4 score = -104792.72
+--relavant FLIP 2121 is 5 score = -104792.72
+--relavant FLIP 2121 is 6 score = -104792.72
+--relavant FLIP 2121 is 7 score = -104792.77
+--relavant FLIP 2121 is 8 score = -104732.62
+--relavant FLIP 2121 is 9 score = -104792.77
+--relavant FLIP 2121 is 10 score = -104832.20
+--relavant FLIP 2121 is 11 score = -107932.20
+--relavant FLIP 2121 is 12 score = -115437.09
+depth0 relavant FLIP 2121 score = -106049.46
+--relavant FLIP 2222 is 0 score = -104792.41
+--relavant FLIP 2222 is 1 score = -104792.94
+--relavant FLIP 2222 is 2 score = -104792.63
+--relavant FLIP 2222 is 3 score = -104793.69
+--relavant FLIP 2222 is 4 score = -104797.49
+--relavant FLIP 2222 is 5 score = -104983.72
+--relavant FLIP 2222 is 6 score = -106008.81
+--relavant FLIP 2222 is 7 score = -104795.12
+--relavant FLIP 2222 is 8 score = -104794.79
+--relavant FLIP 2222 is 9 score = -104795.12
+--relavant FLIP 2222 is 10 score = -105612.38
+--relavant FLIP 2222 is 11 score = -104149.37
+--relavant FLIP 2222 is 12 score = -104490.50
+depth0 relavant FLIP 2222 score = -104808.26
+--relavant FLIP 2626 is 0 score = -106032.10
+--relavant FLIP 2626 is 1 score = -106220.32
+--relavant FLIP 2626 is 2 score = -106032.10
+--relavant FLIP 2626 is 3 score = -106032.10
+--relavant FLIP 2626 is 4 score = -106032.10
+--relavant FLIP 2626 is 5 score = -106032.10
+--relavant FLIP 2626 is 6 score = -106032.10
+--relavant FLIP 2626 is 7 score = -106032.10
+--relavant FLIP 2626 is 8 score = -105518.32
+--relavant FLIP 2626 is 9 score = -106032.10
+--relavant FLIP 2626 is 10 score = -106032.00
+--relavant FLIP 2626 is 11 score = -105891.09
+--relavant FLIP 2626 is 12 score = -105549.95
+depth0 relavant FLIP 2626 score = -105941.41
+--irrelavant FLIP 2727 is 0 score = -106032.10
+--irrelavant FLIP 2727 is 1 score = -106217.45
+--irrelavant FLIP 2727 is 2 score = -106032.10
+--irrelavant FLIP 2727 is 3 score = -106032.10
+--irrelavant FLIP 2727 is 4 score = -106032.10
+--irrelavant FLIP 2727 is 5 score = -106032.10
+--irrelavant FLIP 2727 is 6 score = -106032.10
+--irrelavant FLIP 2727 is 7 score = -106032.10
+--irrelavant FLIP 2727 is 8 score = -106035.63
+--irrelavant FLIP 2727 is 9 score = -106032.10
+--irrelavant FLIP 2727 is 10 score = -106032.00
+--irrelavant FLIP 2727 is 11 score = -105891.09
+--irrelavant FLIP 2727 is 12 score = -105549.95
+irrelavant FLIP 2727 score = -105986.27
+Depth:  2, Time: 7032, Node:    6209773, Score: -50426.55279, Best Move: 606,
+Projected Depth  3 Time: 2116620.318905
+Depth:  2, Node:    6209773, Score: -50426.55279, Move: c7-c7
+=12 c7 c7
+11 flip c7 g
+=11
+16 time_left black 882892
+Time Left(black): 882892
+=16
+11 flip a8 n
+=11
+16 time_left red 849164
+Time Left(red): 849164
+=16
+12 genmove black
+I am black, time left 822892.000000
+Assigned 15526.264151 seconds this turn,15526.264151 
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+HistoryCount 12
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-7500.000000,8140.000000,0.000000,11.910000,2.300000,0.000000,0.000000
+Curstate: 3 643.655000
+277,277,277.000000
+depth 0 MOVE 4 score = 1342.46
+depth 0 MOVE 607 score = 903.60
+depth 0 MOVE 105 score = -104227.45
+depth 0 MOVE 605 score = 1197.50
+move 4 returns value 1342.460000 > 643.655000 
+Depth:  1, Time: 3, Node:       3305, Score: +1342.46000, Best Move: 4,
+Projected Depth  2 Time: 831.000000
+depth 0 MOVE 4 score = 1342.46
+depth 0 MOVE 607 score = 903.60
+depth 0 MOVE 105 score = -104227.45
+depth 0 MOVE 605 score = 1197.50
+move 4 returns value 1342.460000 > 643.655000 
+Depth:  2, Time: 328, Node:     310666, Score: +1342.46000, Best Move: 4,
+Projected Depth  3 Time: 90856.000000
+Depth:  2, Node:     310666, Score: +1342.46000, Move: a8-a7
+=12 a8 a7
+10 move a8 a7
+=10
+16 time_left black 882557
+Time Left(black): 882557
+=16
+10 move d7 a7
+=10
+16 time_left red 843886
+Time Left(red): 843886
+=16
+12 genmove black
+I am black, time left 822557.000000
+Assigned 15818.403846 seconds this turn,15818.403846 
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+HistoryCount 14
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-7000.000000,8140.000000,0.000000,13.800000,2.240000,0.000000,0.000000
+Curstate: 3 1144.660000
+277,277,277.000000
+depth 0 MOVE 105 score = -7459.39
+depth 0 MOVE 100 score = 1572.57
+depth 0 MOVE 607 score = 757.16
+depth 0 MOVE 605 score = 1574.97
+move 605 returns value 1574.970000 > 1144.660000 
+Depth:  1, Time: 2, Node:       2588, Score: +1574.97000, Best Move: 605,
+Projected Depth  2 Time: 554.000000
+depth 0 MOVE 105 score = -7459.39
+depth 0 MOVE 100 score = 1572.57
+depth 0 MOVE 607 score = 757.16
+depth 0 MOVE 605 score = 1574.97
+move 605 returns value 1574.970000 > 1144.660000 
+Depth:  2, Time: 511, Node:     480356, Score: +1574.97000, Best Move: 605,
+Projected Depth  3 Time: 141547.000000
+Depth:  2, Node:     480356, Score: +1574.97000, Move: c7-b7
+=12 c7 b7
+10 move c7 b7
+=10
+16 time_left black 882043
+Time Left(black): 882043
+=16
+11 flip d5 P
+=11
+16 time_left red 839189
+Time Left(red): 839189
+=16
+12 genmove black
+I am black, time left 822043.000000
+Assigned 16118.490196 seconds this turn,16118.490196 
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+HistoryCount 16
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-7000.000000,8140.000000,0.000000,11.820000,2.220000,0.000000,0.000000
+Curstate: 3 1143.690000
+264,263,263.499526
+depth 0 MOVE 504 score = 1578.63
+depth 0 MOVE 100 score = 1573.87
+depth 0 MOVE 506 score = 1572.56
+depth 0 MOVE 206 score = 1578.63
+move 504 returns value 1578.630000 > 1143.690000 
+Depth:  1, Time: 1, Node:       1352, Score: +1578.63000, Best Move: 504,
+Projected Depth  2 Time: 263.499526
+depth 0 MOVE 504 score = 1578.63
+depth 0 MOVE 100 score = 1573.87
+depth 0 MOVE 506 score = 1572.56
+depth 0 MOVE 206 score = 1578.63
+move 504 returns value 1578.630000 > 1143.690000 
+Depth:  2, Time: 244, Node:     270870, Score: +1578.63000, Best Move: 504,
+Projected Depth  3 Time: 64293.884250
+Depth:  2, Node:     270870, Score: +1578.63000, Move: b7-a7
+=12 b7 a7
+10 move b7 a7
+=10
+16 time_left black 881755
+Time Left(black): 881755
+=16
+11 flip a4 p
+=11
+16 time_left red 834941
+Time Left(red): 834941
+=16
+12 genmove black
+I am black, time left 821755.000000
+Assigned 16435.100000 seconds this turn,16435.100000 
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+HistoryCount 18
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6500.000000,8160.000000,0.000000,18.720000,2.200000,0.000000,0.000000
+Curstate: 3 1667.160000
+253,249,250.992032
+depth 0 MOVE 408 score = 1578.63
+depth 0 MOVE 105 score = 1577.46
+depth 0 MOVE 100 score = 1577.47
+depth 0 MOVE 400 score = 1577.46
+depth 0 MOVE 405 score = 1577.46
+depth 0 MOVE 206 score = 1578.63
+--relavant FLIP 303 is 0 score = 858.47
+--relavant FLIP 303 is 1 score = -104284.99
+--relavant FLIP 303 is 2 score = 1578.41
+--relavant FLIP 303 is 3 score = 1578.15
+--relavant FLIP 303 is 4 score = 1576.43
+--relavant FLIP 303 is 5 score = 1568.83
+--relavant FLIP 303 is 6 score = 221787.38
+--relavant FLIP 303 is 7 score = 1578.65
+--relavant FLIP 303 is 8 score = 2797.07
+--relavant FLIP 303 is 9 score = 1578.74
+--relavant FLIP 303 is 10 score = 1579.13
+--relavant FLIP 303 is 11 score = 1581.03
+--relavant FLIP 303 is 12 score = 1583.53
+depth0 relavant FLIP 303 score = 7611.19
+--relavant FLIP 909 is 0 score = 1579.69
+--relavant FLIP 909 is 1 score = 2248.68
+--relavant FLIP 909 is 2 score = 1579.60
+--relavant FLIP 909 is 3 score = 1579.47
+--relavant FLIP 909 is 4 score = 1578.61
+--relavant FLIP 909 is 5 score = 1568.75
+--relavant FLIP 909 is 6 score = 1573.80
+--relavant FLIP 909 is 7 score = 1578.61
+--relavant FLIP 909 is 8 score = 1575.08
+--relavant FLIP 909 is 9 score = 1580.03
+--relavant FLIP 909 is 10 score = 1580.42
+--relavant FLIP 909 is 11 score = 1901.03
+--relavant FLIP 909 is 12 score = 1904.83
+depth0 relavant FLIP 909 score = 1664.32
+--relavant FLIP 1010 is 0 score = 1577.44
+--relavant FLIP 1010 is 1 score = 38.08
+--relavant FLIP 1010 is 2 score = 1576.25
+--relavant FLIP 1010 is 3 score = 1576.12
+--relavant FLIP 1010 is 4 score = 1575.02
+--relavant FLIP 1010 is 5 score = 1567.42
+--relavant FLIP 1010 is 6 score = 1576.24
+--relavant FLIP 1010 is 7 score = 1447.54
+--relavant FLIP 1010 is 8 score = 1577.53
+--relavant FLIP 1010 is 9 score = 1577.53
+--relavant FLIP 1010 is 10 score = 1207.54
+--relavant FLIP 1010 is 11 score = -1212.46
+--relavant FLIP 1010 is 12 score = 4502.12
+depth0 relavant FLIP 1010 score = 1322.63
+--relavant FLIP 1111 is 0 score = 1578.49
+--relavant FLIP 1111 is 1 score = 1578.43
+--relavant FLIP 1111 is 2 score = 1578.41
+--relavant FLIP 1111 is 3 score = 1578.28
+--relavant FLIP 1111 is 4 score = 1577.42
+--relavant FLIP 1111 is 5 score = 1569.88
+--relavant FLIP 1111 is 6 score = 2791.28
+--relavant FLIP 1111 is 7 score = 859.68
+--relavant FLIP 1111 is 8 score = 1578.65
+--relavant FLIP 1111 is 9 score = 2797.11
+--relavant FLIP 1111 is 10 score = 2797.31
+--relavant FLIP 1111 is 11 score = 4502.07
+--relavant FLIP 1111 is 12 score = 4504.57
+depth0 relavant FLIP 1111 score = 2156.17
+--relavant FLIP 1212 is 0 score = 1578.58
+--relavant FLIP 1212 is 1 score = -7461.92
+--relavant FLIP 1212 is 2 score = 1578.30
+--relavant FLIP 1212 is 3 score = 1577.91
+--relavant FLIP 1212 is 4 score = 1577.22
+--relavant FLIP 1212 is 5 score = 748.38
+--relavant FLIP 1212 is 6 score = 222508.90
+--relavant FLIP 1212 is 7 score = 1576.36
+--relavant FLIP 1212 is 8 score = 2797.07
+--relavant FLIP 1212 is 9 score = 1576.40
+--relavant FLIP 1212 is 10 score = 1576.60
+--relavant FLIP 1212 is 11 score = 1899.83
+--relavant FLIP 1212 is 12 score = 1901.08
+depth0 relavant FLIP 1212 score = 12865.42
+--relavant FLIP 1717 is 0 score = 2077.04
+--relavant FLIP 1717 is 1 score = 1578.47
+--relavant FLIP 1717 is 2 score = 858.37
+--relavant FLIP 1717 is 3 score = 858.11
+--relavant FLIP 1717 is 4 score = 856.39
+--relavant FLIP 1717 is 5 score = 848.79
+--relavant FLIP 1717 is 6 score = 222544.53
+--relavant FLIP 1717 is 7 score = 857.51
+--relavant FLIP 1717 is 8 score = 1527.51
+--relavant FLIP 1717 is 9 score = 1571.50
+--relavant FLIP 1717 is 10 score = 1571.69
+--relavant FLIP 1717 is 11 score = 4502.12
+--relavant FLIP 1717 is 12 score = 4504.62
+depth0 relavant FLIP 1717 score = 13476.63
+--relavant FLIP 1919 is 0 score = 1578.61
+--relavant FLIP 1919 is 1 score = 858.48
+--relavant FLIP 1919 is 2 score = 1578.52
+--relavant FLIP 1919 is 3 score = 1578.39
+--relavant FLIP 1919 is 4 score = 1577.47
+--relavant FLIP 1919 is 5 score = 1569.87
+--relavant FLIP 1919 is 6 score = 1575.07
+--relavant FLIP 1919 is 7 score = 2668.41
+--relavant FLIP 1919 is 8 score = 1529.71
+--relavant FLIP 1919 is 9 score = 2797.11
+--relavant FLIP 1919 is 10 score = 2427.06
+--relavant FLIP 1919 is 11 score = 4502.07
+--relavant FLIP 1919 is 12 score = 4504.57
+depth0 relavant FLIP 1919 score = 2220.06
+--relavant FLIP 2020 is 0 score = 859.67
+--relavant FLIP 2020 is 1 score = 1578.63
+--relavant FLIP 2020 is 2 score = 859.58
+--relavant FLIP 2020 is 3 score = 859.45
+--relavant FLIP 2020 is 4 score = 858.59
+--relavant FLIP 2020 is 5 score = 854.79
+--relavant FLIP 2020 is 6 score = 222556.65
+--relavant FLIP 2020 is 7 score = 1578.63
+--relavant FLIP 2020 is 8 score = 1578.63
+--relavant FLIP 2020 is 9 score = 1578.63
+--relavant FLIP 2020 is 10 score = 1578.63
+--relavant FLIP 2020 is 11 score = 1578.63
+--relavant FLIP 2020 is 12 score = 1578.63
+depth0 relavant FLIP 2020 score = 12905.99
+--relavant FLIP 2121 is 0 score = 1578.63
+--relavant FLIP 2121 is 1 score = 1572.40
+--relavant FLIP 2121 is 2 score = 1578.63
+--relavant FLIP 2121 is 3 score = 1578.63
+--relavant FLIP 2121 is 4 score = 1578.63
+--relavant FLIP 2121 is 5 score = 1578.63
+--relavant FLIP 2121 is 6 score = 1578.63
+--relavant FLIP 2121 is 7 score = 1578.63
+--relavant FLIP 2121 is 8 score = 1898.63
+--relavant FLIP 2121 is 9 score = 1578.63
+--relavant FLIP 2121 is 10 score = 1578.63
+--relavant FLIP 2121 is 11 score = 1578.63
+--relavant FLIP 2121 is 12 score = 1578.63
+depth0 relavant FLIP 2121 score = 1611.99
+--relavant FLIP 2222 is 0 score = 1578.61
+--relavant FLIP 2222 is 1 score = 1573.66
+--relavant FLIP 2222 is 2 score = 1578.52
+--relavant FLIP 2222 is 3 score = 1578.39
+--relavant FLIP 2222 is 4 score = 1577.49
+--relavant FLIP 2222 is 5 score = 1569.89
+--relavant FLIP 2222 is 6 score = 1575.09
+--relavant FLIP 2222 is 7 score = 859.71
+--relavant FLIP 2222 is 8 score = 1578.65
+--relavant FLIP 2222 is 9 score = 1409.71
+--relavant FLIP 2222 is 10 score = 889.71
+--relavant FLIP 2222 is 11 score = 2168.63
+--relavant FLIP 2222 is 12 score = 2168.63
+depth0 relavant FLIP 2222 score = 1549.96
+--relavant FLIP 2323 is 0 score = 1578.63
+--relavant FLIP 2323 is 1 score = 1578.63
+--relavant FLIP 2323 is 2 score = 1578.63
+--relavant FLIP 2323 is 3 score = 1578.63
+--relavant FLIP 2323 is 4 score = 1578.63
+--relavant FLIP 2323 is 5 score = 1578.63
+--relavant FLIP 2323 is 6 score = 1578.63
+--relavant FLIP 2323 is 7 score = 1578.63
+--relavant FLIP 2323 is 8 score = 2797.06
+--relavant FLIP 2323 is 9 score = 1578.63
+--relavant FLIP 2323 is 10 score = 1578.63
+--relavant FLIP 2323 is 11 score = 1578.63
+--relavant FLIP 2323 is 12 score = 1578.63
+depth0 relavant FLIP 2323 score = 1706.89
+--relavant FLIP 2424 is 0 score = 1578.63
+--relavant FLIP 2424 is 1 score = 39.24
+--relavant FLIP 2424 is 2 score = 1578.63
+--relavant FLIP 2424 is 3 score = 1578.63
+--relavant FLIP 2424 is 4 score = 1578.63
+--relavant FLIP 2424 is 5 score = 1578.63
+--relavant FLIP 2424 is 6 score = 1578.63
+--relavant FLIP 2424 is 7 score = 1578.63
+--relavant FLIP 2424 is 8 score = 1578.63
+--relavant FLIP 2424 is 9 score = 1578.63
+--relavant FLIP 2424 is 10 score = 1578.63
+--relavant FLIP 2424 is 11 score = 1578.63
+--relavant FLIP 2424 is 12 score = 1578.63
+depth0 relavant FLIP 2424 score = 1497.61
+--relavant FLIP 2626 is 0 score = 1578.63
+--relavant FLIP 2626 is 1 score = 38.18
+--relavant FLIP 2626 is 2 score = 1578.63
+--relavant FLIP 2626 is 3 score = 1578.63
+--relavant FLIP 2626 is 4 score = 1578.63
+--relavant FLIP 2626 is 5 score = 1578.63
+--relavant FLIP 2626 is 6 score = 1578.63
+--relavant FLIP 2626 is 7 score = 1578.63
+--relavant FLIP 2626 is 8 score = 4149.64
+--relavant FLIP 2626 is 9 score = 1578.63
+--relavant FLIP 2626 is 10 score = 1578.63
+--relavant FLIP 2626 is 11 score = 1578.63
+--relavant FLIP 2626 is 12 score = 1578.63
+depth0 relavant FLIP 2626 score = 1768.19
+--irrelavant FLIP 2727 is 0 score = 1578.63
+--irrelavant FLIP 2727 is 1 score = 1578.63
+--irrelavant FLIP 2727 is 2 score = 1578.63
+--irrelavant FLIP 2727 is 3 score = 1578.63
+--irrelavant FLIP 2727 is 4 score = 1578.63
+--irrelavant FLIP 2727 is 5 score = 1578.63
+--irrelavant FLIP 2727 is 6 score = 1578.63
+--irrelavant FLIP 2727 is 7 score = 1578.63
+--irrelavant FLIP 2727 is 8 score = 1578.63
+--irrelavant FLIP 2727 is 9 score = 1578.63
+--irrelavant FLIP 2727 is 10 score = 1578.63
+--irrelavant FLIP 2727 is 11 score = 1578.63
+--irrelavant FLIP 2727 is 12 score = 1578.63
+irrelavant FLIP 2727 score = 1578.63
+Depth:  1, Time: 200, Node:     190304, Score: +13476.63105, Best Move: 1717,
+Projected Depth  2 Time: 50198.406349
+Depth:  1, Node:     190304, Score: +13476.63105, Move: b4-b4
+=12 b4 b4
+11 flip b4 N
+=11
+16 time_left black 881550
+Time Left(black): 881550
+=16
+11 flip b3 n
+=11
+16 time_left red 832126
+Time Left(red): 832126
+=16
+12 genmove black
+I am black, time left 821550.000000
+Assigned 16766.326531 seconds this turn,16766.326531 
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+HistoryCount 20
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6500.000000,8160.000000,0.000000,19.330000,2.350000,0.000000,0.000000
+Curstate: 3 1667.315000
+195,192,193.494186
+depth 0 MOVE 1817 score = 2205.53
+depth 0 MOVE 2117 score = 2425.26
+depth 0 MOVE 408 score = 2422.66
+depth 0 MOVE 105 score = 2255.08
+depth 0 MOVE 100 score = 2253.93
+depth 0 MOVE 400 score = 2252.60
+depth 0 MOVE 405 score = 2252.60
+depth 0 MOVE 206 score = 2258.70
+move 2117 returns value 2425.255000 > 1667.315000 
+Depth:  1, Time: 20, Node:      17201, Score: +2425.25500, Best Move: 2117,
+Projected Depth  2 Time: 3869.883719
+depth 0 MOVE 1817 score = 2205.53
+depth 0 MOVE 2117 score = 2418.66
+depth 0 MOVE 408 score = 2258.70
+depth 0 MOVE 105 score = 2255.08
+depth 0 MOVE 100 score = 2253.93
+depth 0 MOVE 400 score = 2252.60
+depth 0 MOVE 405 score = 2252.60
+depth 0 MOVE 206 score = 2258.70
+move 2117 returns value 2418.663529 > 1667.315000 
+Depth:  2, Time: 1626, Node:    1639544, Score: +2418.66353, Best Move: 2117,
+Projected Depth  3 Time: 314621.546370
+Depth:  2, Node:    1639544, Score: +2418.66353, Move: b3-b4
+=12 b3 b4
+10 move b3 b4
+=10
+16 time_left black 879919
+Time Left(black): 879919
+=16
+11 flip c1 p
+=11
+16 time_left red 830319
+Time Left(red): 830319
+=16
+12 genmove black
+I am black, time left 819919.000000
+Assigned 17081.645833 seconds this turn,17081.645833 
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+HistoryCount 22
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6000.000000,8480.000000,0.000000,18.860000,2.200000,0.000000,0.000000
+Curstate: 3 2487.230000
+183,178,180.482686
+depth 0 MOVE 408 score = 2426.45
+depth 0 MOVE 105 score = 2425.13
+depth 0 MOVE 100 score = 2423.98
+depth 0 MOVE 400 score = 2422.66
+depth 0 MOVE 405 score = 2422.66
+depth 0 MOVE 1721 score = 2426.45
+depth 0 MOVE 206 score = 2426.45
+--relavant FLIP 303 is 0 score = 1605.89
+--relavant FLIP 303 is 1 score = -103964.37
+--relavant FLIP 303 is 3 score = 2424.78
+--relavant FLIP 303 is 4 score = 2423.06
+--relavant FLIP 303 is 5 score = 2415.46
+--relavant FLIP 303 is 6 score = 222957.70
+--relavant FLIP 303 is 7 score = 2425.28
+--relavant FLIP 303 is 8 score = 3421.40
+--relavant FLIP 303 is 10 score = 2425.51
+--relavant FLIP 303 is 11 score = 2426.45
+--relavant FLIP 303 is 12 score = 2427.70
+depth0 relavant FLIP 303 score = 9529.58
+--relavant FLIP 909 is 0 score = 2816.70
+--relavant FLIP 909 is 1 score = 2602.27
+--relavant FLIP 909 is 3 score = 1678.47
+--relavant FLIP 909 is 4 score = 1677.61
+--relavant FLIP 909 is 5 score = 1594.97
+--relavant FLIP 909 is 6 score = 2124.97
+--relavant FLIP 909 is 7 score = 2257.78
+--relavant FLIP 909 is 8 score = 2425.42
+--relavant FLIP 909 is 10 score = 2424.61
+--relavant FLIP 909 is 11 score = 2427.68
+--relavant FLIP 909 is 12 score = 2430.18
+depth0 relavant FLIP 909 score = 2289.10
+--relavant FLIP 1010 is 0 score = 2425.22
+--relavant FLIP 1010 is 1 score = 2135.16
+--relavant FLIP 1010 is 3 score = 2424.78
+--relavant FLIP 1010 is 4 score = 2203.31
+--relavant FLIP 1010 is 5 score = 2190.45
+--relavant FLIP 1010 is 6 score = 2255.23
+--relavant FLIP 1010 is 7 score = 2205.51
+--relavant FLIP 1010 is 8 score = 2425.36
+--relavant FLIP 1010 is 10 score = 2215.28
+--relavant FLIP 1010 is 11 score = -204.72
+--relavant FLIP 1010 is 12 score = 3286.22
+depth0 relavant FLIP 1010 score = 2066.10
+--relavant FLIP 1111 is 0 score = 2425.24
+--relavant FLIP 1111 is 1 score = 2425.21
+--relavant FLIP 1111 is 3 score = 2425.02
+--relavant FLIP 1111 is 4 score = 2424.16
+--relavant FLIP 1111 is 5 score = 2417.72
+--relavant FLIP 1111 is 6 score = 222545.17
+--relavant FLIP 1111 is 7 score = 1676.50
+--relavant FLIP 1111 is 8 score = 2425.31
+--relavant FLIP 1111 is 10 score = 3421.82
+--relavant FLIP 1111 is 11 score = 3423.72
+--relavant FLIP 1111 is 12 score = 3426.22
+depth0 relavant FLIP 1111 score = 16385.04
+--relavant FLIP 1212 is 0 score = 3425.16
+--relavant FLIP 1212 is 1 score = -6051.18
+--relavant FLIP 1212 is 3 score = 2257.29
+--relavant FLIP 1212 is 4 score = 2253.15
+--relavant FLIP 1212 is 5 score = 1596.15
+--relavant FLIP 1212 is 6 score = 223369.16
+--relavant FLIP 1212 is 7 score = 2252.82
+--relavant FLIP 1212 is 8 score = 3286.28
+--relavant FLIP 1212 is 10 score = 2424.28
+--relavant FLIP 1212 is 11 score = 2607.68
+--relavant FLIP 1212 is 12 score = 2608.93
+depth0 relavant FLIP 1212 score = 15939.46
+--relavant FLIP 1919 is 0 score = 2425.24
+--relavant FLIP 1919 is 1 score = 1507.46
+--relavant FLIP 1919 is 3 score = 1678.45
+--relavant FLIP 1919 is 4 score = 1676.49
+--relavant FLIP 1919 is 5 score = 1665.09
+--relavant FLIP 1919 is 6 score = 1670.79
+--relavant FLIP 1919 is 7 score = 2379.83
+--relavant FLIP 1919 is 8 score = 2425.31
+--relavant FLIP 1919 is 10 score = 3422.07
+--relavant FLIP 1919 is 11 score = 3423.97
+--relavant FLIP 1919 is 12 score = 3426.47
+depth0 relavant FLIP 1919 score = 2379.96
+--relavant FLIP 2020 is 0 score = 2899.82
+--relavant FLIP 2020 is 1 score = 3107.60
+--relavant FLIP 2020 is 3 score = 1678.28
+--relavant FLIP 2020 is 4 score = 1676.56
+--relavant FLIP 2020 is 5 score = 1668.96
+--relavant FLIP 2020 is 6 score = 223364.54
+--relavant FLIP 2020 is 7 score = 2238.43
+--relavant FLIP 2020 is 8 score = 2420.47
+--relavant FLIP 2020 is 10 score = 2338.34
+--relavant FLIP 2020 is 11 score = 2428.81
+--relavant FLIP 2020 is 12 score = 2430.06
+depth0 relavant FLIP 2020 score = 16161.19
+--relavant FLIP 2222 is 0 score = 3421.36
+--relavant FLIP 2222 is 1 score = 1506.14
+--relavant FLIP 2222 is 3 score = 1678.52
+--relavant FLIP 2222 is 4 score = 1676.56
+--relavant FLIP 2222 is 5 score = 1665.16
+--relavant FLIP 2222 is 6 score = 1670.87
+--relavant FLIP 2222 is 7 score = 2256.51
+--relavant FLIP 2222 is 8 score = 2375.25
+--relavant FLIP 2222 is 10 score = 2215.34
+--relavant FLIP 2222 is 11 score = 2958.98
+--relavant FLIP 2222 is 12 score = 2960.23
+depth0 relavant FLIP 2222 score = 2390.03
+--relavant FLIP 2323 is 0 score = 2425.26
+--relavant FLIP 2323 is 1 score = 2420.41
+--relavant FLIP 2323 is 3 score = 2425.26
+--relavant FLIP 2323 is 4 score = 2425.26
+--relavant FLIP 2323 is 5 score = 2425.26
+--relavant FLIP 2323 is 6 score = 2425.26
+--relavant FLIP 2323 is 7 score = 2425.26
+--relavant FLIP 2323 is 8 score = 3421.38
+--relavant FLIP 2323 is 10 score = 2425.26
+--relavant FLIP 2323 is 11 score = 2425.26
+--relavant FLIP 2323 is 12 score = 2425.26
+depth0 relavant FLIP 2323 score = 2549.47
+--relavant FLIP 2424 is 0 score = 2425.26
+--relavant FLIP 2424 is 1 score = 1507.46
+--relavant FLIP 2424 is 3 score = 2425.26
+--relavant FLIP 2424 is 4 score = 2425.26
+--relavant FLIP 2424 is 5 score = 2425.26
+--relavant FLIP 2424 is 6 score = 2425.26
+--relavant FLIP 2424 is 7 score = 2425.26
+--relavant FLIP 2424 is 8 score = 2425.26
+--relavant FLIP 2424 is 10 score = 2425.26
+--relavant FLIP 2424 is 11 score = 2425.26
+--relavant FLIP 2424 is 12 score = 2425.26
+depth0 relavant FLIP 2424 score = 2367.89
+--relavant FLIP 2525 is 0 score = 3421.36
+--relavant FLIP 2525 is 1 score = 2251.61
+--relavant FLIP 2525 is 3 score = 2258.20
+--relavant FLIP 2525 is 4 score = 2068.07
+--relavant FLIP 2525 is 5 score = 2064.28
+--relavant FLIP 2525 is 6 score = 2418.09
+--relavant FLIP 2525 is 7 score = 2420.43
+--relavant FLIP 2525 is 8 score = 2775.34
+--relavant FLIP 2525 is 10 score = 2420.66
+--relavant FLIP 2525 is 11 score = 2428.79
+--relavant FLIP 2525 is 12 score = 2430.04
+depth0 relavant FLIP 2525 score = 2578.87
+--relavant FLIP 2626 is 0 score = 1678.71
+--relavant FLIP 2626 is 1 score = 1675.20
+--relavant FLIP 2626 is 3 score = 1678.49
+--relavant FLIP 2626 is 4 score = 1677.63
+--relavant FLIP 2626 is 5 score = 1673.84
+--relavant FLIP 2626 is 6 score = 223463.54
+--relavant FLIP 2626 is 7 score = 2425.26
+--relavant FLIP 2626 is 8 score = 3281.32
+--relavant FLIP 2626 is 10 score = 2425.26
+--relavant FLIP 2626 is 11 score = 2425.26
+--relavant FLIP 2626 is 12 score = 2425.26
+depth0 relavant FLIP 2626 score = 15973.27
+--relavant FLIP 2828 is 0 score = 2425.26
+--relavant FLIP 2828 is 1 score = 1678.73
+--relavant FLIP 2828 is 3 score = 2425.26
+--relavant FLIP 2828 is 4 score = 2425.26
+--relavant FLIP 2828 is 5 score = 2425.26
+--relavant FLIP 2828 is 6 score = 2425.26
+--relavant FLIP 2828 is 7 score = 2425.26
+--relavant FLIP 2828 is 8 score = 2425.26
+--relavant FLIP 2828 is 10 score = 2425.26
+--relavant FLIP 2828 is 11 score = 2425.26
+--relavant FLIP 2828 is 12 score = 2425.26
+depth0 relavant FLIP 2828 score = 2378.60
+--relavant FLIP 2929 is 0 score = 1678.71
+--relavant FLIP 2929 is 1 score = 2257.36
+--relavant FLIP 2929 is 3 score = 1678.49
+--relavant FLIP 2929 is 4 score = 1677.63
+--relavant FLIP 2929 is 5 score = 1673.84
+--relavant FLIP 2929 is 6 score = 223463.54
+--relavant FLIP 2929 is 7 score = 2425.26
+--relavant FLIP 2929 is 8 score = 2428.84
+--relavant FLIP 2929 is 10 score = 2425.26
+--relavant FLIP 2929 is 11 score = 2425.26
+--relavant FLIP 2929 is 12 score = 2425.26
+depth0 relavant FLIP 2929 score = 15903.09
+--relavant FLIP 3131 is 0 score = 1678.71
+--relavant FLIP 3131 is 1 score = 2425.26
+--relavant FLIP 3131 is 3 score = 1678.49
+--relavant FLIP 3131 is 4 score = 1677.63
+--relavant FLIP 3131 is 5 score = 1673.84
+--relavant FLIP 3131 is 6 score = 223463.54
+--relavant FLIP 3131 is 7 score = 2425.26
+--relavant FLIP 3131 is 8 score = 2425.26
+--relavant FLIP 3131 is 10 score = 2425.26
+--relavant FLIP 3131 is 11 score = 2425.26
+--relavant FLIP 3131 is 12 score = 2425.26
+depth0 relavant FLIP 3131 score = 15913.14
+--irrelavant FLIP 2727 is 0 score = 2425.26
+--irrelavant FLIP 2727 is 1 score = 2425.26
+--irrelavant FLIP 2727 is 3 score = 2425.26
+--irrelavant FLIP 2727 is 4 score = 2425.26
+--irrelavant FLIP 2727 is 5 score = 2425.26
+--irrelavant FLIP 2727 is 6 score = 2425.26
+--irrelavant FLIP 2727 is 7 score = 2425.26
+--irrelavant FLIP 2727 is 8 score = 2425.26
+--irrelavant FLIP 2727 is 10 score = 2425.26
+--irrelavant FLIP 2727 is 11 score = 2425.26
+--irrelavant FLIP 2727 is 12 score = 2425.26
+irrelavant FLIP 2727 score = 2425.26
+Depth:  1, Time: 917, Node:     864226, Score: +16385.03750, Best Move: 1111,
+Projected Depth  2 Time: 165502.623200
+Depth:  1, Node:     864226, Score: +16385.03750, Move: d6-d6
+=12 d6 d6
+11 flip d6 C
+=11
+16 time_left black 878953
+Time Left(black): 878953
+=16
+11 flip b2 R
+=11
+16 time_left red 829299
+Time Left(red): 829299
+=16
+12 genmove black
+I am black, time left 818953.000000
+Assigned 17424.531915 seconds this turn,17424.531915 
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+HistoryCount 24
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6000.000000,8480.000000,0.000000,18.860000,2.460000,0.000000,0.000000
+Curstate: 3 2486.970000
+147,144,145.492268
+depth 0 MOVE 408 score = 2258.15
+depth 0 MOVE 105 score = 2257.15
+depth 0 MOVE 100 score = 2257.17
+depth 0 MOVE 400 score = 2257.15
+depth 0 MOVE 405 score = 2257.15
+depth 0 MOVE 1721 score = 2258.15
+depth 0 MOVE 206 score = 2258.15
+--relavant FLIP 303 is 0 score = 1605.61
+--relavant FLIP 303 is 3 score = 2257.61
+--relavant FLIP 303 is 4 score = 2255.89
+--relavant FLIP 303 is 5 score = 2248.29
+--relavant FLIP 303 is 6 score = 222956.92
+--relavant FLIP 303 is 7 score = 2258.14
+--relavant FLIP 303 is 8 score = 3286.01
+--relavant FLIP 303 is 10 score = 3105.62
+--relavant FLIP 303 is 11 score = 3107.52
+--relavant FLIP 303 is 12 score = 3110.02
+depth0 relavant FLIP 303 score = 18271.17
+--relavant FLIP 909 is 0 score = 2256.05
+--relavant FLIP 909 is 3 score = 1431.76
+--relavant FLIP 909 is 4 score = 1240.04
+--relavant FLIP 909 is 5 score = 1224.85
+--relavant FLIP 909 is 6 score = 1603.33
+--relavant FLIP 909 is 7 score = 1850.55
+--relavant FLIP 909 is 8 score = 2777.11
+--relavant FLIP 909 is 10 score = 2253.86
+--relavant FLIP 909 is 11 score = 70.67
+--relavant FLIP 909 is 12 score = -5030.62
+depth0 relavant FLIP 909 score = 1216.96
+--relavant FLIP 1010 is 0 score = 2252.44
+--relavant FLIP 1010 is 3 score = 2252.00
+--relavant FLIP 1010 is 4 score = 2060.59
+--relavant FLIP 1010 is 5 score = 2051.36
+--relavant FLIP 1010 is 6 score = 2254.88
+--relavant FLIP 1010 is 7 score = 2068.62
+--relavant FLIP 1010 is 8 score = 2378.03
+--relavant FLIP 1010 is 10 score = 1867.31
+--relavant FLIP 1010 is 11 score = -552.95
+--relavant FLIP 1010 is 12 score = 4016.02
+depth0 relavant FLIP 1010 score = 1927.02
+--relavant FLIP 1212 is 0 score = 3424.03
+--relavant FLIP 1212 is 3 score = 2256.07
+--relavant FLIP 1212 is 4 score = 2252.80
+--relavant FLIP 1212 is 5 score = 1432.80
+--relavant FLIP 1212 is 6 score = 223365.35
+--relavant FLIP 1212 is 7 score = 2255.01
+--relavant FLIP 1212 is 8 score = 3285.99
+--relavant FLIP 1212 is 10 score = 2258.11
+--relavant FLIP 1212 is 11 score = 2606.13
+--relavant FLIP 1212 is 12 score = 2607.38
+depth0 relavant FLIP 1212 score = 18463.13
+--relavant FLIP 1919 is 0 score = 2258.07
+--relavant FLIP 1919 is 3 score = 1678.16
+--relavant FLIP 1919 is 4 score = 1676.20
+--relavant FLIP 1919 is 5 score = 1664.80
+--relavant FLIP 1919 is 6 score = 1670.50
+--relavant FLIP 1919 is 7 score = 2901.37
+--relavant FLIP 1919 is 8 score = 3105.08
+--relavant FLIP 1919 is 10 score = 3211.91
+--relavant FLIP 1919 is 11 score = 791.65
+--relavant FLIP 1919 is 12 score = -4312.25
+depth0 relavant FLIP 1919 score = 1647.03
+--relavant FLIP 2020 is 0 score = 2899.52
+--relavant FLIP 2020 is 3 score = 1677.99
+--relavant FLIP 2020 is 4 score = 1676.27
+--relavant FLIP 2020 is 5 score = 1668.67
+--relavant FLIP 2020 is 6 score = 223364.20
+--relavant FLIP 2020 is 7 score = 1677.06
+--relavant FLIP 2020 is 8 score = 2257.66
+--relavant FLIP 2020 is 10 score = 2337.88
+--relavant FLIP 2020 is 11 score = 3496.43
+--relavant FLIP 2020 is 12 score = 3498.78
+depth0 relavant FLIP 2020 score = 18293.40
+--relavant FLIP 2222 is 0 score = 2258.07
+--relavant FLIP 2222 is 3 score = 1678.23
+--relavant FLIP 2222 is 4 score = 1676.27
+--relavant FLIP 2222 is 5 score = 1664.88
+--relavant FLIP 2222 is 6 score = 1670.57
+--relavant FLIP 2222 is 7 score = 2256.16
+--relavant FLIP 2222 is 8 score = 2257.72
+--relavant FLIP 2222 is 10 score = 1868.28
+--relavant FLIP 2222 is 11 score = 3496.38
+--relavant FLIP 2222 is 12 score = 3498.73
+depth0 relavant FLIP 2222 score = 2328.25
+--relavant FLIP 2323 is 0 score = 2258.09
+--relavant FLIP 2323 is 3 score = 2258.09
+--relavant FLIP 2323 is 4 score = 2258.09
+--relavant FLIP 2323 is 5 score = 2258.09
+--relavant FLIP 2323 is 6 score = 2258.09
+--relavant FLIP 2323 is 7 score = 2258.09
+--relavant FLIP 2323 is 8 score = 3289.30
+--relavant FLIP 2323 is 10 score = 2258.09
+--relavant FLIP 2323 is 11 score = 668.29
+--relavant FLIP 2323 is 12 score = -4435.61
+depth0 relavant FLIP 2323 score = 1700.17
+--relavant FLIP 2424 is 0 score = 2258.07
+--relavant FLIP 2424 is 3 score = 2257.85
+--relavant FLIP 2424 is 4 score = 2256.99
+--relavant FLIP 2424 is 5 score = 2253.19
+--relavant FLIP 2424 is 6 score = 2255.79
+--relavant FLIP 2424 is 7 score = 1678.50
+--relavant FLIP 2424 is 8 score = 2258.14
+--relavant FLIP 2424 is 10 score = 1864.81
+--relavant FLIP 2424 is 11 score = 3282.49
+--relavant FLIP 2424 is 12 score = 3283.74
+depth0 relavant FLIP 2424 score = 2407.60
+--relavant FLIP 2626 is 0 score = 1678.18
+--relavant FLIP 2626 is 3 score = 1677.96
+--relavant FLIP 2626 is 4 score = 1677.11
+--relavant FLIP 2626 is 5 score = 1673.30
+--relavant FLIP 2626 is 6 score = 223366.21
+--relavant FLIP 2626 is 7 score = 1155.30
+--relavant FLIP 2626 is 8 score = 2095.30
+--relavant FLIP 2626 is 10 score = 1675.27
+--relavant FLIP 2626 is 11 score = 3282.49
+--relavant FLIP 2626 is 12 score = 3283.74
+depth0 relavant FLIP 2626 score = 17878.50
+--relavant FLIP 2727 is 0 score = 2258.09
+--relavant FLIP 2727 is 3 score = 2258.09
+--relavant FLIP 2727 is 4 score = 2258.09
+--relavant FLIP 2727 is 5 score = 2258.09
+--relavant FLIP 2727 is 6 score = 2258.09
+--relavant FLIP 2727 is 7 score = 2258.09
+--relavant FLIP 2727 is 8 score = 2258.15
+--relavant FLIP 2727 is 10 score = 2258.09
+--relavant FLIP 2727 is 11 score = 2258.09
+--relavant FLIP 2727 is 12 score = 2258.09
+depth0 relavant FLIP 2727 score = 2258.10
+--relavant FLIP 2828 is 0 score = 2258.09
+--relavant FLIP 2828 is 3 score = 2258.09
+--relavant FLIP 2828 is 4 score = 2258.09
+--relavant FLIP 2828 is 5 score = 2258.09
+--relavant FLIP 2828 is 6 score = 2258.09
+--relavant FLIP 2828 is 7 score = 2258.09
+--relavant FLIP 2828 is 8 score = 2258.09
+--relavant FLIP 2828 is 10 score = 2258.09
+--relavant FLIP 2828 is 11 score = 2258.09
+--relavant FLIP 2828 is 12 score = 2258.09
+depth0 relavant FLIP 2828 score = 2258.09
+--relavant FLIP 2929 is 0 score = 1678.18
+--relavant FLIP 2929 is 3 score = 1677.96
+--relavant FLIP 2929 is 4 score = 1677.11
+--relavant FLIP 2929 is 5 score = 1673.30
+--relavant FLIP 2929 is 6 score = 223366.21
+--relavant FLIP 2929 is 7 score = 1155.30
+--relavant FLIP 2929 is 8 score = 2095.30
+--relavant FLIP 2929 is 10 score = 1675.27
+--relavant FLIP 2929 is 11 score = 3282.49
+--relavant FLIP 2929 is 12 score = 3283.74
+depth0 relavant FLIP 2929 score = 17878.50
+--relavant FLIP 3131 is 0 score = 1678.42
+--relavant FLIP 3131 is 3 score = 1678.20
+--relavant FLIP 3131 is 4 score = 1677.35
+--relavant FLIP 3131 is 5 score = 1673.54
+--relavant FLIP 3131 is 6 score = 223366.15
+--relavant FLIP 3131 is 7 score = 2258.09
+--relavant FLIP 3131 is 8 score = 2258.09
+--relavant FLIP 3131 is 10 score = 2258.09
+--relavant FLIP 3131 is 11 score = 2258.09
+--relavant FLIP 3131 is 12 score = 2258.09
+depth0 relavant FLIP 3131 score = 17802.65
+Depth:  1, Time: 1774, Node:    1438503, Score: +18463.13107, Best Move: 1212,
+Projected Depth  2 Time: 258103.283141
+Depth:  1, Node:    1438503, Score: +18463.13107, Move: a5-a5
+=12 a5 a5
+11 flip a5 p
+=11
+16 time_left black 877173
+Time Left(black): 877173
+=16
+11 flip a2 P
+=11
+16 time_left red 828764
+Time Left(red): 828764
+=16
+12 genmove black
+I am black, time left 817173.000000
+Assigned 17764.630435 seconds this turn,17764.630435 
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+HistoryCount 26
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6000.000000,8480.000000,0.000000,18.910000,2.480000,0.000000,0.000000
+Curstate: 3 2486.975000
+116,113,114.490174
+depth 0 MOVE 408 score = 2258.12
+depth 0 MOVE 1208 score = 2258.12
+depth 0 MOVE 105 score = 2256.94
+depth 0 MOVE 100 score = 2256.97
+depth 0 MOVE 400 score = 2256.94
+depth 0 MOVE 405 score = 2256.97
+depth 0 MOVE 1721 score = 2257.64
+depth 0 MOVE 206 score = 2258.12
+--relavant FLIP 303 is 0 score = 1506.86
+--relavant FLIP 303 is 3 score = 2251.88
+--relavant FLIP 303 is 4 score = 2252.89
+--relavant FLIP 303 is 5 score = 2248.75
+--relavant FLIP 303 is 6 score = 222956.93
+--relavant FLIP 303 is 8 score = 2899.62
+--relavant FLIP 303 is 10 score = 2425.38
+--relavant FLIP 303 is 11 score = 2426.33
+--relavant FLIP 303 is 12 score = 2427.58
+depth0 relavant FLIP 303 score = 20685.75
+--relavant FLIP 909 is 0 score = 2066.32
+--relavant FLIP 909 is 3 score = 1676.85
+--relavant FLIP 909 is 4 score = 1675.13
+--relavant FLIP 909 is 5 score = 1660.29
+--relavant FLIP 909 is 6 score = 223358.65
+--relavant FLIP 909 is 8 score = 2704.44
+--relavant FLIP 909 is 10 score = 2252.67
+--relavant FLIP 909 is 11 score = -13.77
+--relavant FLIP 909 is 12 score = -5117.68
+depth0 relavant FLIP 909 score = 19584.99
+--relavant FLIP 1010 is 0 score = 2254.97
+--relavant FLIP 1010 is 3 score = 2206.19
+--relavant FLIP 1010 is 4 score = 2204.01
+--relavant FLIP 1010 is 5 score = 2191.31
+--relavant FLIP 1010 is 6 score = 2254.93
+--relavant FLIP 1010 is 8 score = 2318.58
+--relavant FLIP 1010 is 10 score = 2212.29
+--relavant FLIP 1010 is 11 score = -207.97
+--relavant FLIP 1010 is 12 score = 3295.74
+depth0 relavant FLIP 1010 score = 1924.63
+--relavant FLIP 1919 is 0 score = 2254.99
+--relavant FLIP 1919 is 3 score = 1676.85
+--relavant FLIP 1919 is 4 score = 1675.12
+--relavant FLIP 1919 is 5 score = 1663.75
+--relavant FLIP 1919 is 6 score = 2247.49
+--relavant FLIP 1919 is 8 score = 2298.70
+--relavant FLIP 1919 is 10 score = 3214.08
+--relavant FLIP 1919 is 11 score = 793.83
+--relavant FLIP 1919 is 12 score = -4310.07
+depth0 relavant FLIP 1919 score = 1405.19
+--relavant FLIP 2020 is 0 score = 2897.30
+--relavant FLIP 2020 is 3 score = 1676.71
+--relavant FLIP 2020 is 4 score = 1674.13
+--relavant FLIP 2020 is 5 score = 1666.53
+--relavant FLIP 2020 is 6 score = 2420.60
+--relavant FLIP 2020 is 8 score = 2256.76
+--relavant FLIP 2020 is 10 score = 3086.70
+--relavant FLIP 2020 is 11 score = 3799.07
+--relavant FLIP 2020 is 12 score = 3801.57
+depth0 relavant FLIP 2020 score = 2686.04
+--relavant FLIP 2222 is 0 score = 2256.98
+--relavant FLIP 2222 is 3 score = 1676.92
+--relavant FLIP 2222 is 4 score = 1675.20
+--relavant FLIP 2222 is 5 score = 1663.83
+--relavant FLIP 2222 is 6 score = 2247.28
+--relavant FLIP 2222 is 8 score = 2257.74
+--relavant FLIP 2222 is 10 score = 1867.37
+--relavant FLIP 2222 is 11 score = 3286.16
+--relavant FLIP 2222 is 12 score = 3288.66
+depth0 relavant FLIP 2222 score = 2335.08
+--relavant FLIP 2323 is 0 score = 2255.01
+--relavant FLIP 2323 is 3 score = 2255.01
+--relavant FLIP 2323 is 4 score = 2255.01
+--relavant FLIP 2323 is 5 score = 2255.01
+--relavant FLIP 2323 is 6 score = 2255.01
+--relavant FLIP 2323 is 8 score = 2899.62
+--relavant FLIP 2323 is 10 score = 2255.01
+--relavant FLIP 2323 is 11 score = 668.34
+--relavant FLIP 2323 is 12 score = -4435.56
+depth0 relavant FLIP 2323 score = 1540.45
+--relavant FLIP 2626 is 0 score = 1677.11
+--relavant FLIP 2626 is 3 score = 1674.81
+--relavant FLIP 2626 is 4 score = 1673.95
+--relavant FLIP 2626 is 5 score = 1668.32
+--relavant FLIP 2626 is 6 score = 223365.15
+--relavant FLIP 2626 is 8 score = 2094.08
+--relavant FLIP 2626 is 10 score = 1674.05
+--relavant FLIP 2626 is 11 score = 3289.56
+--relavant FLIP 2626 is 12 score = 3293.31
+depth0 relavant FLIP 2626 score = 20622.59
+--relavant FLIP 2727 is 0 score = 2255.01
+--relavant FLIP 2727 is 3 score = 2255.01
+--relavant FLIP 2727 is 4 score = 2255.01
+--relavant FLIP 2727 is 5 score = 2255.01
+--relavant FLIP 2727 is 6 score = 2255.01
+--relavant FLIP 2727 is 8 score = 2989.11
+--relavant FLIP 2727 is 10 score = 2255.01
+--relavant FLIP 2727 is 11 score = 2255.01
+--relavant FLIP 2727 is 12 score = 2255.01
+depth0 relavant FLIP 2727 score = 2377.36
+--relavant FLIP 2828 is 0 score = 2255.01
+--relavant FLIP 2828 is 3 score = 2255.01
+--relavant FLIP 2828 is 4 score = 2255.01
+--relavant FLIP 2828 is 5 score = 2255.01
+--relavant FLIP 2828 is 6 score = 2255.01
+--relavant FLIP 2828 is 8 score = 2255.01
+--relavant FLIP 2828 is 10 score = 3086.62
+--relavant FLIP 2828 is 11 score = 3481.32
+--relavant FLIP 2828 is 12 score = 3483.82
+depth0 relavant FLIP 2828 score = 2631.10
+--relavant FLIP 2929 is 0 score = 1677.11
+--relavant FLIP 2929 is 3 score = 1674.81
+--relavant FLIP 2929 is 4 score = 1673.95
+--relavant FLIP 2929 is 5 score = 1668.32
+--relavant FLIP 2929 is 6 score = 223365.15
+--relavant FLIP 2929 is 8 score = 2028.11
+--relavant FLIP 2929 is 10 score = 1674.05
+--relavant FLIP 2929 is 11 score = 3289.56
+--relavant FLIP 2929 is 12 score = 3293.31
+depth0 relavant FLIP 2929 score = 20611.60
+--relavant FLIP 3131 is 0 score = 1677.35
+--relavant FLIP 3131 is 3 score = 1674.81
+--relavant FLIP 3131 is 4 score = 1673.95
+--relavant FLIP 3131 is 5 score = 1670.15
+--relavant FLIP 3131 is 6 score = 223365.09
+--relavant FLIP 3131 is 8 score = 2255.01
+--relavant FLIP 3131 is 10 score = 2255.01
+--relavant FLIP 3131 is 11 score = 2255.01
+--relavant FLIP 3131 is 12 score = 2255.01
+depth0 relavant FLIP 3131 score = 20439.06
+Depth:  1, Time: 4683, Node:    3629997, Score: +20685.75333, Best Move: 303,
+Projected Depth  2 Time: 536157.486017
+Depth:  1, Node:    3629997, Score: +20685.75333, Move: d8-d8
+=12 d8 d8
+11 flip d8 c
+=11
+16 time_left black 872484
+Time Left(black): 872484
+=16
+11 flip d3 m
+=11
+16 time_left red 828399
+Time Left(red): 828399
+=16
+12 genmove black
+I am black, time left 812484.000000
+Assigned 18055.200000 seconds this turn,18055.200000 
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+HistoryCount 28
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-6000.000000,8480.000000,0.000000,19.130000,2.480000,0.000000,0.000000
+Curstate: 3 2487.085000
+100,95,97.467943
+depth 0 MOVE 408 score = 3473.30
+depth 0 MOVE 315 score = 3318.73
+depth 0 MOVE 1208 score = 3475.80
+depth 0 MOVE 105 score = 3475.72
+depth 0 MOVE 100 score = 3475.80
+depth 0 MOVE 400 score = 3475.72
+depth 0 MOVE 405 score = 3475.80
+depth 0 MOVE 1721 score = 3475.66
+depth 0 MOVE 307 score = 3475.78
+depth 0 MOVE 206 score = 3475.76
+move 1208 returns value 3475.805000 > 2487.085000 
+Depth:  1, Time: 397, Node:     287813, Score: +3475.80500, Best Move: 1208,
+Projected Depth  2 Time: 38694.773549
+Depth:  1, Node:     287813, Score: +3475.80500, Move: a5-a6
+=12 a5 a6
+10 move a5 a6
+=10
+16 time_left black 872041
+Time Left(black): 872041
+=16
+11 flip a1 r
+=11
+16 time_left red 828079
+Time Left(red): 828079
+=16
+12 genmove black
+I am black, time left 812041.000000
+Assigned 18455.477273 seconds this turn,18455.477273 
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+HistoryCount 30
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-5500.000000,8800.000000,0.000000,15.430000,2.460000,0.000000,0.000000
+Curstate: 3 3305.255000
+84,76,79.899937
+depth 0 MOVE 2824 score = 4608.40
+depth 0 MOVE 315 score = 4286.70
+depth 0 MOVE 105 score = 4607.35
+depth 0 MOVE 100 score = 4607.80
+depth 0 MOVE 400 score = 4607.35
+depth 0 MOVE 405 score = 4607.80
+depth 0 MOVE 1721 score = 4608.40
+depth 0 MOVE 307 score = 4607.72
+depth 0 MOVE 206 score = 4490.47
+depth 0 MOVE 812 score = 4490.47
+depth 0 MOVE 1312 score = 4608.38
+depth 0 MOVE 1612 score = 4607.80
+move 2824 returns value 4608.400000 > 3305.255000 
+Depth:  1, Time: 673, Node:     529868, Score: +4608.40000, Best Move: 2824,
+Projected Depth  2 Time: 53772.657885
+Depth:  1, Node:     529868, Score: +4608.40000, Move: a1-a2
+=12 a1 a2
+10 move a1 a2
+=10
+16 time_left black 871364
+Time Left(black): 871364
+=16
+11 flip d2 P
+=11
+16 time_left red 827915
+Time Left(red): 827915
+=16
+12 genmove black
+I am black, time left 811364.000000
+Assigned 18868.930233 seconds this turn,18868.930233 
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+HistoryCount 32
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-5000.000000,9520.000000,0.000000,19.730000,2.700000,0.000000,0.000000
+Curstate: 3 4527.165000
+78,69,73.362116
+depth 0 MOVE 2425 score = 7867.41
+depth 0 MOVE 2327 score = 7741.08
+depth 0 MOVE 315 score = 7346.15
+depth 0 MOVE 105 score = 7516.16
+depth 0 MOVE 100 score = 7513.16
+depth 0 MOVE 400 score = 7513.16
+depth 0 MOVE 405 score = 7740.65
+depth 0 MOVE 2428 score = 7733.89
+depth 0 MOVE 1721 score = 7733.89
+depth 0 MOVE 307 score = 7518.59
+depth 0 MOVE 206 score = 7521.61
+depth 0 MOVE 812 score = 7712.23
+depth 0 MOVE 1312 score = 7714.43
+depth 0 MOVE 1612 score = 7714.43
+move 2425 returns value 7867.410000 > 4527.165000 
+Depth:  1, Time: 1076, Node:     803848, Score: +7867.41000, Best Move: 2425,
+Projected Depth  2 Time: 78937.636347
+Depth:  1, Node:     803848, Score: +7867.41000, Move: a2-b2
+=12 a2 b2
+10 move a2 b2
+=10
+16 time_left black 870283
+Time Left(black): 870283
+=16
+11 flip c3 K
+=11
+16 time_left red 827803
+Time Left(red): 827803
+=16
+12 genmove black
+I am black, time left 810283.000000
+Assigned 19292.452381 seconds this turn,19292.452381 
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+HistoryCount 34
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-4500.000000,10450.000000,0.000000,20.360000,8.220000,0.000000,0.000000
+Curstate: 3 5951.960000
+63,55,58.864251
+depth 0 MOVE 2327 score = 7072.04
+depth 0 MOVE 315 score = 7072.04
+depth 0 MOVE 105 score = 6637.20
+depth 0 MOVE 100 score = 6636.65
+depth 0 MOVE 400 score = 6637.20
+depth 0 MOVE 405 score = 6637.11
+depth 0 MOVE 2521 score = 6639.65
+depth 0 MOVE 2524 score = 6634.66
+depth 0 MOVE 1721 score = 6638.31
+depth 0 MOVE 307 score = 6637.08
+depth 0 MOVE 206 score = 6639.65
+depth 0 MOVE 812 score = 6639.65
+depth 0 MOVE 1312 score = 6635.88
+depth 0 MOVE 1612 score = 6635.74
+move 2327 returns value 7072.040000 > 5951.960000 
+Depth:  1, Time: 1759, Node:    1291925, Score: +7072.04000, Best Move: 2327,
+Projected Depth  2 Time: 103542.216825
+Depth:  1, Node:    1291925, Score: +7072.04000, Move: d3-d2
+=12 d3 d2
+10 move d3 d2
+=10
+16 time_left black 868477
+Time Left(black): 868477
+=16
+10 move c3 d3
+=10
+16 time_left red 827695
+Time Left(red): 827695
+=16
+12 genmove black
+I am black, time left 808477.000000
+Assigned 19718.951220 seconds this turn,19718.951220 
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+HistoryCount 36
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-4000.000000,11470.000000,0.000000,20.460000,6.220000,0.000000,0.000000
+Curstate: 3 7474.010000
+63,54,58.326666
+depth 0 MOVE 315 score = 7067.75
+depth 0 MOVE 105 score = 7067.75
+depth 0 MOVE 100 score = 7067.70
+depth 0 MOVE 400 score = 7067.70
+depth 0 MOVE 405 score = 7070.15
+depth 0 MOVE 1822 score = 7069.43
+depth 0 MOVE 2521 score = 7069.98
+depth 0 MOVE 2524 score = 7070.04
+depth 0 MOVE 1721 score = 7069.80
+depth 0 MOVE 307 score = 7070.04
+depth 0 MOVE 206 score = 7070.04
+depth 0 MOVE 812 score = 7070.04
+depth 0 MOVE 1312 score = 7069.66
+depth 0 MOVE 1612 score = 7069.64
+--relavant FLIP 909 is 0 score = 111381.39
+--relavant FLIP 909 is 3 score = 6657.72
+--relavant FLIP 909 is 4 score = 6655.32
+--relavant FLIP 909 is 5 score = 6640.12
+--relavant FLIP 909 is 8 score = 5446.73
+--relavant FLIP 909 is 11 score = 2686.73
+--relavant FLIP 909 is 12 score = -2416.45
+depth0 relavant FLIP 909 score = 19578.80
+--relavant FLIP 1010 is 0 score = 7067.18
+--relavant FLIP 1010 is 3 score = 7067.45
+--relavant FLIP 1010 is 4 score = 7856.11
+--relavant FLIP 1010 is 5 score = 7056.64
+--relavant FLIP 1010 is 8 score = 7069.01
+--relavant FLIP 1010 is 11 score = 6747.89
+--relavant FLIP 1010 is 12 score = 9893.95
+depth0 relavant FLIP 1010 score = 7536.89
+--relavant FLIP 1919 is 0 score = 111862.12
+--relavant FLIP 1919 is 3 score = 6332.65
+--relavant FLIP 1919 is 4 score = 6330.25
+--relavant FLIP 1919 is 5 score = 6315.05
+--relavant FLIP 1919 is 8 score = 6660.18
+--relavant FLIP 1919 is 11 score = 3840.12
+--relavant FLIP 1919 is 12 score = -885.98
+depth0 relavant FLIP 1919 score = 20064.91
+--relavant FLIP 2020 is 0 score = 112187.39
+--relavant FLIP 2020 is 3 score = 6658.14
+--relavant FLIP 2020 is 4 score = 6656.34
+--relavant FLIP 2020 is 5 score = 6642.17
+--relavant FLIP 2020 is 8 score = 7071.57
+--relavant FLIP 2020 is 11 score = 7067.43
+--relavant FLIP 2020 is 12 score = 7069.93
+depth0 relavant FLIP 2020 score = 21907.57
+--relavant FLIP 2626 is 0 score = 112427.20
+--relavant FLIP 2626 is 3 score = 8912.35
+--relavant FLIP 2626 is 4 score = 6478.43
+--relavant FLIP 2626 is 5 score = 6464.77
+--relavant FLIP 2626 is 8 score = 9309.69
+--relavant FLIP 2626 is 11 score = 7065.70
+--relavant FLIP 2626 is 12 score = 7067.36
+depth0 relavant FLIP 2626 score = 22532.22
+--relavant FLIP 2929 is 0 score = 112181.10
+--relavant FLIP 2929 is 3 score = 6479.97
+--relavant FLIP 2929 is 4 score = 6478.18
+--relavant FLIP 2929 is 5 score = 6466.77
+--relavant FLIP 2929 is 8 score = 7065.26
+--relavant FLIP 2929 is 11 score = 7066.23
+--relavant FLIP 2929 is 12 score = 7067.48
+depth0 relavant FLIP 2929 score = 21829.28
+--relavant FLIP 3131 is 0 score = 112595.31
+--relavant FLIP 3131 is 3 score = 6658.94
+--relavant FLIP 3131 is 4 score = 6658.34
+--relavant FLIP 3131 is 5 score = 6654.54
+--relavant FLIP 3131 is 8 score = 7064.91
+--relavant FLIP 3131 is 11 score = 7064.91
+--relavant FLIP 3131 is 12 score = 7064.91
+depth0 relavant FLIP 3131 score = 21965.98
+Depth:  1, Time: 22127, Node:   15389123, Score: +22532.21571, Best Move: 2626,
+Depth:  1, Node:   15389123, Score: +22532.21571, Move: c2-c2
+=12 c2 c2
+11 flip c2 G
+=11
+16 time_left black 846343
+Time Left(black): 846343
+=16
+10 move d3 d2
+=10
+16 time_left red 827653
+Time Left(red): 827653
+=16
+12 genmove black
+I am black, time left 786343.000000
+Assigned 19658.575000 seconds this turn,19658.575000 
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+HistoryCount 38
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-4000.000000,8780.000000,0.000000,20.460000,18.950000,0.000000,0.000000
+Curstate: 3 4771.280000
+50,43,46.368092
+depth 0 MOVE 315 score = 6457.89
+depth 0 MOVE 105 score = 6332.52
+depth 0 MOVE 100 score = 6456.81
+depth 0 MOVE 400 score = 6457.20
+depth 0 MOVE 405 score = 6331.97
+depth 0 MOVE 1822 score = 6457.76
+depth 0 MOVE 2521 score = 6329.41
+depth 0 MOVE 2524 score = 6370.92
+depth 0 MOVE 1721 score = 6075.60
+depth 0 MOVE 307 score = 6457.74
+depth 0 MOVE 206 score = 6456.65
+depth 0 MOVE 812 score = 6456.48
+depth 0 MOVE 1312 score = 6457.81
+depth 0 MOVE 1612 score = 6457.76
+move 315 returns value 6457.895000 > 4771.280000 
+Depth:  1, Time: 2722, Node:    1946112, Score: +6457.89500, Best Move: 315,
+Projected Depth  2 Time: 126213.947724
+Depth:  1, Node:    1946112, Score: +6457.89500, Move: d8-d5
+=12 d8 d5
+10 move d8 d5
+=10
+16 time_left black 843614
+Time Left(black): 843614
+=16
+10 move c5 d5
+=10
+16 time_left red 827614
+Time Left(red): 827614
+=16
+12 genmove black
+I am black, time left 783614.000000
+Assigned 20092.666667 seconds this turn,20092.666667 
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+HistoryCount 40
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-3500.000000,10560.000000,0.000000,24.700000,17.850000,0.000000,0.000000
+Curstate: 3 7054.500000
+51,42,46.281746
+depth 0 MOVE 105 score = 6251.53
+depth 0 MOVE 100 score = 6064.40
+depth 0 MOVE 400 score = 6064.85
+depth 0 MOVE 405 score = 6251.65
+depth 0 MOVE 1814 score = 6056.69
+depth 0 MOVE 1822 score = 6067.14
+depth 0 MOVE 2521 score = 6067.02
+depth 0 MOVE 2524 score = 6067.02
+depth 0 MOVE 1721 score = 6059.64
+depth 0 MOVE 203 score = 6243.45
+depth 0 MOVE 206 score = 6066.75
+depth 0 MOVE 812 score = 6243.57
+depth 0 MOVE 1314 score = 6056.69
+depth 0 MOVE 1312 score = 6066.85
+depth 0 MOVE 1612 score = 6241.36
+--relavant FLIP 909 is 0 score = 110255.69
+--relavant FLIP 909 is 3 score = 4734.20
+--relavant FLIP 909 is 4 score = 4732.55
+--relavant FLIP 909 is 8 score = 6461.32
+--relavant FLIP 909 is 11 score = 4131.77
+--relavant FLIP 909 is 12 score = -972.13
+depth0 relavant FLIP 909 score = 21557.23
+--relavant FLIP 1010 is 0 score = 6463.55
+--relavant FLIP 1010 is 3 score = 6252.36
+--relavant FLIP 1010 is 4 score = 5769.19
+--relavant FLIP 1010 is 8 score = 6374.72
+--relavant FLIP 1010 is 11 score = 6063.67
+--relavant FLIP 1010 is 12 score = 7052.64
+depth0 relavant FLIP 1010 score = 6329.35
+--relavant FLIP 1919 is 0 score = 6716.31
+--relavant FLIP 1919 is 3 score = 5772.16
+--relavant FLIP 1919 is 4 score = 5251.34
+--relavant FLIP 1919 is 8 score = 5764.52
+--relavant FLIP 1919 is 11 score = 2874.32
+--relavant FLIP 1919 is 12 score = -978.96
+depth0 relavant FLIP 1919 score = 4233.28
+--relavant FLIP 2020 is 0 score = 110808.48
+--relavant FLIP 2020 is 3 score = 5268.55
+--relavant FLIP 2020 is 4 score = 5259.53
+--relavant FLIP 2020 is 8 score = 6057.26
+--relavant FLIP 2020 is 11 score = 5837.98
+--relavant FLIP 2020 is 12 score = 5848.72
+depth0 relavant FLIP 2020 score = 23180.09
+--relavant FLIP 2929 is 0 score = 110983.68
+--relavant FLIP 2929 is 3 score = 5767.94
+--relavant FLIP 2929 is 4 score = 5765.53
+--relavant FLIP 2929 is 8 score = 6047.55
+--relavant FLIP 2929 is 11 score = 3562.38
+--relavant FLIP 2929 is 12 score = 6058.01
+depth0 relavant FLIP 2929 score = 23030.85
+--relavant FLIP 3131 is 0 score = 5836.64
+--relavant FLIP 3131 is 3 score = 5822.47
+--relavant FLIP 3131 is 4 score = 5821.27
+--relavant FLIP 3131 is 8 score = 5762.15
+--relavant FLIP 3131 is 11 score = 3450.57
+--relavant FLIP 3131 is 12 score = -1140.34
+depth0 relavant FLIP 3131 score = 4258.79
+Depth:  1, Time: 14579, Node:   10773665, Score: +23180.08500, Best Move: 2020,
+Projected Depth  2 Time: 674741.572917
+Depth:  1, Node:   10773665, Score: +23180.08500, Move: a3-a3
+=12 a3 a3
+11 flip a3 P
+=11
+16 time_left black 828990
+Time Left(black): 828990
+=16
+11 flip d1 m
+=11
+16 time_left red 827550
+Time Left(red): 827550
+=16
+12 genmove black
+I am black, time left 768990.000000
+Assigned 20236.578947 seconds this turn,20236.578947 
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+HistoryCount 42
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can opponent beat me?=2
+NEUTRAL(ATTACK/ATTACK)
+-3500.000000,10560.000000,0.000000,24.810000,19.910000,0.000000,0.000000
+Curstate: 3 7052.495000
+32,26,28.844410
+depth 0 MOVE 1620 score = 109068.31
+depth 0 MOVE 105 score = 109068.19
+depth 0 MOVE 100 score = 108884.21
+depth 0 MOVE 400 score = 108884.21
+depth 0 MOVE 405 score = 109068.31
+depth 0 MOVE 1814 score = 109052.60
+depth 0 MOVE 1822 score = 108889.52
+depth 0 MOVE 2521 score = 108494.36
+depth 0 MOVE 2524 score = 108494.36
+depth 0 MOVE 1721 score = 108892.35
+depth 0 MOVE 203 score = 108897.60
+depth 0 MOVE 206 score = 108897.66
+depth 0 MOVE 812 score = 108894.56
+depth 0 MOVE 1314 score = 109059.26
+depth 0 MOVE 1312 score = 108892.17
+depth 0 MOVE 1612 score = 109052.60
+move 1620 returns value 109068.310000 > 7052.495000 
+Depth:  1, Time: 11164, Node:    8524289, Score: +109068.31000, Best Move: 1620,
+Projected Depth  2 Time: 322018.995514
+Depth:  1, Node:    8524289, Score: +109068.31000, Move: a4-a3
+=12 a4 a3
+10 move a4 a3
+=10
+16 time_left black 817821
+Time Left(black): 817821
+=16
+10 move c2 b2
+=10
+16 time_left red 827534
+Time Left(red): 827534
+=16
+12 genmove black
+I am black, time left 757821.000000
+Assigned 20481.648649 seconds this turn,20481.648649 
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+HistoryCount 44
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,15020.000000,0.000000,34.270000,21.910000,0.000000,0.000000
+Curstate: 5 112015.225000
+33,24,28.142495
+depth 0 MOVE 100 score = 108479.55
+depth 0 MOVE 105 score = 109732.42
+depth 0 MOVE 400 score = 108487.05
+depth 0 MOVE 405 score = 109732.42
+depth 0 MOVE 1822 score = 108487.85
+depth 0 MOVE 1814 score = 108311.52
+depth 0 MOVE 1721 score = 108487.60
+depth 0 MOVE 1716 score = 108487.37
+depth 0 MOVE 3026 score = 108893.16
+depth 0 MOVE 2024 score = 108487.67
+depth 0 MOVE 2021 score = 108487.35
+depth 0 MOVE 2016 score = 108487.48
+depth 0 MOVE 1312 score = 108487.11
+depth 0 MOVE 1314 score = 108474.49
+depth 0 MOVE 812 score = 108487.85
+depth 0 MOVE 206 score = 108487.85
+depth 0 MOVE 203 score = 108801.98
+--relavant FLIP 909 is 3 score = 108474.03
+--relavant FLIP 909 is 4 score = 108474.03
+--relavant FLIP 909 is 8 score = 109517.38
+--relavant FLIP 909 is 12 score = 100954.78
+depth0 relavant FLIP 909 score = 106855.06
+--relavant FLIP 1010 is 3 score = 111116.48
+--relavant FLIP 1010 is 4 score = 110975.24
+--relavant FLIP 1010 is 8 score = 111369.30
+--relavant FLIP 1010 is 12 score = 112017.99
+depth0 relavant FLIP 1010 score = 111369.75
+--relavant FLIP 1919 is 3 score = 107728.25
+--relavant FLIP 1919 is 4 score = 107728.25
+--relavant FLIP 1919 is 8 score = 109510.54
+--relavant FLIP 1919 is 12 score = 100949.45
+depth0 relavant FLIP 1919 score = 106479.12
+--relavant FLIP 2929 is 3 score = 108476.62
+--relavant FLIP 2929 is 4 score = 108476.62
+--relavant FLIP 2929 is 8 score = 108482.38
+--relavant FLIP 2929 is 12 score = 99824.30
+depth0 relavant FLIP 2929 score = 106314.98
+Depth:  1, Time: 24012, Node:   17511861, Score: +111369.75250, Best Move: 1010,
+Depth:  1, Node:   17511861, Score: +111369.75250, Move: c6-c6
+=12 c6 c6
+11 flip c6 c
+=11
+16 time_left black 793803
+Time Left(black): 793803
+=16
+10 move d5 c5
+=10
+16 time_left red 827527
+Time Left(red): 827527
+=16
+12 genmove black
+I am black, time left 733803.000000
+Assigned 20383.416667 seconds this turn,20383.416667 
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+HistoryCount 46
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,15020.000000,0.000000,33.900000,25.320000,0.000000,0.000000
+Curstate: 5 112011.630000
+25,21,22.912878
+depth 0 MOVE 105 score = 108806.21
+depth 0 MOVE 100 score = 108799.89
+depth 0 MOVE 400 score = 108799.89
+depth 0 MOVE 405 score = 108809.14
+depth 0 MOVE 1822 score = 110800.19
+depth 0 MOVE 1721 score = 110802.57
+depth 0 MOVE 1716 score = 110975.38
+depth 0 MOVE 1006 score = 110975.37
+depth 0 MOVE 203 score = 110971.88
+depth 0 MOVE 206 score = 110971.81
+depth 0 MOVE 812 score = 110974.65
+depth 0 MOVE 1312 score = 110974.86
+depth 0 MOVE 2016 score = 110885.98
+depth 0 MOVE 2021 score = 110974.38
+depth 0 MOVE 2024 score = 110974.24
+depth 0 MOVE 3026 score = 110703.95
+--relavant FLIP 909 is 3 score = 108948.43
+--relavant FLIP 909 is 4 score = 109430.61
+--relavant FLIP 909 is 12 score = 104385.04
+depth0 relavant FLIP 909 score = 107588.03
+--relavant FLIP 1919 is 3 score = 110389.12
+--relavant FLIP 1919 is 4 score = 110362.72
+--relavant FLIP 1919 is 12 score = 111564.23
+depth0 relavant FLIP 1919 score = 110772.02
+--relavant FLIP 2929 is 3 score = 108472.40
+--relavant FLIP 2929 is 4 score = 108472.40
+--relavant FLIP 2929 is 12 score = 99408.15
+depth0 relavant FLIP 2929 score = 105450.98
+Depth:  1, Time: 35970, Node:   23298345, Score: +110975.38000, Best Move: 1716,
+Depth:  1, Node:   23298345, Score: +110975.38000, Move: b4-a4
+=12 b4 a4
+10 move b4 a4
+=10
+16 time_left black 757777
+Time Left(black): 757777
+=16
+10 move c5 c6
+=10
+16 time_left red 827471
+Time Left(red): 827471
+=16
+12 genmove black
+I am black, time left 697777.000000
+Assigned 19936.485714 seconds this turn,19936.485714 
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+HistoryCount 48
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,34.770000,23.120000,0.000000,0.000000
+Curstate: 5 111774.265000
+27,19,22.649503
+depth 0 MOVE 100 score = 110292.46
+depth 0 MOVE 105 score = 111145.02
+depth 0 MOVE 400 score = 111145.01
+depth 0 MOVE 405 score = 111144.42
+depth 0 MOVE 1817 score = 111143.54
+depth 0 MOVE 1822 score = 111144.99
+depth 0 MOVE 1814 score = 111061.73
+depth 0 MOVE 1612 score = 111144.78
+depth 0 MOVE 1617 score = 111144.90
+depth 0 MOVE 3026 score = 110314.00
+depth 0 MOVE 2024 score = 111065.30
+depth 0 MOVE 2021 score = 111059.92
+depth 0 MOVE 1312 score = 111144.67
+depth 0 MOVE 1317 score = 111144.84
+depth 0 MOVE 1314 score = 111059.92
+depth 0 MOVE 812 score = 111144.05
+depth 0 MOVE 206 score = 111144.97
+depth 0 MOVE 203 score = 111144.04
+--relavant FLIP 909 is 3 score = 110566.85
+--relavant FLIP 909 is 4 score = 110556.99
+--relavant FLIP 909 is 12 score = 104405.07
+depth0 relavant FLIP 909 score = 108509.63
+--relavant FLIP 1919 is 3 score = 107881.60
+--relavant FLIP 1919 is 4 score = 107881.60
+--relavant FLIP 1919 is 12 score = 108658.12
+depth0 relavant FLIP 1919 score = 108140.43
+--relavant FLIP 2929 is 3 score = 110561.90
+--relavant FLIP 2929 is 4 score = 110560.71
+--relavant FLIP 2929 is 12 score = 102323.85
+depth0 relavant FLIP 2929 score = 107815.48
+Depth:  1, Time: 19296, Node:   13452443, Score: +111145.02000, Best Move: 105,
+Projected Depth  2 Time: 437044.815789
+Depth:  1, Node:   13452443, Score: +111145.02000, Move: b8-b7
+=12 b8 b7
+10 move b8 b7
+=10
+16 time_left black 738472
+Time Left(black): 738472
+=16
+10 move d6 d7
+=10
+16 time_left red 827464
+Time Left(red): 827464
+=16
+12 genmove black
+I am black, time left 678472.000000
+Assigned 19955.058824 seconds this turn,19955.058824 
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+HistoryCount 50
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,29.980000,24.440000,0.000000,0.000000
+Curstate: 5 111770.550000
+27,22,24.372115
+depth 0 MOVE 501 score = 107203.27
+depth 0 MOVE 506 score = 107203.27
+depth 0 MOVE 400 score = 110747.90
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108104.10
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1612 score = 109207.55
+depth 0 MOVE 1617 score = 109207.50
+depth 0 MOVE 1312 score = 109207.05
+depth 0 MOVE 3026 score = 110295.57
+depth 0 MOVE 2024 score = 108002.20
+depth 0 MOVE 2021 score = 110742.49
+depth 0 MOVE 203 score = 107416.62
+depth 0 MOVE 1317 score = 109207.00
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 109207.30
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = -51283.60
+--relavant FLIP 909 is 3 score = 105519.58
+--relavant FLIP 909 is 4 score = 107420.18
+--relavant FLIP 909 is 12 score = 105528.20
+depth0 relavant FLIP 909 score = 106155.99
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 104384.70
+--relavant FLIP 1919 is 12 score = 104396.80
+depth0 relavant FLIP 1919 score = 104687.84
+--relavant FLIP 2929 is 3 score = 104387.69
+--relavant FLIP 2929 is 4 score = 104382.57
+--relavant FLIP 2929 is 12 score = 102323.30
+depth0 relavant FLIP 2929 score = 103697.85
+Depth:  1, Time: 15266, Node:   11064279, Score: +110747.89500, Best Move: 400,
+Projected Depth  2 Time: 372064.710856
+Depth:  1, Node:   11064279, Score: +110747.89500, Move: a7-a8
+=12 a7 a8
+10 move a7 a8
+=10
+16 time_left black 723201
+Time Left(black): 723201
+=16
+10 move d7 d8
+=10
+16 time_left red 827450
+Time Left(red): 827450
+=16
+12 genmove black
+I am black, time left 663201.000000
+Assigned 20097.000000 seconds this turn,20097.000000 
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+HistoryCount 52
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,45.880000,24.220000,0.000000,0.000000
+Curstate: 5 111778.720000
+29,20,24.083189
+depth 0 MOVE 501 score = -105484.18
+depth 0 MOVE 506 score = 103475.28
+depth 0 MOVE 504 score = 103454.85
+depth 0 MOVE 4 score = 110748.15
+depth 0 MOVE 1 score = 109208.05
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108098.60
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1617 score = 108002.20
+depth 0 MOVE 1612 score = 108398.55
+depth 0 MOVE 3026 score = 110296.06
+depth 0 MOVE 2024 score = 107505.65
+depth 0 MOVE 2021 score = 110741.60
+depth 0 MOVE 1312 score = 109199.05
+depth 0 MOVE 1317 score = 107606.40
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 108702.45
+depth 0 MOVE 804 score = 108703.75
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = 110308.50
+--relavant FLIP 909 is 3 score = 105295.33
+--relavant FLIP 909 is 4 score = 106597.86
+--relavant FLIP 909 is 12 score = 105517.20
+depth0 relavant FLIP 909 score = 105803.46
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 103130.99
+--relavant FLIP 1919 is 12 score = 103469.68
+depth0 relavant FLIP 1919 score = 103960.89
+--relavant FLIP 2929 is 3 score = 103134.89
+--relavant FLIP 2929 is 4 score = 103131.50
+--relavant FLIP 2929 is 12 score = 102324.03
+depth0 relavant FLIP 2929 score = 102863.47
+Depth:  1, Time: 18382, Node:   13331335, Score: +110748.15500, Best Move: 4,
+Projected Depth  2 Time: 442697.183095
+Depth:  1, Node:   13331335, Score: +110748.15500, Move: a8-a7
+=12 a8 a7
+10 move a8 a7
+=10
+16 time_left black 704770
+Time Left(black): 704770
+=16
+10 move d8 d7
+=10
+16 time_left red 827394
+Time Left(red): 827394
+=16
+12 genmove black
+I am black, time left 644770.000000
+Assigned 20149.062500 seconds this turn,20149.062500 
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+HistoryCount 54
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,29.980000,24.440000,0.000000,0.000000
+Curstate: 5 111770.550000
+27,22,24.372115
+depth 0 MOVE 501 score = 107203.27
+depth 0 MOVE 506 score = 107203.27
+depth 0 MOVE 400 score = 110747.90
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108104.10
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1612 score = 109207.55
+depth 0 MOVE 1617 score = 109207.50
+depth 0 MOVE 1312 score = 109207.05
+depth 0 MOVE 3026 score = 110295.57
+depth 0 MOVE 2024 score = 108002.20
+depth 0 MOVE 2021 score = 110742.49
+depth 0 MOVE 203 score = 107416.62
+depth 0 MOVE 1317 score = 109207.00
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 109207.30
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = -51283.60
+--relavant FLIP 909 is 3 score = 105519.58
+--relavant FLIP 909 is 4 score = 107420.18
+--relavant FLIP 909 is 12 score = 105528.20
+depth0 relavant FLIP 909 score = 106155.99
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 104384.70
+--relavant FLIP 1919 is 12 score = 104396.80
+depth0 relavant FLIP 1919 score = 104687.84
+--relavant FLIP 2929 is 3 score = 104387.69
+--relavant FLIP 2929 is 4 score = 104382.57
+--relavant FLIP 2929 is 12 score = 102323.30
+depth0 relavant FLIP 2929 score = 103697.85
+Depth:  1, Time: 15250, Node:   11064279, Score: +110747.89500, Best Move: 400,
+Projected Depth  2 Time: 371674.757012
+Depth:  1, Node:   11064279, Score: +110747.89500, Move: a7-a8
+=12 a7 a8
+10 move a7 a8
+=10
+16 time_left black 689514
+Time Left(black): 689514
+=16
+10 move d7 d8
+=10
+16 time_left red 827384
+Time Left(red): 827384
+=16
+12 genmove black
+I am black, time left 629514.000000
+Assigned 20306.903226 seconds this turn,20306.903226 
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+HistoryCount 56
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,45.880000,24.220000,0.000000,0.000000
+Curstate: 5 111778.720000
+29,20,24.083189
+depth 0 MOVE 501 score = -105484.18
+depth 0 MOVE 506 score = 103475.28
+depth 0 MOVE 504 score = 103454.85
+depth 0 MOVE 4 score = 110748.15
+depth 0 MOVE 1 score = 109208.05
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108098.60
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1617 score = 108002.20
+depth 0 MOVE 1612 score = 108398.55
+depth 0 MOVE 3026 score = 110296.06
+depth 0 MOVE 2024 score = 107505.65
+depth 0 MOVE 2021 score = 110741.60
+depth 0 MOVE 1312 score = 109199.05
+depth 0 MOVE 1317 score = 107606.40
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 108702.45
+depth 0 MOVE 804 score = 108703.75
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = 110308.50
+--relavant FLIP 909 is 3 score = 105295.33
+--relavant FLIP 909 is 4 score = 106597.86
+--relavant FLIP 909 is 12 score = 105517.20
+depth0 relavant FLIP 909 score = 105803.46
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 103130.99
+--relavant FLIP 1919 is 12 score = 103469.68
+depth0 relavant FLIP 1919 score = 103960.89
+--relavant FLIP 2929 is 3 score = 103134.89
+--relavant FLIP 2929 is 4 score = 103131.50
+--relavant FLIP 2929 is 12 score = 102324.03
+depth0 relavant FLIP 2929 score = 102863.47
+Depth:  1, Time: 18392, Node:   13331335, Score: +110748.15500, Best Move: 4,
+Projected Depth  2 Time: 442938.014986
+Depth:  1, Node:   13331335, Score: +110748.15500, Move: a8-a7
+=12 a8 a7
+10 move a8 a7
+=10
+16 time_left black 671113
+Time Left(black): 671113
+=16
+10 move d8 d7
+=10
+16 time_left red 827376
+Time Left(red): 827376
+=16
+12 genmove black
+I am black, time left 611113.000000
+Assigned 20370.433333 seconds this turn,20370.433333 
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+HistoryCount 58
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,29.980000,24.440000,0.000000,0.000000
+Curstate: 5 111770.550000
+27,22,24.372115
+depth 0 MOVE 501 score = 107203.27
+depth 0 MOVE 506 score = 107203.27
+depth 0 MOVE 400 score = 110747.90
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108104.10
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1612 score = 109207.55
+depth 0 MOVE 1617 score = 109207.50
+depth 0 MOVE 1312 score = 109207.05
+depth 0 MOVE 3026 score = 110295.57
+depth 0 MOVE 2024 score = 108002.20
+depth 0 MOVE 2021 score = 110742.49
+depth 0 MOVE 203 score = 107416.62
+depth 0 MOVE 1317 score = 109207.00
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 109207.30
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = -51283.60
+--relavant FLIP 909 is 3 score = 105519.58
+--relavant FLIP 909 is 4 score = 107420.18
+--relavant FLIP 909 is 12 score = 105528.20
+depth0 relavant FLIP 909 score = 106155.99
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 104384.70
+--relavant FLIP 1919 is 12 score = 104396.80
+depth0 relavant FLIP 1919 score = 104687.84
+--relavant FLIP 2929 is 3 score = 104387.69
+--relavant FLIP 2929 is 4 score = 104382.57
+--relavant FLIP 2929 is 12 score = 102323.30
+depth0 relavant FLIP 2929 score = 103697.85
+Depth:  1, Time: 15250, Node:   11064279, Score: +110747.89500, Best Move: 400,
+Projected Depth  2 Time: 371674.757012
+Depth:  1, Node:   11064279, Score: +110747.89500, Move: a7-a8
+=12 a7 a8
+10 move a7 a8
+=10
+16 time_left black 655816
+Time Left(black): 655816
+=16
+10 move d7 d8
+=10
+16 time_left red 827320
+Time Left(red): 827320
+=16
+12 genmove black
+I am black, time left 595816.000000
+Assigned 20545.379310 seconds this turn,20545.379310 
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+HistoryCount 60
+my 0+6 can take down of opponent 6
+my largest is 6, second largest is 5
+Can I beat opponent? state=2
+my largest is 6, second largest is 5
+my 6 take care of opponent 6
+Can opponent beat me?=1
+ATTACK/SQUEEZE
+97000.000000,14780.000000,0.000000,45.880000,24.220000,0.000000,0.000000
+Curstate: 5 111778.720000
+29,20,24.083189
+depth 0 MOVE 501 score = -105484.18
+depth 0 MOVE 506 score = 103475.28
+depth 0 MOVE 504 score = 103454.85
+depth 0 MOVE 4 score = 110748.15
+depth 0 MOVE 1 score = 109208.05
+depth 0 MOVE 1817 score = 109499.65
+depth 0 MOVE 1822 score = 108098.60
+depth 0 MOVE 1814 score = 107197.77
+depth 0 MOVE 1617 score = 108002.20
+depth 0 MOVE 1612 score = 108398.55
+depth 0 MOVE 3026 score = 110296.06
+depth 0 MOVE 2024 score = 107505.65
+depth 0 MOVE 2021 score = 110741.60
+depth 0 MOVE 1312 score = 109199.05
+depth 0 MOVE 1317 score = 107606.40
+depth 0 MOVE 1314 score = 107197.77
+depth 0 MOVE 812 score = 108702.45
+depth 0 MOVE 804 score = 108703.75
+depth 0 MOVE 201 score = 107416.74
+depth 0 MOVE 206 score = 110308.50
+--relavant FLIP 909 is 3 score = 105295.33
+--relavant FLIP 909 is 4 score = 106597.86
+--relavant FLIP 909 is 12 score = 105517.20
+depth0 relavant FLIP 909 score = 105803.46
+--relavant FLIP 1919 is 3 score = 105282.01
+--relavant FLIP 1919 is 4 score = 103130.99
+--relavant FLIP 1919 is 12 score = 103469.68
+depth0 relavant FLIP 1919 score = 103960.89
+--relavant FLIP 2929 is 3 score = 103134.89
+--relavant FLIP 2929 is 4 score = 103131.50
+--relavant FLIP 2929 is 12 score = 102324.03
+depth0 relavant FLIP 2929 score = 102863.47
+Depth:  1, Time: 18385, Node:   13331335, Score: +110748.15500, Best Move: 4,
+Projected Depth  2 Time: 442769.432662
+Depth:  1, Node:   13331335, Score: +110748.15500, Move: a8-a7
+=12 a8 a7
+10 move a8 a7
+=10
+16 time_left black 637424
+Time Left(black): 637424
+=16
+10 move d8 d7
+=10
+16 time_left red 827309
+Time Left(red): 827309
+=16
+5 quit
+
+###
+Account: chan
+Mode: MGTP
+Path: /mnt/HDD/course/1101/darkchess/FINAL/NegaScout/r09946011/github/darkchess/exec.final
+Arg: 
+Name: MyAI
+Version: 1.0.0
+###

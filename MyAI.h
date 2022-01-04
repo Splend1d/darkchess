@@ -95,11 +95,15 @@ public:
 	bool showboard(const char* data[], char* response);// 17
 	bool init_board(const char* data[], char* response);// 18
 
+
+
+
 private:
 	int Color;
 	int Red_Time, Black_Time;
 	ChessBoard main_chessboard;
 	bool timeIsUp;
+
 
 #ifdef WINDOWS
 	clock_t begin;
@@ -118,15 +122,21 @@ private:
 	void initBoardState();
 	void initBoardState(const char* data[]);
 	void generateMove(char move[6]);
-	int MakeMove(ChessBoard* chessboard, const int move, const int chess);
+	int MakeMoveAndReturn(ChessBoard* chessboard, const int move, const int chess);
+	void MakeMove(ChessBoard* chessboard, const int move, const int chess);
 	void MakeMove(ChessBoard* chessboard, const char move[6]);
 	bool Referee(const int* board, const int Startoint, const int EndPoint, const int color);
 	void Expand(const int* board, const int color, vector<Move2Strength>* Result);
 	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int first_eat_bonus, int depth);
+	double EvaluateLight(const ChessBoard* chessboard, const int legal_move_count, const int color, int first_eat_bonus, int depth);
+
 	double NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta, int first_eat_bonus);
 
 	bool isDraw(const ChessBoard* chessboard);
 	bool isFinish(const ChessBoard* chessboard, int move_count);
+	long get_relavant_positions(const ChessBoard chessboard, const int position);
+
+	double ElapsedTime();
 
 	// Display
 	void Pirnf_Chess(int chess_no,char *Result);

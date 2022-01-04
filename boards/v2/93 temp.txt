@@ -1,0 +1,93 @@
+This is TEMPORARILY file. You can use it for DEBUG.
+* 5:5pm Jan 4, 2022
+* chan vs ai
+* 1 2 2 2 2 2 5 1 2 2 2 2 2 5
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* first 0
+* time 900
+* 1. b5(C) 
+* Comment 0 0
+0. 1641287145961
+1. 1641287145961
+
+# 17 #
+=1 MyAI
+=2 1.0.0
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=7
+=15
+=14
+My result: 
+--------------------------
+NegaScout: 0.000000 (node: 1279348297)
+(13) -> (13)
+< X > -> < X >
+move:b5-b5
+--------------------------
+------------Black-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 b5 b5
+
+# 17 #
+1 name
+=1 MyAI
+2 version
+=2 1.0.0
+7 reset_board
+=7
+15 time_setting 900000
+=15
+14 ready
+=14
+12 genmove unknown
+I am black, time left 900000.000000
+Assigned 15254.237288 seconds this turn,15254.237288 
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+HistoryCount 0
+Depth:  3, Node: 1279348297, Score: +0.00000, Move: b5-b5
+=12 b5 b5
+
+###
+Account: chan
+Mode: MGTP
+Path: /mnt/HDD/course/1101/darkchess/FINAL/NegaScout/r09946011/github/darkchess/exec.final
+Arg: 
+Name: MyAI
+Version: 1.0.0
+###
