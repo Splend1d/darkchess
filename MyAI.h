@@ -137,6 +137,7 @@ private:
 	long get_relavant_positions(const ChessBoard chessboard, const int position);
 
 	double ElapsedTime();
+	bool isTimeUp();
 
 	// Display
 	void Pirnf_Chess(int chess_no,char *Result);

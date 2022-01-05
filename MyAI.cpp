@@ -31,6 +31,7 @@ bool ISTURNSTART = false;
 double TURNSTART_VAL = 0;
 int GLOBALTURN = 0;
 bool GLOBALFLAG = false;
+double HARD_TIME_LIMIT = 1000; //ms
 static tuple<int,int> MAX_TUPLE=make_tuple(3,-1);
 static const double values[14] = {
 	  50, 3000,  500, 1100, 2400,4900,11000,
@@ -367,9 +368,14 @@ void MyAI::generateMove(char move[6])
 	double assign_time_this_turn;
 	if (myturnstarttime > 0)
 		assign_time_this_turn = max((double)1000,(double)myturnstarttime/(double)max(10,60-GLOBALTURN));
+	else if (myturnstarttime > -50000)
+		assign_time_this_turn = 50;
 	else
-		assign_time_this_turn = 100;
+		assign_time_this_turn = 5;
+	
 	fprintf(stderr,"Assigned %lf seconds this turn,%lf \n",assign_time_this_turn,(double)myturnstarttime/(double)(60-GLOBALTURN));
+	HARD_TIME_LIMIT = assign_time_this_turn * 2; // If surpassed assigned time by twice the amount, force stop
+	
 	for (int i = 0;i < 10; ++i)
 		fprintf(stderr,"HistoryCount %d\n",this->main_chessboard.HistoryCount);
 	for (int i = 0; i < 8; ++i){
@@ -380,7 +386,9 @@ void MyAI::generateMove(char move[6])
 	ISTURNSTART = true;
 	double v;
 	double t;
+	double t_temp;
 	int best_move;
+	int best_move_tmp;
 	bool isInit = true;
 	for (int i = 0; i < 32; ++i){
 		if (this->main_chessboard.Board[i] != CHESS_COVER){
@@ -423,11 +431,14 @@ void MyAI::generateMove(char move[6])
 		for (int i = 0;i < 32;++i){
 			if (this->main_chessboard.Board[i] == CHESS_COVER){
 				flips += possibles;
+				best_move = i * 100 + i;
 			}
 		}
 
 		vector<Move2Strength> Moves1;
 		Expand(this->main_chessboard.Board, this->Color,&Moves1);
+		if (Moves1.size())
+			best_move = Moves1.front().move; // initialize with random move so to avoid running out of time
 
 		int nmoves1 = Moves1.size() + flips;
 		vector<Move2Strength> Moves2;
@@ -438,6 +449,7 @@ void MyAI::generateMove(char move[6])
 		fprintf(stderr,"%d,%d,%lf\n",nmoves1,nmoves2,time_complexity);
 		//assert(false);
 		t = -DBL_MAX;
+		t_temp = -DBL_MAX;
 
 		// iterative-deeping, start from 3, time limit = <TIME_LIMIT> sec
 		this->node = 0;
@@ -445,32 +457,43 @@ void MyAI::generateMove(char move[6])
 
 		// run Nega-max
 		THINK_DEPTH = 1;
-		if (avg_complexity < 15)
+		if (avg_complexity < 50)
 			EXCHANGE_DEPTH = 1;
 		else
 			EXCHANGE_DEPTH = 7;
 		int last_t_nodes = 1;
 		while(true){
 			
-			t = NegaScout(this->main_chessboard, &best_move, this->Color, 0, 0, -DBL_MAX, DBL_MAX,-1);
-			t -= OFFSET; // rescale
-			if (t >= WIN){
-				fprintf(stderr,"Found winning path!");
+			t_temp = NegaScout(this->main_chessboard, &best_move_tmp, this->Color, 0, 0, -DBL_MAX, DBL_MAX,-1);
+			t_temp -= OFFSET; // rescale
+			if(!isTimeUp()){
+				if (t_temp >= WIN){ 
+					best_move = best_move_tmp;
+					fprintf(stderr,"Found winning path!");
+					break;
+				} else {
+					t = t_temp;
+					best_move = best_move_tmp;
+					int t_depth = ElapsedTime();
+					fprintf(stderr, "Depth: %2d, Time: %d, Node: %10d, Score: %+1.5lf, Best Move: %d,\n",
+					THINK_DEPTH, t_depth, this->node, t_temp, best_move);
+					if (t_depth > assign_time_this_turn)
+						break;
+					double power = (double)(THINK_DEPTH+1)/THINK_DEPTH;
+					double projected_t_nextdepth = t_depth * time_complexity;
+					fprintf(stderr, "Projected Depth %2d Time: %lf\n",
+					THINK_DEPTH+1, projected_t_nextdepth);
+					if (projected_t_nextdepth > assign_time_this_turn) // projected next turn overtime, break early
+						break;
+					last_t_nodes = this->node;
+					THINK_DEPTH += 1;
+				}
+			} else {
+				fprintf(stderr,"Interrupt by exceeding time\n");
 				break;
 			}
-			int t_depth = ElapsedTime();
-			fprintf(stderr, "Depth: %2d, Time: %d, Node: %10d, Score: %+1.5lf, Best Move: %d,\n",
-			THINK_DEPTH, t_depth, this->node, t, best_move);
-			if (t_depth > assign_time_this_turn)
-				break;
-			double power = (double)(THINK_DEPTH+1)/THINK_DEPTH;
-			double projected_t_nextdepth = t_depth * time_complexity;
-			fprintf(stderr, "Projected Depth %2d Time: %lf\n",
-			THINK_DEPTH+1, projected_t_nextdepth);
-			if (projected_t_nextdepth > assign_time_this_turn) // projected next turn overtime, break early
-				break;
-			last_t_nodes = this->node;
-			THINK_DEPTH += 1;
+			
+			
 		}
 		
 	}
@@ -501,14 +524,15 @@ int MyAI::MakeMoveAndReturn(ChessBoard* chessboard, const int move, const int ch
 	// return 0 -> MOVE
 	// return 1 -> EAT
 	// return 2 -> FLIP
+	int is_eat = -1;
 	int src = move/100, dst = move%100;
 	if(src == dst){ // flip
 		chessboard->Board[src] = chess;
 		chessboard->CoverChess[chess]--;
 		chessboard->NoEatFlip = 0;
-		return 2;
+		is_eat = 2;
 	}else { // move
-		int is_eat = -1;
+		
 		if(chessboard->Board[dst] != CHESS_EMPTY){
 			if(chessboard->Board[dst] / 7 == 0){ // red
 				(chessboard->Red_Chess_Num)--;
@@ -524,9 +548,10 @@ int MyAI::MakeMoveAndReturn(ChessBoard* chessboard, const int move, const int ch
 		assert(is_eat >= 0);
 		chessboard->Board[dst] = chessboard->Board[src];
 		chessboard->Board[src] = CHESS_EMPTY;
-		return is_eat;
+		
 	}
 	chessboard->History[chessboard->HistoryCount++] = move;
+	return is_eat;
 }
 
 void MyAI::MakeMove(ChessBoard* chessboard, const int move, const int chess){
@@ -994,9 +1019,6 @@ double MyAI::EvaluateLight(const ChessBoard* chessboard,
 			score += WIN - LOSE;
 		}
 		finish = true;
-	}else if(isDraw(chessboard)){ // Draw
-		score += DRAW - DRAW;
-		finish = true;
 	}else{ // no conclusion
 		// static material values
 		// cover and empty are both zero
@@ -1424,7 +1446,23 @@ long MyAI::get_relavant_positions(const ChessBoard chessboard, const int positio
 
 
 }
+bool MyAI::isTimeUp(){
+	double elapsed; // ms
+	
+	// design for different os
+#ifdef WINDOWS
+	clock_t end = clock();
+	elapsed = (end - begin);
+#else
+	struct timeval end;
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+	long microseconds = end.tv_usec - begin.tv_usec;
+	elapsed = (seconds*1000 + microseconds*1e-3);
+#endif
 
+	return elapsed >= HARD_TIME_LIMIT;
+}
 double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int last_move_type, double alpha, double beta, int first_eat_bonus){
 
 	vector<Move2Strength> Moves;
@@ -1450,6 +1488,7 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 		}
 	}
 	//fprintf(stderr, "remain_depth=%d, move_count = %d, flip_count = % d\n", remain_depth,move_count,flip_count);
+	
 	if ((depth >= THINK_DEPTH)&&move_count==0){ // If last move is only flip, skip
 		this->node++;
 		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
@@ -1467,6 +1506,7 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 		return val;
 	}
 	else if(
+		isTimeUp() ||
 		chessboard.Red_Chess_Num == 0 || // terminal node (no chess type)
 		chessboard.Black_Chess_Num == 0 || // terminal node (no chess type)
 		move_count+flip_count == 0 // terminal node (no move type)
