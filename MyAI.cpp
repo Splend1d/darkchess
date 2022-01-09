@@ -398,7 +398,7 @@ void MyAI::generateMove(char move[6])
 	}
 	if (isInit){
 		t = 0;
-		best_move = 1313; 
+		best_move = 101; 
 	}else{
 		v = Evaluate(&this->main_chessboard, 1, this->Color, 0,0);
 		v -= OFFSET;
@@ -1540,10 +1540,7 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			int thismove = it -> move;
 			
 			auto thisevaluator = it -> evaluator;
-			if(depth <= 100){
-				//fprintf(stderr, "DEPTH=%d, thismove=%d \n",depth, thismove);
-				fflush(stderr);
-			}
+			
 			
 			if (get<0>(thisevaluator) <=0)
 				first_eat_bonus += (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
@@ -1597,7 +1594,7 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			if (m >= beta){
 				return m;
 			}
-			//n = std::max(alpha, m)+0.01 ;
+			//n = std::max(alpha, m);
 			
 		}
 		if (depth == 0 && m -TURNSTART_VAL > 20){
