@@ -12,6 +12,7 @@
 #include <vector>
 #include <tuple>
 #include <utility>
+#include <unordered_map>
 
 using namespace std;
 
@@ -61,6 +62,10 @@ bool HASEAT = false;
 bool BESTHASEAT = true;
 bool LASTTURNBESTHASEAT = true;
 bool THISTURNBESTHASEAT = true;
+
+unordered_map<long long,tuple<double,double,double>>* transposition_table[32];
+
+
 
 MyAI::MyAI(void){srand(time(NULL));}
 
@@ -266,6 +271,56 @@ int MyAI::ConvertChessNo(int input)
 	return -1;
 }
 
+long long zobrish[32][15];
+long long zobrish_cover[14][6];
+long long zobrish_turn[2];
+long long hasher(ChessBoard* chessboard){
+	long long ret = 0;
+	for(int i = 0; i < 32; i++){
+		if(chessboard -> Board[i]==CHESS_COVER){
+			ret ^= zobrish[i][14];
+		} else if (chessboard -> Board[i]!=CHESS_COVER){
+			ret ^= zobrish[i][chessboard -> Board[i]];
+		}
+	}
+	for (int i = 0; i < 14; ++i){
+		ret ^= zobrish_cover[i][chessboard -> CoverChess[i]];
+	}
+
+	//ret ^= zobrish_turn[chessboard -> HistoryCount % 2];
+	ret -= ret % 2;
+	ret += chessboard -> HistoryCount % 2;
+	//ret += chessboard -> HistoryCount;
+	return ret;
+}
+bool hash_collision(ChessBoard* chessboard,int depth,tuple<double,double,double>* sol){
+	int remain_depth = THINK_DEPTH-depth;
+	if (remain_depth < 0)
+		return false;
+	long long h = 0;
+	for(int i = 0; i < 32; i++){
+		if(chessboard -> Board[i]==CHESS_COVER){
+			h ^= zobrish[i][14];
+		} else if (chessboard -> Board[i]!=CHESS_COVER){
+			h ^= zobrish[i][chessboard -> Board[i]];
+		}
+	}
+	for (int i = 0; i < 14; ++i){
+		h ^= zobrish_cover[i][chessboard -> CoverChess[i]];
+	}
+	h -= h % 2;
+	h += chessboard -> HistoryCount % 2; // ensure player turn
+	for (int depth_bucket = 31; depth_bucket >= remain_depth; --depth_bucket ){
+		//fprintf(stderr,"%d\n",depth_bucket);
+		auto it = transposition_table[depth_bucket] -> find(h);
+		if (it != transposition_table[depth_bucket] -> end()){
+			//found hash
+			*sol = it->second;
+			return true;
+		}
+	}
+	return false;
+}
 
 void MyAI::initBoardState()
 {	
@@ -275,6 +330,18 @@ void MyAI::initBoardState()
 	main_chessboard.Black_Chess_Num = 16;
 	main_chessboard.NoEatFlip = 0;
 	main_chessboard.HistoryCount = 0;
+
+	for(int i = 0; i < 32; i++){
+		for(int j = 0; j < 15; j++){
+			zobrish[i][j] = rand();
+		}
+	}
+	for(int i = 0; i < 14; i++){
+		for(int j = 0; j < 6; j++){
+			zobrish_cover[i][j] = rand();
+		}
+	}
+	
 
 	// convert to my format
 	int Index = 0;
@@ -286,8 +353,17 @@ void MyAI::initBoardState()
 			Index++;
 		}
 	}
+
+	for (int i = 0; i < 32; ++ i){
+		unordered_map<long long,tuple<double,double,double>> * table = new unordered_map<long long,tuple<double,double,double>> ;
+		//unordered_map<long long,tuple<double,double,double>> table; //transposition_table;
+		transposition_table[i] = table;
+	}
+
 	Pirnf_Chessboard();
 }
+
+
 
 void MyAI::initBoardState(const char* data[])
 {	
@@ -367,17 +443,17 @@ void MyAI::generateMove(char move[6])
 	//fprintf(stderr, "%lf %d %lf\n",myturnstarttime,(60-GLOBALTURN),(double)myturnstarttime/(60-GLOBALTURN));
 	double assign_time_this_turn;
 	if (myturnstarttime > 0)
-		assign_time_this_turn = max((double)1000,(double)myturnstarttime/(double)max(10,60-GLOBALTURN));
+		assign_time_this_turn = max((double)1000,(double)myturnstarttime/(double)max(10,120-this->main_chessboard.HistoryCount));
 	else if (myturnstarttime > -50000)
 		assign_time_this_turn = 50;
 	else
 		assign_time_this_turn = 5;
-	assign_time_this_turn =10000;//DEBUG;
+	//assign_time_this_turn =100000;//DEBUG;
 	fprintf(stderr,"Assigned %lf seconds this turn,%lf \n",assign_time_this_turn,(double)myturnstarttime/(double)(60-GLOBALTURN));
 	HARD_TIME_LIMIT = assign_time_this_turn * 2; // If surpassed assigned time by twice the amount, force stop
 	
-	for (int i = 0;i < 10; ++i)
-		fprintf(stderr,"HistoryCount %d\n",this->main_chessboard.HistoryCount);
+	
+	fprintf(stderr,"HistoryCount %d\n",this->main_chessboard.HistoryCount);
 	for (int i = 0; i < 8; ++i){
 		fprintf(stderr, "%d %d %d %d\n",main_chessboard.Board[i*4],main_chessboard.Board[i*4+1],main_chessboard.Board[i*4+2],main_chessboard.Board[i*4+3]);
 	}
@@ -467,9 +543,10 @@ void MyAI::generateMove(char move[6])
 			t_temp = NegaScout(this->main_chessboard, &best_move_tmp, this->Color, 0, 0, -DBL_MAX, DBL_MAX,-1);
 			t_temp -= OFFSET; // rescale
 			if(!isTimeUp()){
-				if (t_temp >= WIN){ 
+				if (t_temp >= WIN || THINK_DEPTH > 50){ 
+					t = t_temp;
 					best_move = best_move_tmp;
-					fprintf(stderr,"Found winning path!");
+					fprintf(stderr,"Found winning/tie path!\n");
 					break;
 				} else {
 					t = t_temp;
@@ -477,6 +554,13 @@ void MyAI::generateMove(char move[6])
 					double t_depth = ElapsedTime();
 					fprintf(stderr, "Depth: %2d, Time: %lf, Node: %10d, Score: %+1.5lf, Best Move: %d,\n",
 					THINK_DEPTH, t_depth, this->node, t_temp, best_move);
+
+					int tot_states = 0;
+					for (int bucket = 0;bucket < 32 ; ++bucket){
+						tot_states += transposition_table[bucket] -> size();
+					}
+					fprintf(stderr,"Saved states: %d\n",tot_states);
+					
 					if (t_depth > assign_time_this_turn)
 						break;
 					double power = (double)(THINK_DEPTH+1)/THINK_DEPTH;
@@ -495,6 +579,19 @@ void MyAI::generateMove(char move[6])
 			
 			
 		}
+		//assert(false);
+		delete transposition_table[0];
+		delete transposition_table[1];
+		for (int i = 0;i < 30; ++i){
+			transposition_table[i] = transposition_table[i+2];
+		}
+		unordered_map<long long,tuple<double,double,double>> * table = new unordered_map<long long,tuple<double,double,double>> ;
+		//unordered_map<long long,tuple<double,double,double>> table; //transposition_table;
+		transposition_table[31] = table;
+		table = new unordered_map<long long,tuple<double,double,double>> ;
+		//unordered_map<long long,tuple<double,double,double>> table; //transposition_table;
+		transposition_table[30] = table;
+		
 		
 	}
 
@@ -524,6 +621,11 @@ int MyAI::MakeMoveAndReturn(ChessBoard* chessboard, const int move, const int ch
 	// return 0 -> MOVE
 	// return 1 -> EAT
 	// return 2 -> FLIP
+	if (move < 0) { //flip random ~= no move
+		chessboard->NoEatFlip = 0;
+		chessboard->History[chessboard->HistoryCount++] = move;
+		return -1;
+	} 
 	int is_eat = -1;
 	int src = move/100, dst = move%100;
 	if(src == dst){ // flip
@@ -1204,7 +1306,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 			}
 
 			for (int p = 0; p < 14; ++p){
-
+				
 				if (p % 7 == 6) {
 					// if (ISTURNSTART == true){
 					// 	fprintf(stderr,"%d,%d,%lf\n",p,count_pieces[p],KhasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1));
@@ -1215,6 +1317,11 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 					piece_value += KhasPKval[has_enemy[p]] * count_pieces[p] * (p / 7 == this->Color?1:-1);
 					my_extra_moves_score       += KhasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?1:0);
 					opponent_extra_moves_score += KhasPKval[has_enemy[p]] * 0.001 *  pieces_moves[p] * (p / 7 == this->Color?0:1);
+				}
+				else if (p % 7 == 1){
+					piece_value += 3000 * count_pieces[p] * (p / 7 == this->Color?1:-1);
+					//my_extra_moves_score       += 3000 * 0.01 *  pieces_moves[p] * (p / 7 == this->Color?1:0); //mobility of gun is irrelavant
+					//opponent_extra_moves_score += 3000 * 0.01 *  pieces_moves[p] * (p / 7 == this->Color?0:1);
 				}
 				else {
 					// if (ISTURNSTART == true){
@@ -1341,7 +1448,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 		fflush(stderr);
 		
 	}
-	// if (score + piece_value + bonus + 0.5*my_extra_moves_score - opponent_extra_moves_score + close2preyscore + clusterscore >8000 and GLOBALFLAG == true){
+	// if (score + piece_value + bonus + 0.5*my_extra_moves_score - opponent_extra_moves_score + close2preyscore + clusterscore >220000 and GLOBALFLAG == true){
 
 	// 	for (int i = 0; i < 8; ++i){
 	// 		fprintf(stderr, "%d %d %d %d\n",chessboard -> Board[i*4],chessboard ->Board[i*4+1],chessboard ->Board[i*4+2],chessboard ->Board[i*4+3]);
@@ -1487,17 +1594,28 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			flip_count++;
 		}
 	}
-	//fprintf(stderr, "remain_depth=%d, move_count = %d, flip_count = % d\n", remain_depth,move_count,flip_count);
-	
-	if ((depth >= THINK_DEPTH)&&move_count==0){ // If last move is only flip, skip
-		this->node++;
-		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
-		
-		return val;
-	}
-	else if (depth > max(EXCHANGE_DEPTH,THINK_DEPTH) && !(last_move_type==1)){
+	//fprintf(stderr, "depth=%d, move_count = %d, flip_count = % d\n", depth,move_count,flip_count);
+	// if ((depth >= max(EXCHANGE_DEPTH,THINK_DEPTH)) && last_move_type == -1){
+	// 	this->node++;
+	// 	double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);	
+	// 	return val;
+	// }
+	// if ((depth >= max(EXCHANGE_DEPTH,THINK_DEPTH)) && move_count==0 && flip_count){
+	// 	this->node++;
+	// 	double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);	
+	// 	return val;
+	// }
+	//fprintf(stderr,"%d\n",last_move_type);
+	if (depth > max(EXCHANGE_DEPTH,THINK_DEPTH) && !(last_move_type==1)){
 		this->node++;
 		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);	
+		if(depth == 0 || abs(abs(val)-6384.03) < 0.005){
+			for (int i = 0; i < 8; ++i){
+				fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
+				
+			
+			}
+		}
 		return val;
 	}
 	else if (depth > THINK_DEPTH && !(last_move_type==1) && !(last_move_type==0)){
@@ -1533,6 +1651,8 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 		double m = -DBL_MAX; // lower bound
 		double n = beta; // upper bound
 		int new_move;
+		double t ;
+		
 		sort(Moves.begin(), Moves.end(), [](Move2Strength a, Move2Strength b) { return a.evaluator < b.evaluator; });
 		// search deeper
 		for (vector<Move2Strength>::iterator it = Moves.begin();it != Moves.end(); ++it){  // move
@@ -1561,17 +1681,39 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			
 				
 			//fprintf(stderr,"Move%d\n",thismove);
-			double t ;
+			tuple<double,double,double> hash_sol;
+			
 			if (isDraw(&new_chessboard)==true)
 				t = (OFFSET - (125000)) * (depth&1 ? -1 : 1);
+			else if (hash_collision(&new_chessboard,depth,&hash_sol)){
+				double lb = get<0>(hash_sol); //lower bound
+				double exact = get<1>(hash_sol); //exact
+				double ub = get<2>(hash_sol); //upper bound
+				//fprintf(stderr,"%lf %lf %lf\n",lb,exact,ub);
+				//assert(false);
+				if (exact != -DBL_MAX){
+					t = exact;
+				} else if (ub != DBL_MAX){
+					//beta = min(beta,ub);
+					
+					t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, move_type, -n, -std::max(alpha, m),first_eat_bonus);
+
+				} else if (lb != -DBL_MAX){
+					//alpha = max(alpha,lb);
+					t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, move_type, -n, -std::max(alpha, m),first_eat_bonus);
+
+				} else {
+					assert(false);
+				}
+			}
 			else  { // If last move is eat, keep searching
 				t = -NegaScout(new_chessboard, &new_move, color^1, depth+1, move_type, -n, -std::max(alpha, m),first_eat_bonus);
 			} 
 			// if (get<0>(thisevaluator) <=0)
 			// 	first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
 			//alpha = max(alpha, t);
-			if(depth == 0){
-				fprintf(stderr, "MOVE %d score = %.2lf\n", thismove, t);
+			if(depth == 0 || abs(abs(t)-6384.03) < 0.005){
+				fprintf(stderr, "depth %d MOVE %d score = %.2lf\n",depth, thismove, t);
 				fflush(stderr);
 				// 	for (int i = 0; i < 8; ++i){
 				// 	fprintf(stderr, "%d %d %d %d\n",new_chessboard.Board[i*4],new_chessboard.Board[i*4+1],new_chessboard.Board[i*4+2],new_chessboard.Board[i*4+3]);
@@ -1592,16 +1734,69 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			}
 				
 			if (m >= beta){
+				if (THINK_DEPTH - depth >= 0){
+					//assert (false);
+					//auto table = *transposition_table[THINK_DEPTH - depth];
+					//(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(-DBL_MAX,-DBL_MAX,m);
+				}
+					 
 				return m;
 			}
+			if (t != 125000 && t != -125000){
+				if (THINK_DEPTH - depth >= 0){
+					//fprintf(stderr,"%p\n",transposition_table[THINK_DEPTH - depth]);
+					//(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(-DBL_MAX,t,DBL_MAX);
+					if (t > alpha){
+						//auto table = *transposition_table[THINK_DEPTH - depth];
+						//fprintf(stderr,"%p\n",&table);
+						(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(-DBL_MAX,t,DBL_MAX); 
+					} else {
+						//auto table = *transposition_table[THINK_DEPTH - depth];
+						//(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(t,-DBL_MAX,DBL_MAX); 
+					}
+					//fprintf(stderr,"%lu\n",transposition_table[THINK_DEPTH - depth] -> size());
+					// for (auto it = *transposition_table[THINK_DEPTH - depth].begin(); it != *transposition_table[THINK_DEPTH - depth].end() ; ++ it){
+					// 	fprintf)_
+					// }
+					//assert (false);
+				}
+				
+			} 
+			
 			n = std::max(alpha, m) + 0.01;
 			
 		}
-		if (depth == 0 && m -TURNSTART_VAL > 20){
-			fprintf(stderr,"move %d returns value %lf > %lf \n",*move,m,TURNSTART_VAL);
-			//assert(false);
-			return m;
-		}
+		if ((depth >= THINK_DEPTH)&&flip_count){ // If last move is only flip, check if the opponent can capture, fastforward to exchange phase	
+			ChessBoard new_chessboard = chessboard;
+			int move_type = MakeMoveAndReturn(&new_chessboard, -1, 0); // fake move
+			//fprintf(stderr,"fakemove %d\n",depth);
+			
+			
+			t = -NegaScout(new_chessboard, &new_move, color^1,depth + 1 , -1, -n, -std::max(alpha, m),first_eat_bonus);
+			//fprintf(stderr,"%lf\n",t);
+			// if(abs(abs(t)-9470.23) < 0.05){
+			// 	fprintf(stderr, "depth %d MOVE %d score = %.2lf\n",depth, -1, t);
+			// 	fprintf(stderr,"%lf,%lf\n",t,beta);
+			// 	fflush(stderr);
+
+			// }
+			if(t > m){ 
+				m = t;
+				*move = -1;
+			}
+			if (t != 125000 && t != -125000){
+				if (THINK_DEPTH - depth >= 0){
+					if (t > alpha){
+						(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(-DBL_MAX,t,DBL_MAX); 
+					}
+				}
+			} 
+		} 
+		// if (depth == 0 && m -TURNSTART_VAL > 20){
+		// 	fprintf(stderr,"move %d returns value %lf > %lf \n",*move,m,TURNSTART_VAL);
+		// 	//assert(false);
+		// 	return m;
+		// }
 		//fprintf(stderr,"depth now:%d\n",depth);
 		if (depth < THINK_DEPTH && flip_count){
 
@@ -1661,7 +1856,9 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 						m = E_score;
 						*move = Flip_Moves[i];
 					}
-					if(depth == 0 ){
+					
+					
+					if(depth == 0){
 						fprintf(stderr, "depth%d relavant FLIP %d score = %.2lf\n",depth, Flip_Moves[i], E_score);
 						fflush(stderr);
 					}
