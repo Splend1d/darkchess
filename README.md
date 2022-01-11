@@ -10,3 +10,5 @@ V3 Added more robust time allocation mechanism to avoid timeout
 V4 Resolved NegaScout Error
 
 V5 Transposition Table
+
+V6 Resolved NegaScout Error, fake move

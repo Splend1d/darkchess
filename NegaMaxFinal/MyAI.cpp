@@ -606,14 +606,10 @@ void MyAI::generateMove(char move[6])
 
 		// run Nega-max
 		THINK_DEPTH = 1;
-		if (avg_complexity < 50 || possibles <= 1){ // when only one flip left, do normal deepening
-			THINK_DEPTH = 1;
+		if (avg_complexity < 50)
 			EXCHANGE_DEPTH = 1;
-		}
-		else{
-			THINK_DEPTH = 0;
+		else
 			EXCHANGE_DEPTH = 7;
-		}
 		int last_t_nodes = 1;
 		while(true){
 			
@@ -1640,26 +1636,26 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
 		return val;
 	}
-	if (depth > max(EXCHANGE_DEPTH,THINK_DEPTH) && !(last_move_type==1)){
+	if (depth > max(EXCHANGE_DEPTH,THINK_DEPTH) && !(last_move_type==1) && !(last_move_type==-1)){
 		this->node++;
 		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);	
-		// if(depth == 0 || abs(abs(val)-202845.40) < 0.01){
-		// 	for (int i = 0; i < 8; ++i){
-		// 		fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
-		// 	}
-		// 	assert(false);
-		// }
+		if(depth == 0 || abs(abs(val)-202845.40) < 0.01){
+			for (int i = 0; i < 8; ++i){
+				fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
+			}
+			//assert(false);
+		}
 		return val;
 	}
 	else if (depth > THINK_DEPTH && !(last_move_type==1) && !(last_move_type==0)&& !(last_move_type==-1)){
 		this->node++;
 		double val = Evaluate(&chessboard,move_count+flip_count, color,first_eat_bonus,depth) * (depth&1 ? -1 : 1);
-		// if(depth == 0 || abs(abs(val)-202845.40) < 0.01){
-		// 	for (int i = 0; i < 8; ++i){
-		// 		fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
-		// 	}
-		// 	assert(false);
-		// }
+		if(depth == 0 || abs(abs(val)-202845.40) < 0.01){
+			for (int i = 0; i < 8; ++i){
+				fprintf(stderr, "%d %d %d %d\n",chessboard.Board[i*4],chessboard.Board[i*4+1],chessboard.Board[i*4+2],chessboard.Board[i*4+3]);
+			}
+			//assert(false);
+		}
 		return val;
 	}
 	else if(
@@ -1701,8 +1697,8 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 				fprintf(stderr,"%d\n",thismove);
 			}
 			auto thisevaluator = it -> evaluator;
-			if (depth <= 4){
-				//fprintf(stderr,"D:%d %d\n",depth,thismove);
+			if (depth == 4){
+				fprintf(stderr,"%d\n",thismove);
 			}
 			
 			// if (get<0>(thisevaluator) <=0)
@@ -1758,42 +1754,45 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			// if (get<0>(thisevaluator) <=0)
 			// 	first_eat_bonus -= (1-get<0>(thisevaluator))*(30-depth) * ((depth % 2 == 0)?1:-1);
 			//alpha = max(alpha, t);
-			
+			if(depth == 0 || abs(abs(t)-202845.40) < 0.01 || (depth == 4)){
+				fprintf(stderr, "depth %d MOVE %d score = %.2lf\n",depth, thismove, t);
+				fflush(stderr);
+				if (depth == 0 && thismove == 1115){
+					assert(false);
+				}
+				if (depth == 5 && thismove == 2322){
+					//assert(false);
+				}
+				// if (depth == 0 and thismove == 1519){
+				// 	GLOBALFLAG = true;
+				// }
+				// 	for (int i = 0; i < 8; ++i){
+				// 	fprintf(stderr, "%d %d %d %d\n",new_chessboard.Board[i*4],new_chessboard.Board[i*4+1],new_chessboard.Board[i*4+2],new_chessboard.Board[i*4+3]);
+				// }
+				//assert(false);
+			}
 			if(t > m){ 
-				if (n == beta  || t >= beta){ // No scouting || THINK_DEPTH - depth < 3
+				if (n == beta || THINK_DEPTH - depth < 3 || t >= beta){ // No scouting
 					m = t;
 					*move = thismove;
-					if(depth == 0){ //} || abs(abs(t)-202845.40) < 0.01 || (depth == 4)){
-						fprintf(stderr, "(scout passed) MOVE %d score = %.2lf\n", thismove, t);
-						fflush(stderr);
-					}
 
 					// if(depth == 1){ fprintf(stderr, "%d score= %.2lf\n", *move, t); }
 				} else { 
 					m = -NegaScout(new_chessboard, &new_move, color^1, depth+1, move_type, -beta, -t, first_eat_bonus,0); // re-search
 					
 					*move = thismove;
-					if(depth == 0){ //} || abs(abs(t)-202845.40) < 0.01 || (depth == 4)){
-						fprintf(stderr, "(scout failed) MOVE %d score = %.2lf\n", thismove, m);
-						fflush(stderr);
-					}
 				}	
 			}
-			else{
-				if(depth == 0){ //} || abs(abs(t)-202845.40) < 0.01 || (depth == 4)){
-					fprintf(stderr, "(scout passed and dicarded) MOVE %d score = %.2lf\n", thismove, t);
-					fflush(stderr);
-				}
-			}
-			
-			
+			if (alpha >= beta){
+				break;
+			}	
 			if (m >= beta){
 				if (THINK_DEPTH - depth >= 0){
 					//assert (false);
 					//auto table = *transposition_table[THINK_DEPTH - depth];
 					//(*transposition_table[THINK_DEPTH - depth])[hasher(&new_chessboard)] = make_tuple(-DBL_MAX,-DBL_MAX,m);
 				}
-				
+				 
 				return m;
 			}
 			if (t != 125000 && t != -125000){
@@ -1817,9 +1816,9 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 				
 			} 
 			
-			n = std::max(alpha, m)+0.0001;			
+			//n = std::max(alpha, m)+0.01;			
 		}
-		if ((depth >= THINK_DEPTH)&&flip_count>=16&& depth != 0){ // If last move is only flip, check if the opponent can capture, fastforward to exchange phase	
+		if ((depth >= THINK_DEPTH)&&flip_count){ // If last move is only flip, check if the opponent can capture, fastforward to exchange phase	
 			ChessBoard new_chessboard = chessboard;
 			int move_type = MakeMoveAndReturn(&new_chessboard, -1, 0); // fake move
 			//fprintf(stderr,"fakemove %d\n",depth);
@@ -1828,12 +1827,12 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			t = -NegaScout(new_chessboard, &new_move, color^1,depth + 1 , -1, -n, -std::max(alpha, m),first_eat_bonus,acc_skips+1);
 			//fprintf(stderr,"%lf\n",t);
 
-			// if(abs(abs(t)-202845.40) < 0.01){
-			// 	fprintf(stderr, "depth %d MOVE %d score = %.2lf\n",depth, -1, t);
-			// 	fprintf(stderr,"%lf,%lf\n",t,beta);
-			// 	fflush(stderr);
+			if(abs(abs(t)-202845.40) < 0.01){
+				fprintf(stderr, "depth %d MOVE %d score = %.2lf\n",depth, -1, t);
+				fprintf(stderr,"%lf,%lf\n",t,beta);
+				fflush(stderr);
 
-			// }
+			}
 			if(t > m){ 
 				m = t;
 				*move = -1;
