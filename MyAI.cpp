@@ -1819,13 +1819,13 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			
 			n = std::max(alpha, m)+0.0001;			
 		}
-		if ((depth >= THINK_DEPTH)&&flip_count>=16&& depth != 0){ // If last move is only flip, check if the opponent can capture, fastforward to exchange phase	
+		if ((depth >= THINK_DEPTH)&&(flip_count>=16|| move_count==0)&& depth != 0){ // If last move is only flip, check if the opponent can capture, fastforward to exchange phase	
 			ChessBoard new_chessboard = chessboard;
 			int move_type = MakeMoveAndReturn(&new_chessboard, -1, 0); // fake move
 			//fprintf(stderr,"fakemove %d\n",depth);
+			// -n, -std::max(alpha, m)
 			
-			
-			t = -NegaScout(new_chessboard, &new_move, color^1,depth + 1 , -1, -n, -std::max(alpha, m),first_eat_bonus,acc_skips+1);
+			t = -NegaScout(new_chessboard, &new_move, color^1,depth + 1 , -1,-DBL_MAX,DBL_MAX ,first_eat_bonus,acc_skips+1);
 			//fprintf(stderr,"%lf\n",t);
 
 			// if(abs(abs(t)-202845.40) < 0.01){
@@ -1962,7 +1962,10 @@ double MyAI::NegaScout(const ChessBoard chessboard, int* move, const int color, 
 			
 			
 		}
-		
+		// if (m == DBL_MAX || m == -DBL_MAX){
+		// 	fprintf(stderr,"D:%d,")
+		// 	assert (false)
+		// }
 		return m;
 	}
 }
