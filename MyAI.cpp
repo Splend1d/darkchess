@@ -620,7 +620,7 @@ void MyAI::generateMove(char move[6])
 			t_temp = NegaScout(this->main_chessboard, &best_move_tmp, this->Color, 0, 0, -DBL_MAX, DBL_MAX,-1,0,-1);
 			t_temp -= OFFSET; // rescale
 			if(!isTimeUp()){
-				if (t_temp >= WIN || THINK_DEPTH > 50){ 
+				if (t_temp >= WIN || THINK_DEPTH > 30){ 
 					t = t_temp;
 					best_move = best_move_tmp;
 					fprintf(stderr,"Found winning/tie path!\n");
@@ -1312,7 +1312,7 @@ double MyAI::Evaluate(const ChessBoard* chessboard,
 			}
 		}
 
-		score += getState(&count_pieces[this->Color*7],&count_pieces[opponent*7]); //meta score, win/lose
+		//score += getState(&count_pieces[this->Color*7],&count_pieces[opponent*7]); //meta score, win/lose
 		//fprintf(stderr,"State Score:%lf\n",score);
 		if (((count_pieces[0] != 0 && count_pieces[13] != 0) || (count_pieces[7] != 0 && count_pieces[6] != 0) )&& !finish){ // pawn bite king
 			// dynamic score
