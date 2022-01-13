@@ -43,7 +43,7 @@ struct ChessBoard{
 struct Move2Strength
 {
     int move;
-    tuple<int,int> evaluator;
+    tuple<int,int,int> evaluator;
 
 };
 
