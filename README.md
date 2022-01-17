@@ -34,3 +34,4 @@ Identified Issues :
 - Misclassification of board type : Winning too much may cause capturing a piece unfavorable during transition states (帥卒 ->no 帥卒)
 
 Final Results : 5th place
+http://120.126.195.84/record.php?gametype=DarkChess&contest=NTU_CDC_Contest_20220113
