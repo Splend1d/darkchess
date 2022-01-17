@@ -130,7 +130,7 @@ private:
 	double Evaluate(const ChessBoard* chessboard, const int legal_move_count, const int color, int first_eat_bonus, int depth);
 	double EvaluateLight(const ChessBoard* chessboard, const int legal_move_count, const int color, int first_eat_bonus, int depth);
 
-	double NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta, int first_eat_bonus, int acc_skips, int acc_flips,int last_eaten_pos);
+	double NegaScout(const ChessBoard chessboard, int* move, const int color, const int depth, const int remain_depth, double alpha, double beta, int first_eat_bonus, int acc_skips,int last_eaten_pos);
 
 	bool isDraw(const ChessBoard* chessboard);
 	bool isFinish(const ChessBoard* chessboard, int move_count);
