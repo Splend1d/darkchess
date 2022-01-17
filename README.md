@@ -26,4 +26,9 @@ Identified Issues :
 Day2 - which bot : v7turn30draw-75000
 Results : 1W1L against, 2L against, 1W1D against
 Identified Issues : 
-- Misclassification of board type : 帥仕 vs 將士, should be draw (bad move vs R10922077 1st round, move 118)
+- Misclassification of board type : 帥仕 vs 將士, should be draw (bad move vs R10922077 1st round, move 118) (fixed in next version)
+
+Day3 - which bot : v7turn30draw-75000_eatfirst
+Results : 1W1L against, 2D against, 1W1L against
+Identified Issues : 
+- Misclassification of board type : Winning too much may cause capturing a piece unfavorable during transition states (帥卒 ->no 帥卒)
