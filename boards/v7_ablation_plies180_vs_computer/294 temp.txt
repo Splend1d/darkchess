@@ -1,0 +1,1804 @@
+This is TEMPORARILY file. You can use it for DEBUG.
+* 10:48pm Jan 19, 2022
+* ai vs chan_submit
+* 1 2 2 2 2 2 5 1 2 2 2 2 2 5
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* X X X X
+* first 1
+* time 900
+* 1. d2(p) d6(P)
+* 2. d1(p) d7(m)
+* 3. c1(N) c1-d1
+* Comment 0 0
+0. 1642603722946
+1. 1642603722946
+2. 1642603723099
+3. 1642603734558
+4. 1642603734914
+5. 1642603744385
+6. 1642603748945
+
+# 17 32 52 82 102 132 #
+=1 MyAI
+=2 1.0.0
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    X 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=7
+=15
+=14
+# call flip(): flip(27,27) = 15
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: -548.350806 (node: 44328)
+(11) -> (11)
+< X > -> < X >
+move:d6-d6
+--------------------------
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    X 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d6 d6
+# call flip(): flip(11,11) = 7
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    X 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(31,31) = 15
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    p 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 13.121305 (node: 186551)
+(7) -> (7)
+< X > -> < X >
+move:d7-d7
+--------------------------
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    X 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    p 
+
+      <a>  <b>  <c>  <d> 
+
+=12 d7 d7
+# call flip(): flip(7,7) = 11
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    m 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    X    p 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+# call flip(): flip(30,30) = 5
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    m 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    N    p 
+
+      <a>  <b>  <c>  <d> 
+
+=11
+=16
+My result: 
+--------------------------
+NegaScout: 717.833333 (node: 4234142)
+(30) -> (31)
+< N > -> < p >
+move:c1-d1
+--------------------------
+------------Red-------------
+<8>    X    X    X    X 
+<7>    X    X    X    m 
+<6>    X    X    X    P 
+<5>    X    X    X    X 
+<4>    X    X    X    X 
+<3>    X    X    X    X 
+<2>    X    X    X    p 
+<1>    X    X    N    p 
+
+      <a>  <b>  <c>  <d> 
+
+=12 c1 d1
+
+# 17 32 52 82 102 132 #
+1 name
+=1 MyAI
+2 version
+=2 1.0.0
+7 reset_board
+=7
+15 time_setting 900000
+=15
+14 ready
+=14
+11 flip d2 p
+=11
+16 time_left black 900000
+Time Left(black): 900000
+=16
+12 genmove red
+I am red, time left 900000.000000
+Assigned 10112.359551 seconds this turn,10112.359551 
+HistoryCount 1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 7
+-1 -1 -1 -1
+0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+Curstate: 3 0.000000
+434,434,434.000000
+aspire
+failed low re-search
+Depth:  0, Time: 0.035000, Node:          0, Score: -179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.00000, Best Move: 0,
+Saved states: 0
+Projected Depth  1 Time: 7.595000
+aspire
+--relavant FLIP 1919 is 0 score = 1.00
+--relavant FLIP 1919 is 1 score = 320.00
+--relavant FLIP 1919 is 2 score = 5.00
+--relavant FLIP 1919 is 3 score = 7.00
+--relavant FLIP 1919 is 4 score = 9.00
+--relavant FLIP 1919 is 5 score = 11.00
+--relavant FLIP 1919 is 6 score = 13.00
+--relavant FLIP 1919 is 7 score = -1.00
+--relavant FLIP 1919 is 8 score = -1.00
+--relavant FLIP 1919 is 9 score = -1.00
+--relavant FLIP 1919 is 10 score = -1.00
+--relavant FLIP 1919 is 11 score = -1.00
+--relavant FLIP 1919 is 12 score = -1.00
+--relavant FLIP 1919 is 13 score = -1.00
+depth0 relavant FLIP 1919 score = 22.81
+--relavant FLIP 2222 is 0 score = 1.00
+--relavant FLIP 2222 is 1 score = 3.00
+--relavant FLIP 2222 is 2 score = 5.00
+--relavant FLIP 2222 is 3 score = 7.00
+--relavant FLIP 2222 is 4 score = 9.00
+--relavant FLIP 2222 is 5 score = 11.00
+--relavant FLIP 2222 is 6 score = 13.00
+--relavant FLIP 2222 is 7 score = -1.00
+--relavant FLIP 2222 is 8 score = -1.00
+--relavant FLIP 2222 is 9 score = -1.00
+--relavant FLIP 2222 is 10 score = -1.00
+--relavant FLIP 2222 is 11 score = -1.00
+--relavant FLIP 2222 is 12 score = -1.00
+--relavant FLIP 2222 is 13 score = -1.00
+depth0 relavant FLIP 2222 score = 2.35
+--relavant FLIP 2323 is 0 score = -321.00
+--relavant FLIP 2323 is 1 score = 1.00
+--relavant FLIP 2323 is 2 score = 322.00
+--relavant FLIP 2323 is 3 score = 323.00
+--relavant FLIP 2323 is 4 score = 324.00
+--relavant FLIP 2323 is 5 score = 325.00
+--relavant FLIP 2323 is 6 score = -17441.00
+--relavant FLIP 2323 is 7 score = -1.00
+--relavant FLIP 2323 is 8 score = -1.00
+--relavant FLIP 2323 is 9 score = -1.00
+--relavant FLIP 2323 is 10 score = -1.00
+--relavant FLIP 2323 is 11 score = -1.00
+--relavant FLIP 2323 is 12 score = -1.00
+--relavant FLIP 2323 is 13 score = -1.00
+depth0 relavant FLIP 2323 score = -531.32
+--relavant FLIP 2525 is 0 score = 0.00
+--relavant FLIP 2525 is 1 score = 320.00
+--relavant FLIP 2525 is 2 score = 2.00
+--relavant FLIP 2525 is 3 score = 3.00
+--relavant FLIP 2525 is 4 score = 4.00
+--relavant FLIP 2525 is 5 score = 5.00
+--relavant FLIP 2525 is 6 score = 6.00
+--relavant FLIP 2525 is 7 score = -1.00
+--relavant FLIP 2525 is 8 score = -1.00
+--relavant FLIP 2525 is 9 score = -1.00
+--relavant FLIP 2525 is 10 score = -1.00
+--relavant FLIP 2525 is 11 score = -1.00
+--relavant FLIP 2525 is 12 score = -1.00
+--relavant FLIP 2525 is 13 score = -1.00
+depth0 relavant FLIP 2525 score = 21.26
+--relavant FLIP 2626 is 0 score = -321.00
+--relavant FLIP 2626 is 1 score = 1.00
+--relavant FLIP 2626 is 2 score = 322.00
+--relavant FLIP 2626 is 3 score = 323.00
+--relavant FLIP 2626 is 4 score = 324.00
+--relavant FLIP 2626 is 5 score = 325.00
+--relavant FLIP 2626 is 6 score = -17441.00
+--relavant FLIP 2626 is 7 score = -1.00
+--relavant FLIP 2626 is 8 score = -1.00
+--relavant FLIP 2626 is 9 score = -1.00
+--relavant FLIP 2626 is 10 score = -1.00
+--relavant FLIP 2626 is 11 score = -1.00
+--relavant FLIP 2626 is 12 score = -1.00
+--relavant FLIP 2626 is 13 score = -1.00
+depth0 relavant FLIP 2626 score = -531.32
+--relavant FLIP 3030 is 0 score = -0.50
+--relavant FLIP 3030 is 1 score = 0.00
+--relavant FLIP 3030 is 2 score = 0.50
+--relavant FLIP 3030 is 3 score = 1.00
+--relavant FLIP 3030 is 4 score = 1.50
+--relavant FLIP 3030 is 5 score = 2.00
+--relavant FLIP 3030 is 6 score = 2.50
+--relavant FLIP 3030 is 7 score = -1.00
+--relavant FLIP 3030 is 8 score = -1.00
+--relavant FLIP 3030 is 9 score = -1.00
+--relavant FLIP 3030 is 10 score = -1.00
+--relavant FLIP 3030 is 11 score = -1.00
+--relavant FLIP 3030 is 12 score = -1.00
+--relavant FLIP 3030 is 13 score = -1.00
+depth0 relavant FLIP 3030 score = -0.16
+--relavant FLIP 3131 is 0 score = -321.00
+--relavant FLIP 3131 is 1 score = -0.50
+--relavant FLIP 3131 is 2 score = 320.50
+--relavant FLIP 3131 is 3 score = 321.00
+--relavant FLIP 3131 is 4 score = 321.50
+--relavant FLIP 3131 is 5 score = 322.00
+--relavant FLIP 3131 is 6 score = -17441.00
+--relavant FLIP 3131 is 7 score = -1.00
+--relavant FLIP 3131 is 8 score = -1.00
+--relavant FLIP 3131 is 9 score = -1.00
+--relavant FLIP 3131 is 10 score = -1.00
+--relavant FLIP 3131 is 11 score = -1.00
+--relavant FLIP 3131 is 12 score = -1.00
+--relavant FLIP 3131 is 13 score = -1.00
+depth0 relavant FLIP 3131 score = -532.00
+--irrelavant FLIP 0 is 0 score = -0.75
+--irrelavant FLIP 0 is 1 score = -0.50
+--irrelavant FLIP 0 is 2 score = -0.25
+--irrelavant FLIP 0 is 3 score = 0.00
+--irrelavant FLIP 0 is 4 score = 0.25
+--irrelavant FLIP 0 is 5 score = 0.50
+--irrelavant FLIP 0 is 6 score = 0.75
+--irrelavant FLIP 0 is 7 score = -1.00
+--irrelavant FLIP 0 is 8 score = -1.00
+--irrelavant FLIP 0 is 9 score = -1.00
+--irrelavant FLIP 0 is 10 score = -1.00
+--irrelavant FLIP 0 is 11 score = -1.00
+--irrelavant FLIP 0 is 12 score = -1.00
+--irrelavant FLIP 0 is 13 score = -1.00
+irrelavant FLIP 0 score = -0.58
+failed high re-search
+--relavant FLIP 1919 is 0 score = 1.00
+--relavant FLIP 1919 is 1 score = 320.00
+--relavant FLIP 1919 is 2 score = 5.00
+--relavant FLIP 1919 is 3 score = 7.00
+--relavant FLIP 1919 is 4 score = 9.00
+--relavant FLIP 1919 is 5 score = 11.00
+--relavant FLIP 1919 is 6 score = 13.00
+--relavant FLIP 1919 is 7 score = -1.00
+--relavant FLIP 1919 is 8 score = -1.00
+--relavant FLIP 1919 is 9 score = -1.00
+--relavant FLIP 1919 is 10 score = -1.00
+--relavant FLIP 1919 is 11 score = -1.00
+--relavant FLIP 1919 is 12 score = -1.00
+--relavant FLIP 1919 is 13 score = -1.00
+depth0 relavant FLIP 1919 score = 22.81
+--relavant FLIP 2222 is 0 score = 1.00
+--relavant FLIP 2222 is 1 score = 3.00
+--relavant FLIP 2222 is 2 score = 5.00
+--relavant FLIP 2222 is 3 score = 7.00
+--relavant FLIP 2222 is 4 score = 9.00
+--relavant FLIP 2222 is 5 score = 11.00
+--relavant FLIP 2222 is 6 score = 13.00
+--relavant FLIP 2222 is 7 score = -1.00
+--relavant FLIP 2222 is 8 score = -1.00
+--relavant FLIP 2222 is 9 score = -1.00
+--relavant FLIP 2222 is 10 score = -1.00
+--relavant FLIP 2222 is 11 score = -1.00
+--relavant FLIP 2222 is 12 score = -1.00
+--relavant FLIP 2222 is 13 score = -1.00
+depth0 relavant FLIP 2222 score = 2.35
+--relavant FLIP 2323 is 0 score = -321.00
+--relavant FLIP 2323 is 1 score = 1.00
+--relavant FLIP 2323 is 2 score = 322.00
+--relavant FLIP 2323 is 3 score = 323.00
+--relavant FLIP 2323 is 4 score = 324.00
+--relavant FLIP 2323 is 5 score = 325.00
+--relavant FLIP 2323 is 6 score = -17441.00
+--relavant FLIP 2323 is 7 score = -1.00
+--relavant FLIP 2323 is 8 score = -1.00
+--relavant FLIP 2323 is 9 score = -1.00
+--relavant FLIP 2323 is 10 score = -1.00
+--relavant FLIP 2323 is 11 score = -1.00
+--relavant FLIP 2323 is 12 score = -1.00
+--relavant FLIP 2323 is 13 score = -1.00
+depth0 relavant FLIP 2323 score = -531.32
+--relavant FLIP 2525 is 0 score = 0.00
+--relavant FLIP 2525 is 1 score = 320.00
+--relavant FLIP 2525 is 2 score = 2.00
+--relavant FLIP 2525 is 3 score = 3.00
+--relavant FLIP 2525 is 4 score = 4.00
+--relavant FLIP 2525 is 5 score = 5.00
+--relavant FLIP 2525 is 6 score = 6.00
+--relavant FLIP 2525 is 7 score = -1.00
+--relavant FLIP 2525 is 8 score = -1.00
+--relavant FLIP 2525 is 9 score = -1.00
+--relavant FLIP 2525 is 10 score = -1.00
+--relavant FLIP 2525 is 11 score = -1.00
+--relavant FLIP 2525 is 12 score = -1.00
+--relavant FLIP 2525 is 13 score = -1.00
+depth0 relavant FLIP 2525 score = 21.26
+--relavant FLIP 2626 is 0 score = -321.00
+--relavant FLIP 2626 is 1 score = 1.00
+--relavant FLIP 2626 is 2 score = 322.00
+--relavant FLIP 2626 is 3 score = 323.00
+--relavant FLIP 2626 is 4 score = 324.00
+--relavant FLIP 2626 is 5 score = 325.00
+--relavant FLIP 2626 is 6 score = -17441.00
+--relavant FLIP 2626 is 7 score = -1.00
+--relavant FLIP 2626 is 8 score = -1.00
+--relavant FLIP 2626 is 9 score = -1.00
+--relavant FLIP 2626 is 10 score = -1.00
+--relavant FLIP 2626 is 11 score = -1.00
+--relavant FLIP 2626 is 12 score = -1.00
+--relavant FLIP 2626 is 13 score = -1.00
+depth0 relavant FLIP 2626 score = -531.32
+--relavant FLIP 3030 is 0 score = -0.50
+--relavant FLIP 3030 is 1 score = 0.00
+--relavant FLIP 3030 is 2 score = 0.50
+--relavant FLIP 3030 is 3 score = 1.00
+--relavant FLIP 3030 is 4 score = 1.50
+--relavant FLIP 3030 is 5 score = 2.00
+--relavant FLIP 3030 is 6 score = 2.50
+--relavant FLIP 3030 is 7 score = -1.00
+--relavant FLIP 3030 is 8 score = -1.00
+--relavant FLIP 3030 is 9 score = -1.00
+--relavant FLIP 3030 is 10 score = -1.00
+--relavant FLIP 3030 is 11 score = -1.00
+--relavant FLIP 3030 is 12 score = -1.00
+--relavant FLIP 3030 is 13 score = -1.00
+depth0 relavant FLIP 3030 score = -0.16
+--relavant FLIP 3131 is 0 score = -321.00
+--relavant FLIP 3131 is 1 score = -0.50
+--relavant FLIP 3131 is 2 score = 320.50
+--relavant FLIP 3131 is 3 score = 321.00
+--relavant FLIP 3131 is 4 score = 321.50
+--relavant FLIP 3131 is 5 score = 322.00
+--relavant FLIP 3131 is 6 score = -17441.00
+--relavant FLIP 3131 is 7 score = -1.00
+--relavant FLIP 3131 is 8 score = -1.00
+--relavant FLIP 3131 is 9 score = -1.00
+--relavant FLIP 3131 is 10 score = -1.00
+--relavant FLIP 3131 is 11 score = -1.00
+--relavant FLIP 3131 is 12 score = -1.00
+--relavant FLIP 3131 is 13 score = -1.00
+depth0 relavant FLIP 3131 score = -532.00
+--irrelavant FLIP 0 is 0 score = -0.75
+--irrelavant FLIP 0 is 1 score = -0.50
+--irrelavant FLIP 0 is 2 score = -0.25
+--irrelavant FLIP 0 is 3 score = 0.00
+--irrelavant FLIP 0 is 4 score = 0.25
+--irrelavant FLIP 0 is 5 score = 0.50
+--irrelavant FLIP 0 is 6 score = 0.75
+--irrelavant FLIP 0 is 7 score = -1.00
+--irrelavant FLIP 0 is 8 score = -1.00
+--irrelavant FLIP 0 is 9 score = -1.00
+--irrelavant FLIP 0 is 10 score = -1.00
+--irrelavant FLIP 0 is 11 score = -1.00
+--irrelavant FLIP 0 is 12 score = -1.00
+--irrelavant FLIP 0 is 13 score = -1.00
+irrelavant FLIP 0 score = -0.58
+Depth:  1, Time: 0.786000, Node:        342, Score: +22.80645, Best Move: 1919,
+Saved states: 118
+Projected Depth  2 Time: 170.562000
+aspire
+--relavant FLIP 1919 is 0 score = -452.43
+--relavant FLIP 1919 is 1 score = -577.00
+--relavant FLIP 1919 is 2 score = -448.78
+--relavant FLIP 1919 is 3 score = -446.70
+--relavant FLIP 1919 is 4 score = -444.38
+--relavant FLIP 1919 is 5 score = -530.93
+--relavant FLIP 1919 is 6 score = -2174.92
+--relavant FLIP 1919 is 7 score = -442.95
+--relavant FLIP 1919 is 8 score = -1100.27
+--relavant FLIP 1919 is 9 score = -677.90
+--relavant FLIP 1919 is 10 score = -606.07
+--relavant FLIP 1919 is 11 score = -442.95
+--relavant FLIP 1919 is 12 score = -442.95
+--relavant FLIP 1919 is 13 score = -442.95
+depth0 relavant FLIP 1919 score = -583.47
+--relavant FLIP 2222 is 0 score = -452.43
+--relavant FLIP 2222 is 1 score = -1340.53
+--relavant FLIP 2222 is 2 score = -448.78
+--relavant FLIP 2222 is 3 score = -446.70
+--relavant FLIP 2222 is 4 score = -444.38
+--relavant FLIP 2222 is 5 score = -531.70
+--relavant FLIP 2222 is 6 score = -2174.92
+--relavant FLIP 2222 is 7 score = -442.95
+--relavant FLIP 2222 is 8 score = -1121.40
+--relavant FLIP 2222 is 9 score = -677.90
+--relavant FLIP 2222 is 10 score = -606.07
+--relavant FLIP 2222 is 11 score = -442.95
+--relavant FLIP 2222 is 12 score = -442.95
+--relavant FLIP 2222 is 13 score = -442.95
+depth0 relavant FLIP 2222 score = -634.15
+--relavant FLIP 2323 is 0 score = -321.00
+--relavant FLIP 2323 is 1 score = -897.13
+--relavant FLIP 2323 is 2 score = 319.30
+--relavant FLIP 2323 is 3 score = 300.40
+--relavant FLIP 2323 is 4 score = 208.93
+--relavant FLIP 2323 is 5 score = -215.00
+--relavant FLIP 2323 is 6 score = -17441.00
+--relavant FLIP 2323 is 7 score = -303.67
+--relavant FLIP 2323 is 8 score = -1121.53
+--relavant FLIP 2323 is 9 score = -489.20
+--relavant FLIP 2323 is 10 score = -472.53
+--relavant FLIP 2323 is 11 score = -425.87
+--relavant FLIP 2323 is 12 score = -563.20
+--relavant FLIP 2323 is 13 score = -0.57
+depth0 relavant FLIP 2323 score = -870.09
+--relavant FLIP 2525 is 0 score = -453.03
+--relavant FLIP 2525 is 1 score = -578.77
+--relavant FLIP 2525 is 2 score = -451.28
+--relavant FLIP 2525 is 3 score = -450.30
+--relavant FLIP 2525 is 4 score = -449.22
+--relavant FLIP 2525 is 5 score = -531.93
+--relavant FLIP 2525 is 6 score = -2180.75
+--relavant FLIP 2525 is 7 score = -442.95
+--relavant FLIP 2525 is 8 score = -1100.27
+--relavant FLIP 2525 is 9 score = -678.90
+--relavant FLIP 2525 is 10 score = -606.80
+--relavant FLIP 2525 is 11 score = -442.95
+--relavant FLIP 2525 is 12 score = -442.95
+--relavant FLIP 2525 is 13 score = -442.95
+depth0 relavant FLIP 2525 score = -584.75
+--relavant FLIP 2626 is 0 score = -321.00
+--relavant FLIP 2626 is 1 score = -899.32
+--relavant FLIP 2626 is 2 score = 318.68
+--relavant FLIP 2626 is 3 score = 298.95
+--relavant FLIP 2626 is 4 score = 207.98
+--relavant FLIP 2626 is 5 score = -217.30
+--relavant FLIP 2626 is 6 score = -17441.00
+--relavant FLIP 2626 is 7 score = -303.77
+--relavant FLIP 2626 is 8 score = -1121.53
+--relavant FLIP 2626 is 9 score = -489.30
+--relavant FLIP 2626 is 10 score = -472.83
+--relavant FLIP 2626 is 11 score = -426.42
+--relavant FLIP 2626 is 12 score = -564.05
+--relavant FLIP 2626 is 13 score = -0.13
+depth0 relavant FLIP 2626 score = -870.69
+--relavant FLIP 3030 is 0 score = -452.63
+--relavant FLIP 3030 is 1 score = -1342.58
+--relavant FLIP 3030 is 2 score = -452.03
+--relavant FLIP 3030 is 3 score = -451.73
+--relavant FLIP 3030 is 4 score = -451.43
+--relavant FLIP 3030 is 5 score = -540.48
+--relavant FLIP 3030 is 6 score = -2184.45
+--relavant FLIP 3030 is 7 score = -442.92
+--relavant FLIP 3030 is 8 score = -1121.60
+--relavant FLIP 3030 is 9 score = -679.40
+--relavant FLIP 3030 is 10 score = -607.17
+--relavant FLIP 3030 is 11 score = -442.17
+--relavant FLIP 3030 is 12 score = -442.17
+--relavant FLIP 3030 is 13 score = -442.17
+depth0 relavant FLIP 3030 score = -636.23
+--relavant FLIP 3131 is 0 score = -321.00
+--relavant FLIP 3131 is 1 score = -900.03
+--relavant FLIP 3131 is 2 score = 318.10
+--relavant FLIP 3131 is 3 score = 300.43
+--relavant FLIP 3131 is 4 score = 300.72
+--relavant FLIP 3131 is 5 score = 302.10
+--relavant FLIP 3131 is 6 score = -17441.00
+--relavant FLIP 3131 is 7 score = -304.33
+--relavant FLIP 3131 is 8 score = -1121.63
+--relavant FLIP 3131 is 9 score = -489.70
+--relavant FLIP 3131 is 10 score = -472.90
+--relavant FLIP 3131 is 11 score = -426.07
+--relavant FLIP 3131 is 12 score = -563.20
+--relavant FLIP 3131 is 13 score = -0.13
+depth0 relavant FLIP 3131 score = -831.22
+--irrelavant FLIP 1111 is 0 score = -453.03
+--irrelavant FLIP 1111 is 1 score = -899.28
+--irrelavant FLIP 1111 is 2 score = -451.28
+--irrelavant FLIP 1111 is 3 score = -450.30
+--irrelavant FLIP 1111 is 4 score = -449.22
+--irrelavant FLIP 1111 is 5 score = -537.68
+--irrelavant FLIP 1111 is 6 score = -1156.76
+--irrelavant FLIP 1111 is 7 score = -442.95
+--irrelavant FLIP 1111 is 8 score = -1121.53
+--irrelavant FLIP 1111 is 9 score = -442.95
+--irrelavant FLIP 1111 is 10 score = -442.95
+--irrelavant FLIP 1111 is 11 score = -442.95
+--irrelavant FLIP 1111 is 12 score = -442.95
+--irrelavant FLIP 1111 is 13 score = -442.95
+irrelavant FLIP 1111 score = -548.35
+Depth:  2, Time: 59.229000, Node:      44328, Score: -548.35081, Best Move: 1111,
+Saved states: 15302
+Projected Depth  3 Time: 12852.693000
+Depth:  2, Node:      44328, Score: -548.35081, Move: d6-d6
+=12 d6 d6
+11 flip d6 P
+=11
+16 time_left red 899847
+Time Left(red): 899847
+=16
+11 flip d1 p
+=11
+16 time_left black 888541
+Time Left(black): 888541
+=16
+12 genmove red
+I am red, time left 839847.000000
+Assigned 9543.715909 seconds this turn,9543.715909 
+HistoryCount 3
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 0
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 7
+-1 -1 -1 7
+0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,1.000000
+Curstate: 3 1.000000
+406,406,406.000000
+aspire
+failed low re-search
+Depth:  0, Time: 0.052000, Node:          0, Score: -179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.00000, Best Move: 1111,
+Saved states: 0
+Projected Depth  1 Time: 10.556000
+aspire
+--relavant FLIP 303 is 0 score = 0.00
+--relavant FLIP 303 is 1 score = -0.50
+--relavant FLIP 303 is 2 score = -0.25
+--relavant FLIP 303 is 3 score = 0.00
+--relavant FLIP 303 is 4 score = 0.25
+--relavant FLIP 303 is 5 score = 1.50
+--relavant FLIP 303 is 6 score = 1.75
+--relavant FLIP 303 is 7 score = 0.00
+--relavant FLIP 303 is 8 score = -321.00
+--relavant FLIP 303 is 9 score = 0.00
+--relavant FLIP 303 is 10 score = 0.00
+--relavant FLIP 303 is 11 score = 0.00
+--relavant FLIP 303 is 12 score = 0.00
+--relavant FLIP 303 is 13 score = 0.00
+depth0 relavant FLIP 303 score = -22.01
+--relavant FLIP 606 is 0 score = 0.00
+--relavant FLIP 606 is 1 score = 1.00
+--relavant FLIP 606 is 2 score = 2.00
+--relavant FLIP 606 is 3 score = 3.00
+--relavant FLIP 606 is 4 score = 4.00
+--relavant FLIP 606 is 5 score = 6.00
+--relavant FLIP 606 is 6 score = 7.00
+--relavant FLIP 606 is 7 score = 0.00
+--relavant FLIP 606 is 8 score = 0.00
+--relavant FLIP 606 is 9 score = 0.00
+--relavant FLIP 606 is 10 score = 0.00
+--relavant FLIP 606 is 11 score = 0.00
+--relavant FLIP 606 is 12 score = 0.00
+--relavant FLIP 606 is 13 score = 0.00
+depth0 relavant FLIP 606 score = 1.34
+--relavant FLIP 707 is 0 score = 0.00
+--relavant FLIP 707 is 1 score = 0.00
+--relavant FLIP 707 is 2 score = 0.50
+--relavant FLIP 707 is 3 score = 1.00
+--relavant FLIP 707 is 4 score = 1.50
+--relavant FLIP 707 is 5 score = 3.00
+--relavant FLIP 707 is 6 score = 3.50
+--relavant FLIP 707 is 7 score = -321.00
+--relavant FLIP 707 is 8 score = 0.00
+--relavant FLIP 707 is 9 score = -321.00
+--relavant FLIP 707 is 10 score = -321.00
+--relavant FLIP 707 is 11 score = -321.00
+--relavant FLIP 707 is 12 score = -321.00
+--relavant FLIP 707 is 13 score = 17440.00
+depth0 relavant FLIP 707 score = 480.16
+--relavant FLIP 909 is 0 score = 0.00
+--relavant FLIP 909 is 1 score = 3.00
+--relavant FLIP 909 is 2 score = 5.00
+--relavant FLIP 909 is 3 score = 7.00
+--relavant FLIP 909 is 4 score = 9.00
+--relavant FLIP 909 is 5 score = 12.00
+--relavant FLIP 909 is 6 score = 14.00
+--relavant FLIP 909 is 7 score = 0.00
+--relavant FLIP 909 is 8 score = -321.00
+--relavant FLIP 909 is 9 score = 0.00
+--relavant FLIP 909 is 10 score = 0.00
+--relavant FLIP 909 is 11 score = 0.00
+--relavant FLIP 909 is 12 score = 0.00
+--relavant FLIP 909 is 13 score = 0.00
+depth0 relavant FLIP 909 score = -19.17
+--relavant FLIP 1010 is 0 score = 0.00
+--relavant FLIP 1010 is 1 score = 3.00
+--relavant FLIP 1010 is 2 score = 5.00
+--relavant FLIP 1010 is 3 score = 7.00
+--relavant FLIP 1010 is 4 score = 9.00
+--relavant FLIP 1010 is 5 score = 12.00
+--relavant FLIP 1010 is 6 score = 14.00
+--relavant FLIP 1010 is 7 score = -321.00
+--relavant FLIP 1010 is 8 score = 0.00
+--relavant FLIP 1010 is 9 score = -321.00
+--relavant FLIP 1010 is 10 score = -321.00
+--relavant FLIP 1010 is 11 score = -321.00
+--relavant FLIP 1010 is 12 score = -321.00
+--relavant FLIP 1010 is 13 score = 17441.00
+depth0 relavant FLIP 1010 score = 482.62
+--relavant FLIP 1414 is 0 score = 3.00
+--relavant FLIP 1414 is 1 score = 7.00
+--relavant FLIP 1414 is 2 score = 11.00
+--relavant FLIP 1414 is 3 score = 15.00
+--relavant FLIP 1414 is 4 score = 19.00
+--relavant FLIP 1414 is 5 score = 24.00
+--relavant FLIP 1414 is 6 score = 28.00
+--relavant FLIP 1414 is 7 score = 0.00
+--relavant FLIP 1414 is 8 score = 0.00
+--relavant FLIP 1414 is 9 score = 0.00
+--relavant FLIP 1414 is 10 score = 0.00
+--relavant FLIP 1414 is 11 score = 0.00
+--relavant FLIP 1414 is 12 score = 0.00
+--relavant FLIP 1414 is 13 score = 0.00
+depth0 relavant FLIP 1414 score = 6.62
+--relavant FLIP 1515 is 0 score = 1.00
+--relavant FLIP 1515 is 1 score = 3.00
+--relavant FLIP 1515 is 2 score = 5.00
+--relavant FLIP 1515 is 3 score = 7.00
+--relavant FLIP 1515 is 4 score = 9.00
+--relavant FLIP 1515 is 5 score = 12.00
+--relavant FLIP 1515 is 6 score = 14.00
+--relavant FLIP 1515 is 7 score = -321.00
+--relavant FLIP 1515 is 8 score = 0.00
+--relavant FLIP 1515 is 9 score = -321.00
+--relavant FLIP 1515 is 10 score = -321.00
+--relavant FLIP 1515 is 11 score = -321.00
+--relavant FLIP 1515 is 12 score = -321.00
+--relavant FLIP 1515 is 13 score = 17441.00
+depth0 relavant FLIP 1515 score = 482.76
+--relavant FLIP 1919 is 0 score = 1.00
+--relavant FLIP 1919 is 1 score = 320.00
+--relavant FLIP 1919 is 2 score = 5.00
+--relavant FLIP 1919 is 3 score = 7.00
+--relavant FLIP 1919 is 4 score = 9.00
+--relavant FLIP 1919 is 5 score = 12.00
+--relavant FLIP 1919 is 6 score = 14.00
+--relavant FLIP 1919 is 7 score = 0.00
+--relavant FLIP 1919 is 8 score = -321.00
+--relavant FLIP 1919 is 9 score = 0.00
+--relavant FLIP 1919 is 10 score = 0.00
+--relavant FLIP 1919 is 11 score = 0.00
+--relavant FLIP 1919 is 12 score = 0.00
+--relavant FLIP 1919 is 13 score = 0.00
+depth0 relavant FLIP 1919 score = 2.83
+--relavant FLIP 2222 is 0 score = 1.00
+--relavant FLIP 2222 is 1 score = 3.00
+--relavant FLIP 2222 is 2 score = 5.00
+--relavant FLIP 2222 is 3 score = 7.00
+--relavant FLIP 2222 is 4 score = 9.00
+--relavant FLIP 2222 is 5 score = 12.00
+--relavant FLIP 2222 is 6 score = 14.00
+--relavant FLIP 2222 is 7 score = 0.00
+--relavant FLIP 2222 is 8 score = 0.00
+--relavant FLIP 2222 is 9 score = 0.00
+--relavant FLIP 2222 is 10 score = 0.00
+--relavant FLIP 2222 is 11 score = 0.00
+--relavant FLIP 2222 is 12 score = 0.00
+--relavant FLIP 2222 is 13 score = 0.00
+depth0 relavant FLIP 2222 score = 3.10
+--relavant FLIP 2323 is 0 score = -320.00
+--relavant FLIP 2323 is 1 score = 319.50
+--relavant FLIP 2323 is 2 score = 1040.50
+--relavant FLIP 2323 is 3 score = 1041.00
+--relavant FLIP 2323 is 4 score = 1041.50
+--relavant FLIP 2323 is 5 score = 1043.00
+--relavant FLIP 2323 is 6 score = -17440.00
+--relavant FLIP 2323 is 7 score = 0.00
+--relavant FLIP 2323 is 8 score = 0.00
+--relavant FLIP 2323 is 9 score = 0.00
+--relavant FLIP 2323 is 10 score = 0.00
+--relavant FLIP 2323 is 11 score = 0.00
+--relavant FLIP 2323 is 12 score = 0.00
+--relavant FLIP 2323 is 13 score = 0.00
+depth0 relavant FLIP 2323 score = -336.17
+--relavant FLIP 2525 is 0 score = 0.00
+--relavant FLIP 2525 is 1 score = 320.00
+--relavant FLIP 2525 is 2 score = 2.00
+--relavant FLIP 2525 is 3 score = 3.00
+--relavant FLIP 2525 is 4 score = 4.00
+--relavant FLIP 2525 is 5 score = 6.00
+--relavant FLIP 2525 is 6 score = 7.00
+--relavant FLIP 2525 is 7 score = 0.00
+--relavant FLIP 2525 is 8 score = 0.00
+--relavant FLIP 2525 is 9 score = 0.00
+--relavant FLIP 2525 is 10 score = 0.00
+--relavant FLIP 2525 is 11 score = 0.00
+--relavant FLIP 2525 is 12 score = 0.00
+--relavant FLIP 2525 is 13 score = 0.00
+depth0 relavant FLIP 2525 score = 23.34
+--relavant FLIP 2626 is 0 score = -320.00
+--relavant FLIP 2626 is 1 score = 1.00
+--relavant FLIP 2626 is 2 score = 1040.50
+--relavant FLIP 2626 is 3 score = 1041.00
+--relavant FLIP 2626 is 4 score = 1041.50
+--relavant FLIP 2626 is 5 score = 1043.00
+--relavant FLIP 2626 is 6 score = -17440.00
+--relavant FLIP 2626 is 7 score = 0.00
+--relavant FLIP 2626 is 8 score = 0.00
+--relavant FLIP 2626 is 9 score = 0.00
+--relavant FLIP 2626 is 10 score = 0.00
+--relavant FLIP 2626 is 11 score = 0.00
+--relavant FLIP 2626 is 12 score = 0.00
+--relavant FLIP 2626 is 13 score = 0.00
+depth0 relavant FLIP 2626 score = -358.14
+--relavant FLIP 2929 is 0 score = -0.50
+--relavant FLIP 2929 is 1 score = 319.50
+--relavant FLIP 2929 is 2 score = 0.50
+--relavant FLIP 2929 is 3 score = 1.00
+--relavant FLIP 2929 is 4 score = 1.50
+--relavant FLIP 2929 is 5 score = 3.00
+--relavant FLIP 2929 is 6 score = 3.50
+--relavant FLIP 2929 is 7 score = 0.00
+--relavant FLIP 2929 is 8 score = 0.00
+--relavant FLIP 2929 is 9 score = 0.00
+--relavant FLIP 2929 is 10 score = 0.00
+--relavant FLIP 2929 is 11 score = 0.00
+--relavant FLIP 2929 is 12 score = 0.00
+--relavant FLIP 2929 is 13 score = 0.00
+depth0 relavant FLIP 2929 score = 22.50
+--relavant FLIP 3030 is 0 score = -320.00
+--relavant FLIP 3030 is 1 score = 0.00
+--relavant FLIP 3030 is 2 score = 1040.50
+--relavant FLIP 3030 is 3 score = 1041.00
+--relavant FLIP 3030 is 4 score = 1041.50
+--relavant FLIP 3030 is 5 score = 1043.00
+--relavant FLIP 3030 is 6 score = -17440.00
+--relavant FLIP 3030 is 7 score = 0.00
+--relavant FLIP 3030 is 8 score = 0.00
+--relavant FLIP 3030 is 9 score = 0.00
+--relavant FLIP 3030 is 10 score = 0.00
+--relavant FLIP 3030 is 11 score = 0.00
+--relavant FLIP 3030 is 12 score = 0.00
+--relavant FLIP 3030 is 13 score = 0.00
+depth0 relavant FLIP 3030 score = -358.21
+--irrelavant FLIP 2121 is 0 score = 1.00
+--irrelavant FLIP 2121 is 1 score = 3.00
+--irrelavant FLIP 2121 is 2 score = 5.00
+--irrelavant FLIP 2121 is 3 score = 7.00
+--irrelavant FLIP 2121 is 4 score = 9.00
+--irrelavant FLIP 2121 is 5 score = 12.00
+--irrelavant FLIP 2121 is 6 score = 14.00
+--irrelavant FLIP 2121 is 7 score = 0.00
+--irrelavant FLIP 2121 is 8 score = 0.00
+--irrelavant FLIP 2121 is 9 score = 0.00
+--irrelavant FLIP 2121 is 10 score = 0.00
+--irrelavant FLIP 2121 is 11 score = 0.00
+--irrelavant FLIP 2121 is 12 score = 0.00
+--irrelavant FLIP 2121 is 13 score = 0.00
+irrelavant FLIP 2121 score = 3.10
+failed high re-search
+--relavant FLIP 303 is 0 score = 0.00
+--relavant FLIP 303 is 1 score = -0.50
+--relavant FLIP 303 is 2 score = -0.25
+--relavant FLIP 303 is 3 score = 0.00
+--relavant FLIP 303 is 4 score = 0.25
+--relavant FLIP 303 is 5 score = 1.50
+--relavant FLIP 303 is 6 score = 1.75
+--relavant FLIP 303 is 7 score = 0.00
+--relavant FLIP 303 is 8 score = -321.00
+--relavant FLIP 303 is 9 score = 0.00
+--relavant FLIP 303 is 10 score = 0.00
+--relavant FLIP 303 is 11 score = 0.00
+--relavant FLIP 303 is 12 score = 0.00
+--relavant FLIP 303 is 13 score = 0.00
+depth0 relavant FLIP 303 score = -22.01
+--relavant FLIP 606 is 0 score = 0.00
+--relavant FLIP 606 is 1 score = 1.00
+--relavant FLIP 606 is 2 score = 2.00
+--relavant FLIP 606 is 3 score = 3.00
+--relavant FLIP 606 is 4 score = 4.00
+--relavant FLIP 606 is 5 score = 6.00
+--relavant FLIP 606 is 6 score = 7.00
+--relavant FLIP 606 is 7 score = 0.00
+--relavant FLIP 606 is 8 score = 0.00
+--relavant FLIP 606 is 9 score = 0.00
+--relavant FLIP 606 is 10 score = 0.00
+--relavant FLIP 606 is 11 score = 0.00
+--relavant FLIP 606 is 12 score = 0.00
+--relavant FLIP 606 is 13 score = 0.00
+depth0 relavant FLIP 606 score = 1.34
+--relavant FLIP 707 is 0 score = 0.00
+--relavant FLIP 707 is 1 score = 0.00
+--relavant FLIP 707 is 2 score = 0.50
+--relavant FLIP 707 is 3 score = 1.00
+--relavant FLIP 707 is 4 score = 1.50
+--relavant FLIP 707 is 5 score = 3.00
+--relavant FLIP 707 is 6 score = 3.50
+--relavant FLIP 707 is 7 score = -321.00
+--relavant FLIP 707 is 8 score = 0.00
+--relavant FLIP 707 is 9 score = -321.00
+--relavant FLIP 707 is 10 score = -321.00
+--relavant FLIP 707 is 11 score = -321.00
+--relavant FLIP 707 is 12 score = -321.00
+--relavant FLIP 707 is 13 score = 17440.00
+depth0 relavant FLIP 707 score = 480.16
+--relavant FLIP 909 is 0 score = 0.00
+--relavant FLIP 909 is 1 score = 3.00
+--relavant FLIP 909 is 2 score = 5.00
+--relavant FLIP 909 is 3 score = 7.00
+--relavant FLIP 909 is 4 score = 9.00
+--relavant FLIP 909 is 5 score = 12.00
+--relavant FLIP 909 is 6 score = 14.00
+--relavant FLIP 909 is 7 score = 0.00
+--relavant FLIP 909 is 8 score = -321.00
+--relavant FLIP 909 is 9 score = 0.00
+--relavant FLIP 909 is 10 score = 0.00
+--relavant FLIP 909 is 11 score = 0.00
+--relavant FLIP 909 is 12 score = 0.00
+--relavant FLIP 909 is 13 score = 0.00
+depth0 relavant FLIP 909 score = -19.17
+--relavant FLIP 1010 is 0 score = 0.00
+--relavant FLIP 1010 is 1 score = 3.00
+--relavant FLIP 1010 is 2 score = 5.00
+--relavant FLIP 1010 is 3 score = 7.00
+--relavant FLIP 1010 is 4 score = 9.00
+--relavant FLIP 1010 is 5 score = 12.00
+--relavant FLIP 1010 is 6 score = 14.00
+--relavant FLIP 1010 is 7 score = -321.00
+--relavant FLIP 1010 is 8 score = 0.00
+--relavant FLIP 1010 is 9 score = -321.00
+--relavant FLIP 1010 is 10 score = -321.00
+--relavant FLIP 1010 is 11 score = -321.00
+--relavant FLIP 1010 is 12 score = -321.00
+--relavant FLIP 1010 is 13 score = 17441.00
+depth0 relavant FLIP 1010 score = 482.62
+--relavant FLIP 1414 is 0 score = 3.00
+--relavant FLIP 1414 is 1 score = 7.00
+--relavant FLIP 1414 is 2 score = 11.00
+--relavant FLIP 1414 is 3 score = 15.00
+--relavant FLIP 1414 is 4 score = 19.00
+--relavant FLIP 1414 is 5 score = 24.00
+--relavant FLIP 1414 is 6 score = 28.00
+--relavant FLIP 1414 is 7 score = 0.00
+--relavant FLIP 1414 is 8 score = 0.00
+--relavant FLIP 1414 is 9 score = 0.00
+--relavant FLIP 1414 is 10 score = 0.00
+--relavant FLIP 1414 is 11 score = 0.00
+--relavant FLIP 1414 is 12 score = 0.00
+--relavant FLIP 1414 is 13 score = 0.00
+depth0 relavant FLIP 1414 score = 6.62
+--relavant FLIP 1515 is 0 score = 1.00
+--relavant FLIP 1515 is 1 score = 3.00
+--relavant FLIP 1515 is 2 score = 5.00
+--relavant FLIP 1515 is 3 score = 7.00
+--relavant FLIP 1515 is 4 score = 9.00
+--relavant FLIP 1515 is 5 score = 12.00
+--relavant FLIP 1515 is 6 score = 14.00
+--relavant FLIP 1515 is 7 score = -321.00
+--relavant FLIP 1515 is 8 score = 0.00
+--relavant FLIP 1515 is 9 score = -321.00
+--relavant FLIP 1515 is 10 score = -321.00
+--relavant FLIP 1515 is 11 score = -321.00
+--relavant FLIP 1515 is 12 score = -321.00
+--relavant FLIP 1515 is 13 score = 17441.00
+depth0 relavant FLIP 1515 score = 482.76
+--relavant FLIP 1919 is 0 score = 1.00
+--relavant FLIP 1919 is 1 score = 320.00
+--relavant FLIP 1919 is 2 score = 5.00
+--relavant FLIP 1919 is 3 score = 7.00
+--relavant FLIP 1919 is 4 score = 9.00
+--relavant FLIP 1919 is 5 score = 12.00
+--relavant FLIP 1919 is 6 score = 14.00
+--relavant FLIP 1919 is 7 score = 0.00
+--relavant FLIP 1919 is 8 score = -321.00
+--relavant FLIP 1919 is 9 score = 0.00
+--relavant FLIP 1919 is 10 score = 0.00
+--relavant FLIP 1919 is 11 score = 0.00
+--relavant FLIP 1919 is 12 score = 0.00
+--relavant FLIP 1919 is 13 score = 0.00
+depth0 relavant FLIP 1919 score = 2.83
+--relavant FLIP 2222 is 0 score = 1.00
+--relavant FLIP 2222 is 1 score = 3.00
+--relavant FLIP 2222 is 2 score = 5.00
+--relavant FLIP 2222 is 3 score = 7.00
+--relavant FLIP 2222 is 4 score = 9.00
+--relavant FLIP 2222 is 5 score = 12.00
+--relavant FLIP 2222 is 6 score = 14.00
+--relavant FLIP 2222 is 7 score = 0.00
+--relavant FLIP 2222 is 8 score = 0.00
+--relavant FLIP 2222 is 9 score = 0.00
+--relavant FLIP 2222 is 10 score = 0.00
+--relavant FLIP 2222 is 11 score = 0.00
+--relavant FLIP 2222 is 12 score = 0.00
+--relavant FLIP 2222 is 13 score = 0.00
+depth0 relavant FLIP 2222 score = 3.10
+--relavant FLIP 2323 is 0 score = -320.00
+--relavant FLIP 2323 is 1 score = 319.50
+--relavant FLIP 2323 is 2 score = 1040.50
+--relavant FLIP 2323 is 3 score = 1041.00
+--relavant FLIP 2323 is 4 score = 1041.50
+--relavant FLIP 2323 is 5 score = 1043.00
+--relavant FLIP 2323 is 6 score = -17440.00
+--relavant FLIP 2323 is 7 score = 0.00
+--relavant FLIP 2323 is 8 score = 0.00
+--relavant FLIP 2323 is 9 score = 0.00
+--relavant FLIP 2323 is 10 score = 0.00
+--relavant FLIP 2323 is 11 score = 0.00
+--relavant FLIP 2323 is 12 score = 0.00
+--relavant FLIP 2323 is 13 score = 0.00
+depth0 relavant FLIP 2323 score = -336.17
+--relavant FLIP 2525 is 0 score = 0.00
+--relavant FLIP 2525 is 1 score = 320.00
+--relavant FLIP 2525 is 2 score = 2.00
+--relavant FLIP 2525 is 3 score = 3.00
+--relavant FLIP 2525 is 4 score = 4.00
+--relavant FLIP 2525 is 5 score = 6.00
+--relavant FLIP 2525 is 6 score = 7.00
+--relavant FLIP 2525 is 7 score = 0.00
+--relavant FLIP 2525 is 8 score = 0.00
+--relavant FLIP 2525 is 9 score = 0.00
+--relavant FLIP 2525 is 10 score = 0.00
+--relavant FLIP 2525 is 11 score = 0.00
+--relavant FLIP 2525 is 12 score = 0.00
+--relavant FLIP 2525 is 13 score = 0.00
+depth0 relavant FLIP 2525 score = 23.34
+--relavant FLIP 2626 is 0 score = -320.00
+--relavant FLIP 2626 is 1 score = 1.00
+--relavant FLIP 2626 is 2 score = 1040.50
+--relavant FLIP 2626 is 3 score = 1041.00
+--relavant FLIP 2626 is 4 score = 1041.50
+--relavant FLIP 2626 is 5 score = 1043.00
+--relavant FLIP 2626 is 6 score = -17440.00
+--relavant FLIP 2626 is 7 score = 0.00
+--relavant FLIP 2626 is 8 score = 0.00
+--relavant FLIP 2626 is 9 score = 0.00
+--relavant FLIP 2626 is 10 score = 0.00
+--relavant FLIP 2626 is 11 score = 0.00
+--relavant FLIP 2626 is 12 score = 0.00
+--relavant FLIP 2626 is 13 score = 0.00
+depth0 relavant FLIP 2626 score = -358.14
+--relavant FLIP 2929 is 0 score = -0.50
+--relavant FLIP 2929 is 1 score = 319.50
+--relavant FLIP 2929 is 2 score = 0.50
+--relavant FLIP 2929 is 3 score = 1.00
+--relavant FLIP 2929 is 4 score = 1.50
+--relavant FLIP 2929 is 5 score = 3.00
+--relavant FLIP 2929 is 6 score = 3.50
+--relavant FLIP 2929 is 7 score = 0.00
+--relavant FLIP 2929 is 8 score = 0.00
+--relavant FLIP 2929 is 9 score = 0.00
+--relavant FLIP 2929 is 10 score = 0.00
+--relavant FLIP 2929 is 11 score = 0.00
+--relavant FLIP 2929 is 12 score = 0.00
+--relavant FLIP 2929 is 13 score = 0.00
+depth0 relavant FLIP 2929 score = 22.50
+--relavant FLIP 3030 is 0 score = -320.00
+--relavant FLIP 3030 is 1 score = 0.00
+--relavant FLIP 3030 is 2 score = 1040.50
+--relavant FLIP 3030 is 3 score = 1041.00
+--relavant FLIP 3030 is 4 score = 1041.50
+--relavant FLIP 3030 is 5 score = 1043.00
+--relavant FLIP 3030 is 6 score = -17440.00
+--relavant FLIP 3030 is 7 score = 0.00
+--relavant FLIP 3030 is 8 score = 0.00
+--relavant FLIP 3030 is 9 score = 0.00
+--relavant FLIP 3030 is 10 score = 0.00
+--relavant FLIP 3030 is 11 score = 0.00
+--relavant FLIP 3030 is 12 score = 0.00
+--relavant FLIP 3030 is 13 score = 0.00
+depth0 relavant FLIP 3030 score = -358.21
+--irrelavant FLIP 101 is 0 score = 0.00
+--irrelavant FLIP 101 is 1 score = 0.00
+--irrelavant FLIP 101 is 2 score = 0.50
+--irrelavant FLIP 101 is 3 score = 1.00
+--irrelavant FLIP 101 is 4 score = 1.50
+--irrelavant FLIP 101 is 5 score = 3.00
+--irrelavant FLIP 101 is 6 score = 3.50
+--irrelavant FLIP 101 is 7 score = 0.00
+--irrelavant FLIP 101 is 8 score = 0.00
+--irrelavant FLIP 101 is 9 score = 0.00
+--irrelavant FLIP 101 is 10 score = 0.00
+--irrelavant FLIP 101 is 11 score = 0.00
+--irrelavant FLIP 101 is 12 score = 0.00
+--irrelavant FLIP 101 is 13 score = 0.00
+irrelavant FLIP 101 score = 0.53
+Depth:  1, Time: 2.015000, Node:        809, Score: +482.75862, Best Move: 1515,
+Saved states: 248
+Projected Depth  2 Time: 409.045000
+aspire
+--relavant FLIP 303 is 0 score = -325.29
+--relavant FLIP 303 is 1 score = -963.96
+--relavant FLIP 303 is 2 score = -362.65
+--relavant FLIP 303 is 3 score = -362.50
+--relavant FLIP 303 is 4 score = -362.35
+--relavant FLIP 303 is 5 score = -602.52
+--relavant FLIP 303 is 6 score = -1266.59
+--relavant FLIP 303 is 7 score = -485.29
+--relavant FLIP 303 is 8 score = -1758.57
+--relavant FLIP 303 is 9 score = -325.29
+--relavant FLIP 303 is 10 score = -325.29
+--relavant FLIP 303 is 11 score = -325.29
+--relavant FLIP 303 is 12 score = -325.29
+--relavant FLIP 303 is 13 score = -325.29
+depth0 relavant FLIP 303 score = -544.01
+--relavant FLIP 606 is 0 score = -325.29
+--relavant FLIP 606 is 1 score = -963.27
+--relavant FLIP 606 is 2 score = -360.80
+--relavant FLIP 606 is 3 score = -359.82
+--relavant FLIP 606 is 4 score = -358.73
+--relavant FLIP 606 is 5 score = -575.41
+--relavant FLIP 606 is 6 score = -1238.79
+--relavant FLIP 606 is 7 score = -484.64
+--relavant FLIP 606 is 8 score = -1189.21
+--relavant FLIP 606 is 9 score = -325.29
+--relavant FLIP 606 is 10 score = -325.29
+--relavant FLIP 606 is 11 score = -325.29
+--relavant FLIP 606 is 12 score = -325.29
+--relavant FLIP 606 is 13 score = -325.29
+depth0 relavant FLIP 606 score = -501.24
+--relavant FLIP 707 is 0 score = -325.29
+--relavant FLIP 707 is 1 score = -971.54
+--relavant FLIP 707 is 2 score = -362.04
+--relavant FLIP 707 is 3 score = -361.61
+--relavant FLIP 707 is 4 score = -361.14
+--relavant FLIP 707 is 5 score = -577.46
+--relavant FLIP 707 is 6 score = -1241.32
+--relavant FLIP 707 is 7 score = -321.00
+--relavant FLIP 707 is 8 score = -1189.29
+--relavant FLIP 707 is 9 score = -703.14
+--relavant FLIP 707 is 10 score = -703.14
+--relavant FLIP 707 is 11 score = -703.14
+--relavant FLIP 707 is 12 score = -703.14
+--relavant FLIP 707 is 13 score = 17157.29
+depth0 relavant FLIP 707 score = 13.12
+--relavant FLIP 909 is 0 score = -325.29
+--relavant FLIP 909 is 1 score = -961.57
+--relavant FLIP 909 is 2 score = -358.34
+--relavant FLIP 909 is 3 score = -356.25
+--relavant FLIP 909 is 4 score = -353.91
+--relavant FLIP 909 is 5 score = -593.13
+--relavant FLIP 909 is 6 score = -1255.57
+--relavant FLIP 909 is 7 score = -483.29
+--relavant FLIP 909 is 8 score = -1758.82
+--relavant FLIP 909 is 9 score = -325.29
+--relavant FLIP 909 is 10 score = -325.29
+--relavant FLIP 909 is 11 score = -325.29
+--relavant FLIP 909 is 12 score = -325.29
+--relavant FLIP 909 is 13 score = -325.29
+depth0 relavant FLIP 909 score = -541.32
+--relavant FLIP 1010 is 0 score = -325.29
+--relavant FLIP 1010 is 1 score = -967.36
+--relavant FLIP 1010 is 2 score = -358.34
+--relavant FLIP 1010 is 3 score = -356.25
+--relavant FLIP 1010 is 4 score = -353.91
+--relavant FLIP 1010 is 5 score = -569.84
+--relavant FLIP 1010 is 6 score = -1232.29
+--relavant FLIP 1010 is 7 score = -321.00
+--relavant FLIP 1010 is 8 score = -1395.25
+--relavant FLIP 1010 is 9 score = -703.14
+--relavant FLIP 1010 is 10 score = -703.14
+--relavant FLIP 1010 is 11 score = -703.14
+--relavant FLIP 1010 is 12 score = -703.14
+--relavant FLIP 1010 is 13 score = 17158.04
+depth0 relavant FLIP 1010 score = 1.19
+--relavant FLIP 1414 is 0 score = -323.14
+--relavant FLIP 1414 is 1 score = -955.11
+--relavant FLIP 1414 is 2 score = -353.41
+--relavant FLIP 1414 is 3 score = -349.11
+--relavant FLIP 1414 is 4 score = -344.27
+--relavant FLIP 1414 is 5 score = -557.96
+--relavant FLIP 1414 is 6 score = -1218.57
+--relavant FLIP 1414 is 7 score = -479.86
+--relavant FLIP 1414 is 8 score = -1188.79
+--relavant FLIP 1414 is 9 score = -325.29
+--relavant FLIP 1414 is 10 score = -325.29
+--relavant FLIP 1414 is 11 score = -325.29
+--relavant FLIP 1414 is 12 score = -325.29
+--relavant FLIP 1414 is 13 score = -325.29
+depth0 relavant FLIP 1414 score = -495.71
+--relavant FLIP 1515 is 0 score = -324.68
+--relavant FLIP 1515 is 1 score = -956.04
+--relavant FLIP 1515 is 2 score = -358.34
+--relavant FLIP 1515 is 3 score = -359.61
+--relavant FLIP 1515 is 4 score = -455.98
+--relavant FLIP 1515 is 5 score = -910.00
+--relavant FLIP 1515 is 6 score = -1226.86
+--relavant FLIP 1515 is 7 score = -321.00
+--relavant FLIP 1515 is 8 score = -1235.39
+--relavant FLIP 1515 is 9 score = -703.14
+--relavant FLIP 1515 is 10 score = -703.14
+--relavant FLIP 1515 is 11 score = -703.14
+--relavant FLIP 1515 is 12 score = -703.14
+--relavant FLIP 1515 is 13 score = 17158.04
+depth0 relavant FLIP 1515 score = -17.46
+--relavant FLIP 1919 is 0 score = -324.57
+--relavant FLIP 1919 is 1 score = -411.12
+--relavant FLIP 1919 is 2 score = -358.34
+--relavant FLIP 1919 is 3 score = -356.25
+--relavant FLIP 1919 is 4 score = -353.91
+--relavant FLIP 1919 is 5 score = -593.13
+--relavant FLIP 1919 is 6 score = -4095.66
+--relavant FLIP 1919 is 7 score = -479.86
+--relavant FLIP 1919 is 8 score = -1758.82
+--relavant FLIP 1919 is 9 score = -325.29
+--relavant FLIP 1919 is 10 score = -325.29
+--relavant FLIP 1919 is 11 score = -325.29
+--relavant FLIP 1919 is 12 score = -325.29
+--relavant FLIP 1919 is 13 score = -325.29
+depth0 relavant FLIP 1919 score = -600.84
+--relavant FLIP 2222 is 0 score = -347.50
+--relavant FLIP 2222 is 1 score = -1288.25
+--relavant FLIP 2222 is 2 score = -362.27
+--relavant FLIP 2222 is 3 score = -382.46
+--relavant FLIP 2222 is 4 score = -478.84
+--relavant FLIP 2222 is 5 score = -932.82
+--relavant FLIP 2222 is 6 score = -4095.66
+--relavant FLIP 2222 is 7 score = -483.00
+--relavant FLIP 2222 is 8 score = -1189.07
+--relavant FLIP 2222 is 9 score = -535.71
+--relavant FLIP 2222 is 10 score = -521.15
+--relavant FLIP 2222 is 11 score = -314.04
+--relavant FLIP 2222 is 12 score = -22.79
+--relavant FLIP 2222 is 13 score = -56.88
+depth0 relavant FLIP 2222 score = -656.77
+--relavant FLIP 2323 is 0 score = -426.84
+--relavant FLIP 2323 is 1 score = -255.01
+--relavant FLIP 2323 is 2 score = 643.98
+--relavant FLIP 2323 is 3 score = 574.14
+--relavant FLIP 2323 is 4 score = 562.70
+--relavant FLIP 2323 is 5 score = 740.11
+--relavant FLIP 2323 is 6 score = -17470.36
+--relavant FLIP 2323 is 7 score = -324.57
+--relavant FLIP 2323 is 8 score = -1166.46
+--relavant FLIP 2323 is 9 score = -380.26
+--relavant FLIP 2323 is 10 score = -454.43
+--relavant FLIP 2323 is 11 score = -455.43
+--relavant FLIP 2323 is 12 score = -602.58
+--relavant FLIP 2323 is 13 score = -602.58
+depth0 relavant FLIP 2323 score = -770.36
+--relavant FLIP 2525 is 0 score = -325.29
+--relavant FLIP 2525 is 1 score = -437.61
+--relavant FLIP 2525 is 2 score = -360.80
+--relavant FLIP 2525 is 3 score = -359.82
+--relavant FLIP 2525 is 4 score = -358.73
+--relavant FLIP 2525 is 5 score = -569.86
+--relavant FLIP 2525 is 6 score = -4100.66
+--relavant FLIP 2525 is 7 score = -484.64
+--relavant FLIP 2525 is 8 score = -1166.43
+--relavant FLIP 2525 is 9 score = -535.71
+--relavant FLIP 2525 is 10 score = -521.15
+--relavant FLIP 2525 is 11 score = -325.29
+--relavant FLIP 2525 is 12 score = -325.29
+--relavant FLIP 2525 is 13 score = -325.29
+depth0 relavant FLIP 2525 score = -589.74
+--relavant FLIP 2626 is 0 score = -320.00
+--relavant FLIP 2626 is 1 score = -1289.14
+--relavant FLIP 2626 is 2 score = 380.34
+--relavant FLIP 2626 is 3 score = 306.88
+--relavant FLIP 2626 is 4 score = 393.38
+--relavant FLIP 2626 is 5 score = 410.30
+--relavant FLIP 2626 is 6 score = -17462.86
+--relavant FLIP 2626 is 7 score = -324.65
+--relavant FLIP 2626 is 8 score = -1189.21
+--relavant FLIP 2626 is 9 score = -538.73
+--relavant FLIP 2626 is 10 score = -546.25
+--relavant FLIP 2626 is 11 score = -455.43
+--relavant FLIP 2626 is 12 score = -602.58
+--relavant FLIP 2626 is 13 score = -602.58
+depth0 relavant FLIP 2626 score = -916.56
+--relavant FLIP 2929 is 0 score = -325.57
+--relavant FLIP 2929 is 1 score = -438.11
+--relavant FLIP 2929 is 2 score = -362.04
+--relavant FLIP 2929 is 3 score = -361.61
+--relavant FLIP 2929 is 4 score = -361.14
+--relavant FLIP 2929 is 5 score = -575.86
+--relavant FLIP 2929 is 6 score = -4103.23
+--relavant FLIP 2929 is 7 score = -485.39
+--relavant FLIP 2929 is 8 score = -1166.46
+--relavant FLIP 2929 is 9 score = -535.66
+--relavant FLIP 2929 is 10 score = -521.08
+--relavant FLIP 2929 is 11 score = -325.21
+--relavant FLIP 2929 is 12 score = -325.21
+--relavant FLIP 2929 is 13 score = -325.21
+depth0 relavant FLIP 2929 score = -590.75
+--relavant FLIP 3030 is 0 score = -404.66
+--relavant FLIP 3030 is 1 score = -1289.43
+--relavant FLIP 3030 is 2 score = 375.52
+--relavant FLIP 3030 is 3 score = 286.39
+--relavant FLIP 3030 is 4 score = 274.43
+--relavant FLIP 3030 is 5 score = 409.90
+--relavant FLIP 3030 is 6 score = -17462.86
+--relavant FLIP 3030 is 7 score = -325.22
+--relavant FLIP 3030 is 8 score = -1189.29
+--relavant FLIP 3030 is 9 score = -539.26
+--relavant FLIP 3030 is 10 score = -546.79
+--relavant FLIP 3030 is 11 score = -314.68
+--relavant FLIP 3030 is 12 score = -457.07
+--relavant FLIP 3030 is 13 score = -457.07
+depth0 relavant FLIP 3030 score = -913.61
+--irrelavant FLIP 1818 is 0 score = -346.14
+--irrelavant FLIP 1818 is 1 score = -969.86
+--irrelavant FLIP 1818 is 2 score = -357.77
+--irrelavant FLIP 1818 is 3 score = -375.89
+--irrelavant FLIP 1818 is 4 score = -469.91
+--irrelavant FLIP 1818 is 5 score = -921.61
+--irrelavant FLIP 1818 is 6 score = -1217.00
+--irrelavant FLIP 1818 is 7 score = -480.43
+--irrelavant FLIP 1818 is 8 score = -1188.79
+--irrelavant FLIP 1818 is 9 score = -325.29
+--irrelavant FLIP 1818 is 10 score = -325.29
+--irrelavant FLIP 1818 is 11 score = -325.29
+--irrelavant FLIP 1818 is 12 score = -325.29
+--irrelavant FLIP 1818 is 13 score = -325.29
+irrelavant FLIP 1818 score = -535.80
+Depth:  2, Time: 237.578000, Node:     186551, Score: +13.12131, Best Move: 707,
+Saved states: 36943
+Projected Depth  3 Time: 48228.334000
+Depth:  2, Node:     186551, Score: +13.12131, Move: d7-d7
+=12 d7 d7
+11 flip d7 m
+=11
+16 time_left red 899491
+Time Left(red): 899491
+=16
+11 flip c1 N
+=11
+16 time_left black 879070
+Time Left(black): 879070
+=16
+12 genmove red
+I am red, time left 839491.000000
+Assigned 9649.321839 seconds this turn,9649.321839 
+HistoryCount 5
+-1 -1 -1 -1
+-1 -1 -1 11
+-1 -1 -1 0
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 -1
+-1 -1 -1 7
+-1 -1 2 7
+0.000000,0.000000,0.000000,0.020000,0.020000,0.000000,1.500000
+Curstate: 3 1.490000
+379,379,379.000000
+aspire
+(scout passed) MOVE 3031 score = 720.50
+Depth:  0, Time: 0.129000, Node:        102, Score: +720.50000, Best Move: 3031,
+Saved states: 1
+Projected Depth  1 Time: 24.445500
+aspire
+(scout passed) MOVE 3031 score = 720.50
+--relavant FLIP 303 is 0 score = 0.50
+--relavant FLIP 303 is 1 score = -2279.50
+--relavant FLIP 303 is 2 score = 670.50
+--relavant FLIP 303 is 3 score = 360.50
+--relavant FLIP 303 is 4 score = -1019.50
+--relavant FLIP 303 is 5 score = 1745.73
+--relavant FLIP 303 is 6 score = 1746.73
+--relavant FLIP 303 is 7 score = 720.50
+--relavant FLIP 303 is 8 score = 720.50
+--relavant FLIP 303 is 9 score = 720.50
+--relavant FLIP 303 is 10 score = 720.50
+--relavant FLIP 303 is 11 score = 720.50
+--relavant FLIP 303 is 12 score = 720.50
+--relavant FLIP 303 is 13 score = 720.50
+depth0 relavant FLIP 303 score = 348.16
+--relavant FLIP 505 is 0 score = 720.50
+--relavant FLIP 505 is 1 score = 720.50
+--relavant FLIP 505 is 2 score = 720.50
+--relavant FLIP 505 is 3 score = 723.00
+--relavant FLIP 505 is 4 score = 724.00
+--relavant FLIP 505 is 5 score = 726.50
+--relavant FLIP 505 is 6 score = 727.50
+--relavant FLIP 505 is 7 score = 720.50
+--relavant FLIP 505 is 8 score = 720.50
+--relavant FLIP 505 is 9 score = 720.50
+--relavant FLIP 505 is 10 score = 720.50
+--relavant FLIP 505 is 11 score = 720.50
+--relavant FLIP 505 is 12 score = 720.50
+--relavant FLIP 505 is 13 score = 720.50
+depth0 relavant FLIP 505 score = 721.65
+--relavant FLIP 606 is 0 score = 0.50
+--relavant FLIP 606 is 1 score = -2279.50
+--relavant FLIP 606 is 2 score = 670.50
+--relavant FLIP 606 is 3 score = 360.50
+--relavant FLIP 606 is 4 score = -1019.50
+--relavant FLIP 606 is 5 score = 1745.73
+--relavant FLIP 606 is 6 score = 1746.73
+--relavant FLIP 606 is 7 score = 720.50
+--relavant FLIP 606 is 8 score = 720.50
+--relavant FLIP 606 is 9 score = 720.50
+--relavant FLIP 606 is 10 score = 720.50
+--relavant FLIP 606 is 11 score = 720.50
+--relavant FLIP 606 is 12 score = 720.50
+--relavant FLIP 606 is 13 score = 720.50
+depth0 relavant FLIP 606 score = 348.16
+--relavant FLIP 909 is 0 score = 720.50
+--relavant FLIP 909 is 1 score = 1040.51
+--relavant FLIP 909 is 2 score = 720.50
+--relavant FLIP 909 is 3 score = 727.00
+--relavant FLIP 909 is 4 score = 729.00
+--relavant FLIP 909 is 5 score = 732.50
+--relavant FLIP 909 is 6 score = 734.50
+--relavant FLIP 909 is 7 score = 720.50
+--relavant FLIP 909 is 8 score = 720.50
+--relavant FLIP 909 is 9 score = 720.50
+--relavant FLIP 909 is 10 score = 720.50
+--relavant FLIP 909 is 11 score = 720.50
+--relavant FLIP 909 is 12 score = 720.50
+--relavant FLIP 909 is 13 score = 720.50
+depth0 relavant FLIP 909 score = 746.72
+--relavant FLIP 1010 is 0 score = 0.50
+--relavant FLIP 1010 is 1 score = -2279.50
+--relavant FLIP 1010 is 2 score = 670.50
+--relavant FLIP 1010 is 3 score = 360.50
+--relavant FLIP 1010 is 4 score = 1049.01
+--relavant FLIP 1010 is 5 score = 1052.51
+--relavant FLIP 1010 is 6 score = 1054.51
+--relavant FLIP 1010 is 7 score = 720.50
+--relavant FLIP 1010 is 8 score = 720.50
+--relavant FLIP 1010 is 9 score = 720.50
+--relavant FLIP 1010 is 10 score = 720.50
+--relavant FLIP 1010 is 11 score = 720.50
+--relavant FLIP 1010 is 12 score = 720.50
+--relavant FLIP 1010 is 13 score = 720.50
+depth0 relavant FLIP 1010 score = 424.39
+--relavant FLIP 1414 is 0 score = 720.50
+--relavant FLIP 1414 is 1 score = 720.50
+--relavant FLIP 1414 is 2 score = 720.50
+--relavant FLIP 1414 is 3 score = 735.00
+--relavant FLIP 1414 is 4 score = 739.00
+--relavant FLIP 1414 is 5 score = 744.50
+--relavant FLIP 1414 is 6 score = 748.50
+--relavant FLIP 1414 is 7 score = 720.50
+--relavant FLIP 1414 is 8 score = 720.50
+--relavant FLIP 1414 is 9 score = 720.50
+--relavant FLIP 1414 is 10 score = 720.50
+--relavant FLIP 1414 is 11 score = 720.50
+--relavant FLIP 1414 is 12 score = 720.50
+--relavant FLIP 1414 is 13 score = 720.50
+depth0 relavant FLIP 1414 score = 725.76
+--relavant FLIP 1515 is 0 score = 0.50
+--relavant FLIP 1515 is 1 score = -2279.50
+--relavant FLIP 1515 is 2 score = 670.50
+--relavant FLIP 1515 is 3 score = 360.50
+--relavant FLIP 1515 is 4 score = 1049.01
+--relavant FLIP 1515 is 5 score = 1052.51
+--relavant FLIP 1515 is 6 score = 1054.51
+--relavant FLIP 1515 is 7 score = 720.50
+--relavant FLIP 1515 is 8 score = 720.50
+--relavant FLIP 1515 is 9 score = 720.50
+--relavant FLIP 1515 is 10 score = 720.50
+--relavant FLIP 1515 is 11 score = 720.50
+--relavant FLIP 1515 is 12 score = 720.50
+--relavant FLIP 1515 is 13 score = 720.50
+depth0 relavant FLIP 1515 score = 424.39
+--relavant FLIP 1919 is 0 score = 720.50
+--relavant FLIP 1919 is 1 score = 1040.51
+--relavant FLIP 1919 is 2 score = 720.50
+--relavant FLIP 1919 is 3 score = 727.00
+--relavant FLIP 1919 is 4 score = 729.00
+--relavant FLIP 1919 is 5 score = 732.50
+--relavant FLIP 1919 is 6 score = 734.50
+--relavant FLIP 1919 is 7 score = 720.50
+--relavant FLIP 1919 is 8 score = 669.00
+--relavant FLIP 1919 is 9 score = 720.50
+--relavant FLIP 1919 is 10 score = 720.50
+--relavant FLIP 1919 is 11 score = 720.50
+--relavant FLIP 1919 is 12 score = 720.50
+--relavant FLIP 1919 is 13 score = 720.50
+depth0 relavant FLIP 1919 score = 742.91
+--relavant FLIP 2222 is 0 score = 720.50
+--relavant FLIP 2222 is 1 score = 720.50
+--relavant FLIP 2222 is 2 score = 720.50
+--relavant FLIP 2222 is 3 score = 727.00
+--relavant FLIP 2222 is 4 score = 729.00
+--relavant FLIP 2222 is 5 score = 732.50
+--relavant FLIP 2222 is 6 score = 734.50
+--relavant FLIP 2222 is 7 score = 720.50
+--relavant FLIP 2222 is 8 score = -371.00
+--relavant FLIP 2222 is 9 score = 720.50
+--relavant FLIP 2222 is 10 score = 720.50
+--relavant FLIP 2222 is 11 score = 720.50
+--relavant FLIP 2222 is 12 score = 720.50
+--relavant FLIP 2222 is 13 score = 720.50
+depth0 relavant FLIP 2222 score = 642.17
+--relavant FLIP 2323 is 0 score = 2.00
+--relavant FLIP 2323 is 1 score = 720.50
+--relavant FLIP 2323 is 2 score = 720.50
+--relavant FLIP 2323 is 3 score = 723.00
+--relavant FLIP 2323 is 4 score = 724.00
+--relavant FLIP 2323 is 5 score = 726.50
+--relavant FLIP 2323 is 6 score = -17718.00
+--relavant FLIP 2323 is 7 score = 1742.00
+--relavant FLIP 2323 is 8 score = -51.00
+--relavant FLIP 2323 is 9 score = 669.00
+--relavant FLIP 2323 is 10 score = 669.00
+--relavant FLIP 2323 is 11 score = 669.00
+--relavant FLIP 2323 is 12 score = 669.00
+--relavant FLIP 2323 is 13 score = 669.00
+depth0 relavant FLIP 2323 score = -26.87
+--relavant FLIP 2525 is 0 score = 720.50
+--relavant FLIP 2525 is 1 score = 720.50
+--relavant FLIP 2525 is 2 score = 720.50
+--relavant FLIP 2525 is 3 score = 723.00
+--relavant FLIP 2525 is 4 score = 724.00
+--relavant FLIP 2525 is 5 score = 726.50
+--relavant FLIP 2525 is 6 score = 727.50
+--relavant FLIP 2525 is 7 score = 720.50
+--relavant FLIP 2525 is 8 score = 669.00
+--relavant FLIP 2525 is 9 score = 720.50
+--relavant FLIP 2525 is 10 score = 720.50
+--relavant FLIP 2525 is 11 score = 720.50
+--relavant FLIP 2525 is 12 score = 720.50
+--relavant FLIP 2525 is 13 score = 720.50
+depth0 relavant FLIP 2525 score = 717.83
+--relavant FLIP 2626 is 0 score = -718.02
+--relavant FLIP 2626 is 1 score = 720.50
+--relavant FLIP 2626 is 2 score = 720.50
+--relavant FLIP 2626 is 3 score = 723.00
+--relavant FLIP 2626 is 4 score = 724.00
+--relavant FLIP 2626 is 5 score = 726.50
+--relavant FLIP 2626 is 6 score = -17738.02
+--relavant FLIP 2626 is 7 score = 721.98
+--relavant FLIP 2626 is 8 score = 3001.98
+--relavant FLIP 2626 is 9 score = -371.00
+--relavant FLIP 2626 is 10 score = -371.00
+--relavant FLIP 2626 is 11 score = -371.00
+--relavant FLIP 2626 is 12 score = -371.00
+--relavant FLIP 2626 is 13 score = -371.00
+depth0 relavant FLIP 2626 score = -329.62
+--relavant FLIP 2828 is 0 score = 720.50
+--relavant FLIP 2828 is 1 score = 720.50
+--relavant FLIP 2828 is 2 score = 719.75
+--relavant FLIP 2828 is 3 score = 720.00
+--relavant FLIP 2828 is 4 score = 720.25
+--relavant FLIP 2828 is 5 score = 722.00
+--relavant FLIP 2828 is 6 score = 722.25
+--relavant FLIP 2828 is 7 score = 720.50
+--relavant FLIP 2828 is 8 score = -371.00
+--relavant FLIP 2828 is 9 score = 720.50
+--relavant FLIP 2828 is 10 score = 720.50
+--relavant FLIP 2828 is 11 score = 720.50
+--relavant FLIP 2828 is 12 score = 720.50
+--relavant FLIP 2828 is 13 score = 720.50
+depth0 relavant FLIP 2828 score = 639.74
+--relavant FLIP 2929 is 0 score = 720.50
+--relavant FLIP 2929 is 1 score = 720.50
+--relavant FLIP 2929 is 2 score = 720.50
+--relavant FLIP 2929 is 3 score = 721.00
+--relavant FLIP 2929 is 4 score = 721.50
+--relavant FLIP 2929 is 5 score = 723.50
+--relavant FLIP 2929 is 6 score = 724.00
+--relavant FLIP 2929 is 7 score = 720.48
+--relavant FLIP 2929 is 8 score = 3000.48
+--relavant FLIP 2929 is 9 score = -371.00
+--relavant FLIP 2929 is 10 score = -371.00
+--relavant FLIP 2929 is 11 score = -371.00
+--relavant FLIP 2929 is 12 score = -371.00
+--relavant FLIP 2929 is 13 score = -371.00
+depth0 relavant FLIP 2929 score = 566.44
+--irrelavant FLIP 1818 is 0 score = 720.50
+--irrelavant FLIP 1818 is 1 score = 720.50
+--irrelavant FLIP 1818 is 2 score = 720.50
+--irrelavant FLIP 1818 is 3 score = 735.00
+--irrelavant FLIP 1818 is 4 score = 739.00
+--irrelavant FLIP 1818 is 5 score = 744.50
+--irrelavant FLIP 1818 is 6 score = 748.50
+--irrelavant FLIP 1818 is 7 score = 720.50
+--irrelavant FLIP 1818 is 8 score = 720.50
+--irrelavant FLIP 1818 is 9 score = 720.50
+--irrelavant FLIP 1818 is 10 score = 720.50
+--irrelavant FLIP 1818 is 11 score = 720.50
+--irrelavant FLIP 1818 is 12 score = 720.50
+--irrelavant FLIP 1818 is 13 score = 720.50
+irrelavant FLIP 1818 score = 725.76
+Depth:  1, Time: 30.474000, Node:      26998, Score: +746.72296, Best Move: 909,
+Saved states: 463
+Projected Depth  2 Time: 5774.823000
+aspire
+(scout passed) MOVE 3031 score = 717.83
+--relavant FLIP 303 is 0 score = -562.17
+--relavant FLIP 303 is 1 score = -2888.26
+--relavant FLIP 303 is 2 score = -76.48
+--relavant FLIP 303 is 3 score = -304.59
+--relavant FLIP 303 is 4 score = -1019.50
+--relavant FLIP 303 is 5 score = 1745.73
+--relavant FLIP 303 is 6 score = 1674.37
+--relavant FLIP 303 is 7 score = -94.90
+--relavant FLIP 303 is 8 score = -913.65
+--relavant FLIP 303 is 9 score = -53.63
+--relavant FLIP 303 is 10 score = -53.63
+--relavant FLIP 303 is 11 score = -53.63
+--relavant FLIP 303 is 12 score = -53.63
+--relavant FLIP 303 is 13 score = -53.63
+depth0 relavant FLIP 303 score = -300.93
+--relavant FLIP 505 is 0 score = -27.60
+--relavant FLIP 505 is 1 score = 720.50
+--relavant FLIP 505 is 2 score = -54.46
+--relavant FLIP 505 is 3 score = -53.38
+--relavant FLIP 505 is 4 score = -52.46
+--relavant FLIP 505 is 5 score = -49.85
+--relavant FLIP 505 is 6 score = -745.42
+--relavant FLIP 505 is 7 score = -94.90
+--relavant FLIP 505 is 8 score = -658.43
+--relavant FLIP 505 is 9 score = -53.63
+--relavant FLIP 505 is 10 score = -53.63
+--relavant FLIP 505 is 11 score = -53.63
+--relavant FLIP 505 is 12 score = -53.63
+--relavant FLIP 505 is 13 score = -53.63
+depth0 relavant FLIP 505 score = -67.09
+--relavant FLIP 606 is 0 score = -562.11
+--relavant FLIP 606 is 1 score = -2888.26
+--relavant FLIP 606 is 2 score = -75.96
+--relavant FLIP 606 is 3 score = -304.13
+--relavant FLIP 606 is 4 score = -1019.50
+--relavant FLIP 606 is 5 score = 1745.73
+--relavant FLIP 606 is 6 score = 1465.62
+--relavant FLIP 606 is 7 score = -94.90
+--relavant FLIP 606 is 8 score = -889.12
+--relavant FLIP 606 is 9 score = -53.63
+--relavant FLIP 606 is 10 score = -53.63
+--relavant FLIP 606 is 11 score = -53.63
+--relavant FLIP 606 is 12 score = -53.63
+--relavant FLIP 606 is 13 score = -53.63
+depth0 relavant FLIP 606 score = -306.78
+--relavant FLIP 909 is 0 score = -27.21
+--relavant FLIP 909 is 1 score = -4.54
+--relavant FLIP 909 is 2 score = -53.31
+--relavant FLIP 909 is 3 score = -49.85
+--relavant FLIP 909 is 4 score = -47.65
+--relavant FLIP 909 is 5 score = -43.85
+--relavant FLIP 909 is 6 score = -738.96
+--relavant FLIP 909 is 7 score = -94.90
+--relavant FLIP 909 is 8 score = -913.65
+--relavant FLIP 909 is 9 score = -53.63
+--relavant FLIP 909 is 10 score = -53.63
+--relavant FLIP 909 is 11 score = -53.63
+--relavant FLIP 909 is 12 score = -53.63
+--relavant FLIP 909 is 13 score = -53.63
+depth0 relavant FLIP 909 score = -138.30
+--relavant FLIP 1010 is 0 score = -782.60
+--relavant FLIP 1010 is 1 score = -3055.62
+--relavant FLIP 1010 is 2 score = -105.62
+--relavant FLIP 1010 is 3 score = -421.10
+--relavant FLIP 1010 is 4 score = 333.89
+--relavant FLIP 1010 is 5 score = 338.09
+--relavant FLIP 1010 is 6 score = -389.30
+--relavant FLIP 1010 is 7 score = 659.71
+--relavant FLIP 1010 is 8 score = -889.12
+--relavant FLIP 1010 is 9 score = -53.63
+--relavant FLIP 1010 is 10 score = -53.63
+--relavant FLIP 1010 is 11 score = -53.63
+--relavant FLIP 1010 is 12 score = -53.63
+--relavant FLIP 1010 is 13 score = 720.50
+depth0 relavant FLIP 1010 score = -321.81
+--relavant FLIP 1414 is 0 score = -26.44
+--relavant FLIP 1414 is 1 score = -635.46
+--relavant FLIP 1414 is 2 score = -51.00
+--relavant FLIP 1414 is 3 score = -42.77
+--relavant FLIP 1414 is 4 score = -38.04
+--relavant FLIP 1414 is 5 score = -31.85
+--relavant FLIP 1414 is 6 score = -726.04
+--relavant FLIP 1414 is 7 score = -94.90
+--relavant FLIP 1414 is 8 score = -658.35
+--relavant FLIP 1414 is 9 score = -53.63
+--relavant FLIP 1414 is 10 score = -53.63
+--relavant FLIP 1414 is 11 score = -53.63
+--relavant FLIP 1414 is 12 score = -53.63
+--relavant FLIP 1414 is 13 score = -53.63
+depth0 relavant FLIP 1414 score = -163.32
+--relavant FLIP 1515 is 0 score = -727.21
+--relavant FLIP 1515 is 1 score = -2279.50
+--relavant FLIP 1515 is 2 score = -101.77
+--relavant FLIP 1515 is 3 score = -392.90
+--relavant FLIP 1515 is 4 score = 230.05
+--relavant FLIP 1515 is 5 score = -258.30
+--relavant FLIP 1515 is 6 score = -385.26
+--relavant FLIP 1515 is 7 score = 659.71
+--relavant FLIP 1515 is 8 score = -889.12
+--relavant FLIP 1515 is 9 score = 28.67
+--relavant FLIP 1515 is 10 score = 63.23
+--relavant FLIP 1515 is 11 score = 63.23
+--relavant FLIP 1515 is 12 score = 63.23
+--relavant FLIP 1515 is 13 score = 720.50
+depth0 relavant FLIP 1515 score = -277.86
+--relavant FLIP 1919 is 0 score = 89.55
+--relavant FLIP 1919 is 1 score = 223.84
+--relavant FLIP 1919 is 2 score = 63.09
+--relavant FLIP 1919 is 3 score = 67.07
+--relavant FLIP 1919 is 4 score = 69.26
+--relavant FLIP 1919 is 5 score = 47.56
+--relavant FLIP 1919 is 6 score = -4358.18
+--relavant FLIP 1919 is 7 score = 61.19
+--relavant FLIP 1919 is 8 score = -916.54
+--relavant FLIP 1919 is 9 score = -76.78
+--relavant FLIP 1919 is 10 score = 35.99
+--relavant FLIP 1919 is 11 score = 63.23
+--relavant FLIP 1919 is 12 score = 63.23
+--relavant FLIP 1919 is 13 score = 63.23
+depth0 relavant FLIP 1919 score = -170.36
+--relavant FLIP 2222 is 0 score = 247.01
+--relavant FLIP 2222 is 1 score = -962.54
+--relavant FLIP 2222 is 2 score = 242.19
+--relavant FLIP 2222 is 3 score = 229.31
+--relavant FLIP 2222 is 4 score = 152.52
+--relavant FLIP 2222 is 5 score = 70.81
+--relavant FLIP 2222 is 6 score = -4337.52
+--relavant FLIP 2222 is 7 score = 444.88
+--relavant FLIP 2222 is 8 score = -658.35
+--relavant FLIP 2222 is 9 score = -105.25
+--relavant FLIP 2222 is 10 score = -16.34
+--relavant FLIP 2222 is 11 score = 257.64
+--relavant FLIP 2222 is 12 score = 661.25
+--relavant FLIP 2222 is 13 score = 530.69
+depth0 relavant FLIP 2222 score = -83.02
+--relavant FLIP 2323 is 0 score = -188.04
+--relavant FLIP 2323 is 1 score = -140.60
+--relavant FLIP 2323 is 2 score = 720.50
+--relavant FLIP 2323 is 3 score = 722.86
+--relavant FLIP 2323 is 4 score = 670.13
+--relavant FLIP 2323 is 5 score = 672.60
+--relavant FLIP 2323 is 6 score = -17723.88
+--relavant FLIP 2323 is 7 score = 556.61
+--relavant FLIP 2323 is 8 score = -1080.60
+--relavant FLIP 2323 is 9 score = 62.19
+--relavant FLIP 2323 is 10 score = 104.17
+--relavant FLIP 2323 is 11 score = 178.80
+--relavant FLIP 2323 is 12 score = 41.20
+--relavant FLIP 2323 is 13 score = 37.43
+depth0 relavant FLIP 2323 score = -509.84
+--relavant FLIP 2525 is 0 score = -27.60
+--relavant FLIP 2525 is 1 score = 153.63
+--relavant FLIP 2525 is 2 score = -54.46
+--relavant FLIP 2525 is 3 score = -53.38
+--relavant FLIP 2525 is 4 score = -52.46
+--relavant FLIP 2525 is 5 score = -49.85
+--relavant FLIP 2525 is 6 score = -688.66
+--relavant FLIP 2525 is 7 score = -94.90
+--relavant FLIP 2525 is 8 score = -682.12
+--relavant FLIP 2525 is 9 score = -53.63
+--relavant FLIP 2525 is 10 score = -53.63
+--relavant FLIP 2525 is 11 score = -53.63
+--relavant FLIP 2525 is 12 score = -53.63
+--relavant FLIP 2525 is 13 score = -53.63
+depth0 relavant FLIP 2525 score = -108.73
+--relavant FLIP 2626 is 0 score = -718.02
+--relavant FLIP 2626 is 1 score = -221.04
+--relavant FLIP 2626 is 2 score = 720.50
+--relavant FLIP 2626 is 3 score = 722.89
+--relavant FLIP 2626 is 4 score = 670.13
+--relavant FLIP 2626 is 5 score = 275.75
+--relavant FLIP 2626 is 6 score = -17738.02
+--relavant FLIP 2626 is 7 score = 596.29
+--relavant FLIP 2626 is 8 score = 2711.56
+--relavant FLIP 2626 is 9 score = -371.00
+--relavant FLIP 2626 is 10 score = -371.00
+--relavant FLIP 2626 is 11 score = -371.00
+--relavant FLIP 2626 is 12 score = -371.00
+--relavant FLIP 2626 is 13 score = -382.36
+depth0 relavant FLIP 2626 score = -472.65
+--relavant FLIP 2828 is 0 score = -48.56
+--relavant FLIP 2828 is 1 score = -202.10
+--relavant FLIP 2828 is 2 score = -60.04
+--relavant FLIP 2828 is 3 score = -76.92
+--relavant FLIP 2828 is 4 score = -76.98
+--relavant FLIP 2828 is 5 score = -75.00
+--relavant FLIP 2828 is 6 score = -695.42
+--relavant FLIP 2828 is 7 score = -94.90
+--relavant FLIP 2828 is 8 score = -1433.88
+--relavant FLIP 2828 is 9 score = -53.63
+--relavant FLIP 2828 is 10 score = -53.63
+--relavant FLIP 2828 is 11 score = -53.63
+--relavant FLIP 2828 is 12 score = -53.63
+--relavant FLIP 2828 is 13 score = -53.63
+depth0 relavant FLIP 2828 score = -199.75
+--relavant FLIP 2929 is 0 score = -27.79
+--relavant FLIP 2929 is 1 score = -493.21
+--relavant FLIP 2929 is 2 score = 175.21
+--relavant FLIP 2929 is 3 score = 175.46
+--relavant FLIP 2929 is 4 score = 48.44
+--relavant FLIP 2929 is 5 score = -24.65
+--relavant FLIP 2929 is 6 score = -463.42
+--relavant FLIP 2929 is 7 score = 250.04
+--relavant FLIP 2929 is 8 score = 2398.38
+--relavant FLIP 2929 is 9 score = -371.00
+--relavant FLIP 2929 is 10 score = -371.00
+--relavant FLIP 2929 is 11 score = -371.00
+--relavant FLIP 2929 is 12 score = -371.00
+--relavant FLIP 2929 is 13 score = -371.00
+depth0 relavant FLIP 2929 score = 58.95
+--irrelavant FLIP 2424 is 0 score = -27.79
+--irrelavant FLIP 2424 is 1 score = -261.75
+--irrelavant FLIP 2424 is 2 score = -55.50
+--irrelavant FLIP 2424 is 3 score = -55.23
+--irrelavant FLIP 2424 is 4 score = -54.96
+--irrelavant FLIP 2424 is 5 score = -52.85
+--irrelavant FLIP 2424 is 6 score = -692.65
+--irrelavant FLIP 2424 is 7 score = -94.90
+--irrelavant FLIP 2424 is 8 score = -658.35
+--irrelavant FLIP 2424 is 9 score = -53.63
+--irrelavant FLIP 2424 is 10 score = -53.63
+--irrelavant FLIP 2424 is 11 score = -53.63
+--irrelavant FLIP 2424 is 12 score = -53.63
+--irrelavant FLIP 2424 is 13 score = -53.63
+irrelavant FLIP 2424 score = -138.50
+Depth:  2, Time: 4437.275000, Node:    4234142, Score: +717.83333, Best Move: 3031,
+Saved states: 69130
+Projected Depth  3 Time: 840863.612500
+Depth:  2, Node:    4234142, Score: +717.83333, Move: c1-d1
+=12 c1 d1
+
+###
+Account: chan_submit
+Mode: MGTP
+Path: /mnt/HDD/course/1101/darkchess/FINAL/NegaScout/r09946011/github/darkchess/Variations/v7_vs_ai_ablation_plies180/exec.final
+Arg: 
+Name: MyAI
+Version: 1.0.0
+###
